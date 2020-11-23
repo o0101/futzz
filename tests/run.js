@@ -9,6 +9,7 @@ function runAll() {
   runBasic1();
   runIteration1();
   //runIteration2();
+  runIteration1(fs.readFileSync(path.resolve('samples', 'do.txt')).toString(), false);
   runIteration1(fs.readFileSync(path.resolve('samples', 'do.txt')).toString(), true);
 }
 
