@@ -6,18 +6,36 @@ runAll();
 
 function runAll() {
   runEmpty();
-  runBasic1();
-  runIteration1();
+  const dict = new Map();
+  runBasic1(dict);
+  runIteration1(undefined, true, dict, 'declaration of independence');
   //runIteration2();
-  runIteration1(fs.readFileSync(path.resolve('samples', 'do.txt')).toString(), false);
-  runIteration1(fs.readFileSync(path.resolve('samples', 'do.txt')).toString(), true);
+  runIteration1(fs.readFileSync(path.resolve('samples', 'do.txt')).toString(), false, dict, 'down and out');
+  runIteration1(fs.readFileSync(path.resolve('samples', 'do.txt')).toString(), true, dict, 'down and out');
+  runIteration1(fs.readFileSync(path.resolve('samples', 't2.txt')).toString(), false, dict, 'terminator 2');
+  runIteration1(fs.readFileSync(path.resolve('samples', 't2.txt')).toString(), true, dict, 'terminator 2');
+  query("terminator 2", dict);
+  query("judgement day", dict);
+  query("john connor", dict);
+  query("john connor's mother's name", dict);
+  query("Whuffie book", dict);
+  query("Keep a moving Dan", dict);
+  query("Declaration of Independence", dict);
 }
 
-function runEmpty() {
-  console.log(ent(lz().factors));
+function query(words, dict) {
+  const {factors} = lz(words, dict, 'query');
+
+  factors.forEach(f => {
+    console.log(JSON.stringify(f));
+  });
+}
+function runEmpty(dict = new Map()) {
+  console.log(ent(lz('',dict, 'empty').factors));
+  return dict;
 }
 
-function runBasic1() {
+function runBasic1(dict = new Map()) {
   const {factors} = lz(`
 		 In Congress, July 4, 1776
 
@@ -84,12 +102,13 @@ function runBasic1() {
 		Nor have We been wanting in attentions to our Brittish brethren. We have warned them from time to time of attempts by their legislature to extend an unwarrantable jurisdiction over us. We have reminded them of the circumstances of our emigration and settlement here. We have appealed to their native justice and magnanimity, and we have conjured them by the ties of our common kindred to disavow these usurpations, which, would inevitably interrupt our connections and correspondence. They too have been deaf to the voice of justice and of consanguinity. We must, therefore, acquiesce in the necessity, which denounces our Separation, and hold them, as we hold the rest of mankind, Enemies in War, in Peace Friends.
 
 		We, therefore, the Representatives of the united States of America, in General Congress, Assembled, appealing to the Supreme Judge of the world for the rectitude of our intentions, do, in the Name, and by Authority of the good People of these Colonies, solemnly publish and declare, That these United Colonies are, and of Right ought to be Free and Independent States; that they are Absolved from all Allegiance to the British Crown, and that all political connection between them and the State of Great Britain, is and ought to be totally dissolved; and that as Free and Independent States, they have full Power to levy War, conclude Peace, contract Alliances, establish Commerce, and to do all other Acts and Things which Independent States may of right do. And for the support of this Declaration, with a firm reliance on the protection of divine Providence, we mutually pledge to each other our Lives, our Fortunes and our sacred Honor. 
-  `);
+  `, dict, 'declaration of independence');
 
   console.log(ent(factors));
+  return dict;
 }
 
-function runIteration1(Text, useRun = false) {
+function runIteration1(Text, useRun = false, dict = new Map(), name) {
   const Ent = [];
   const text = Text || `
      In Congress, July 4, 1776
@@ -160,10 +179,8 @@ function runIteration1(Text, useRun = false) {
   `;
   const sortKey = useRun ? 'count' : 'runCount';
 
-  const dict = new Map();
-
   for( let i = 0; i < 10; i++ ) {
-    const {factors} = lz(text, dict);  
+    const {factors} = lz(text, dict, name);  
     const entropy = ent(factors, useRun ? i+1 : undefined);
     Ent.push(entropy);
     const approxEnt = Math.round(entropy*10000).toString().padStart(9,'0');
@@ -177,6 +194,7 @@ function runIteration1(Text, useRun = false) {
   }
 
   console.log(Ent);
+  return dict;
 }
 
 function runIteration2() {

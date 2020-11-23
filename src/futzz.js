@@ -1,4 +1,4 @@
-export function lz(docStr = '', dict = new Map()) {
+export function lz(docStr = '', dict = new Map(), name = 'unknown doc') {
   const factors = [];
   let codeId = dict.size/2;
   let wordFirstIndex = -1;
@@ -7,9 +7,9 @@ export function lz(docStr = '', dict = new Map()) {
 
   // a tiny bit of preProcessing
 
-  docStr = docStr.trim();
-  docStr = docStr.replace(/\s*[\n\r]+\s*/g, ' ');      // multiple new lines to 1
-  docStr = docStr.replace(/[^\S\r\n]+/g, ' '); // multiple whitespace to 1 space
+  docStr = docStr.replace(/\p{P}+/gu, ' ');     // unicode replace all punctuation
+  docStr = docStr.replace(/\p{Z}+/gu, ' ');     // unicode replace all separators
+  docStr = docStr.trim().toLocaleLowerCase();
 
   factors.docStr = docStr;
 
@@ -18,6 +18,7 @@ export function lz(docStr = '', dict = new Map()) {
     for ( const nextChar of docStr ) {
       if ( ! dict.has(nextChar) ) {
           const data = {
+            name,
             word: nextChar,
             firstIndex: charIndex,
             count: 0,
@@ -30,6 +31,7 @@ export function lz(docStr = '', dict = new Map()) {
       if ( ! dict.has(currentWord) ) {
         // save the new unseen token
           const data = {
+            name, 
             word: currentWord,
             firstIndex: null,
             count: 0,
