@@ -9,7 +9,7 @@ function runAll() {
   runBasic1();
   runIteration1();
   //runIteration2();
-  runIteration1(fs.readFileSync(path.resolve('samples', 'do.txt')).toString());
+  runIteration1(fs.readFileSync(path.resolve('samples', 'do.txt')).toString(), true);
 }
 
 function runEmpty() {
@@ -88,7 +88,7 @@ function runBasic1() {
   console.log(ent(factors));
 }
 
-function runIteration1(Text) {
+function runIteration1(Text, useRun = false) {
   const Ent = [];
   const text = Text || `
      In Congress, July 4, 1776
@@ -157,19 +157,20 @@ function runIteration1(Text) {
 
     We, therefore, the Representatives of the united States of America, in General Congress, Assembled, appealing to the Supreme Judge of the world for the rectitude of our intentions, do, in the Name, and by Authority of the good People of these Colonies, solemnly publish and declare, That these United Colonies are, and of Right ought to be Free and Independent States; that they are Absolved from all Allegiance to the British Crown, and that all political connection between them and the State of Great Britain, is and ought to be totally dissolved; and that as Free and Independent States, they have full Power to levy War, conclude Peace, contract Alliances, establish Commerce, and to do all other Acts and Things which Independent States may of right do. And for the support of this Declaration, with a firm reliance on the protection of divine Providence, we mutually pledge to each other our Lives, our Fortunes and our sacred Honor. 
   `;
+  const sortKey = useRun ? 'count' : 'runCount';
 
   const dict = new Map();
 
   for( let i = 0; i < 10; i++ ) {
     const {factors} = lz(text, dict);  
-    const entropy = ent(factors);
+    const entropy = ent(factors, useRun ? i+1 : undefined);
     Ent.push(entropy);
     const approxEnt = Math.round(entropy*10000).toString().padStart(9,'0');
 
     fs.writeFileSync(
       path.resolve('output', `${approxEnt}.txt`), 
       factors
-        .sort(({runCount:A},{runCount:B}) => B-A)
+        .sort(({[sortKey]:A},{[sortKey]:B}) => B-A)
         .map(f => JSON.stringify(f)).join('\n')
     );
   }

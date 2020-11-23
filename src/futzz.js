@@ -107,9 +107,11 @@ export function lz(docStr = '', dict = new Map()) {
   return {factors, dict};
 }
 
-export function ent(factors) {
+export function ent(factors, run = 1, adjustLength = false) {
   let TotalLength = 0;
   let Ent = 0;
+
+  run = run || 1;
   
   const dict = new Map(); 
 
@@ -122,14 +124,29 @@ export function ent(factors) {
     TotalLength += f.word.length;
   }
 
-  for( const {runCount,word} of dict.values() ) {
-    const p = runCount*word.length/TotalLength;
+  if ( adjustLength ) {
+    TotalLength *= run;
+  }
+
+  for( const {runCount,count,word} of dict.values() ) {
+    let Count = runCount;
+    if ( run > 1 ) {
+      Count = count; 
+    }
+    const p = Count*word.length/TotalLength;
     const ent = -p*Math.log2(p);
     Ent += ent;
   }
 
-  const check = factors.docStr.length == TotalLength;
-  console.assert(check, factors.docStr.length, TotalLength);
+  let check;
+
+  if ( adjustLength ) {
+    check = factors.docStr.length*run == TotalLength;
+  } else {
+    check = factors.docStr.length == TotalLength;
+  }
+
+  console.assert(check, factors.docStr.length*run, TotalLength);
 
   return Ent;
 }
