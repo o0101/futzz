@@ -7,6 +7,7 @@ export function lz(docStr = '', dict = new Map()) {
 
   // a tiny bit of preProcessing
 
+  docStr = docStr.trim();
   docStr = docStr.replace(/\n+/g, '\n');      // multiple new lines to 1
   docStr = docStr.replace(/[^\S\r\n]+/g, ' '); // multiple whitespace to 1 space
 
