@@ -1,0 +1,28 @@
+{
+  "name": "futzz",
+  "version": "1.0.0",
+  "description": "full text search system based on lempel ziv",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "node -r esm tests/run.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/c9fe/futzz.git"
+  },
+  "keywords": [
+    "full-text",
+    "search",
+    "lempel",
+    "ziv"
+  ],
+  "author": "@dosy",
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/c9fe/futzz/issues"
+  },
+  "homepage": "https://github.com/c9fe/futzz#readme",
+  "dependencies": {
+    "esm": "^3.2.25"
+  }
+}
