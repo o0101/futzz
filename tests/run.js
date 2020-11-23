@@ -12,9 +12,6 @@ function runAll() {
   runIteration1(fs.readFileSync(path.resolve('samples', 'do.txt')).toString());
 }
 
-import fs from 'fs';
-import path from 'path';
-
 function runEmpty() {
   console.log(ent(lz().factors));
 }
