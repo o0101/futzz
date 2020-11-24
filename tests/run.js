@@ -21,6 +21,12 @@ function runAll() {
   query("Whuffie book", dict);
   query("Keep a moving Dan", dict);
   query("Declaration of Independence", dict);
+  query("life liberty and the pursuit of happiness", dict);
+  query("hasta la vista baby", dict);
+  query("baby", dict);
+  query("legislature of the united states", dict);
+  query("of free men and government, all the world's peoples", dict);
+  query(process.argv[2], dict);
 }
 
 function query(words, dict) {
@@ -30,8 +36,9 @@ function query(words, dict) {
     console.log(JSON.stringify(f));
   });
 }
+
 function runEmpty(dict = new Map()) {
-  console.log(ent(lz('',dict, 'empty').factors));
+  //console.log(ent(lz('',dict, 'empty').factors));
   return dict;
 }
 
@@ -104,7 +111,7 @@ function runBasic1(dict = new Map()) {
 		We, therefore, the Representatives of the united States of America, in General Congress, Assembled, appealing to the Supreme Judge of the world for the rectitude of our intentions, do, in the Name, and by Authority of the good People of these Colonies, solemnly publish and declare, That these United Colonies are, and of Right ought to be Free and Independent States; that they are Absolved from all Allegiance to the British Crown, and that all political connection between them and the State of Great Britain, is and ought to be totally dissolved; and that as Free and Independent States, they have full Power to levy War, conclude Peace, contract Alliances, establish Commerce, and to do all other Acts and Things which Independent States may of right do. And for the support of this Declaration, with a firm reliance on the protection of divine Providence, we mutually pledge to each other our Lives, our Fortunes and our sacred Honor. 
   `, dict, 'declaration of independence');
 
-  console.log(ent(factors));
+  //console.log(ent(factors));
   return dict;
 }
 
@@ -179,7 +186,7 @@ function runIteration1(Text, useRun = false, dict = new Map(), name) {
   `;
   const sortKey = useRun ? 'count' : 'runCount';
 
-  for( let i = 0; i < 10; i++ ) {
+  for( let i = 0; i < 6; i++ ) {
     const {factors} = lz(text, dict, name);  
     const entropy = ent(factors, useRun ? i+1 : undefined);
     Ent.push(entropy);
@@ -193,7 +200,7 @@ function runIteration1(Text, useRun = false, dict = new Map(), name) {
     );
   }
 
-  console.log(Ent);
+  //console.log(Ent);
   return dict;
 }
 
@@ -279,5 +286,5 @@ function runIteration2() {
     );
   }
 
-  console.log(Ent);
+  //console.log(Ent);
 }

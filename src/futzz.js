@@ -7,7 +7,7 @@ export function lz(docStr = '', dict = new Map(), name = 'unknown doc') {
 
   // a tiny bit of preProcessing
 
-  docStr = docStr.replace(/\p{P}+/gu, ' ');     // unicode replace all punctuation
+  docStr = docStr.replace(/\p{P}+/gu, '');     // unicode replace all punctuation
   docStr = docStr.replace(/\p{Z}+/gu, ' ');     // unicode replace all separators
   docStr = docStr.trim().toLocaleLowerCase();
 
