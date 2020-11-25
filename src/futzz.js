@@ -61,9 +61,13 @@ const State = {
     const {dict} = State;
     const {factors} = lz(words, dict, 'query');
 
+    const merge = {};
     factors.forEach(({name, word}) => {
-      console.log(JSON.stringify({word, name:Object.fromEntries([...name.entries()].map(([_,{count}]) => [_, count]))}));
+      const counts = Object.fromEntries([...name.entries()].map(([_,{count}]) => [_, count]));
+      mergeAdd(merge, counts);
+      //console.log(JSON.stringify({word, counts}));
     });
+    console.log(JSON.stringify({words, merge});
     console.log('');
   }
 
@@ -231,4 +235,13 @@ const State = {
     console.assert(check, factors.docStr.length*run, TotalLength);
 
     return Ent;
+  }
+
+  function mergeAdd(result, source) {
+    for( const key of Object.keys(source) ) {
+      if ( ! result[key] ) {
+        result[key] = 0;
+      }
+      result[key] += source[key];
+    }
   }
