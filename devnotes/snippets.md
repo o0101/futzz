@@ -14,4 +14,18 @@ If we keep an index for each occurrence of each factor, it will be massive but l
 
 Then find k (or less) items that are in order, and hopefully if we do this the right way, then we can also minimize the distance between these. 
 
+## A heuristic
+
+Let's take the largest snippet (longest), that also has the highest score (informational significance), so maybe we want length * score and sort all snippets. 
+
+Take the first occurence of such, and give a bit of context around it. That's probably a good snippet. 
+
+## Improving the heurstic
+
+Repeat for the next best factor (for snippeting). Now find the pair of these two factors that are closest together. 
+
+Do this, and repeat, until we don't want to do anymore or until our snippet is good enough.
+
+
+
 
