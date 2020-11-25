@@ -6,6 +6,8 @@ const SLOW_CHANGE = 2;
 const CHANGE_THRESH = 0.2;
 const TERMINATE_ON = MAX_ENT;
 
+const FOUND_NOT_FACTOR_MULT = 0.8;
+
 const USE_COVER = true;
 
 const State = {
@@ -30,15 +32,6 @@ const State = {
 
     indexingCycle: for( let i = 0; i < MAX_ITERATION; i++ ) {
       ({dict, factors, docStr} = lz(text, State.dict, name)); 
-      // normalize factors
-        factors.forEach(f => {
-          const n = f.name.get(name);
-          if ( USE_COVER ) {
-            n.score = n.count*f.word.length / docStr.length;
-          } else {
-            n.score = n.count / factors.length;
-          }
-        });
       totalFactorsLength += factors.length;
       const entropy = ent(factors, useRun ? i+1 : undefined, true, totalFactorsLength);
       const total = entropy*factors.length;
@@ -84,12 +77,19 @@ const State = {
   export function query(words) {
     const {dict} = State;
     const {factors} = lz(words, dict, 'query');
+    let willExit = false;
 
     const merge = {};
     factors.forEach(f => {
       const {name, word} = f;
-      const scores = Object.fromEntries([...name.entries()].map(([_,{score}]) => [_, score]));
-      console.log({scores, name, word});
+      const scores = Object.fromEntries([...name.entries()].map(([_,{score}]) => {
+        if ( score == null ) {
+          console.log(f, name, word);
+          willExit = true;
+        } 
+        return [_, score];
+      }))
+      //console.log({scores, name, word});
       mergeAdd(merge, scores);
       //console.log(JSON.stringify({word, scores}));
     });
@@ -97,13 +97,17 @@ const State = {
     const results = Object.entries(merge);
     results.sort(([,countA], [,countB]) => {
       //console.log({countA, countB});
-      return parseInt(countB) - parseInt(countA);
+      return parseFloat(countB) - parseFloat(countA);
     });
     console.log(JSON.stringify({words, results}, null, 2));
     console.log('');
+    if ( willExit ) {
+      process.exit(1);
+    }
   }
 
   export function lz(docStr = '', dict = new Map(), name = 'unknown doc') {
+    const toNormalize = new Set();
     const factors = [];
     let codeId = dict.size/2;
     let wordFirstIndex = -1;
@@ -129,6 +133,7 @@ const State = {
               count: 0,
               codeId 
             }
+            toNormalize.add(data);
             dict.set(codeId, data);
             dict.set(nextChar, data);
             codeId += 1;
@@ -142,6 +147,7 @@ const State = {
               count: 0,
               codeId 
             }
+            toNormalize.add(data);
             dict.set(codeId, data);
             dict.set(currentWord, data);
             codeId += 1;
@@ -164,6 +170,7 @@ const State = {
               factor.count++;
 
               factors.push(factor);
+              toNormalize.delete(factor);
             }
 
           // update the state
@@ -185,6 +192,7 @@ const State = {
               count: 0,
               codeId 
             }
+            toNormalize.add(data);
             dict.set(codeId, data);
             dict.set(currentWord, data);
             codeId += 1;
@@ -202,10 +210,24 @@ const State = {
               factor.count++;
 
               factors.push(factor);
+              toNormalize.delete(factor);
+
+              if ( !factor.name.has(name) ) {
+                factor.name.set(name, {count: 1});
+              } else {
+                factor.name.get(name).count += 1;
+              }
 
               // in this case we push the last factor if any
                 const suffixFactor = dict.get(suffix);
                 factors.push(suffixFactor);
+                toNormalize.delete(suffixFactor);
+
+              if ( !suffixFactor.name.has(name) ) {
+                suffixFactor.name.set(name, {count: 1});
+              } else {
+                suffixFactor.name.get(name).count += 1;
+              }
             }
         } else {
           const factor = dict.get(currentWord);
@@ -220,7 +242,26 @@ const State = {
           factor.count++;
 
           factors.push(factor);
+          toNormalize.delete(factor);
         }
+
+    // normalize factors
+      factors.forEach(f => {
+        const n = f.name.get(name);
+        if ( USE_COVER ) {
+          n.score = n.count*f.word.length / docStr.length;
+        } else {
+          n.score = n.count / factors.length;
+        }
+      });
+      toNormalize.forEach(f => {
+        const n = f.name.get(name);
+        if ( USE_COVER ) {
+          n.score = FOUND_NOT_FACTOR_MULT * f.word.length / docStr.length;
+        } else {
+          n.score = FOUND_NOT_FACTOR_MULT * 1 / factors.length;
+        }
+      });
 
     return {factors, dict, docStr};
   }
