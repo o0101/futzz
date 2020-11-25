@@ -1,7 +1,12 @@
 const MAX_ITERATION = 12;
+
 const MAX_ENT = 0;
 const MAX_TOT_ENT = 1;
+const SLOW_CHANGE = 2;
+const CHANGE_THRESH = 0.2;
 const TERMINATE_ON = MAX_ENT;
+
+const USE_COVER = true;
 
 const State = {
   dict: new Map(),
@@ -21,11 +26,21 @@ const State = {
       indexStart: new Date
     };
 
-    let dict, factors, maxEntropy = 0, maxFactors;
+    let dict, docStr, factors, lastEntropy = 0, maxEntropy = 0, maxFactors, totalFactorsLength = 0;
 
     indexingCycle: for( let i = 0; i < MAX_ITERATION; i++ ) {
-      ({dict, factors} = lz(text, State.dict, name)); 
-      const entropy = ent(factors, useRun ? i+1 : undefined);
+      ({dict, factors, docStr} = lz(text, State.dict, name)); 
+      // normalize factors
+        factors.forEach(f => {
+          const n = f.name.get(name);
+          if ( USE_COVER ) {
+            n.score = n.count*f.word.length / docStr.length;
+          } else {
+            n.score = n.count / factors.length;
+          }
+        });
+      totalFactorsLength += factors.length;
+      const entropy = ent(factors, useRun ? i+1 : undefined, true, totalFactorsLength);
       const total = entropy*factors.length;
       Ent.push({entropy, total: entropy*factors.length, name});
       switch( TERMINATE_ON ) {
@@ -45,7 +60,16 @@ const State = {
             break indexingCycle;
           }
         }
+        case SLOW_CHANGE: {
+          if ( entropy > lastEntropy ) {
+            maxEntropy = total;
+            maxFactors = factors;
+          } else if ( (lastEntropy - entropy/lastEntropy) < CHANGE_THRESH ) {
+            break indexingCycle;
+          }
+        }
       } 
+      lastEntropy = entropy;
     }
 
     indexHistoryEntry.indexEndAt = new Date;
@@ -62,12 +86,20 @@ const State = {
     const {factors} = lz(words, dict, 'query');
 
     const merge = {};
-    factors.forEach(({name, word}) => {
-      const counts = Object.fromEntries([...name.entries()].map(([_,{count}]) => [_, count]));
-      mergeAdd(merge, counts);
-      //console.log(JSON.stringify({word, counts}));
+    factors.forEach(f => {
+      const {name, word} = f;
+      const scores = Object.fromEntries([...name.entries()].map(([_,{score}]) => [_, score]));
+      console.log({scores, name, word});
+      mergeAdd(merge, scores);
+      //console.log(JSON.stringify({word, scores}));
     });
-    console.log(JSON.stringify({words, merge});
+
+    const results = Object.entries(merge);
+    results.sort(([,countA], [,countB]) => {
+      //console.log({countA, countB});
+      return parseInt(countB) - parseInt(countA);
+    });
+    console.log(JSON.stringify({words, results}, null, 2));
     console.log('');
   }
 
@@ -190,10 +222,10 @@ const State = {
           factors.push(factor);
         }
 
-    return {factors, dict};
+    return {factors, dict, docStr};
   }
 
-  export function ent(factors, run = 1, adjustLength = false) {
+  export function ent(factors, run = 1, adjustLength = true, allFactorsLength) {
     let TotalLength = 0;
     let Ent = 0;
 
@@ -219,7 +251,16 @@ const State = {
       if ( run > 1 ) {
         Count = count; 
       }
-      const p = Count*word.length/TotalLength;
+      let p = 0;
+      if ( USE_COVER ) {
+        p = Count*word.length/TotalLength;
+      } else {
+        if ( run > 1 ) {
+          p = Count/allFactorsLength;
+        } else {
+          p = Count/factors.length;
+        }
+      }
       const ent = -p*Math.log2(p);
       Ent += ent;
     }
