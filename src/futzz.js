@@ -15,8 +15,8 @@ const USE_COVER = true;
 const zmap = new StrongMap();
 zmap.name('fts');
 
-const State = {
-  dict: zmap,
+export const State = {
+  dict: new Map(),
   indexHistory: []
 };
 
@@ -131,17 +131,18 @@ const State = {
 
       for ( const nextChar of docStr ) {
         if ( ! dict.has(nextChar) ) {
-            const data = {
-              name: new Map([[name, {count:0}]]),
-              word: nextChar,
-              firstIndex: charIndex,
-              count: 0,
-              codeId 
-            }
-            toNormalize.add(data);
-            dict.set(codeId, data);
-            dict.set(nextChar, data);
-            codeId += 1;
+          const data = {
+            name: new Map([[name, {count:0}]]),
+            word: nextChar,
+            firstIndex: charIndex,
+            count: 0,
+            codeId 
+          }
+          toNormalize.add(data);
+          dict.set(codeId, data);
+          dict.set(nextChar, data);
+          codeId += 1;
+          console.log(codeId);
         }
         if ( ! dict.has(currentWord) ) {
           // save the new unseen token
@@ -156,6 +157,7 @@ const State = {
             dict.set(codeId, data);
             dict.set(currentWord, data);
             codeId += 1;
+            console.log(codeId);
 
           // get the factor 
             let suffix = '';
@@ -201,6 +203,7 @@ const State = {
             dict.set(codeId, data);
             dict.set(currentWord, data);
             codeId += 1;
+            console.log(codeId);
 
           // get the factor 
             let suffix = '';

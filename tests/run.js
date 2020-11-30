@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
-import {query, index, ent} from '../src/futzz.js';
+import JSON36 from 'json36';
+import {State, query, index, ent} from '../src/futzz.js';
 
 runAll();
 
@@ -27,6 +28,7 @@ runAll();
     // not needed for now
       //rotating of the source text to change factorization
       //runIteration2();
+    fs.writeFileSync('dict.json36.dat', JSON36.stringify(State.dict));
   }
 
   function runEmpty(dict = new Map()) {
