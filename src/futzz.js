@@ -1,3 +1,5 @@
+import StrongMap from 'node-strongmap';
+
 const MAX_ITERATION = 12;
 
 const MAX_ENT = 0;
@@ -10,8 +12,11 @@ const FOUND_NOT_FACTOR_MULT = 0.8;
 
 const USE_COVER = true;
 
+const zmap = new StrongMap();
+zmap.name('fts');
+
 const State = {
-  dict: new Map(),
+  dict: zmap,
   indexHistory: []
 };
 
