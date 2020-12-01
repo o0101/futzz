@@ -18,7 +18,7 @@ const RUN_COUNT = 'r';
 
 const FOUND_NOT_FACTOR_MULT = 0.8;
 
-const USE_COVER = true;
+const USE_COVER = false;
 
 //const zmap = new StrongMap();
 //zmap.name('fts');
@@ -298,7 +298,7 @@ export const State = {
         if ( ! n ) {
           console.log(f, name);
         }
-        if ( USE_COVER ) {
+        if ( Math.random() > 0.49 ) {
           n[SCORE] = n[COUNT]*f[WORD].length / docStr.length;
         } else {
           n[SCORE] = n[COUNT] / factors.length;
