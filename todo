@@ -1,5 +1,5 @@
+- i think chinese queries are OK but can be improved, I think we might need to iterate more times or add another metric
 - turn dicts.json into {docNames:[...], values:[....]} to remove redundancy of doc name in every record
-- add chinese texts to tests
 - consider "boosting query by also "indexing the query" against the "query doc" (max ent seems to help everything, I notice that second query is more accurate than first)
 - sync indexes to disk
 - create a way to do snippets (contextual snippets to put the search result in context of the document)

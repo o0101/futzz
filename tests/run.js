@@ -10,6 +10,8 @@ runAll();
     runIteration1(fs.readFileSync(path.resolve('samples', 'di.txt')).toString(), 'declaration of independence');
     runIteration1(fs.readFileSync(path.resolve('samples', 'do.txt')).toString(), 'down and out');
     runIteration1(fs.readFileSync(path.resolve('samples', 't2.txt')).toString(), 'terminator 2');
+    runIteration1(fs.readFileSync(path.resolve('samples', 'tao.txt')).toString(), 'tao te ching');
+    runIteration1(fs.readFileSync(path.resolve('samples', 'hm.txt')).toString(), 'haruki murakami');
     query("terminator 2");
     query("judgement day");
     query("john connor");
@@ -22,6 +24,15 @@ runAll();
     query("baby");
     query("legislature of the united states");
     query("of free men and government, all the world's peoples");
+    query("haruki murakami");
+    query("挪威的森林");
+    query("tao te ching");
+    query("道的方式");
+    query("在國王的宇宙中，無路可走的路是未知的");
+    query("都在天堂之下");
+    query("Midori");
+    query("famous Kobe writer");
+    query("神戶著名作家");
     if ( process.argv[2] ) {
       query(process.argv[2]);
     }
