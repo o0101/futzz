@@ -1,0 +1,644 @@
+
+> futzz@1.0.0 test /home/cris/futzz
+> node -r esm tests/run.js
+
+declaration of independence [
+  '9.87 : 27913.79',
+  '10.42 : 21241.19',
+  '10.44 : 18506.01',
+  '10.45 : 17600.52',
+  '10.39 : 16103.55'
+]
+down and out [
+  '14.50 : 892432.59',
+  '15.02 : 759456.86',
+  '15.13 : 704234.54',
+  '15.15 : 665783.49',
+  '15.15 : 637787.28'
+]
+terminator 2 [
+  '14.55 : 561282.80',
+  '14.68 : 510476.43',
+  '14.73 : 485087.33',
+  '14.73 : 465519.51',
+  '14.71 : 448489.69'
+]
+tao te ching - chinese [ '12.66 : 151720.87', '12.83 : 123761.18', '12.80 : 114287.70' ]
+wiki - tao te ching - chinese [ '11.13 : 83661.00', '11.90 : 58190.79', '11.84 : 52112.67' ]
+wiki - tao te ching - english [ '11.65 : 47003.51', '11.59 : 42114.46' ]
+haruki murakami - chinese [ '11.29 : 83396.57', '11.90 : 58153.89', '11.83 : 52998.37' ]
+haruki murakami - english [ '12.70 : 116908.62', '12.65 : 103253.20' ]
+{
+  "words": "terminator 2",
+  "results": [
+    [
+      "query",
+      1
+    ],
+    [
+      "terminator 2",
+      0.000052604815094074944
+    ]
+  ]
+}
+
+{
+  "words": "judgement day",
+  "results": [
+    [
+      "query",
+      1
+    ],
+    [
+      "declaration of independence",
+      0.0006244536030972898
+    ],
+    [
+      "terminator 2",
+      0.0000350698767293833
+    ],
+    [
+      "down and out",
+      0.000016829633618876118
+    ]
+  ]
+}
+
+{
+  "words": "john connor",
+  "results": [
+    [
+      "query",
+      1
+    ],
+    [
+      "terminator 2",
+      0.00009644216100580406
+    ]
+  ]
+}
+
+{
+  "words": "john connor's mother's name",
+  "results": [
+    [
+      "query",
+      1.44
+    ],
+    [
+      "terminator 2",
+      0.000149046976099879
+    ],
+    [
+      "down and out",
+      0.000026927413790201788
+    ]
+  ]
+}
+
+{
+  "words": "Whuffie book",
+  "results": [
+    [
+      "query",
+      1
+    ],
+    [
+      "down and out",
+      0.00008482135343913563
+    ],
+    [
+      "terminator 2",
+      0.000039453611320556205
+    ]
+  ]
+}
+
+{
+  "words": "Keep a moving Dan",
+  "results": [
+    [
+      "query",
+      1
+    ],
+    [
+      "wiki - tao te ching - english",
+      0.00033111016508206804
+    ],
+    [
+      "down and out",
+      0.00023561487066426566
+    ],
+    [
+      "terminator 2",
+      0.0001797331182380894
+    ],
+    [
+      "haruki murakami - english",
+      0.00005737454100367197
+    ]
+  ]
+}
+
+{
+  "words": "Declaration of Independence",
+  "results": [
+    [
+      "query",
+      0.9999999999999999
+    ],
+    [
+      "declaration of independence",
+      0.0012489072061945797
+    ],
+    [
+      "wiki - tao te ching - english",
+      0.0004257130693912303
+    ],
+    [
+      "down and out",
+      0.00016156448274121072
+    ],
+    [
+      "tao te ching - chinese",
+      0.000039690414764834295
+    ],
+    [
+      "terminator 2",
+      0.00001753493836469165
+    ]
+  ]
+}
+
+{
+  "words": "life liberty and the pursuit of happiness",
+  "results": [
+    [
+      "query",
+      1
+    ],
+    [
+      "declaration of independence",
+      0.0024478581241413762
+    ],
+    [
+      "down and out",
+      0.0002625422844544674
+    ],
+    [
+      "terminator 2",
+      0.00006137228427642077
+    ],
+    [
+      "tao te ching - chinese",
+      0.000039690414764834295
+    ]
+  ]
+}
+
+{
+  "words": "hasta la vista baby",
+  "results": [
+    [
+      "query",
+      1
+    ],
+    [
+      "haruki murakami - chinese",
+      0.00023171391055843053
+    ],
+    [
+      "terminator 2",
+      0.00008241421031405076
+    ],
+    [
+      "down and out",
+      0.00001009778017132567
+    ]
+  ]
+}
+
+{
+  "words": "baby",
+  "results": [
+    [
+      "query",
+      1
+    ],
+    [
+      "haruki murakami - chinese",
+      0.000308951880744574
+    ],
+    [
+      "terminator 2",
+      0.00001753493836469165
+    ],
+    [
+      "down and out",
+      0.000013463706895100894
+    ]
+  ]
+}
+
+{
+  "words": "legislature of the united states",
+  "results": [
+    [
+      "query",
+      1
+    ],
+    [
+      "declaration of independence",
+      0.0011989509179467968
+    ],
+    [
+      "tao te ching - chinese",
+      0.00019845207382417147
+    ],
+    [
+      "down and out",
+      0.00006058668102795402
+    ]
+  ]
+}
+
+{
+  "words": "of free men and government, all the world's peoples",
+  "results": [
+    [
+      "query",
+      0.9999999999999999
+    ],
+    [
+      "declaration of independence",
+      0.003122268015486449
+    ],
+    [
+      "wiki - tao te ching - english",
+      0.0004257130693912303
+    ],
+    [
+      "wiki - tao te ching - chinese",
+      0.0002452783909737552
+    ],
+    [
+      "haruki murakami - english",
+      0.0001988984088127295
+    ],
+    [
+      "down and out",
+      0.00017839411636008684
+    ],
+    [
+      "terminator 2",
+      0.00010871661786108823
+    ],
+    [
+      "haruki murakami - chinese",
+      0.0000772379701861435
+    ]
+  ]
+}
+
+{
+  "words": "haruki murakami",
+  "results": [
+    [
+      "query",
+      1
+    ],
+    [
+      "haruki murakami - english",
+      0.0008606181150550796
+    ]
+  ]
+}
+
+{
+  "words": "挪威的森林",
+  "results": [
+    [
+      "query",
+      1
+    ],
+    [
+      "haruki murakami - chinese",
+      0.0023171391055843054
+    ]
+  ]
+}
+
+{
+  "words": "tao te ching",
+  "results": [
+    [
+      "query",
+      1
+    ],
+    [
+      "wiki - tao te ching - english",
+      0.0011352348517099475
+    ]
+  ]
+}
+
+{
+  "words": "道的方式",
+  "results": [
+    [
+      "query",
+      1
+    ],
+    [
+      "wiki - tao te ching - chinese",
+      0.001798708200474205
+    ],
+    [
+      "haruki murakami - chinese",
+      0.000308951880744574
+    ]
+  ]
+}
+
+{
+  "words": "the way amazing",
+  "results": [
+    [
+      "query",
+      1
+    ],
+    [
+      "declaration of independence",
+      0.0014986886474334957
+    ],
+    [
+      "wiki - tao te ching - english",
+      0.0006149188780095549
+    ],
+    [
+      "down and out",
+      0.00009155320688668608
+    ],
+    [
+      "tao te ching - chinese",
+      0.000039690414764834295
+    ],
+    [
+      "terminator 2",
+      0.00001753493836469165
+    ]
+  ]
+}
+
+{
+  "words": "在國王的宇宙中，無路可走的路是未知的",
+  "results": [
+    [
+      "query",
+      1
+    ],
+    [
+      "wiki - tao te ching - chinese",
+      0.02189518436759055
+    ],
+    [
+      "haruki murakami - chinese",
+      0.014211786514250405
+    ],
+    [
+      "tao te ching - chinese",
+      0.0014090097241516175
+    ]
+  ]
+}
+
+{
+  "words": "the way",
+  "results": [
+    [
+      "query",
+      1
+    ],
+    [
+      "haruki murakami - english",
+      0.00013387392900856792
+    ],
+    [
+      "down and out",
+      0.000023561487066426562
+    ]
+  ]
+}
+
+{
+  "words": "都在天堂之下",
+  "results": [
+    [
+      "query",
+      1
+    ],
+    [
+      "haruki murakami - chinese",
+      0.0017764733142813006
+    ],
+    [
+      "wiki - tao te ching - chinese",
+      0.0006540757092633472
+    ],
+    [
+      "tao te ching - chinese",
+      0.00035721373288350865
+    ]
+  ]
+}
+
+{
+  "words": "Midori",
+  "results": [
+    [
+      "query",
+      1
+    ],
+    [
+      "declaration of independence",
+      0.0022480329711502436
+    ],
+    [
+      "haruki murakami - chinese",
+      0.0004016374449679462
+    ],
+    [
+      "haruki murakami - english",
+      0.00007649938800489595
+    ],
+    [
+      "down and out",
+      0.00006731853447550447
+    ],
+    [
+      "terminator 2",
+      0.00004383734591172912
+    ]
+  ]
+}
+
+{
+  "words": "famous Kobe writer",
+  "results": [
+    [
+      "query",
+      1
+    ],
+    [
+      "haruki murakami - english",
+      0.00042074663402692775
+    ],
+    [
+      "wiki - tao te ching - english",
+      0.00018920580861832458
+    ],
+    [
+      "down and out",
+      0.0000814554267153604
+    ],
+    [
+      "terminator 2",
+      0.000030686142138210385
+    ]
+  ]
+}
+
+{
+  "words": "神戶著名作家",
+  "results": [
+    [
+      "query",
+      1
+    ],
+    [
+      "haruki murakami - chinese",
+      0.0004016374449679462
+    ]
+  ]
+}
+
+{
+  "words": "lao zi",
+  "results": [
+    [
+      "query",
+      1
+    ],
+    [
+      "wiki - tao te ching - chinese",
+      0.0003924454255580084
+    ]
+  ]
+}
+
+{
+  "words": "老子",
+  "results": [
+    [
+      "query",
+      1
+    ],
+    [
+      "wiki - tao te ching - chinese",
+      0.014716703458425313
+    ]
+  ]
+}
+
+{
+  "words": "the tao",
+  "results": [
+    [
+      "query",
+      1
+    ],
+    [
+      "wiki - tao te ching - english",
+      0.0006622203301641361
+    ],
+    [
+      "tao te ching - chinese",
+      0.00013891645167692004
+    ]
+  ]
+}
+
+{
+  "words": "the warring states period",
+  "results": [
+    [
+      "query",
+      1
+    ],
+    [
+      "terminator 2",
+      0.00012274456855284154
+    ],
+    [
+      "down and out",
+      0.00010905602585031724
+    ]
+  ]
+}
+
+{
+  "words": "classical chinese history texts",
+  "results": [
+    [
+      "query",
+      1
+    ],
+    [
+      "wiki - tao te ching - english",
+      0.0008325055579206282
+    ],
+    [
+      "haruki murakami - english",
+      0.00012239902080783354
+    ],
+    [
+      "tao te ching - chinese",
+      0.00006350466362373487
+    ],
+    [
+      "down and out",
+      0.000037025193961527455
+    ]
+  ]
+}
+
+{
+  "words": "the art of war",
+  "results": [
+    [
+      "query",
+      1
+    ],
+    [
+      "declaration of independence",
+      0.00039965030598226555
+    ],
+    [
+      "haruki murakami - english",
+      0.0001529987760097919
+    ],
+    [
+      "tao te ching - chinese",
+      0.00007938082952966859
+    ],
+    [
+      "down and out",
+      0.00006731853447550447
+    ],
+    [
+      "terminator 2",
+      0.0000350698767293833
+    ]
+  ]
+}
+
