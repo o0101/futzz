@@ -298,9 +298,8 @@ export const State = {
         if ( ! n ) {
           console.log(f, name);
         }
-        n[SCORE] = n[COUNT]*f[WORD].length / docStr.length;
-        n[SCORE] += n[COUNT] / factors.length;
-        n[SCORE] /= 2;
+        n[SCORE] = Math.sqrt(n[COUNT]*f[WORD].length / docStr.length);
+        n[SCORE] *= Math.sqrt(n[COUNT] / factors.length);
         /*
         if ( USE_COVER ) {
           n[SCORE] = n[COUNT]*f[WORD].length / docStr.length;
