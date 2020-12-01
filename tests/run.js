@@ -29,7 +29,10 @@ runAll();
       //rotating of the source text to change factorization
       //runIteration2();
     //fs.writeFileSync('dict.json36.dat', JSON36.stringify(State.dict));
-    fs.writeFileSync(path.resolve('dicts', 'dict.json'), JSON.stringify([...State.dict.entries()]));
+    if ( !fs.existsSync(path.resolve('dicts')) ) {
+      fs.mkdirSync(path.resolve('dicts'), {recursive:true});
+    }
+    fs.writeFileSync(path.resolve('dicts', 'dict.json'), JSON.stringify([...State.dict.values()]));
   }
 
   function runEmpty(dict = new Map()) {

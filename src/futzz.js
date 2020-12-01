@@ -8,6 +8,14 @@ const SLOW_CHANGE = 2;
 const CHANGE_THRESH = 0.2;
 const TERMINATE_ON = MAX_ENT;
 
+const WORD = 'w';
+const NAME = 'n';
+const COUNT = 'c';
+const SCORE = 's';
+const FIRST_INDEX = 'x';
+const CODE_ID = 'i';
+const RUN_COUNT = 'r';
+
 const FOUND_NOT_FACTOR_MULT = 0.8;
 
 const USE_COVER = true;
@@ -23,7 +31,7 @@ export const State = {
 
   export function index(text, name, useRun = false) {
     const Ent = [];
-    const sortKey = useRun ? 'count' : 'runCount';
+    const sortKey = useRun ? COUNT : RUN_COUNT;
 
     const indexHistoryEntry = {
       docName: name, 
@@ -105,8 +113,8 @@ export const State = {
 
     const merge = {};
     factors.forEach(f => {
-      const {name, word} = f;
-      const scores = Object.fromEntries([...Object.entries(name)].map(([_,{score}]) => {
+      const {[NAME]:name, [WORD]:word} = f;
+      const scores = Object.fromEntries([...Object.entries(name)].map(([_,{[SCORE]:score}]) => {
         if ( score == null ) {
           console.log(f, name, word);
           willExit = true;
@@ -151,13 +159,13 @@ export const State = {
       for ( const nextChar of docStr ) {
         if ( ! dict.has(nextChar) ) {
           const data = {
-            name: {
-              [name]: {count: 0}
+            [NAME]: {
+              [name]: {[COUNT]: 0}
             }, 
-            word: nextChar,
-            firstIndex: charIndex,
-            count: 0,
-            codeId 
+            [WORD]: nextChar,
+            [FIRST_INDEX]: charIndex,
+            [COUNT]: 0,
+            [CODE_ID]: codeId 
           }
           toNormalize.add(data);
           dict.set(codeId, data);
@@ -170,13 +178,13 @@ export const State = {
         if ( ! dict.has(currentWord) ) {
           // save the new unseen token
             const data = {
-              name: {
-                [name]: {count: 0}
+              [NAME]: {
+                [name]: {[COUNT]: 0}
               }, 
-              word: currentWord,
-              firstIndex: null,
-              count: 0,
-              codeId 
+              [WORD]: currentWord,
+              [FIRST_INDEX]: null,
+              [COUNT]: 0,
+              [CODE_ID]: codeId 
             }
             toNormalize.add(data);
             dict.set(codeId, data);
@@ -193,15 +201,15 @@ export const State = {
               suffix = currentWord.slice(-1);
               const factor = dict.get(lastWord);
 
-              if ( factor.count == 0 ) {
-                factor.firstIndex = wordFirstIndex;
+              if ( factor[COUNT] == 0 ) {
+                factor[FIRST_INDEX] = wordFirstIndex;
               }
-              if ( !factor.name[name] ) {
-                factor.name[name] = {count: 1};
+              if ( !factor[NAME][name] ) {
+                factor[NAME][name] = {[COUNT]: 1};
               } else {
-                factor.name[name].count += 1;
+                factor[NAME][name][COUNT] += 1;
               }
-              factor.count++;
+              factor[COUNT]++;
 
               factors.push(factor);
               toNormalize.delete(factor);
@@ -220,13 +228,13 @@ export const State = {
         if ( ! dict.has(currentWord) ) {
           // save the new unseen token
             const data = {
-              name: {
-                [name]: {count: 0}
+              [NAME]: {
+                [name]: {[COUNT]: 0}
               }, 
-              word: currentWord,
-              firstIndex: null,
-              count: 0,
-              codeId 
+              [WORD]: currentWord,
+              [FIRST_INDEX]: null,
+              [COUNT]: 0,
+              [CODE_ID]: codeId 
             }
             toNormalize.add(data);
             dict.set(codeId, data);
@@ -243,18 +251,18 @@ export const State = {
               suffix = currentWord.slice(-1);
               const factor = dict.get(lastWord);
 
-              if ( factor.count == 0 ) {
-                factor.firstIndex = wordFirstIndex;
+              if ( factor[COUNT] == 0 ) {
+                factor[FIRST_INDEX] = wordFirstIndex;
               }
-              factor.count++;
+              factor[COUNT]++;
 
               factors.push(factor);
               toNormalize.delete(factor);
 
-              if ( !factor.name[name] ) {
-                factor.name[name] = {count: 1};
+              if ( !factor[NAME][name] ) {
+                factor[NAME][name] = {[COUNT]: 1};
               } else {
-                factor.name[name].count += 1;
+                factor[NAME][name][COUNT] += 1;
               }
 
               // in this case we push the last factor if any
@@ -262,23 +270,23 @@ export const State = {
                 factors.push(suffixFactor);
                 toNormalize.delete(suffixFactor);
 
-              if ( !suffixFactor.name[name] ) {
-                suffixFactor.name[name] = {count: 1};
+              if ( !suffixFactor[NAME][name] ) {
+                suffixFactor[NAME][name] = {[COUNT]: 1};
               } else {
-                suffixFactor.name[name].count += 1;
+                suffixFactor[NAME][name][COUNT] += 1;
               }
             }
         } else {
           const factor = dict.get(currentWord);
-          if ( factor.count == 0 ) {
-            factor.firstIndex = wordFirstIndex;
+          if ( factor[COUNT] == 0 ) {
+            factor[FIRST_INDEX] = wordFirstIndex;
           }
-          if ( !factor.name[name] ) {
-            factor.name[name] = {count: 1};
+          if ( !factor[NAME][name] ) {
+            factor[NAME][name] = {[COUNT]: 1};
           } else {
-            factor.name[name].count += 1;
+            factor[NAME][name][COUNT] += 1;
           }
-          factor.count++;
+          factor[COUNT]++;
 
           factors.push(factor);
           toNormalize.delete(factor);
@@ -286,22 +294,22 @@ export const State = {
 
     // normalize factors
       factors.forEach(f => {
-        const n = f.name[name];
+        const n = f[NAME][name];
         if ( ! n ) {
           console.log(f, name);
         }
         if ( USE_COVER ) {
-          n.score = n.count*f.word.length / docStr.length;
+          n[SCORE] = n[COUNT]*f[WORD].length / docStr.length;
         } else {
-          n.score = n.count / factors.length;
+          n[SCORE] = n[COUNT] / factors.length;
         }
       });
       toNormalize.forEach(f => {
-        const n = f.name[name];
+        const n = f[NAME][name];
         if ( USE_COVER ) {
-          n.score = FOUND_NOT_FACTOR_MULT * f.word.length / docStr.length;
+          n[SCORE] = FOUND_NOT_FACTOR_MULT * f[WORD].length / docStr.length;
         } else {
-          n.score = FOUND_NOT_FACTOR_MULT * 1 / factors.length;
+          n[SCORE] = FOUND_NOT_FACTOR_MULT * 1 / factors.length;
         }
       });
 
@@ -317,19 +325,19 @@ export const State = {
     const dict = new Map(); 
 
     for( const f of factors ) {
-      if ( !dict.has(f.word) ) {
-        dict.set(f.word, f);
-        f.runCount = 0;
+      if ( !dict.has(f[WORD]) ) {
+        dict.set(f[WORD], f);
+        f[RUN_COUNT] = 0;
       }
-      f.runCount += 1;
-      TotalLength += f.word.length;
+      f[RUN_COUNT] += 1;
+      TotalLength += f[WORD].length;
     }
 
     if ( adjustLength ) {
       TotalLength *= run;
     }
 
-    for( const {runCount,count,word} of dict.values() ) {
+    for( const {[RUN_COUNT]:runCount,[COUNT]:count,[WORD]:word} of dict.values() ) {
       let Count = runCount;
       if ( run > 1 ) {
         Count = count; 
