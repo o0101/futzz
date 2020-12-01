@@ -298,11 +298,16 @@ export const State = {
         if ( ! n ) {
           console.log(f, name);
         }
-        if ( Math.random() > 0.49 ) {
+        n[SCORE] = n[COUNT]*f[WORD].length / docStr.length;
+        n[SCORE] += n[COUNT] / factors.length;
+        n[SCORE] /= 2;
+        /*
+        if ( USE_COVER ) {
           n[SCORE] = n[COUNT]*f[WORD].length / docStr.length;
         } else {
           n[SCORE] = n[COUNT] / factors.length;
         }
+        */
       });
       toNormalize.forEach(f => {
         const n = f[NAME][name];
