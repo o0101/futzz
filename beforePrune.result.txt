@@ -1,0 +1,249 @@
+
+> futzz@1.0.0 test /home/cris/futzz
+> rm -rf dicts/ && node -r esm tests/run.js
+
+declaration of independence [
+  '9.87 : 27913.79',
+  '10.42 : 21241.19',
+  '10.44 : 18506.01',
+  '10.45 : 17600.52',
+  '10.39 : 16103.55'
+]
+down and out [
+  '14.50 : 892432.59',
+  '15.02 : 759456.86',
+  '15.13 : 704234.54',
+  '15.15 : 665783.49',
+  '15.15 : 637787.28'
+]
+terminator 2 [
+  '14.55 : 561282.80',
+  '14.68 : 510476.43',
+  '14.73 : 485087.33',
+  '14.73 : 465519.51',
+  '14.71 : 448489.69'
+]
+{
+  "words": "terminator 2",
+  "results": [
+    [
+      "query",
+      1
+    ],
+    [
+      "terminator 2",
+      0.000052604815094074944
+    ]
+  ]
+}
+
+{
+  "words": "judgement day",
+  "results": [
+    [
+      "query",
+      1
+    ],
+    [
+      "declaration of independence",
+      0.0006244536030972898
+    ],
+    [
+      "terminator 2",
+      0.0000350698767293833
+    ],
+    [
+      "down and out",
+      0.000016829633618876118
+    ]
+  ]
+}
+
+{
+  "words": "john connor",
+  "results": [
+    [
+      "query",
+      1
+    ],
+    [
+      "terminator 2",
+      0.00009644216100580406
+    ]
+  ]
+}
+
+{
+  "words": "john connor's mother's name",
+  "results": [
+    [
+      "query",
+      1.44
+    ],
+    [
+      "terminator 2",
+      0.000149046976099879
+    ],
+    [
+      "down and out",
+      0.000026927413790201788
+    ]
+  ]
+}
+
+{
+  "words": "Whuffie book",
+  "results": [
+    [
+      "query",
+      1
+    ],
+    [
+      "down and out",
+      0.00008482135343913563
+    ],
+    [
+      "terminator 2",
+      0.000039453611320556205
+    ]
+  ]
+}
+
+{
+  "words": "Keep a moving Dan",
+  "results": [
+    [
+      "query",
+      1
+    ],
+    [
+      "down and out",
+      0.00023561487066426566
+    ],
+    [
+      "terminator 2",
+      0.0001797331182380894
+    ]
+  ]
+}
+
+{
+  "words": "Declaration of Independence",
+  "results": [
+    [
+      "query",
+      1
+    ],
+    [
+      "declaration of independence",
+      0.0032971150243536903
+    ],
+    [
+      "down and out",
+      0.00031976303875864623
+    ],
+    [
+      "terminator 2",
+      0.00007890722264111242
+    ]
+  ]
+}
+
+{
+  "words": "life liberty and the pursuit of happiness",
+  "results": [
+    [
+      "query",
+      1
+    ],
+    [
+      "declaration of independence",
+      0.0024478581241413762
+    ],
+    [
+      "down and out",
+      0.0002625422844544674
+    ],
+    [
+      "terminator 2",
+      0.00006137228427642077
+    ]
+  ]
+}
+
+{
+  "words": "hasta la vista baby",
+  "results": [
+    [
+      "query",
+      1
+    ],
+    [
+      "terminator 2",
+      0.00008241421031405076
+    ],
+    [
+      "down and out",
+      0.00001009778017132567
+    ]
+  ]
+}
+
+{
+  "words": "baby",
+  "results": [
+    [
+      "query",
+      1
+    ],
+    [
+      "terminator 2",
+      0.00001753493836469165
+    ],
+    [
+      "down and out",
+      0.000013463706895100894
+    ]
+  ]
+}
+
+{
+  "words": "legislature of the united states",
+  "results": [
+    [
+      "query",
+      1
+    ],
+    [
+      "declaration of independence",
+      0.0011989509179467968
+    ],
+    [
+      "down and out",
+      0.00006058668102795402
+    ]
+  ]
+}
+
+{
+  "words": "of free men and government, all the world's peoples",
+  "results": [
+    [
+      "query",
+      1
+    ],
+    [
+      "declaration of independence",
+      0.002722617709504184
+    ],
+    [
+      "down and out",
+      0.0001837795991181272
+    ],
+    [
+      "terminator 2",
+      0.00006487927194935911
+    ]
+  ]
+}
+

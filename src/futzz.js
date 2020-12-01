@@ -1,4 +1,4 @@
-import StrongMap from 'node-strongmap';
+import StrongMap from './node-strongmap-fast/index.js';
 
 const MAX_ITERATION = 12;
 
@@ -12,11 +12,12 @@ const FOUND_NOT_FACTOR_MULT = 0.8;
 
 const USE_COVER = true;
 
-const zmap = new StrongMap();
-zmap.name('fts');
+//const zmap = new StrongMap();
+//zmap.name('fts');
 
 export const State = {
   dict: new Map(),
+  // dict: zmap, 
   indexHistory: []
 };
 
@@ -142,7 +143,9 @@ export const State = {
           dict.set(codeId, data);
           dict.set(nextChar, data);
           codeId += 1;
-          console.log(codeId);
+          if ( codeId%100 == 0) {
+            //console.log(codeId);
+          }
         }
         if ( ! dict.has(currentWord) ) {
           // save the new unseen token
@@ -157,7 +160,9 @@ export const State = {
             dict.set(codeId, data);
             dict.set(currentWord, data);
             codeId += 1;
-            console.log(codeId);
+            if ( codeId%100 == 0) {
+              //console.log(codeId);
+            }
 
           // get the factor 
             let suffix = '';
@@ -203,7 +208,9 @@ export const State = {
             dict.set(codeId, data);
             dict.set(currentWord, data);
             codeId += 1;
-            console.log(codeId);
+            if ( codeId%100 == 0) {
+              //console.log(codeId);
+            }
 
           // get the factor 
             let suffix = '';
