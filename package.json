@@ -4,8 +4,8 @@
   "description": "full text search system based on lempel ziv",
   "main": "src/index.js",
   "scripts": {
-    "test": "rm -rf dicts/ && node -r esm tests/run.js",
-    "profile": "rm -rf dicts/ && node --inspect-brk=0.0.0.0:9229 -r esm tests/run.js"
+    "test": "node -r esm tests/run.js",
+    "profile": "node --inspect-brk=0.0.0.0:9229 -r esm tests/run.js"
   },
   "repository": {
     "type": "git",
