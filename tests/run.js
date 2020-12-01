@@ -7,11 +7,14 @@ runAll();
 
   function runAll() {
     runEmpty();
-    //runIteration1(fs.readFileSync(path.resolve('samples', 'di.txt')).toString(), 'declaration of independence');
-    //runIteration1(fs.readFileSync(path.resolve('samples', 'do.txt')).toString(), 'down and out');
-    //runIteration1(fs.readFileSync(path.resolve('samples', 't2.txt')).toString(), 'terminator 2');
-    runIteration1(fs.readFileSync(path.resolve('samples', 'tao.txt')).toString(), 'tao te ching');
-    runIteration1(fs.readFileSync(path.resolve('samples', 'hm.txt')).toString(), 'haruki murakami');
+    runIteration1(fs.readFileSync(path.resolve('samples', 'di.txt')).toString(), 'declaration of independence');
+    runIteration1(fs.readFileSync(path.resolve('samples', 'do.txt')).toString(), 'down and out');
+    runIteration1(fs.readFileSync(path.resolve('samples', 't2.txt')).toString(), 'terminator 2');
+    runIteration1(fs.readFileSync(path.resolve('samples', 'tao.txt')).toString(), 'tao te ching - chinese');
+    runIteration1(fs.readFileSync(path.resolve('samples', 'tao2.txt')).toString(), 'wiki - tao te ching - chinese');
+    runIteration1(fs.readFileSync(path.resolve('samples', 'tao3.txt')).toString(), 'wiki - tao te ching - english');
+    runIteration1(fs.readFileSync(path.resolve('samples', 'hm.txt')).toString(), 'haruki murakami - chinese');
+    runIteration1(fs.readFileSync(path.resolve('samples', 'hm2.txt')).toString(), 'haruki murakami - english');
     query("terminator 2");
     query("judgement day");
     query("john connor");
@@ -28,11 +31,15 @@ runAll();
     query("挪威的森林");
     query("tao te ching");
     query("道的方式");
+    query("the way amazing");
     query("在國王的宇宙中，無路可走的路是未知的");
+    query("the way");
     query("都在天堂之下");
     query("Midori");
     query("famous Kobe writer");
     query("神戶著名作家");
+    query("lao zi");
+    query("老子");
     if ( process.argv[2] ) {
       query(process.argv[2]);
     }
