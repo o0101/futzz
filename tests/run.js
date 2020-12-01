@@ -7,9 +7,9 @@ runAll();
 
   function runAll() {
     runEmpty();
-    runIteration1(fs.readFileSync(path.resolve('samples', 'di.txt')).toString(), 'declaration of independence');
-    runIteration1(fs.readFileSync(path.resolve('samples', 'do.txt')).toString(), 'down and out');
-    runIteration1(fs.readFileSync(path.resolve('samples', 't2.txt')).toString(), 'terminator 2');
+    //runIteration1(fs.readFileSync(path.resolve('samples', 'di.txt')).toString(), 'declaration of independence');
+    //runIteration1(fs.readFileSync(path.resolve('samples', 'do.txt')).toString(), 'down and out');
+    //runIteration1(fs.readFileSync(path.resolve('samples', 't2.txt')).toString(), 'terminator 2');
     runIteration1(fs.readFileSync(path.resolve('samples', 'tao.txt')).toString(), 'tao te ching');
     runIteration1(fs.readFileSync(path.resolve('samples', 'hm.txt')).toString(), 'haruki murakami');
     query("terminator 2");
