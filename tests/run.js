@@ -40,6 +40,10 @@ runAll();
     query("神戶著名作家");
     query("lao zi");
     query("老子");
+    query("the tao");
+    query("the warring states period");
+    query("classical chinese history texts");
+    query("the art of war");
     if ( process.argv[2] ) {
       query(process.argv[2]);
     }
