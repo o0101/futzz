@@ -1,3 +1,4 @@
+- turn dicts.json into {docNames:[...], values:[....]} to remove redundancy of doc name in every record
 - add chinese texts to tests
 - consider "boosting query by also "indexing the query" against the "query doc" (max ent seems to help everything, I notice that second query is more accurate than first)
 - sync indexes to disk
