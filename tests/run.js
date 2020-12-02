@@ -4,14 +4,14 @@ import JSON36 from 'json36';
 import {State, query, index, ent} from '../src/futzz.js';
 import readline from 'readline';
 
-const terminal = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
-
-runNew();
+runAll();
 
   async function runNew() {
+    const terminal = readline.createInterface({
+      input: process.stdin,
+      output: process.stdout
+    });
+
     const entries = [];
     let count = 0;
 
@@ -19,7 +19,7 @@ runNew();
 
     entries.map(dirent => dirent.basePath = path.resolve('demo', 'data', process.argv[2]));
 
-    while( entries.length ) {
+    while( entries.length && count < 50 ) {
       const entry = entries.shift();
       if ( ! entry.isDirectory ) {
         console.log(entry);
@@ -47,7 +47,13 @@ runNew();
 
         results = results.map(([name]) => ({name, start:fs.readFileSync(name).toString().trim().slice(0, 512)}));
 
-        console.log(results);
+        for (const {name, start} of results ) {
+          console.log(name);
+          console.log('');
+          console.log(start);
+          console.log('\n');
+        }
+        console.log({resultsLength: results.length});
       }
     } while( q !== '.exit' );
 
@@ -100,6 +106,7 @@ runNew();
     }
 
     console.log({totalScore:score});
+
     // not needed for now
       //rotating of the source text to change factorization
       //runIteration2();

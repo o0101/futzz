@@ -1,6 +1,12 @@
 import {BigMap} from 'big-associative';
 //import StrongMap from './node-strongmap-fast/index.js';
 
+const GEOAVG = 1;
+const WAVG = 2;
+const AVG = 3;
+const NORMAL = 4;
+const SCORE_METHOD = 4;
+
 const MIN_ITERATION = 3;
 const MAX_ITERATION = 12;
 
@@ -8,7 +14,7 @@ const MAX_ENT = 0;
 const MAX_TOT_ENT = 1;
 const SLOW_CHANGE = 2;
 const CHANGE_THRESH = 0.95;
-const TERMINATE_ON = MAX_TOT_ENT;
+const TERMINATE_ON = MAX_ENT;
 
 const WORD = 'w';
 const NAME = 'n';
@@ -38,7 +44,7 @@ export const State = {
   indexHistory: []
 };
 
-  export function index(text, name, useRun = false) {
+  export function index(text, name, useRun = true) {
     const Ent = [];
     const sortKey = useRun ? COUNT : RUN_COUNT;
 
@@ -124,7 +130,7 @@ export const State = {
     }
     const Answers = new Set(right_answers);
     const {dict} = State;
-    const {factors} = lz(words, dict, 'query');
+    const {factors} = lz(words, dict, 'query', {idempotent:true});
     let willExit = false;
 
     let score = 0;
@@ -184,20 +190,25 @@ export const State = {
       console.log({score});
 
       console.log('');
+      
+      return score;
     }
-
-
 
     return results;
   }
 
-  export function lz(docStr = '', dict = new Map(), name = 'unknown doc') {
+  export function lz(docStr = '', dict = new Map(), name = 'unknown doc', opts = {}) {
     const toNormalize = new Set();
     const factors = [];
     let codeId = dict.size/2;
     let wordFirstIndex = -1;
     let charIndex = 0;
     let currentWord = '';
+    let reverse;
+
+    if ( opts.idempotent ) {
+      reverse = [];
+    }
 
     // a tiny bit of preProcessing
 
@@ -224,6 +235,9 @@ export const State = {
           toNormalize.add(data);
           dict.set(codeId, data);
           dict.set(nextChar, data);
+          if ( opts.idempotent ) {
+            reverse.push(data);
+          }
           codeId += 1;
           if ( codeId%100 == 0) {
             //console.log(codeId);
@@ -241,14 +255,11 @@ export const State = {
               [CODE_ID]: codeId 
             }
             toNormalize.add(data);
-            try {
-              dict.set(codeId, data);
-            } catch(e) {
-              console.warn(e);
-              console.log(codeId, data);
-              process.exit(1);
-            }
+            dict.set(codeId, data);
             dict.set(currentWord, data);
+            if ( opts.idempotent ) {
+              reverse.push(data);
+            }
             codeId += 1;
             if ( codeId%100 == 0) {
               //console.log(codeId);
@@ -299,6 +310,9 @@ export const State = {
             toNormalize.add(data);
             dict.set(codeId, data);
             dict.set(currentWord, data);
+            if ( opts.idempotent ) {
+              reverse.push(data);
+            }
             codeId += 1;
             if ( codeId%100 == 0) {
               //console.log(codeId);
@@ -330,11 +344,11 @@ export const State = {
                 factors.push(suffixFactor);
                 toNormalize.delete(suffixFactor);
 
-              if ( !suffixFactor[NAME][name] ) {
-                suffixFactor[NAME][name] = {[COUNT]: 1};
-              } else {
-                suffixFactor[NAME][name][COUNT] += 1;
-              }
+                if ( !suffixFactor[NAME][name] ) {
+                  suffixFactor[NAME][name] = {[COUNT]: 1};
+                } else {
+                  suffixFactor[NAME][name][COUNT] += 1;
+                }
             }
         } else {
           const factor = dict.get(currentWord);
@@ -353,42 +367,66 @@ export const State = {
         }
 
     // normalize factors
-      factors.forEach(f => {
-        const n = f[NAME][name];
-        if ( ! n ) {
-          console.log(f, name);
-        }
-        /*
-        n[SCORE] = Math.sqrt(n[COUNT]*f[WORD].length / docStr.length);
-        n[SCORE] *= Math.sqrt(n[COUNT] / factors.length);
-        */
-        /*
-        n[SCORE] = 0.2*(n[COUNT]*f[WORD].length / docStr.length);
-        n[SCORE] += 0.8*(n[COUNT] / factors.length);
-        */
-        if ( USE_COVER ) {
-          n[SCORE] = n[COUNT]*f[WORD].length / docStr.length;
-        } else {
-          n[SCORE] = n[COUNT] / factors.length;
-        }
-      });
-      toNormalize.forEach(f => {
-        const n = f[NAME][name];
-        /*
-        n[SCORE] = 0.2*(FOUND_NOT_FACTOR_MULT*f[WORD].length / docStr.length);
-        n[SCORE] += 0.8*(FOUND_NOT_FACTOR_MULT/ factors.length);
-        */
-        /*
-        n[SCORE] = Math.sqrt(FOUND_NOT_FACTOR_MULT*f[WORD].length / docStr.length);
-        n[SCORE] *= Math.sqrt(FOUND_NOT_FACTOR_MULT/ factors.length);
-        */
-        if ( USE_COVER ) {
-          n[SCORE] = FOUND_NOT_FACTOR_MULT * f[WORD].length / docStr.length;
-        } else {
-          n[SCORE] = FOUND_NOT_FACTOR_MULT * 1 / factors.length;
-        }
-      });
+        factors.forEach(f => {
+          const n = f[NAME][name];
+          if ( ! n ) {
+            console.log(f, name);
+          }
+          switch( SCORE_METHOD ) {
+            case GEOAVG:
+              n[SCORE] = Math.sqrt(n[COUNT]*f[WORD].length / docStr.length);
+              n[SCORE] *= Math.sqrt(n[COUNT] / factors.length);
+              break;
+            case AVG:
+              n[SCORE] = 0.5*(n[COUNT]*f[WORD].length / docStr.length);
+              n[SCORE] += 0.5*(n[COUNT] / factors.length);
+              break;
+            case WAVG:
+              n[SCORE] = 0.2*(n[COUNT]*f[WORD].length / docStr.length);
+              n[SCORE] += 0.8*(n[COUNT] / factors.length);
+              break;
+            case NORMAL:
+            default:
+              if ( USE_COVER ) {
+                n[SCORE] = n[COUNT]*f[WORD].length / docStr.length;
+              } else {
+                n[SCORE] = n[COUNT] / factors.length;
+              }
+              break;
+          }
+        });
+        toNormalize.forEach(f => {
+          const n = f[NAME][name];
+          switch( SCORE_METHOD ) {
+            case GEOAVG:
+              n[SCORE] = Math.sqrt(FOUND_NOT_FACTOR_MULT*f[WORD].length / docStr.length);
+              n[SCORE] *= Math.sqrt(FOUND_NOT_FACTOR_MULT/ factors.length);
+              break;
+            case WAVG:
+              n[SCORE] = 0.2*(FOUND_NOT_FACTOR_MULT*f[WORD].length / docStr.length);
+              n[SCORE] += 0.8*(FOUND_NOT_FACTOR_MULT/ factors.length);
+              break;
+            case AVG:
+              n[SCORE] = 0.5*(FOUND_NOT_FACTOR_MULT*f[WORD].length / docStr.length);
+              n[SCORE] += 0.5*(FOUND_NOT_FACTOR_MULT/ factors.length);
+              break;
+            default:
+            case NORMAL:
+              if ( USE_COVER ) {
+                n[SCORE] = FOUND_NOT_FACTOR_MULT * f[WORD].length / docStr.length;
+              } else {
+                n[SCORE] = FOUND_NOT_FACTOR_MULT * 1 / factors.length;
+              }
+              break;
+          }
+        });
 
+    if ( opts.idempotent ) {
+      reverse.forEach(({[WORD]:word,[CODE_ID]:codeId}) => {
+        dict.delete(codeId);
+        dict.delete(word);
+      });
+    }
     return {factors, dict, docStr};
   }
 
