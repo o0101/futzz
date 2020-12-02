@@ -1,6 +1,7 @@
 - don't pre-emptively optimise, keep the algorithm loose and open before it's thoroughly tested
 - add spanish
 - add evaluation dataset
+  - try those listed here: https://github.com/RediSearch/ftsb
 - things we can try to improve performance:
   - the usual parameters, cover, stopping condition, score calculation,1
   - add new things like tf-idf for factors, cosine similarity (on what I don't yet know), boosting doc in (doc, query) based on how many times that doc has been the first clicked result for that query
