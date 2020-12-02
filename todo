@@ -1,3 +1,7 @@
+- limit max length of code to documents are not divided into sets based on the length of their factors
+- when the dictionary has the code we add the current document to it
+- let's index a query but only the first time we get it?
+- i think we should look at all substrings of the query (all possible factorizations)
 - add evaluation dataset
   - trying textfiles.com archives
   - try those listed here: https://github.com/RediSearch/ftsb

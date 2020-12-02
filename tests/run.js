@@ -4,8 +4,8 @@ import JSON36 from 'json36';
 import {State, query, index, ent} from '../src/futzz.js';
 import readline from 'readline';
 
-//runAll();
-runNew();
+runAll();
+//runNew();
 
   async function runNew(limit = Infinity) {
     const terminal = readline.createInterface({
@@ -15,8 +15,10 @@ runNew();
 
     const entries = [];
     let count = 0;
+    let total = 0;
 
     entries.push(...fs.readdirSync(path.resolve('demo','data', process.argv[2]), {withFileTypes:true}));
+    total = entries.length;
 
     entries.map(dirent => dirent.basePath = path.resolve('demo', 'data', process.argv[2]));
 
@@ -26,18 +28,30 @@ runNew();
         console.log(entry);
       }
       if ( entry.isDirectory() ) {
-        entries.push(
-          ...fs.readdirSync(
+        total -= 1;
+        const newEntries = Array.from(
+          fs.readdirSync(
             path.resolve(entry.basePath, entry.name), 
             {withFileTypes:true}
           ).map(dirent => (dirent.basePath = path.resolve(entry.basePath, entry.name), dirent))
         );
+        total += newEntries.length;
+        entries.push(...newEntries);
       } else {
         const filePath = path.resolve(entry.basePath, entry.name);
         runIteration1(fs.readFileSync(filePath).toString(), filePath);
         count ++;
+        process.stdout.clearLine();
+        process.stdout.cursorTo(0);
+        process.stdout.write(
+          `Indexed ${count}/${total} \t\t\t(${
+            (count/total*100).toFixed(2)
+          }%) files...`
+        );
       }
     }
+
+    console.log('Done!');
 
     let q
     do {

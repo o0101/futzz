@@ -7,14 +7,18 @@ const AVG = 3;
 const NORMAL = 4;
 const SCORE_METHOD = 4;
 
-const MIN_ITERATION = 3;
+const MIN_ITERATION = 4;
 const MAX_ITERATION = 12;
+
+const USE_COVER = true;
 
 const MAX_ENT = 0;
 const MAX_TOT_ENT = 1;
 const SLOW_CHANGE = 2;
 const CHANGE_THRESH = 0.95;
 const TERMINATE_ON = MAX_ENT;
+
+const MAX_WORD_LENGTH = 11;
 
 const WORD = 'w';
 const NAME = 'n';
@@ -32,8 +36,6 @@ const QUERY_PLACE_SCORE = [
 ];
 
 const FOUND_NOT_FACTOR_MULT = 0.75;
-
-const USE_COVER = false;
 
 //const zmap = new StrongMap();
 //zmap.name('fts');
@@ -101,7 +103,7 @@ export const State = {
 
     State.indexHistory.push(indexHistoryEntry);
 
-    console.log(name, Ent.map(({entropy, total}) => `${entropy.toFixed(2)} : ${total.toFixed(2)}`));
+    //console.log(name, Ent.map(({entropy, total}) => `${entropy.toFixed(2)} : ${total.toFixed(2)}`));
 
     // this will prune entries to factors
     /**
@@ -150,7 +152,8 @@ export const State = {
       //console.log(JSON.stringify({word, scores}));
     });
 
-    const results = Object.entries(merge);
+    let results = Object.entries(merge);
+
     results.sort(([,countA], [,countB]) => {
       //console.log({countA, countB});
       return parseFloat(countB) - parseFloat(countA);
@@ -160,15 +163,11 @@ export const State = {
       process.exit(1);
     }
 
+    results = results.filter(([doc]) => doc !== "query");
+
     if ( right_answers.length ) {
       console.log(JSON.stringify({words, results}, null, 2));
-    }
 
-    if ( results[0][0] == "query" ) {
-      results.shift();
-    }
-
-    if ( right_answers.length ) {
       results.forEach(([doc], i) => {
         const placeScores = doc == right_answers[i];
         if ( i < QUERY_PLACE_SCORE.length && placeScores ) {
@@ -194,7 +193,7 @@ export const State = {
       return score;
     }
 
-    return results;
+    return results.slice(0,5);
   }
 
   export function lz(docStr = '', dict = new Map(), name = 'unknown doc', opts = {}) {
@@ -243,7 +242,7 @@ export const State = {
             //console.log(codeId);
           }
         }
-        if ( ! dict.has(currentWord) ) {
+        if ( ! dict.has(currentWord) || currentWord.length > MAX_WORD_LENGTH ) {
           // save the new unseen token
             const data = {
               [NAME]: {
@@ -289,6 +288,20 @@ export const State = {
           // update the state
             wordFirstIndex = charIndex;
             currentWord = suffix;
+        } else {
+          /**
+          const data = dict.get(currentWord);
+          if ( data[COUNT] == 0 ) {
+            data[FIRST_INDEX] = wordFirstIndex;
+          }
+          if ( !data[NAME][name] ) {
+            data[NAME][name] = {[COUNT]: 1};
+          } else {
+            data[NAME][name][COUNT] += 1;
+          }
+          data[COUNT]++;
+          toNormalize.add(data);
+          **/
         }
 
         currentWord += nextChar;
