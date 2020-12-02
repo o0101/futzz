@@ -1,3 +1,6 @@
+- consider "boosting query by also "indexing the query" against the "query doc" (max ent seems to help everything, I notice that second query is more accurate than first) 
+  - this doesn't really work
+- add a way to score results and then score the different methods we have
 - add chinese texts to tests
 - make index function
 - improve query function
