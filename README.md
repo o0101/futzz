@@ -17,3 +17,7 @@ Yeah, this scales.
 ## Good results
 
 The algorithm gives good results. The first result is often highly relevant and the best answer to the query, more than half the time. And when it's not the best result and other relevant results are in the top results.
+
+## So far
+
+We have good algorithm with good results and it runs fast. Super fast searches and relatively fast indexing. But the issue is the algorithm takes lots of memory. And quality is not great it seems, but there's more we can do. I think the validity of LZ as a language agnostic stemming and tokenizing step has been established. Now just the details have to be worked out.

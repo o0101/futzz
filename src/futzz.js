@@ -40,8 +40,11 @@ const FOUND_NOT_FACTOR_MULT = 0.75;
 //const zmap = new StrongMap();
 //zmap.name('fts');
 
+let nameId = 0;
+
 export const State = {
   dict: new BigMap(),
+  names: new BigMap(),
   // dict: zmap, 
   indexHistory: []
 };
@@ -163,7 +166,8 @@ export const State = {
       process.exit(1);
     }
 
-    results = results.filter(([doc]) => doc !== "query");
+    results = results.filter(([doc]) => State.names.get(doc) !== "query");
+    results = results.map(([doc,score]) => [State.names.get(doc), score]);
 
     if ( right_answers.length ) {
       console.log(JSON.stringify({words, results}, null, 2));
@@ -197,6 +201,14 @@ export const State = {
   }
 
   export function lz(docStr = '', dict = new Map(), name = 'unknown doc', opts = {}) {
+    if ( State.names.has(name) ) {
+      name = State.names.get(name);
+    } else {
+      State.names.set(name, nameId);
+      State.names.set(nameId+'', name);
+      name = nameId + '';
+      nameId += 1;
+    }
     const toNormalize = new Set();
     const factors = [];
     let codeId = dict.size/2;
@@ -289,7 +301,6 @@ export const State = {
             wordFirstIndex = charIndex;
             currentWord = suffix;
         } else {
-          /**
           const data = dict.get(currentWord);
           if ( data[COUNT] == 0 ) {
             data[FIRST_INDEX] = wordFirstIndex;
@@ -301,7 +312,6 @@ export const State = {
           }
           data[COUNT]++;
           toNormalize.add(data);
-          **/
         }
 
         currentWord += nextChar;

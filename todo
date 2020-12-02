@@ -1,3 +1,7 @@
+- snippets are important to evaluate the document
+- seems more recently indexed documents score higher (i think because the code length is longer)
+  - could try not using cover
+  - could also try using some sort of entropy metric or 'factor length  and frequency distribution' metric to ensure each document is indexed in a commensurate way
 - limit max length of code to documents are not divided into sets based on the length of their factors
 - when the dictionary has the code we add the current document to it
 - let's index a query but only the first time we get it?
