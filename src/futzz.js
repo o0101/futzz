@@ -140,7 +140,7 @@ export const State = {
     const Answers = new Set(right_answers);
     const {dict} = State;
     const {factors} = lz(words, dict, 'query', {idempotent:true, addAllAsFactors:false});
-    console.log({factors});
+    //console.log({factors});
     let willExit = false;
 
     let score = 0;
@@ -179,7 +179,7 @@ export const State = {
 
     results = [...results.filter(([doc]) => resultSet.has(doc)), ...results.slice(0,2)];
 
-    console.log({resultSet});
+    //console.log({resultSet});
 
     if ( willExit ) {
       process.exit(1);
@@ -187,6 +187,8 @@ export const State = {
 
     // replace the document name id with the actual name (and filter out the query "result")
     results = results.map(([doc,score]) => [State.names.get(doc), score]);
+
+    results = [...(new Set(results.map(([doc,score]) => doc))).keys()].map(doc => [doc]);
 
     if ( right_answers.length ) {
       if ( results.length ) {

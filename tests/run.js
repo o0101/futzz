@@ -5,7 +5,7 @@ import {State, query, index, ent} from '../src/futzz.js';
 import readline from 'readline';
 
 //runAll();
-runNew(544);
+runNew(54);
 
   async function runNew(limit = Infinity) {
     const terminal = readline.createInterface({
