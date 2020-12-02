@@ -25,6 +25,9 @@ runDisk();
 
     const values = [...State.dict.values()];
 
+    const ValuesLength = values.length;
+
+
     let i = 0;
 
     while(values.length) {
@@ -40,12 +43,11 @@ runDisk();
       fs.writeSync(fd, "[");
 
       chunk.forEach((value, j) => {
-        const closeOff = i >= values.length - 1 || j >= chunk.length - 1;
+        const closeOff = (i >= (ValuesLength - 1)) || (j >= (chunk.length - 1));
         const string = JSON.stringify(value) + (closeOff ? "]" : ",");
         fs.writeSync(fd, string);
         i += 1;
       });
-
 
       fs.closeSync(fd);
 
