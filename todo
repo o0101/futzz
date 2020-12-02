@@ -1,5 +1,11 @@
+- don't pre-emptively optimise, keep the algorithm loose and open before it's thoroughly tested
 - add spanish
-- i think chinese queries are OK but can be improved, I think we might need to iterate more times or add another metric
+- add evaluation dataset
+- things we can try to improve performance:
+  - the usual parameters, cover, stopping condition, score calculation,1
+  - add new things like tf-idf for factors, cosine similarity (on what I don't yet know), boosting doc in (doc, query) based on how many times that doc has been the first clicked result for that query
+  - joining documents across factors rather than just summing scores.
+  - or summing scores, but multiplying across those factors that share a common document
 - turn dicts.json into {docNames:[...], values:[....]} to remove redundancy of doc name in every record
 - sync indexes to disk
 - create a way to do snippets (contextual snippets to put the search result in context of the document)
