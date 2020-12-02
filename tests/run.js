@@ -1,3 +1,4 @@
+import {execSync} from 'child_process';
 import fs from 'fs';
 import path from 'path';
 import JSON36 from 'json36';
@@ -56,16 +57,14 @@ runNew(544);
     let q
     do {
       q = await new Promise(res => terminal.question(`Query ${count} files> `, res));
-      console.clear();
       console.log({q});
       if ( q && q.length && q !== '.exit' ) {
         let results = query(q);
 
-        results = results.map(([name]) => ({name, start:fs.readFileSync(name).toString().trim().slice(0, 512)}));
+        results = results.map(([name]) => ({name, start:fs.readFileSync(name).toString().trim().slice(300, 512)}));
 
         for (const {name, start} of results ) {
           console.log(name);
-          console.log('');
           console.log(start);
           console.log('\n');
         }

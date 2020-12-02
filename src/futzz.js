@@ -7,7 +7,7 @@ const AVG = 3;
 const NORMAL = 4;
 const SCORE_METHOD = 4;
 
-const MIN_ITERATION = 0;
+const MIN_ITERATION = 2;
 const MAX_ITERATION = 12;
 
 const USE_COVER = false;
@@ -139,6 +139,8 @@ export const State = {
     }
     const Answers = new Set(right_answers);
     const {dict} = State;
+
+    words = ` ${words} ${words} `;
     const {factors} = lz(words, dict, 'query', {idempotent:true, addAllAsFactors:false});
     //console.log({factors});
     let willExit = false;
