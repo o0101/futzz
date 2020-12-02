@@ -4,8 +4,8 @@ import JSON36 from 'json36';
 import {State, query, index, ent} from '../src/futzz.js';
 import readline from 'readline';
 
-runAll();
-//runNew();
+//runAll();
+runNew();
 
   async function runNew(limit = Infinity) {
     const terminal = readline.createInterface({
