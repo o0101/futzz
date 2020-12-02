@@ -7,16 +7,17 @@ const AVG = 3;
 const NORMAL = 4;
 const SCORE_METHOD = 4;
 
-const MIN_ITERATION = 4;
+const MIN_ITERATION = 0;
 const MAX_ITERATION = 12;
 
-const USE_COVER = true;
+const USE_COVER = false;
 
 const MAX_ENT = 0;
 const MAX_TOT_ENT = 1;
 const SLOW_CHANGE = 2;
-const CHANGE_THRESH = 0.95;
 const TERMINATE_ON = MAX_ENT;
+
+const CHANGE_THRESH = 0.95;
 
 const MAX_WORD_LENGTH = 11;
 
@@ -138,12 +139,16 @@ export const State = {
     }
     const Answers = new Set(right_answers);
     const {dict} = State;
-    const {factors} = lz(words, dict, 'query', {idempotent:true});
+    const {factors} = lz(words, dict, 'query', {idempotent:true, addAllAsFactors:false});
+    console.log({factors});
     let willExit = false;
 
     let score = 0;
 
     const merge = {};
+    const resultSet = new Set(Object.keys(factors[0][NAME]));
+    resultSet.delete(State.names.get("query")+'');
+
     factors.forEach(f => {
       const {[NAME]:name, [WORD]:word} = f;
       // discard the count information and just keep the scores per document name
@@ -154,13 +159,17 @@ export const State = {
         } 
         return [_, score];
       }))
+      const docs = Object.keys(name);
       //console.log({scores, name, word});
       // and add these to the summed scores per document for the other factors
       mergeAdd(merge, scores);
+      intersectionAdd(resultSet, docs);
       //console.log(JSON.stringify({word, scores}));
     });
 
     let results = Object.entries(merge);
+
+    results = results.filter(([doc]) => State.names.get(doc) !== "query");
 
     // sort the documents by the summed score
     results.sort(([,countA], [,countB]) => {
@@ -168,38 +177,53 @@ export const State = {
       return parseFloat(countB) - parseFloat(countA);
     });
 
+    results = [...results.filter(([doc]) => resultSet.has(doc)), ...results.slice(0,2)];
+
+    console.log({resultSet});
+
     if ( willExit ) {
       process.exit(1);
     }
 
     // replace the document name id with the actual name (and filter out the query "result")
-    results = results.filter(([doc]) => State.names.get(doc) !== "query");
     results = results.map(([doc,score]) => [State.names.get(doc), score]);
 
     if ( right_answers.length ) {
-      console.log(JSON.stringify({words, results}, null, 2));
+      if ( results.length ) {
+        console.log(JSON.stringify({words, results}, null, 2));
 
-      results.forEach(([doc], i) => {
-        const placeScores = doc == right_answers[i];
-        if ( i < QUERY_PLACE_SCORE.length && placeScores ) {
-          score += QUERY_PLACE_SCORE[i];
-          if ( i === 0 ) {
-            score += 100;
-          }
-        } else if ( Answers.has(doc) ) {
-          if ( i >= QUERY_PLACE_SCORE.length ) {
-            score += 1;
+        /**
+        results.forEach(([doc], i) => {
+          const placeScores = doc == right_answers[i];
+          if ( i < QUERY_PLACE_SCORE.length && placeScores ) {
+            score += QUERY_PLACE_SCORE[i];
+            if ( i === 0 ) {
+              score += 100;
+            }
+          } else if ( Answers.has(doc) ) {
+            if ( i >= QUERY_PLACE_SCORE.length ) {
+              score += 1;
+            } else {
+              score += QUERY_PLACE_SCORE[i]/(right_answers.indexOf(doc)+1);
+            }
           } else {
-            score += QUERY_PLACE_SCORE[i]/(right_answers.indexOf(doc)+1);
+            score -= 2;
           }
-        } else {
-          score -= 2;
-        }
-      });
+        });
+        **/
 
-      console.log({score});
+        let Sum;
+        const recall = results.reduce(
+          (sum, [doc]) => Sum = Answers.has(doc) ? sum + 1 : sum, 0
+        )/Answers.size;
 
-      console.log('');
+        const precision = Sum/results.length;
+
+        score = recall + precision;
+        console.log({score: recall + precision});
+
+        console.log('');
+      }
       
       return score;
     }
@@ -307,9 +331,8 @@ export const State = {
           // update the state
             wordFirstIndex = charIndex;
             currentWord = suffix;
-        } else {
-          /**
-          const data = dict.get(currentWord);
+        } else if ( opts.addAllAsFactors ) {
+          const data = JSON.parse(JSON.stringify(dict.get(currentWord)));
           if ( data[COUNT] == 0 ) {
             data[FIRST_INDEX] = wordFirstIndex;
           }
@@ -319,8 +342,8 @@ export const State = {
             data[NAME][name][COUNT] += 1;
           }
           data[COUNT]++;
+          factors.push(data);
           toNormalize.add(data);
-          **/
         }
 
         currentWord += nextChar;
@@ -522,4 +545,14 @@ export const State = {
       }
       result[key] += source[key];
     }
+  }
+
+  function intersectionAdd(resultSet, keys) {
+    keys = new Set(keys);
+    for ( const key of resultSet.keys() ) {
+      if ( ! keys.has(key) ) {
+        resultSet.delete(key);
+      }
+    }
+    return resultSet;
   }
