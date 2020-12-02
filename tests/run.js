@@ -4,9 +4,10 @@ import JSON36 from 'json36';
 import {State, query, index, ent} from '../src/futzz.js';
 import readline from 'readline';
 
-runAll();
+//runAll();
+runNew();
 
-  async function runNew() {
+  async function runNew(limit = Infinity) {
     const terminal = readline.createInterface({
       input: process.stdin,
       output: process.stdout
@@ -19,7 +20,7 @@ runAll();
 
     entries.map(dirent => dirent.basePath = path.resolve('demo', 'data', process.argv[2]));
 
-    while( entries.length && count < 50 ) {
+    while( entries.length && count < limit ) {
       const entry = entries.shift();
       if ( ! entry.isDirectory ) {
         console.log(entry);
