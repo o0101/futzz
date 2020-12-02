@@ -1,13 +1,13 @@
 import StrongMap from './node-strongmap-fast/index.js';
 
-const MIN_ITERATION = 0;
+const MIN_ITERATION = 3;
 const MAX_ITERATION = 12;
 
 const MAX_ENT = 0;
 const MAX_TOT_ENT = 1;
 const SLOW_CHANGE = 2;
 const CHANGE_THRESH = 0.95;
-const TERMINATE_ON = MAX_ENT;
+const TERMINATE_ON = MAX_TOT_ENT;
 
 const WORD = 'w';
 const NAME = 'n';
@@ -161,14 +161,17 @@ export const State = {
 
     if ( right_answers.length ) {
       results.forEach(([doc], i) => {
-        const placeScores = doc == right_answers[i] || right_answers.indexOf(doc) < i;
+        const placeScores = doc == right_answers[i];
         if ( i < QUERY_PLACE_SCORE.length && placeScores ) {
           score += QUERY_PLACE_SCORE[i];
+          if ( i === 0 ) {
+            score += 100;
+          }
         } else if ( Answers.has(doc) ) {
-          if ( i >= QUERY_PLACE_SCORE ) {
-            i -= 1;
+          if ( i >= QUERY_PLACE_SCORE.length ) {
+            score += 1;
           } else {
-            i += 1;
+            score += QUERY_PLACE_SCORE[i]/(right_answers.indexOf(doc)+1);
           }
         } else {
           score -= 2;
@@ -344,8 +347,12 @@ export const State = {
           console.log(f, name);
         }
         /*
-        n[SCORE] = 0.5*(n[COUNT]*f[WORD].length / docStr.length);
-        n[SCORE] += 0.5*(n[COUNT] / factors.length);
+        n[SCORE] = Math.sqrt(n[COUNT]*f[WORD].length / docStr.length);
+        n[SCORE] *= Math.sqrt(n[COUNT] / factors.length);
+        */
+        /*
+        n[SCORE] = 0.2*(n[COUNT]*f[WORD].length / docStr.length);
+        n[SCORE] += 0.8*(n[COUNT] / factors.length);
         */
         if ( USE_COVER ) {
           n[SCORE] = n[COUNT]*f[WORD].length / docStr.length;
@@ -355,6 +362,14 @@ export const State = {
       });
       toNormalize.forEach(f => {
         const n = f[NAME][name];
+        /*
+        n[SCORE] = 0.2*(FOUND_NOT_FACTOR_MULT*f[WORD].length / docStr.length);
+        n[SCORE] += 0.8*(FOUND_NOT_FACTOR_MULT/ factors.length);
+        */
+        /*
+        n[SCORE] = Math.sqrt(FOUND_NOT_FACTOR_MULT*f[WORD].length / docStr.length);
+        n[SCORE] *= Math.sqrt(FOUND_NOT_FACTOR_MULT/ factors.length);
+        */
         if ( USE_COVER ) {
           n[SCORE] = FOUND_NOT_FACTOR_MULT * f[WORD].length / docStr.length;
         } else {
