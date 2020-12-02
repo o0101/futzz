@@ -12,7 +12,7 @@ runDisk();
   async function runDisk() {
     console.log("Indexing documents...");
 
-    await runNew(10, true);
+    await runNew(undefined, true);
 
     if ( !fs.existsSync(path.resolve('dicts')) ) {
       fs.mkdirSync(path.resolve('dicts'), {recursive:true});

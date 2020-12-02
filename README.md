@@ -25,3 +25,12 @@ We have good algorithm with good results and it runs fast. Super fast searches a
 ## Quality
 
 The quality is around 86% of what I want for this. I'm very happy. It's very good so far. 
+
+## Index size
+
+Compressed index on 42M of English ASCII text is around 280 Mb (2.4 Gb expanded).
+With a bit of other processing this can probably get down to 210Mb. 
+
+So basically an index is 5 - 7 times as large as the text.
+
+This is not terrible. It's a good multiple for a good quality FTS search system like mine.
