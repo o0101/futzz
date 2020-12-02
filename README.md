@@ -13,3 +13,7 @@ At the high end, people's big archives will take 8 billion factors of full text 
 But this FTS will be able to hold around 10 million documents. And the FTS component will be much larger than the archive itself (~8 terrabytes)
 
 Yeah, this scales.
+
+## Good results
+
+The algorithm gives good results. The first result is often highly relevant and the best answer to the query, more than half the time. And when it's not the best result and other relevant results are in the top results.
