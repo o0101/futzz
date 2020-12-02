@@ -1,11 +1,12 @@
 import StrongMap from './node-strongmap-fast/index.js';
 
+const MIN_ITERATION = 0;
 const MAX_ITERATION = 12;
 
 const MAX_ENT = 0;
 const MAX_TOT_ENT = 1;
 const SLOW_CHANGE = 2;
-const CHANGE_THRESH = 0.2;
+const CHANGE_THRESH = 0.95;
 const TERMINATE_ON = MAX_ENT;
 
 const WORD = 'w';
@@ -16,7 +17,14 @@ const FIRST_INDEX = 'x';
 const CODE_ID = 'i';
 const RUN_COUNT = 'r';
 
-const FOUND_NOT_FACTOR_MULT = 0.8;
+const QUERY_PLACE_SCORE = [
+  10, 
+  5,
+  3,
+  1.618
+];
+
+const FOUND_NOT_FACTOR_MULT = 0.75;
 
 const USE_COVER = false;
 
@@ -58,7 +66,7 @@ export const State = {
           if ( entropy > maxEntropy ) {
             maxFactors = factors;
             maxEntropy = entropy;
-          } else {
+          } else if ( i >= MIN_ITERATION ) {
             break indexingCycle;
           }
         } break;
@@ -66,7 +74,7 @@ export const State = {
           if ( total > maxEntropy ) {
             maxEntropy = total;
             maxFactors = factors;
-          } else {
+          } else if ( i >= MIN_ITERATION ) {
             break indexingCycle;
           }
         }
@@ -74,7 +82,7 @@ export const State = {
           if ( entropy > lastEntropy ) {
             maxEntropy = total;
             maxFactors = factors;
-          } else if ( (lastEntropy - entropy/lastEntropy) < CHANGE_THRESH ) {
+          } else if ( (lastEntropy - entropy)/lastEntropy < CHANGE_THRESH && i >= MIN_ITERATION ) {
             break indexingCycle;
           }
         }
@@ -106,10 +114,19 @@ export const State = {
     return {dict, factors: maxFactors || factors};
   }
 
-  export function query(words) {
+  export function query(words, right_answers = []) {
+    if ( right_answers.length > QUERY_PLACE_SCORE.length ) {
+      throw new TypeError(
+        `As we only score ${QUERY_PLACE_SCORE.length} answer slots, ` +
+        `there can only be ${QUERY_PLACE_SCORE.length} right answers.`
+      );
+    }
+    const Answers = new Set(right_answers);
     const {dict} = State;
     const {factors} = lz(words, dict, 'query');
     let willExit = false;
+
+    let score = 0;
 
     const merge = {};
     factors.forEach(f => {
@@ -131,11 +148,39 @@ export const State = {
       //console.log({countA, countB});
       return parseFloat(countB) - parseFloat(countA);
     });
+
     console.log(JSON.stringify({words, results}, null, 2));
-    console.log('');
+
     if ( willExit ) {
       process.exit(1);
     }
+
+    if ( results[0][0] == "query" ) {
+      results.shift();
+    }
+
+    if ( right_answers.length ) {
+      results.forEach(([doc], i) => {
+        const placeScores = doc == right_answers[i] || right_answers.indexOf(doc) < i;
+        if ( i < QUERY_PLACE_SCORE.length && placeScores ) {
+          score += QUERY_PLACE_SCORE[i];
+        } else if ( Answers.has(doc) ) {
+          if ( i >= QUERY_PLACE_SCORE ) {
+            i -= 1;
+          } else {
+            i += 1;
+          }
+        } else {
+          score -= 2;
+        }
+      });
+    }
+
+    console.log({score});
+
+    console.log('');
+
+    return score;
   }
 
   export function lz(docStr = '', dict = new Map(), name = 'unknown doc') {
@@ -298,15 +343,15 @@ export const State = {
         if ( ! n ) {
           console.log(f, name);
         }
-        n[SCORE] = Math.sqrt(n[COUNT]*f[WORD].length / docStr.length);
-        n[SCORE] *= Math.sqrt(n[COUNT] / factors.length);
         /*
+        n[SCORE] = 0.5*(n[COUNT]*f[WORD].length / docStr.length);
+        n[SCORE] += 0.5*(n[COUNT] / factors.length);
+        */
         if ( USE_COVER ) {
           n[SCORE] = n[COUNT]*f[WORD].length / docStr.length;
         } else {
           n[SCORE] = n[COUNT] / factors.length;
         }
-        */
       });
       toNormalize.forEach(f => {
         const n = f[NAME][name];

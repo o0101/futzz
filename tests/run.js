@@ -6,6 +6,7 @@ import {State, query, index, ent} from '../src/futzz.js';
 runAll();
 
   function runAll() {
+    let score = 0;
     runEmpty();
     runIteration1(fs.readFileSync(path.resolve('samples', 'di.txt')).toString(), 'declaration of independence');
     runIteration1(fs.readFileSync(path.resolve('samples', 'do.txt')).toString(), 'down and out');
@@ -15,38 +16,40 @@ runAll();
     runIteration1(fs.readFileSync(path.resolve('samples', 'tao3.txt')).toString(), 'wiki - tao te ching - english');
     runIteration1(fs.readFileSync(path.resolve('samples', 'hm.txt')).toString(), 'haruki murakami - chinese');
     runIteration1(fs.readFileSync(path.resolve('samples', 'hm2.txt')).toString(), 'haruki murakami - english');
-    query("terminator 2");
-    query("judgement day");
-    query("john connor");
-    query("john connor's mother's name");
-    query("Whuffie book");
-    query("Keep a moving Dan");
-    query("Declaration of Independence");
-    query("life liberty and the pursuit of happiness");
-    query("hasta la vista baby");
-    query("baby");
-    query("legislature of the united states");
-    query("of free men and government, all the world's peoples");
-    query("haruki murakami");
-    query("挪威的森林");
-    query("tao te ching");
-    query("道的方式");
-    query("the way amazing");
-    query("在國王的宇宙中，無路可走的路是未知的");
-    query("the way");
-    query("都在天堂之下");
-    query("Midori");
-    query("famous Kobe writer");
-    query("神戶著名作家");
-    query("lao zi");
-    query("老子");
-    query("the tao");
-    query("the warring states period");
-    query("classical chinese history texts");
-    query("the art of war");
+    score += query("terminator 2", [ "terminator 2"]);
+    score += query("judgement day", ["terminator 2" ]);
+    score += query("john connor", [ "terminator 2"]);
+    score += query("john connor's mother's name", [ "terminator 2"]);
+    score += query("Whuffie book", [ "down and out" ]);
+    score += query("Keep a moving Dan", ["down and out" ]);
+    score += query("Declaration of Independence", [ "declaration of independence" ]);
+    score += query("life liberty and the pursuit of happiness", [ "declaration of independence" ]);
+    score += query("hasta la vista baby", [ "terminator 2" ]);
+    score += query("baby", [ "down and out", "terminator 2" ]);
+    score += query("legislature of the united states", [ "declaration of independence" ]);
+    score += query("of free men and government, all the world's peoples", [ "declaration of independence" ]);
+    score += query("haruki murakami", [ "haruki murakmai - english", "haruki murakami - chinese" ]);
+    score += query("挪威的森林", [ "haruki murakami - chinese" ]);
+    score += query("tao te ching", [ "wiki - tao te ching - english" ]);
+    score += query("道的方式", [ "wiki - tao te ching - chinese", "tao te ching - chinese" ]);
+    score += query("the way amazing", [ "wiki - tao te ching - english", "tao te ching - chinese" ]);
+    score += query("在國王的宇宙中，無路可走的路是未知的", [ "tao te ching - chinese", "wiki - tao te ching - chinese" ]);
+    score += query("the way", [ "wiki - tao te ching - english", "down and out" ]);
+    score += query("都在天堂之下", [ "wiki - tao te ching - chinese", "tao te ching - chinese" ]);
+    score += query("Midori", [ "haruki murakami", "haruki murakami - chinese" ]);
+    score += query("famous Kobe writer", [ "haruki murakami" ]);
+    score += query("神戶著名作家", [ "haruki murakami - chinese" ]);
+    score += query("lao zi", [ "wiki - tao te ching - english", "tao te ching - chinese" ]);
+    score += query("老子", [ "tao te ching - chinese", "wiki - tao te ching - chinese" ]);
+    score += query("the tao", [ "tao te ching - chinese", "wiki - tao te ching - english" ]);
+    score += query("the warring states period", [ "tao te ching - chinese", "wiki - tao te ching - english", "declaration of independence", "terminator 2"]);
+    score += query("classical chinese history texts", [ "tao te ching - chinese", "wiki - tao te ching - english"]);
+    score += query("the art of war", [ "wiki - tao te ching - english", "tao te ching - chinese"]);
     if ( process.argv[2] ) {
-      query(process.argv[2]);
+      score += query(process.argv[2], process.argv[3] ? [process.argv[3]] : [ ]);
     }
+
+    console.log({totalScore:score});
     // not needed for now
       //rotating of the source text to change factorization
       //runIteration2();
@@ -54,7 +57,7 @@ runAll();
     if ( !fs.existsSync(path.resolve('dicts')) ) {
       fs.mkdirSync(path.resolve('dicts'), {recursive:true});
     }
-    fs.writeFileSync(path.resolve('dicts', 'dict.json'), JSON.stringify([...State.dict.values()]));
+    //fs.writeFileSync(path.resolve('dicts', 'dict.json'), JSON.stringify([...State.dict.values()]));
   }
 
   function runEmpty(dict = new Map()) {

@@ -1,33 +1,37 @@
 
 > futzz@1.0.0 test /home/cris/futzz
-> clear && node -r esm tests/run.js
+> node -r esm tests/run.js
 
-[H[2J[3Jdeclaration of independence [
-  '9.87 : 27913.79',
-  '10.42 : 21241.19',
-  '10.44 : 18506.01',
-  '10.45 : 17600.52',
-  '10.39 : 16103.55'
+declaration of independence [
+  '9.67 : 27364.47',
+  '10.49 : 21391.54',
+  '10.53 : 18678.04',
+  '10.54 : 17751.33',
+  '10.48 : 16240.45'
 ]
 down and out [
-  '14.50 : 892432.59',
-  '15.02 : 759456.86',
-  '15.13 : 704234.54',
-  '15.15 : 665783.49',
-  '15.15 : 637787.28'
+  '14.43 : 888401.98',
+  '15.07 : 762129.79',
+  '15.19 : 707148.36',
+  '15.22 : 668680.51',
+  '15.22 : 640558.46'
 ]
 terminator 2 [
-  '14.55 : 561282.80',
-  '14.68 : 510476.43',
-  '14.73 : 485087.33',
-  '14.73 : 465519.51',
-  '14.71 : 448489.69'
+  '14.59 : 563041.14',
+  '14.78 : 513750.89',
+  '14.82 : 488033.80',
+  '14.81 : 468224.53'
 ]
-tao te ching - chinese [ '12.66 : 151720.87', '12.83 : 123761.18', '12.80 : 114287.70' ]
-wiki - tao te ching - chinese [ '11.13 : 83661.00', '11.90 : 58190.79', '11.84 : 52112.67' ]
-wiki - tao te ching - english [ '11.65 : 47003.51', '11.59 : 42114.46' ]
-haruki murakami - chinese [ '11.29 : 83396.57', '11.90 : 58153.89', '11.83 : 52998.37' ]
-haruki murakami - english [ '12.70 : 116908.62', '12.65 : 103253.20' ]
+tao te ching - chinese [
+  '12.38 : 149040.88',
+  '12.95 : 125162.87',
+  '12.95 : 116205.05',
+  '12.93 : 107568.21'
+]
+wiki - tao te ching - chinese [ '10.83 : 81088.06', '11.90 : 57853.50', '11.90 : 52340.09' ]
+wiki - tao te ching - english [ '11.75 : 47411.74', '11.71 : 42629.19' ]
+haruki murakami - chinese [ '11.09 : 81912.76', '11.96 : 58379.69', '11.92 : 53427.59' ]
+haruki murakami - english [ '12.83 : 118398.73', '12.84 : 105055.52', '12.80 : 97710.47' ]
 {
   "words": "terminator 2",
   "results": [
@@ -37,18 +41,17 @@ haruki murakami - english [ '12.70 : 116908.62', '12.65 : 103253.20' ]
     ],
     [
       "terminator 2",
-      0.000052604815094074944
+      0.000030360992197225006
     ]
   ]
 }
-{ score: 10 }
 
 {
   "words": "judgement day",
   "results": [
     [
       "query",
-      1.1153846153846154
+      1
     ],
     [
       "declaration of independence",
@@ -64,7 +67,6 @@ haruki murakami - english [ '12.70 : 116908.62', '12.65 : 103253.20' ]
     ]
   ]
 }
-{ score: 18 }
 
 {
   "words": "john connor",
@@ -79,14 +81,17 @@ haruki murakami - english [ '12.70 : 116908.62', '12.65 : 103253.20' ]
     ]
   ]
 }
-{ score: 10 }
 
 {
   "words": "john connor's mother's name",
   "results": [
     [
       "query",
-      1.3333333333333333
+      1.24
+    ],
+    [
+      "tao te ching - chinese",
+      0.00011907124429450288
     ],
     [
       "terminator 2",
@@ -94,11 +99,10 @@ haruki murakami - english [ '12.70 : 116908.62', '12.65 : 103253.20' ]
     ],
     [
       "down and out",
-      0.00002148181564305815
+      0.000026927413790201788
     ]
   ]
 }
-{ score: 15 }
 
 {
   "words": "Whuffie book",
@@ -109,7 +113,7 @@ haruki murakami - english [ '12.70 : 116908.62', '12.65 : 103253.20' ]
     ],
     [
       "down and out",
-      0.00012172114616294855
+      0.00011330456569442636
     ],
     [
       "terminator 2",
@@ -117,26 +121,25 @@ haruki murakami - english [ '12.70 : 116908.62', '12.65 : 103253.20' ]
     ]
   ]
 }
-{ score: 15 }
 
 {
   "words": "Keep a moving Dan",
   "results": [
     [
       "query",
-      1
-    ],
-    [
-      "wiki - tao te ching - english",
-      0.00033111016508206804
+      1.0784313725490196
     ],
     [
       "down and out",
-      0.0002307988966714506
+      0.0002730459925170965
+    ],
+    [
+      "wiki - tao te ching - english",
+      0.00024783147459727387
     ],
     [
       "terminator 2",
-      0.0001797331182380894
+      0.00014904697609987902
     ],
     [
       "haruki murakami - english",
@@ -144,14 +147,13 @@ haruki murakami - english [ '12.70 : 116908.62', '12.65 : 103253.20' ]
     ]
   ]
 }
-{ score: 19.618 }
 
 {
   "words": "Declaration of Independence",
   "results": [
     [
       "query",
-      1
+      0.8703703703703703
     ],
     [
       "declaration of independence",
@@ -163,11 +165,11 @@ haruki murakami - english [ '12.70 : 116908.62', '12.65 : 103253.20' ]
     ],
     [
       "down and out",
-      0.00015195029553815602
+      0.00015739589368529965
     ],
     [
       "tao te ching - chinese",
-      0.00008340979230961715
+      0.00008309098462816784
     ],
     [
       "terminator 2",
@@ -175,22 +177,29 @@ haruki murakami - english [ '12.70 : 116908.62', '12.65 : 103253.20' ]
     ]
   ]
 }
-{ score: 17.618 }
 
 {
   "words": "life liberty and the pursuit of happiness",
   "results": [
     [
       "query",
-      1.0104529616724738
+      0.9616724738675959
     ],
     [
       "declaration of independence",
-      0.0024478581241413762
+      0.00503225806451613
     ],
     [
       "down and out",
-      0.0003059638101141949
+      0.00031705971542512123
+    ],
+    [
+      "wiki - tao te ching - english",
+      0.00027464982147761604
+    ],
+    [
+      "haruki murakami - english",
+      0.00009562423500611996
     ],
     [
       "terminator 2",
@@ -202,22 +211,21 @@ haruki murakami - english [ '12.70 : 116908.62', '12.65 : 103253.20' ]
     ]
   ]
 }
-{ score: 19.618 }
 
 {
   "words": "hasta la vista baby",
   "results": [
     [
       "query",
-      0.8245614035087718
+      1
     ],
     [
       "haruki murakami - chinese",
-      0.0002232142857142857
+      0.00022301516503122213
     ],
     [
       "terminator 2",
-      0.00011683378716146329
+      0.00011032082624132139
     ],
     [
       "down and out",
@@ -225,7 +233,6 @@ haruki murakami - english [ '12.70 : 116908.62', '12.65 : 103253.20' ]
     ]
   ]
 }
-{ score: 18 }
 
 {
   "words": "baby",
@@ -236,7 +243,7 @@ haruki murakami - english [ '12.70 : 116908.62', '12.65 : 103253.20' ]
     ],
     [
       "haruki murakami - chinese",
-      0.00013540961408259986
+      0.000308951880744574
     ],
     [
       "terminator 2",
@@ -248,69 +255,62 @@ haruki murakami - english [ '12.70 : 116908.62', '12.65 : 103253.20' ]
     ]
   ]
 }
-{ score: 18 }
 
 {
   "words": "legislature of the united states",
   "results": [
     [
       "query",
-      1
+      0.9791666666666666
     ],
     [
       "declaration of independence",
-      0.0011989509179467968
+      0.00047505938242280285
     ],
     [
       "tao te ching - chinese",
       0.00019845207382417147
     ],
     [
+      "haruki murakami - english",
+      0.0001912484700122399
+    ],
+    [
       "down and out",
-      0.00006058668102795402
+      0.00003994427724873724
     ]
   ]
 }
-{ score: 18 }
 
 {
   "words": "of free men and government, all the world's peoples",
   "results": [
     [
       "query",
-      0.9030612244897959
+      0.9591836734693877
     ],
     [
-      "declaration of independence",
-      0.003122268015486449
+      "tao te ching - chinese",
+      0.0002591521135742388
     ],
     [
       "wiki - tao te ching - english",
-      0.0007710876190525577
-    ],
-    [
-      "wiki - tao te ching - chinese",
-      0.0006133714986710284
+      0.00024783147459727387
     ],
     [
       "haruki murakami - english",
-      0.0006124749825819085
+      0.0002269714641125378
     ],
     [
       "down and out",
-      0.00017925742624616656
+      0.00008902258903706019
     ],
     [
       "terminator 2",
-      0.00016964690525010363
-    ],
-    [
-      "haruki murakami - chinese",
-      0.0000772379701861435
+      0.00004665025268886873
     ]
   ]
 }
-{ score: 13.617999999999999 }
 
 {
   "words": "haruki murakami",
@@ -321,11 +321,10 @@ haruki murakami - english [ '12.70 : 116908.62', '12.65 : 103253.20' ]
     ],
     [
       "haruki murakami - english",
-      0.00036755697133055625
+      0.000392875851231011
     ]
   ]
 }
-{ score: 10 }
 
 {
   "words": "挪威的森林",
@@ -340,7 +339,6 @@ haruki murakami - english [ '12.70 : 116908.62', '12.65 : 103253.20' ]
     ]
   ]
 }
-{ score: 10 }
 
 {
   "words": "tao te ching",
@@ -351,11 +349,10 @@ haruki murakami - english [ '12.70 : 116908.62', '12.65 : 103253.20' ]
     ],
     [
       "wiki - tao te ching - english",
-      0.000550357732526142
+      0.0011352348517099475
     ]
   ]
 }
-{ score: 10 }
 
 {
   "words": "道的方式",
@@ -366,22 +363,21 @@ haruki murakami - english [ '12.70 : 116908.62', '12.65 : 103253.20' ]
     ],
     [
       "wiki - tao te ching - chinese",
-      0.0020033993950134017
+      0.001798708200474205
     ],
     [
       "haruki murakami - chinese",
-      0.00027081922816519973
+      0.000308951880744574
     ]
   ]
 }
-{ score: 15 }
 
 {
   "words": "the way amazing",
   "results": [
     [
       "query",
-      1.2666666666666666
+      1
     ],
     [
       "declaration of independence",
@@ -389,15 +385,15 @@ haruki murakami - english [ '12.70 : 116908.62', '12.65 : 103253.20' ]
     ],
     [
       "wiki - tao te ching - english",
-      0.000825536598789213
+      0.0008239494644328481
     ],
     [
       "down and out",
-      0.00009155320688668608
+      0.0003008875776297956
     ],
     [
       "tao te ching - chinese",
-      0.00008340979230961715
+      0.00007938082952966859
     ],
     [
       "terminator 2",
@@ -405,30 +401,28 @@ haruki murakami - english [ '12.70 : 116908.62', '12.65 : 103253.20' ]
     ]
   ]
 }
-{ score: 17.618 }
 
 {
   "words": "在國王的宇宙中，無路可走的路是未知的",
   "results": [
     [
       "query",
-      0.9607843137254902
-    ],
-    [
-      "wiki - tao te ching - chinese",
-      0.05178042897340067
+      1.0147058823529411
     ],
     [
       "haruki murakami - chinese",
-      0.024482946745132884
+      0.03658423655020637
+    ],
+    [
+      "wiki - tao te ching - chinese",
+      0.0314775264479637
     ],
     [
       "tao te ching - chinese",
-      0.006088784777425742
+      0.0016185922632712866
     ]
   ]
 }
-{ score: 8 }
 
 {
   "words": "the way",
@@ -438,8 +432,12 @@ haruki murakami - english [ '12.70 : 116908.62', '12.65 : 103253.20' ]
       1
     ],
     [
+      "wiki - tao te ching - english",
+      0.00033111016508206804
+    ],
+    [
       "haruki murakami - english",
-      0.00010866021949364337
+      0.00013387392900856792
     ],
     [
       "down and out",
@@ -447,103 +445,102 @@ haruki murakami - english [ '12.70 : 116908.62', '12.65 : 103253.20' ]
     ]
   ]
 }
-{ score: 15 }
 
 {
   "words": "都在天堂之下",
   "results": [
     [
       "query",
-      0.9166666666666666
+      0.9166666666666665
     ],
     [
       "haruki murakami - chinese",
-      0.00379492188727191
-    ],
-    [
-      "tao te ching - chinese",
-      0.001811759195510987
+      0.0017764733142813006
     ],
     [
       "wiki - tao te ching - chinese",
-      0.0007176746561242081
+      0.0006540757092633472
+    ],
+    [
+      "tao te ching - chinese",
+      0.0003770589402659258
     ]
   ]
 }
-{ score: 18 }
 
 {
   "words": "Midori",
   "results": [
     [
       "query",
-      1
+      1.3333333333333335
     ],
     [
       "declaration of independence",
-      0.0022480329711502436
+      0.011282660332541567
+    ],
+    [
+      "wiki - tao te ching - english",
+      0.0007434944237918215
     ],
     [
       "haruki murakami - chinese",
-      0.0003825711186782591
+      0.00044603033006244426
     ],
     [
       "down and out",
-      0.0002375579047392802
+      0.00019004632379142415
     ],
     [
       "haruki murakami - english",
-      0.00007649938800489595
+      0.00014301658766405093
     ],
     [
       "terminator 2",
-      0.00004383734591172912
+      0.000004383734591172912
     ]
   ]
 }
-{ score: 17.618 }
 
 {
   "words": "famous Kobe writer",
   "results": [
     [
       "query",
-      1.0833333333333333
+      0.9722222222222222
     ],
     [
       "haruki murakami - english",
-      0.00042074663402692775
+      0.0007332274227056092
     ],
     [
       "wiki - tao te ching - english",
-      0.00018920580861832458
+      0.0001982651796778191
     ],
     [
       "down and out",
-      0.00008402793731617403
+      0.00008907506374275273
     ],
     [
       "terminator 2",
-      0.000047895930561916655
+      0.00005627779924659652
     ]
   ]
 }
-{ score: 19.618 }
 
 {
   "words": "神戶著名作家",
   "results": [
     [
       "query",
-      0.8333333333333333
+      1
     ],
     [
       "haruki murakami - chinese",
-      0.0004016374449679462
+      0.0003328880723972647
     ]
   ]
 }
-{ score: 10 }
 
 {
   "words": "lao zi",
@@ -554,11 +551,10 @@ haruki murakami - english [ '12.70 : 116908.62', '12.65 : 103253.20' ]
     ],
     [
       "wiki - tao te ching - chinese",
-      0.0003924454255580084
+      0.00018181818181818183
     ]
   ]
 }
-{ score: 10 }
 
 {
   "words": "老子",
@@ -569,11 +565,10 @@ haruki murakami - english [ '12.70 : 116908.62', '12.65 : 103253.20' ]
     ],
     [
       "wiki - tao te ching - chinese",
-      0.014716703458425313
+      0.020454545454545454
     ]
   ]
 }
-{ score: 0 }
 
 {
   "words": "the tao",
@@ -584,91 +579,86 @@ haruki murakami - english [ '12.70 : 116908.62', '12.65 : 103253.20' ]
     ],
     [
       "wiki - tao te ching - english",
-      0.0004959087527894868
+      0.0007434944237918215
     ],
     [
       "tao te ching - chinese",
-      0.00010370216737529814
+      0.00006647278770253427
     ]
   ]
 }
-{ score: 5 }
 
 {
   "words": "the warring states period",
   "results": [
     [
       "query",
-      0.97
+      0.95
     ],
     [
       "terminator 2",
-      0.00012176911872988541
+      0.00011699978364104654
     ],
     [
       "down and out",
-      0.00010697635442694884
+      0.00010679344082148833
     ]
   ]
 }
-{ score: 5 }
 
 {
   "words": "classical chinese history texts",
   "results": [
     [
       "query",
-      1.1096774193548387
+      1.0838709677419356
     ],
     [
       "wiki - tao te ching - english",
-      0.0008325055579206282
+      0.0007963966540965611
     ],
     [
       "haruki murakami - english",
-      0.00012239902080783354
+      0.0000977636563607479
     ],
     [
       "tao te ching - chinese",
-      0.00006350466362373487
+      0.00008917623453349683
     ],
     [
       "down and out",
-      0.000037025193961527455
+      0.000023561487066426562
     ]
   ]
 }
-{ score: 9.618 }
 
 {
   "words": "the art of war",
   "results": [
     [
       "query",
-      1
+      0.7857142857142857
     ],
     [
       "declaration of independence",
-      0.00039965030598226555
-    ],
-    [
-      "haruki murakami - english",
-      0.0001529987760097919
-    ],
-    [
-      "tao te ching - chinese",
-      0.00010370216737529814
+      0.00047505938242280285
     ],
     [
       "down and out",
-      0.00006731853447550447
+      0.00009886307464162135
+    ],
+    [
+      "haruki murakami - english",
+      0.0000977636563607479
+    ],
+    [
+      "tao te ching - chinese",
+      0.00007938082952966859
     ],
     [
       "terminator 2",
-      0.0000350698767293833
+      0.00001753493836469165
     ]
   ]
 }
-{ score: 17.618 }
 
-{ totalScore: 390.56199999999995 }
