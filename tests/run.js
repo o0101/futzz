@@ -18,11 +18,41 @@ runDisk();
       fs.mkdirSync(path.resolve('dicts'), {recursive:true});
     }
 
-    process.stdout.write("Writing values...");
+    console.log("Serializing values...");
+    let chunkId = 0;
 
-    fs.writeFileSync(path.resolve('dicts', 'dict.json'), JSON.stringify([...State.dict.values()]));
+    const chunkSize = 5000000;
 
-    console.log("Done!");
+    const values = [...State.dict.values()];
+
+    let i = 0;
+
+    while(values.length) {
+      const chunk = values.splice(0, chunkSize);
+
+      process.stdout.write(`Writing chunk of ${Math.min(chunk.length, chunkSize)} values...`);
+
+      const fd = fs.openSync(
+        path.resolve('dicts', `dict.${(chunkId+'').padStart(5,'0')}.json`), 
+        "w"
+      );
+
+      fs.writeSync(fd, "[");
+
+      chunk.forEach((value, j) => {
+        const closeOff = i >= values.length - 1 || j >= chunk.length - 1;
+        const string = JSON.stringify(value) + (closeOff ? "]" : ",");
+        fs.writeSync(fd, string);
+        i += 1;
+      });
+
+
+      fs.closeSync(fd);
+
+      console.log("Done!");
+
+      chunkId++;
+    }
   }
 
   async function runNew(limit = Infinity, noTerminal = false) {
