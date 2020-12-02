@@ -2,8 +2,57 @@ import fs from 'fs';
 import path from 'path';
 import JSON36 from 'json36';
 import {State, query, index, ent} from '../src/futzz.js';
+import readline from 'readline';
 
-runAll();
+const terminal = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+runNew();
+
+  async function runNew() {
+    const entries = [];
+    let count = 0;
+
+    entries.push(...fs.readdirSync(path.resolve('demo','data', process.argv[2]), {withFileTypes:true}));
+
+    entries.map(dirent => dirent.basePath = path.resolve('demo', 'data', process.argv[2]));
+
+    while( entries.length ) {
+      const entry = entries.shift();
+      if ( ! entry.isDirectory ) {
+        console.log(entry);
+      }
+      if ( entry.isDirectory() ) {
+        entries.push(
+          ...fs.readdirSync(
+            path.resolve(entry.basePath, entry.name), 
+            {withFileTypes:true}
+          ).map(dirent => (dirent.basePath = path.resolve(entry.basePath, entry.name), dirent))
+        );
+      } else {
+        const filePath = path.resolve(entry.basePath, entry.name);
+        runIteration1(fs.readFileSync(filePath).toString(), filePath);
+        count ++;
+      }
+    }
+
+    let q
+    do {
+      q = await new Promise(res => terminal.question(`Query ${count} files> `, res));
+      console.log({q});
+      if ( q && q.length && q !== '.exit' ) {
+        let results = query(q);
+
+        results = results.map(([name]) => ({name, start:fs.readFileSync(name).toString().trim().slice(0, 512)}));
+
+        console.log(results);
+      }
+    } while( q !== '.exit' );
+
+    terminal.close();
+  }
 
   function runAll() {
     let score = 0;
@@ -17,6 +66,7 @@ runAll();
     runIteration1(fs.readFileSync(path.resolve('samples', 'hm.txt')).toString(), 'haruki murakami - chinese');
     runIteration1(fs.readFileSync(path.resolve('samples', 'hm2.txt')).toString(), 'haruki murakami - english');
     score += query("terminator 2", [ "terminator 2"]);
+
     score += query("judgement day", ["terminator 2" ]);
     score += query("john connor", [ "terminator 2"]);
     score += query("john connor's mother's name", [ "terminator 2"]);
@@ -57,6 +107,7 @@ runAll();
     if ( !fs.existsSync(path.resolve('dicts')) ) {
       fs.mkdirSync(path.resolve('dicts'), {recursive:true});
     }
+
     //fs.writeFileSync(path.resolve('dicts', 'dict.json'), JSON.stringify([...State.dict.values()]));
   }
 

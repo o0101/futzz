@@ -1,4 +1,5 @@
-import StrongMap from './node-strongmap-fast/index.js';
+import {BigMap} from 'big-associative';
+//import StrongMap from './node-strongmap-fast/index.js';
 
 const MIN_ITERATION = 3;
 const MAX_ITERATION = 12;
@@ -32,7 +33,7 @@ const USE_COVER = false;
 //zmap.name('fts');
 
 export const State = {
-  dict: new Map(),
+  dict: new BigMap(),
   // dict: zmap, 
   indexHistory: []
 };
@@ -149,10 +150,12 @@ export const State = {
       return parseFloat(countB) - parseFloat(countA);
     });
 
-    console.log(JSON.stringify({words, results}, null, 2));
-
     if ( willExit ) {
       process.exit(1);
+    }
+
+    if ( right_answers.length ) {
+      console.log(JSON.stringify({words, results}, null, 2));
     }
 
     if ( results[0][0] == "query" ) {
@@ -177,13 +180,15 @@ export const State = {
           score -= 2;
         }
       });
+
+      console.log({score});
+
+      console.log('');
     }
 
-    console.log({score});
 
-    console.log('');
 
-    return score;
+    return results;
   }
 
   export function lz(docStr = '', dict = new Map(), name = 'unknown doc') {
@@ -198,6 +203,7 @@ export const State = {
 
     docStr = docStr.replace(/\p{P}+/gu, '');     // unicode replace all punctuation
     docStr = docStr.replace(/\p{Z}+/gu, ' ');     // unicode replace all separators
+    docStr = docStr.replace(/[\n\r]+/gu, ' ');     // unicode replace all separators
     docStr = docStr.trim().toLocaleLowerCase();
 
     factors.docStr = docStr;
@@ -235,7 +241,13 @@ export const State = {
               [CODE_ID]: codeId 
             }
             toNormalize.add(data);
-            dict.set(codeId, data);
+            try {
+              dict.set(codeId, data);
+            } catch(e) {
+              console.warn(e);
+              console.log(codeId, data);
+              process.exit(1);
+            }
             dict.set(currentWord, data);
             codeId += 1;
             if ( codeId%100 == 0) {
