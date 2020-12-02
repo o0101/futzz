@@ -5,14 +5,34 @@ import JSON36 from 'json36';
 import {State, query, index, ent} from '../src/futzz.js';
 import readline from 'readline';
 
+runDisk();
 //runAll();
-runNew(544);
+//runNew();
 
-  async function runNew(limit = Infinity) {
-    const terminal = readline.createInterface({
-      input: process.stdin,
-      output: process.stdout
-    });
+  async function runDisk() {
+    console.log("Indexing documents...");
+
+    await runNew(10, true);
+
+    if ( !fs.existsSync(path.resolve('dicts')) ) {
+      fs.mkdirSync(path.resolve('dicts'), {recursive:true});
+    }
+
+    process.stdout.write("Writing values...");
+
+    fs.writeFileSync(path.resolve('dicts', 'dict.json'), JSON.stringify([...State.dict.values()]));
+
+    console.log("Done!");
+  }
+
+  async function runNew(limit = Infinity, noTerminal = false) {
+    let terminal;
+    if ( ! noTerminal ) {
+      terminal = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout
+      });
+    }
 
     const entries = [];
     let count = 0;
@@ -53,6 +73,10 @@ runNew(544);
     }
 
     console.log('Done!');
+
+    if ( noTerminal ) {
+      return;
+    }
 
     let q
     do {
