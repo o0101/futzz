@@ -146,8 +146,9 @@ export const State = {
     let score = 0;
 
     const merge = {};
-    const resultSet = new Set(Object.keys(factors[0][NAME]));
-    resultSet.delete(State.names.get("query")+'');
+    // result set does not really work
+    //const resultSet = new Set(Object.keys(factors[0][NAME]));
+    //resultSet.delete(State.names.get("query")+'');
 
     factors.forEach(f => {
       const {[NAME]:name, [WORD]:word} = f;
@@ -159,11 +160,12 @@ export const State = {
         } 
         return [_, score];
       }))
-      const docs = Object.keys(name);
       //console.log({scores, name, word});
       // and add these to the summed scores per document for the other factors
       mergeAdd(merge, scores);
-      intersectionAdd(resultSet, docs);
+      // result set does not really work
+      //const docs = Object.keys(name);
+      //intersectionAdd(resultSet, docs);
       //console.log(JSON.stringify({word, scores}));
     });
 
@@ -177,7 +179,7 @@ export const State = {
       return parseFloat(countB) - parseFloat(countA);
     });
 
-    results = [...results.filter(([doc]) => resultSet.has(doc)), ...results.slice(0,2)];
+    //results = [...results.filter(([doc]) => resultSet.has(doc)), ...results.slice(0,2)];
 
     //console.log({resultSet});
 
@@ -188,7 +190,7 @@ export const State = {
     // replace the document name id with the actual name (and filter out the query "result")
     results = results.map(([doc,score]) => [State.names.get(doc), score]);
 
-    results = [...(new Set(results.map(([doc,score]) => doc))).keys()].map(doc => [doc]);
+    //results = [...(new Set(results.map(([doc,score]) => doc))).keys()].map(doc => [doc]);
 
     if ( right_answers.length ) {
       if ( results.length ) {
@@ -230,7 +232,7 @@ export const State = {
       return score;
     }
 
-    return results.slice(0,5);
+    return results; //.slice(0,5);
   }
 
   export function lz(docStr = '', dict = new Map(), name = 'unknown doc', opts = {}) {

@@ -5,7 +5,7 @@ import {State, query, index, ent} from '../src/futzz.js';
 import readline from 'readline';
 
 //runAll();
-runNew(54);
+runNew(544);
 
   async function runNew(limit = Infinity) {
     const terminal = readline.createInterface({
@@ -56,6 +56,7 @@ runNew(54);
     let q
     do {
       q = await new Promise(res => terminal.question(`Query ${count} files> `, res));
+      console.clear();
       console.log({q});
       if ( q && q.length && q !== '.exit' ) {
         let results = query(q);
