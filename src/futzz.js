@@ -64,11 +64,14 @@ export const State = {
 
     let dict, docStr, factors, lastEntropy = 0, maxEntropy = 0, maxFactors, totalFactorsLength = 0;
 
-    // this will prune entries to factors
+    let Dict = State.dict;
+
+    // this will prune and clear entries to factors
     //dict = new Map([...State.dict.entries()]);
+    //Dict = dict;
 
     indexingCycle: for( let i = 0; i < MAX_ITERATION; i++ ) {
-      ({dict, factors, docStr} = lz(text, State.dict, name)); 
+      ({dict, factors, docStr} = lz(text, Dict, name)); 
       totalFactorsLength += factors.length;
       const entropy = ent(factors, useRun ? i+1 : undefined, true, totalFactorsLength);
       const total = entropy*factors.length;
@@ -112,13 +115,13 @@ export const State = {
     /**
     let i = State.dict.size/2;
     factors.forEach(f => {
-      f.codeId = i;
-      if ( State.dict.has(f.word) ) {
+      f[CODE_ID] = i;
+      if ( State.dict.has(f[WORD]) ) {
         // do nothing
       } else {
         i++;
-        State.dict.set(f.word, f);
-        State.dict.set(f.codeId, f);
+        State.dict.set(f[WORD], f);
+        State.dict.set(f[CODE_ID], f);
       }
     });
     **/
@@ -143,6 +146,7 @@ export const State = {
     const merge = {};
     factors.forEach(f => {
       const {[NAME]:name, [WORD]:word} = f;
+      // discard the count information and just keep the scores per document name
       const scores = Object.fromEntries([...Object.entries(name)].map(([_,{[SCORE]:score}]) => {
         if ( score == null ) {
           console.log(f, name, word);
@@ -151,12 +155,14 @@ export const State = {
         return [_, score];
       }))
       //console.log({scores, name, word});
+      // and add these to the summed scores per document for the other factors
       mergeAdd(merge, scores);
       //console.log(JSON.stringify({word, scores}));
     });
 
     let results = Object.entries(merge);
 
+    // sort the documents by the summed score
     results.sort(([,countA], [,countB]) => {
       //console.log({countA, countB});
       return parseFloat(countB) - parseFloat(countA);
@@ -166,6 +172,7 @@ export const State = {
       process.exit(1);
     }
 
+    // replace the document name id with the actual name (and filter out the query "result")
     results = results.filter(([doc]) => State.names.get(doc) !== "query");
     results = results.map(([doc,score]) => [State.names.get(doc), score]);
 
@@ -301,6 +308,7 @@ export const State = {
             wordFirstIndex = charIndex;
             currentWord = suffix;
         } else {
+          /**
           const data = dict.get(currentWord);
           if ( data[COUNT] == 0 ) {
             data[FIRST_INDEX] = wordFirstIndex;
@@ -312,6 +320,7 @@ export const State = {
           }
           data[COUNT]++;
           toNormalize.add(data);
+          **/
         }
 
         currentWord += nextChar;
