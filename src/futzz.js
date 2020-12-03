@@ -6,7 +6,7 @@ const WAVG = 2;
 const AVG = 3;
 const NORMAL = 4;
 const NORMAL_RANKED = 5;
-const SCORE_METHOD = 5;
+const SCORE_METHOD = 4;
 
 const MIN_ITERATION = 2;
 const MAX_ITERATION = 12;
@@ -52,14 +52,15 @@ export const State = {
   names: new BigMap(),
   // dict: zmap, 
   indexHistory: [],
-  totalDocLength: 0
+  totalDocLength: 0,
+  totalFactorsLength: 0
 };
 
   export function index(text, name) {
     const Ent = [];
     const sortKey = USE_RUN ? COUNT : RUN_COUNT;
 
-    console.log({USE_RUN});
+    //console.log({USE_RUN});
 
     const indexHistoryEntry = {
       docName: name, 
@@ -70,7 +71,7 @@ export const State = {
       indexStart: new Date
     };
 
-    let dict, docStr, factors, lastEntropy = 0, maxEntropy = 0, maxFactors, totalFactorsLength = 0;
+    let dict, docStr, factors, lastEntropy = 0, maxEntropy = 0, maxFactors;
 
     let Dict = State.dict;
 
@@ -80,8 +81,8 @@ export const State = {
 
     indexingCycle: for( let i = 0; i < MAX_ITERATION; i++ ) {
       ({dict, factors, docStr} = lz(text, Dict, name)); 
-      totalFactorsLength += factors.length;
-      const entropy = ent(factors, USE_RUN ? i+2 : undefined, true, dict.size/2);
+      State.totalFactorsLength += factors.length;
+      const entropy = ent(factors, USE_RUN ? i+2 : undefined, true, State.totalFactorsLength);
       const total = entropy*factors.length;
       Ent.push({entropy, total: entropy*factors.length, name});
       switch( TERMINATE_ON ) {
@@ -461,14 +462,10 @@ export const State = {
               // something like TF IDF
               if ( USE_COVER ) {
                 n[SCORE] = SMULT*(n[COUNT]*f[WORD].length / docStr.length);
-                n[SCORE] /= State.totalDocLength;
+                n[SCORE] *= f[COUNT]*f[WORD].length/State.totalDocLength;
               } else {
                 n[SCORE] = SMULT*(n[COUNT] / factors.length);
-                n[SCORE] /= (f[COUNT]+1);
-                if ( Number.isNaN(n[SCORE]) ) {
-                  console.warn(f);
-                  throw new TypeError('NAN');
-                }
+                n[SCORE] *= f[COUNT]/State.totalFactorsLength;
               }
               break;
             default:
@@ -536,7 +533,7 @@ export const State = {
 
     run = run || 1;
 
-    console.log({run,adjustLength,allFactorsLength});
+    //console.log({run,adjustLength,allFactorsLength});
     
     const dict = new Map(); 
 
@@ -564,7 +561,6 @@ export const State = {
         p = Count*word.length/TotalLength;
       } else {
         if ( run > 1 ) {
-          //console.log("OK", p, Count, allFactorsLength);
           p = Count/allFactorsLength;
         } else {
           p = Count/factors.length;
