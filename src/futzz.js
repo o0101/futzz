@@ -6,7 +6,7 @@ const WAVG = 2;
 const AVG = 3;
 const NORMAL = 4;
 const NORMAL_RANKED = 5;
-const SCORE_METHOD = 4;
+const SCORE_METHOD = 5;
 
 const MIN_ITERATION = 2;
 const MAX_ITERATION = 12;
