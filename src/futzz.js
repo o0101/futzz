@@ -23,7 +23,7 @@ const MIN_COUNT = 1;
 const CHANGE_THRESH = 0.95;
 const SMULT = 1 << 32;
 
-const MAX_WORD_LENGTH = 11;
+const MAX_WORD_LENGTH = 17;
 
 const WORD = 'w';
 const NAME = 'n';
