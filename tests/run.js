@@ -194,8 +194,7 @@ runAll();
   }
 
   function runIteration1(Text, name) {
-    return index(Text, name, false);
-    return index(Text, name, true);
+    return index(Text, name);
   }
 
   // not needed for now

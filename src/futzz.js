@@ -12,6 +12,7 @@ const MIN_ITERATION = 2;
 const MAX_ITERATION = 12;
 
 const USE_COVER = false;
+const USE_RUN = true;
 
 const MAX_ENT = 0;
 const MAX_TOT_ENT = 1;
@@ -50,19 +51,22 @@ export const State = {
   dict: new BigMap(),
   names: new BigMap(),
   // dict: zmap, 
-  indexHistory: []
+  indexHistory: [],
+  totalDocLength: 0
 };
 
-  export function index(text, name, useRun = true) {
+  export function index(text, name) {
     const Ent = [];
-    const sortKey = useRun ? COUNT : RUN_COUNT;
+    const sortKey = USE_RUN ? COUNT : RUN_COUNT;
+
+    console.log({USE_RUN});
 
     const indexHistoryEntry = {
       docName: name, 
       terminatorCondition: TERMINATE_ON == MAX_ENT ? 'maxEntropy' : 
         TERMINATE_ON == MAX_TOT_ENT ? 'maxTotalEntropy' : 
         'unknown',
-      useRunCount: useRun,
+      useRunCount: USE_RUN,
       indexStart: new Date
     };
 
@@ -77,7 +81,7 @@ export const State = {
     indexingCycle: for( let i = 0; i < MAX_ITERATION; i++ ) {
       ({dict, factors, docStr} = lz(text, Dict, name)); 
       totalFactorsLength += factors.length;
-      const entropy = ent(factors, useRun ? i+1 : undefined, true, totalFactorsLength);
+      const entropy = ent(factors, USE_RUN ? i+2 : undefined, true, dict.size/2);
       const total = entropy*factors.length;
       Ent.push({entropy, total: entropy*factors.length, name});
       switch( TERMINATE_ON ) {
@@ -257,6 +261,8 @@ export const State = {
     let currentWord = '';
     let reverse;
 
+    // idempotent in this function means 
+    // provide a factorization but don't change the dict
     if ( opts.idempotent ) {
       reverse = [];
     }
@@ -269,6 +275,8 @@ export const State = {
     docStr = docStr.trim().toLocaleLowerCase();
 
     factors.docStr = docStr;
+
+    State.totalDocLength += docStr.length;
 
     // this is how simple lz is, isn't it beautiful? :)
 
@@ -453,9 +461,10 @@ export const State = {
               // something like TF IDF
               if ( USE_COVER ) {
                 n[SCORE] = SMULT*(n[COUNT]*f[WORD].length / docStr.length);
+                n[SCORE] /= State.totalDocLength;
               } else {
                 n[SCORE] = SMULT*(n[COUNT] / factors.length);
-                n[SCORE] /= f[COUNT];
+                n[SCORE] /= (f[COUNT]+1);
                 if ( Number.isNaN(n[SCORE]) ) {
                   console.warn(f);
                   throw new TypeError('NAN');
@@ -491,9 +500,10 @@ export const State = {
               // something like TF IDF
               if ( USE_COVER ) {
                 n[SCORE] = SMULT*(n[COUNT]*f[WORD].length / docStr.length);
+                n[SCORE] /= State.totalDocLength;
               } else {
                 n[SCORE] = SMULT*(n[COUNT] / factors.length);
-                n[SCORE] /= f[COUNT];
+                n[SCORE] /= (f[COUNT]+1);
                 if ( Number.isNaN(n[SCORE]) ) {
                   console.warn(f);
                   throw new TypeError('NAN');
@@ -525,12 +535,15 @@ export const State = {
     let Ent = 0;
 
     run = run || 1;
+
+    console.log({run,adjustLength,allFactorsLength});
     
     const dict = new Map(); 
 
     for( const f of factors ) {
       if ( !dict.has(f[WORD]) ) {
         dict.set(f[WORD], f);
+        dict.set(f[CODE_ID], f);
         f[RUN_COUNT] = MIN_COUNT;
       }
       f[RUN_COUNT] += 1;
@@ -551,6 +564,7 @@ export const State = {
         p = Count*word.length/TotalLength;
       } else {
         if ( run > 1 ) {
+          //console.log("OK", p, Count, allFactorsLength);
           p = Count/allFactorsLength;
         } else {
           p = Count/factors.length;
