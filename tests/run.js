@@ -5,8 +5,12 @@ import JSON36 from 'json36';
 import {State, query, index, ent} from '../src/futzz.js';
 import readline from 'readline';
 
-runAll();
-//runNew();
+//runAll();
+if ( process.argv[2] ) {
+  runNew(544);
+} else {
+  runAll();
+}
 //runDisk();
 
   async function runDisk() {

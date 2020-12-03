@@ -6,24 +6,23 @@ const WAVG = 2;
 const AVG = 3;
 const NORMAL = 4;
 const NORMAL_RANKED = 5;
-const SCORE_METHOD = 5;
-
-const MIN_ITERATION = 2;
-const MAX_ITERATION = 12;
-
-const USE_COVER = false;
-const USE_RUN = true;
+const SCORE_METHOD = 4;
 
 const MAX_ENT = 0;
 const MAX_TOT_ENT = 1;
 const SLOW_CHANGE = 2;
 const TERMINATE_ON = MAX_ENT;
 
+const MIN_ITERATION = 2;
+const MAX_ITERATION = 12;
+
+const USE_COVER = false;
+const USE_RUN = false;
+const MAX_WORD_LENGTH = 17;
+
 const MIN_COUNT = 1;
 const CHANGE_THRESH = 0.95;
 const SMULT = 1 << 32;
-
-const MAX_WORD_LENGTH = 17;
 
 const WORD = 'w';
 const NAME = 'n';
