@@ -8,7 +8,7 @@ import readline from 'readline';
 const PAGE = 3;
 
 if ( process.argv[2] ) {
-  if ( process.argv[2] === 'disk' ) {
+  if ( process.argv[3] === 'disk' ) {
     runDisk();
   } else {
     runNew(parseInt(process.argv[3]) || Infinity);
