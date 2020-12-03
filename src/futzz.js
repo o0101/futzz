@@ -474,8 +474,10 @@ export const State = {
             case NORMAL:
               if ( USE_COVER ) {
                 n[SCORE] = n[COUNT]*f[WORD].length / docStr.length;
+                n[SCORE] *= SMULT;
               } else {
                 n[SCORE] = n[COUNT] / factors.length;
+                n[SCORE] *= SMULT;
               }
               break;
           }
@@ -511,8 +513,10 @@ export const State = {
             case NORMAL:
               if ( USE_COVER ) {
                 n[SCORE] = FOUND_NOT_FACTOR_MULT * f[WORD].length / docStr.length;
+                n[SCORE] *= SMULT;
               } else {
                 n[SCORE] = FOUND_NOT_FACTOR_MULT * 1 / factors.length;
+                n[SCORE] *= SMULT;
               }
               break;
           }

@@ -1,4 +1,7 @@
 - answer question: why is short document so highly weighted, even without TF-IDF code?
+  - i think because it's based on divisors that are factors.length or docStr.length so shorter docs are advantaged particularly if they are indexed earlier and so have shorter (higher count) codes
+    - to ameliorate, we must normalize those divisors somwehow, as well as
+    - consider that we can add a stopping criterion that must first be met before we consider the normal stopping criterion, and that stopping criterion can be that the distribution of factors approaches the max factor length
 - snippets are important to evaluate the document
 - seems more recently indexed documents score higher (i think because the code length is longer)
   - could try not using cover
