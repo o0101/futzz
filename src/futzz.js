@@ -17,7 +17,7 @@ const MIN_ITERATION = 2;
 const MAX_ITERATION = 12;
 
 const USE_COVER = false;
-const USE_RUN = false;
+const USE_RUN = true;
 const MAX_WORD_LENGTH = 17;
 
 const MIN_COUNT = 1;
