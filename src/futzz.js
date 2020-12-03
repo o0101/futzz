@@ -21,7 +21,7 @@ const TERMINATE_ON = MAX_ENT;
 
 const MIN_COUNT = 0;
 const CHANGE_THRESH = 0.95;
-const SMULT = 1 << 20;
+const SMULT = 1 << 32;
 
 const MAX_WORD_LENGTH = 11;
 
@@ -461,11 +461,13 @@ export const State = {
             case NORMAL_RANKED:
               // something like TF IDF
               if ( USE_COVER ) {
-                n[SCORE] = SMULT*(n[COUNT]*f[WORD].length / docStr.length);
+                n[SCORE] = (n[COUNT]*f[WORD].length / docStr.length);
                 n[SCORE] *= f[COUNT]*f[WORD].length/State.totalDocLength;
+                n[SCORE] *= SMULT;
               } else {
-                n[SCORE] = SMULT*(n[COUNT] / factors.length);
+                n[SCORE] = (n[COUNT] / factors.length);
                 n[SCORE] *= f[COUNT]/State.totalFactorsLength;
+                n[SCORE] *= SMULT;
               }
               break;
             default:
@@ -496,15 +498,13 @@ export const State = {
             case NORMAL_RANKED:
               // something like TF IDF
               if ( USE_COVER ) {
-                n[SCORE] = SMULT*(n[COUNT]*f[WORD].length / docStr.length);
-                n[SCORE] /= State.totalDocLength;
+                n[SCORE] = (FOUND_NOT_FACTOR_MULT*f[WORD].length / docStr.length);
+                n[SCORE] *= f[COUNT]*f[WORD].length/State.totalDocLength;
+                n[SCORE] *= SMULT;
               } else {
-                n[SCORE] = SMULT*(n[COUNT] / factors.length);
-                n[SCORE] /= (f[COUNT]+1);
-                if ( Number.isNaN(n[SCORE]) ) {
-                  console.warn(f);
-                  throw new TypeError('NAN');
-                }
+                n[SCORE] = (FOUND_NOT_FACTOR_MULT / factors.length);
+                n[SCORE] *= f[COUNT]/State.totalFactorsLength;
+                n[SCORE] *= SMULT;
               }
               break;
             default:

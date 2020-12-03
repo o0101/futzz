@@ -1,5 +1,4 @@
-- i think we should break query up into many factors and create results from all of them, rather than just the single factorization. i'm thinking something between single factorization and all substrings. because we are clearly missing out on good results because of a mismatch of query factors and possible-result-doc factors
-- the ways these are scored (in the runAll) in stupid
+- answer question: why is short document so highly weighted, even without TF-IDF code?
 - snippets are important to evaluate the document
 - seems more recently indexed documents score higher (i think because the code length is longer)
   - could try not using cover
