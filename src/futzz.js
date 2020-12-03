@@ -6,7 +6,7 @@ const WAVG = 2;
 const AVG = 3;
 const NORMAL = 4;
 const NORMAL_RANKED = 5;
-const SCORE_METHOD = 4;
+const SCORE_METHOD = 5;
 
 const MIN_ITERATION = 2;
 const MAX_ITERATION = 12;
@@ -19,7 +19,7 @@ const MAX_TOT_ENT = 1;
 const SLOW_CHANGE = 2;
 const TERMINATE_ON = MAX_ENT;
 
-const MIN_COUNT = 0;
+const MIN_COUNT = 1;
 const CHANGE_THRESH = 0.95;
 const SMULT = 1 << 32;
 
@@ -462,11 +462,11 @@ export const State = {
               // something like TF IDF
               if ( USE_COVER ) {
                 n[SCORE] = (n[COUNT]*f[WORD].length / docStr.length);
-                n[SCORE] *= f[COUNT]*f[WORD].length/State.totalDocLength;
+                n[SCORE] /= f[COUNT]*f[WORD].length/State.totalDocLength;
                 n[SCORE] *= SMULT;
               } else {
                 n[SCORE] = (n[COUNT] / factors.length);
-                n[SCORE] *= f[COUNT]/State.totalFactorsLength;
+                n[SCORE] /= f[COUNT]/State.totalFactorsLength;
                 n[SCORE] *= SMULT;
               }
               break;
@@ -499,11 +499,11 @@ export const State = {
               // something like TF IDF
               if ( USE_COVER ) {
                 n[SCORE] = (FOUND_NOT_FACTOR_MULT*f[WORD].length / docStr.length);
-                n[SCORE] *= f[COUNT]*f[WORD].length/State.totalDocLength;
+                n[SCORE] /= f[COUNT]*f[WORD].length/State.totalDocLength;
                 n[SCORE] *= SMULT;
               } else {
                 n[SCORE] = (FOUND_NOT_FACTOR_MULT / factors.length);
-                n[SCORE] *= f[COUNT]/State.totalFactorsLength;
+                n[SCORE] /= f[COUNT]/State.totalFactorsLength;
                 n[SCORE] *= SMULT;
               }
               break;
