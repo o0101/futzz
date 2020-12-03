@@ -1,38 +1,42 @@
 import {BigMap} from 'big-associative';
 //import StrongMap from './node-strongmap-fast/index.js';
 
-const GEOAVG = 1;
-const WAVG = 2;
-const AVG = 3;
-const NORMAL = 4;
-const NORMAL_RANKED = 5;
-const SCORE_METHOD = 4;
+// config
+  const GEOAVG = 1;
+  const WAVG = 2;
+  const AVG = 3;
+  const NORMAL = 4;
+  const NORMAL_RANKED = 5;
+  const SCORE_METHOD = 4;
 
-const MAX_ENT = 0;
-const MAX_TOT_ENT = 1;
-const SLOW_CHANGE = 2;
-const TERMINATE_ON = MAX_ENT;
+  const MAX_ENT = 0;
+  const MAX_TOT_ENT = 1;
+  const SLOW_CHANGE = 2;
+  const TERMINATE_ON = MAX_ENT;
 
-const MIN_ITERATION = 2;
-const MAX_ITERATION = 12;
+  const MIN_ITERATION = 2;
+  const MAX_ITERATION = 12;
 
-const USE_COVER = false;
-const USE_RUN = false;
-const MAX_WORD_LENGTH_0 = 6;
-const MAX_WORD_LENGTH_1 = 17;
-const BREAK_THRESH = 0;//.15;
+  const USE_COVER = false;
+  const USE_RUN = false;
+  const MAX_WORD_LENGTH_0 = 6;
+  const MAX_WORD_LENGTH_1 = 18;
+  const MIN_ALL_FACTOR_LENGTH = 2;
+  const BREAK_THRESH = 0.0;//.15;
 
-const MIN_COUNT = 1;
-const CHANGE_THRESH = 0.95;
-const SMULT = 1 << 32;
+  const MIN_COUNT = 1;
+  const CHANGE_THRESH = 0.95;
+  const FOUND_NOT_FACTOR_MULT = 0.75;
+  const SMULT = 1 << 32;
 
-const WORD = 'w';
-const NAME = 'n';
-const COUNT = 'c';
-const SCORE = 's';
-const FIRST_INDEX = 'x';
-const CODE_ID = 'i';
-const RUN_COUNT = 'r';
+// serialize keys
+  const WORD = 'w';
+  const NAME = 'n';
+  const COUNT = 'c';
+  const SCORE = 's';
+  const FIRST_INDEX = 'x';
+  const CODE_ID = 'i';
+  const RUN_COUNT = 'r';
 
 const QUERY_PLACE_SCORE = [
   10, 
@@ -40,8 +44,6 @@ const QUERY_PLACE_SCORE = [
   3,
   1.618
 ];
-
-const FOUND_NOT_FACTOR_MULT = 0.75;
 
 //const zmap = new StrongMap();
 //zmap.name('fts');
@@ -149,8 +151,8 @@ export const State = {
     const Answers = new Set(right_answers);
     const {dict} = State;
 
-    words = `${words} ${words}  ${words} `;
-    const {factors} = lz(words, dict, 'query', {idempotent:true, addAllAsFactors:false});
+    words = `${words} ${words} ${words}`;
+    const {factors} = lz(words, dict, 'query', {noTrim:false, idempotent:true, addAllAsFactors:false});
     //console.log({factors});
     let willExit = false;
 
@@ -274,15 +276,18 @@ export const State = {
     docStr = docStr.replace(/\p{P}+/gu, '');     // unicode replace all punctuation
     docStr = docStr.replace(/\p{Z}+/gu, ' ');     // unicode replace all separators
     docStr = docStr.replace(/[\n\r]+/gu, '  ');     // unicode replace all separators
-    docStr = docStr.trim().toLocaleLowerCase();
+    if ( ! opts.noTrim ) {
+      docStr = docStr.trim();
+    }
+    docStr = docStr.toLocaleLowerCase();
 
     factors.docStr = docStr;
 
     State.totalDocLength += docStr.length;
 
     const BREAKERS = [
-      () => Math.random() <= 0.618,
-      () => currentWord.length > MAX_WORD_LENGTH_1
+      () => currentWord.length >= MAX_WORD_LENGTH_0 && Math.random() <= 0.618,
+      () => currentWord.length >= MAX_WORD_LENGTH_1
     ]
 
     let breakWord = BREAKERS[Math.random() <= BREAK_THRESH ? 0 : 1];
@@ -360,7 +365,7 @@ export const State = {
 
           // update the next break word function
             breakWord = BREAKERS[Math.random() <= BREAK_THRESH ? 0 : 1];
-        } else if ( opts.addAllAsFactors ) {
+        } else if ( opts.addAllAsFactors && currentWord.length < MIN_ALL_FACTOR_LENGTH ) {
           const data = JSON.parse(JSON.stringify(dict.get(currentWord)));
           if ( data[COUNT] == MIN_COUNT ) {
             data[FIRST_INDEX] = wordFirstIndex;

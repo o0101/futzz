@@ -5,9 +5,11 @@ import JSON36 from 'json36';
 import {State, query, index, ent} from '../src/futzz.js';
 import readline from 'readline';
 
+const PAGE = 3;
+
 //runAll();
 if ( process.argv[2] ) {
-  runNew(544);
+  runNew(parseInt(process.argv[3]) || Infinity);
 } else {
   runAll();
 }
@@ -101,8 +103,8 @@ if ( process.argv[2] ) {
         process.stdout.clearLine();
         process.stdout.cursorTo(0);
         process.stdout.write(
-          `Indexed ${count}/${total} \t\t\t(${
-            (count/total*100).toFixed(2)
+          `Indexed ${count}/${Math.min(limit,total)} \t\t\t(${
+            (count/Math.min(limit,total)*100).toFixed(2)
           }%) files...`
         );
       }
@@ -123,10 +125,20 @@ if ( process.argv[2] ) {
 
         results = results.map(([name]) => ({name, start:fs.readFileSync(name).toString().trim().slice(300, 512)}));
 
+        let i = 0;
         for (const {name, start} of results ) {
           console.log(name);
           console.log(start);
           console.log('\n');
+          i++;
+          if ( i % PAGE === 0 ) {
+            await new Promise(
+              res => terminal.question(
+                `Page ${i/PAGE} of ${Math.round(results.length/PAGE)}. ENTER for next`,
+                res
+              )
+            );
+          }
         }
         console.log({resultsLength: results.length});
       }
