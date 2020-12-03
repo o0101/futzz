@@ -1,4 +1,8 @@
-- evaluation dataset (UFO544)
+- does not work great for long indexes
+  - figure out why at 600 files 21 results for NASA, but at 3000 files only 2 results.
+  - overwriting? 
+  - factor too long? why?
+- evaluation dataset (UFO)
   - set up futzz to be able to fun against this and measure precision and recall against the number of files returned by grep "search term"
 - answer question: why is short document so highly weighted, even without TF-IDF code?
   - i think because it's based on divisors that are factors.length or docStr.length so shorter docs are advantaged particularly if they are indexed earlier and so have shorter (higher count) codes
