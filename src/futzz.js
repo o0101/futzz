@@ -18,9 +18,9 @@ const MAX_ITERATION = 12;
 
 const USE_COVER = false;
 const USE_RUN = false;
-const MAX_WORD_LENGTH_0 = 4;
+const MAX_WORD_LENGTH_0 = 6;
 const MAX_WORD_LENGTH_1 = 17;
-const BREAK_THRESH = 0.8;
+const BREAK_THRESH = 0;//.15;
 
 const MIN_COUNT = 1;
 const CHANGE_THRESH = 0.95;
@@ -149,7 +149,7 @@ export const State = {
     const Answers = new Set(right_answers);
     const {dict} = State;
 
-    words = ` ${words} ${words} `;
+    words = `${words} ${words}  ${words} `;
     const {factors} = lz(words, dict, 'query', {idempotent:true, addAllAsFactors:false});
     //console.log({factors});
     let willExit = false;
@@ -243,7 +243,7 @@ export const State = {
       return score;
     }
 
-    return results.slice(0,10); //.slice(0,5);
+    return results; //.slice(0,10); //.slice(0,5);
   }
 
   export function lz(docStr = '', dict = new Map(), name = 'unknown doc', opts = {}) {
@@ -273,7 +273,7 @@ export const State = {
 
     docStr = docStr.replace(/\p{P}+/gu, '');     // unicode replace all punctuation
     docStr = docStr.replace(/\p{Z}+/gu, ' ');     // unicode replace all separators
-    docStr = docStr.replace(/[\n\r]+/gu, ' ');     // unicode replace all separators
+    docStr = docStr.replace(/[\n\r]+/gu, '  ');     // unicode replace all separators
     docStr = docStr.trim().toLocaleLowerCase();
 
     factors.docStr = docStr;
@@ -281,11 +281,11 @@ export const State = {
     State.totalDocLength += docStr.length;
 
     const BREAKERS = [
-      () => currentWord.length > MAX_WORD_LENGTH_0,
+      () => Math.random() <= 0.618,
       () => currentWord.length > MAX_WORD_LENGTH_1
     ]
 
-    let breakWord = BREAKERS[Math.random() > BREAK_THRESH ? 0 : 1];
+    let breakWord = BREAKERS[Math.random() <= BREAK_THRESH ? 0 : 1];
 
     // this is how simple lz is, isn't it beautiful? :)
 
@@ -359,7 +359,7 @@ export const State = {
             currentWord = suffix;
 
           // update the next break word function
-            breakWord = BREAKERS[Math.random() > BREAK_THRESH ? 0 : 1];
+            breakWord = BREAKERS[Math.random() <= BREAK_THRESH ? 0 : 1];
         } else if ( opts.addAllAsFactors ) {
           const data = JSON.parse(JSON.stringify(dict.get(currentWord)));
           if ( data[COUNT] == MIN_COUNT ) {
