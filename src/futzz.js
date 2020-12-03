@@ -100,7 +100,7 @@ export const State = {
     const Answers = new Set(right_answers);
     const {dict} = State;
 
-    words = `${words} ${words}`;
+    words = `${words} ${words} ${words}`;
     const {factors} = lz(words, dict, 'query', {idempotent:true});
     let willExit = false;
 

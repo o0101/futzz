@@ -7,13 +7,15 @@ import readline from 'readline';
 
 const PAGE = 3;
 
-//runAll();
 if ( process.argv[2] ) {
-  runNew(parseInt(process.argv[3]) || Infinity);
+  if ( process.argv[2] === 'disk' ) {
+    runDisk();
+  } else {
+    runNew(parseInt(process.argv[3]) || Infinity);
+  }
 } else {
   runAll();
 }
-//runDisk();
 
   async function runDisk() {
     console.log("Indexing documents...");
