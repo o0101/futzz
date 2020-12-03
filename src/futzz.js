@@ -5,6 +5,7 @@ const GEOAVG = 1;
 const WAVG = 2;
 const AVG = 3;
 const NORMAL = 4;
+const NORMAL_RANKED = 5;
 const SCORE_METHOD = 4;
 
 const MIN_ITERATION = 2;
@@ -17,7 +18,9 @@ const MAX_TOT_ENT = 1;
 const SLOW_CHANGE = 2;
 const TERMINATE_ON = MAX_ENT;
 
+const MIN_COUNT = 0;
 const CHANGE_THRESH = 0.95;
+const SMULT = 1 << 20;
 
 const MAX_WORD_LENGTH = 11;
 
@@ -273,11 +276,11 @@ export const State = {
         if ( ! dict.has(nextChar) ) {
           const data = {
             [NAME]: {
-              [name]: {[COUNT]: 0}
+              [name]: {[COUNT]: MIN_COUNT}
             }, 
             [WORD]: nextChar,
             [FIRST_INDEX]: charIndex,
-            [COUNT]: 0,
+            [COUNT]: MIN_COUNT,
             [CODE_ID]: codeId 
           }
           toNormalize.add(data);
@@ -295,11 +298,11 @@ export const State = {
           // save the new unseen token
             const data = {
               [NAME]: {
-                [name]: {[COUNT]: 0}
+                [name]: {[COUNT]: MIN_COUNT}
               }, 
               [WORD]: currentWord,
               [FIRST_INDEX]: null,
-              [COUNT]: 0,
+              [COUNT]: MIN_COUNT,
               [CODE_ID]: codeId 
             }
             toNormalize.add(data);
@@ -320,11 +323,11 @@ export const State = {
               suffix = currentWord.slice(-1);
               const factor = dict.get(lastWord);
 
-              if ( factor[COUNT] == 0 ) {
+              if ( factor[COUNT] == 1 ) {
                 factor[FIRST_INDEX] = wordFirstIndex;
               }
               if ( !factor[NAME][name] ) {
-                factor[NAME][name] = {[COUNT]: 1};
+                factor[NAME][name] = {[COUNT]: MIN_COUNT+1};
               } else {
                 factor[NAME][name][COUNT] += 1;
               }
@@ -339,11 +342,11 @@ export const State = {
             currentWord = suffix;
         } else if ( opts.addAllAsFactors ) {
           const data = JSON.parse(JSON.stringify(dict.get(currentWord)));
-          if ( data[COUNT] == 0 ) {
+          if ( data[COUNT] == MIN_COUNT ) {
             data[FIRST_INDEX] = wordFirstIndex;
           }
           if ( !data[NAME][name] ) {
-            data[NAME][name] = {[COUNT]: 1};
+            data[NAME][name] = {[COUNT]: MIN_COUNT};
           } else {
             data[NAME][name][COUNT] += 1;
           }
@@ -361,11 +364,11 @@ export const State = {
           // save the new unseen token
             const data = {
               [NAME]: {
-                [name]: {[COUNT]: 0}
+                [name]: {[COUNT]: MIN_COUNT}
               }, 
               [WORD]: currentWord,
               [FIRST_INDEX]: null,
-              [COUNT]: 0,
+              [COUNT]: MIN_COUNT,
               [CODE_ID]: codeId 
             }
             toNormalize.add(data);
@@ -386,7 +389,7 @@ export const State = {
               suffix = currentWord.slice(-1);
               const factor = dict.get(lastWord);
 
-              if ( factor[COUNT] == 0 ) {
+              if ( factor[COUNT] == MIN_COUNT ) {
                 factor[FIRST_INDEX] = wordFirstIndex;
               }
               factor[COUNT]++;
@@ -395,7 +398,7 @@ export const State = {
               toNormalize.delete(factor);
 
               if ( !factor[NAME][name] ) {
-                factor[NAME][name] = {[COUNT]: 1};
+                factor[NAME][name] = {[COUNT]: MIN_COUNT };
               } else {
                 factor[NAME][name][COUNT] += 1;
               }
@@ -406,18 +409,18 @@ export const State = {
                 toNormalize.delete(suffixFactor);
 
                 if ( !suffixFactor[NAME][name] ) {
-                  suffixFactor[NAME][name] = {[COUNT]: 1};
+                  suffixFactor[NAME][name] = {[COUNT]: MIN_COUNT};
                 } else {
                   suffixFactor[NAME][name][COUNT] += 1;
                 }
             }
         } else {
           const factor = dict.get(currentWord);
-          if ( factor[COUNT] == 0 ) {
+          if ( factor[COUNT] == MIN_COUNT ) {
             factor[FIRST_INDEX] = wordFirstIndex;
           }
           if ( !factor[NAME][name] ) {
-            factor[NAME][name] = {[COUNT]: 1};
+            factor[NAME][name] = {[COUNT]: MIN_COUNT };
           } else {
             factor[NAME][name][COUNT] += 1;
           }
@@ -446,8 +449,21 @@ export const State = {
               n[SCORE] = 0.2*(n[COUNT]*f[WORD].length / docStr.length);
               n[SCORE] += 0.8*(n[COUNT] / factors.length);
               break;
-            case NORMAL:
+            case NORMAL_RANKED:
+              // something like TF IDF
+              if ( USE_COVER ) {
+                n[SCORE] = SMULT*(n[COUNT]*f[WORD].length / docStr.length);
+              } else {
+                n[SCORE] = SMULT*(n[COUNT] / factors.length);
+                n[SCORE] /= f[COUNT];
+                if ( Number.isNaN(n[SCORE]) ) {
+                  console.warn(f);
+                  throw new TypeError('NAN');
+                }
+              }
+              break;
             default:
+            case NORMAL:
               if ( USE_COVER ) {
                 n[SCORE] = n[COUNT]*f[WORD].length / docStr.length;
               } else {
@@ -470,6 +486,19 @@ export const State = {
             case AVG:
               n[SCORE] = 0.5*(FOUND_NOT_FACTOR_MULT*f[WORD].length / docStr.length);
               n[SCORE] += 0.5*(FOUND_NOT_FACTOR_MULT/ factors.length);
+              break;
+            case NORMAL_RANKED:
+              // something like TF IDF
+              if ( USE_COVER ) {
+                n[SCORE] = SMULT*(n[COUNT]*f[WORD].length / docStr.length);
+              } else {
+                n[SCORE] = SMULT*(n[COUNT] / factors.length);
+                n[SCORE] /= f[COUNT];
+                if ( Number.isNaN(n[SCORE]) ) {
+                  console.warn(f);
+                  throw new TypeError('NAN');
+                }
+              }
               break;
             default:
             case NORMAL:
@@ -502,7 +531,7 @@ export const State = {
     for( const f of factors ) {
       if ( !dict.has(f[WORD]) ) {
         dict.set(f[WORD], f);
-        f[RUN_COUNT] = 0;
+        f[RUN_COUNT] = MIN_COUNT;
       }
       f[RUN_COUNT] += 1;
       TotalLength += f[WORD].length;

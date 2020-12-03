@@ -5,9 +5,9 @@ import JSON36 from 'json36';
 import {State, query, index, ent} from '../src/futzz.js';
 import readline from 'readline';
 
-runDisk();
-//runAll();
+runAll();
 //runNew();
+//runDisk();
 
   async function runDisk() {
     console.log("Indexing documents...");
