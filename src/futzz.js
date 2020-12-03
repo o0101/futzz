@@ -2,30 +2,18 @@ import {BigMap} from 'big-associative';
 //import StrongMap from './node-strongmap-fast/index.js';
 
 // config
-  const GEOAVG = 1;
-  const WAVG = 2;
-  const AVG = 3;
   const NORMAL = 4;
-  const NORMAL_RANKED = 5;
   const SCORE_METHOD = 4;
 
   const MAX_ENT = 0;
-  const MAX_TOT_ENT = 1;
-  const SLOW_CHANGE = 2;
   const TERMINATE_ON = MAX_ENT;
 
   const MIN_ITERATION = 2;
   const MAX_ITERATION = 12;
 
-  const USE_COVER = false;
-  const USE_RUN = false;
-  const MAX_WORD_LENGTH_0 = 6;
   const MAX_WORD_LENGTH_1 = 18;
-  const MIN_ALL_FACTOR_LENGTH = 2;
-  const BREAK_THRESH = 0.0;//.15;
 
   const MIN_COUNT = 1;
-  const CHANGE_THRESH = 0.95;
   const FOUND_NOT_FACTOR_MULT = 0.75;
   const SMULT = 1 << 32;
 
@@ -61,16 +49,13 @@ export const State = {
 
   export function index(text, name) {
     const Ent = [];
-    const sortKey = USE_RUN ? COUNT : RUN_COUNT;
-
-    //console.log({USE_RUN});
+    const sortKey = RUN_COUNT;
 
     const indexHistoryEntry = {
       docName: name, 
       terminatorCondition: TERMINATE_ON == MAX_ENT ? 'maxEntropy' : 
         TERMINATE_ON == MAX_TOT_ENT ? 'maxTotalEntropy' : 
         'unknown',
-      useRunCount: USE_RUN,
       indexStart: new Date
     };
 
@@ -78,17 +63,14 @@ export const State = {
 
     let Dict = State.dict;
 
-    // this will prune and clear entries to factors
-    //dict = new Map([...State.dict.entries()]);
-    //Dict = dict;
-
     indexingCycle: for( let i = 0; i < MAX_ITERATION; i++ ) {
       ({dict, factors, docStr} = lz(text, Dict, name)); 
       State.totalFactorsLength += factors.length;
-      const entropy = ent(factors, USE_RUN ? i+2 : undefined, true, State.totalFactorsLength);
+      const entropy = ent(factors);
       const total = entropy*factors.length;
       Ent.push({entropy, total: entropy*factors.length, name});
       switch( TERMINATE_ON ) {
+        default:
         case MAX_ENT: {
           if ( entropy > maxEntropy ) {
             maxFactors = factors;
@@ -97,22 +79,6 @@ export const State = {
             break indexingCycle;
           }
         } break;
-        case MAX_TOT_ENT: {
-          if ( total > maxEntropy ) {
-            maxEntropy = total;
-            maxFactors = factors;
-          } else if ( i >= MIN_ITERATION ) {
-            break indexingCycle;
-          }
-        }
-        case SLOW_CHANGE: {
-          if ( entropy > lastEntropy ) {
-            maxEntropy = total;
-            maxFactors = factors;
-          } else if ( (lastEntropy - entropy)/lastEntropy < CHANGE_THRESH && i >= MIN_ITERATION ) {
-            break indexingCycle;
-          }
-        }
       } 
       lastEntropy = entropy;
     }
@@ -120,23 +86,6 @@ export const State = {
     indexHistoryEntry.indexEndAt = new Date;
 
     State.indexHistory.push(indexHistoryEntry);
-
-    //console.log(name, Ent.map(({entropy, total}) => `${entropy.toFixed(2)} : ${total.toFixed(2)}`));
-
-    // this will prune entries to factors
-    /**
-    let i = State.dict.size/2;
-    factors.forEach(f => {
-      f[CODE_ID] = i;
-      if ( State.dict.has(f[WORD]) ) {
-        // do nothing
-      } else {
-        i++;
-        State.dict.set(f[WORD], f);
-        State.dict.set(f[CODE_ID], f);
-      }
-    });
-    **/
 
     return {dict, factors: maxFactors || factors};
   }
@@ -151,17 +100,13 @@ export const State = {
     const Answers = new Set(right_answers);
     const {dict} = State;
 
-    words = `${words} ${words} ${words}`;
-    const {factors} = lz(words, dict, 'query', {noTrim:false, idempotent:true, addAllAsFactors:false});
-    //console.log({factors});
+    words = `${words} ${words}`;
+    const {factors} = lz(words, dict, 'query', {idempotent:true});
     let willExit = false;
 
     let score = 0;
 
     const merge = {};
-    // result set does not really work
-    //const resultSet = new Set(Object.keys(factors[0][NAME]));
-    //resultSet.delete(State.names.get("query")+'');
 
     factors.forEach(f => {
       const {[NAME]:name, [WORD]:word} = f;
@@ -192,18 +137,12 @@ export const State = {
       return parseFloat(countB) - parseFloat(countA);
     });
 
-    //results = [...results.filter(([doc]) => resultSet.has(doc)), ...results.slice(0,2)];
-
-    //console.log({resultSet});
-
     if ( willExit ) {
       process.exit(1);
     }
 
     // replace the document name id with the actual name (and filter out the query "result")
     results = results.map(([doc,score]) => [State.names.get(doc), score]);
-
-    //results = [...(new Set(results.map(([doc,score]) => doc))).keys()].map(doc => [doc]);
 
     if ( right_answers.length ) {
       if ( results.length ) {
@@ -245,7 +184,7 @@ export const State = {
       return score;
     }
 
-    return results; //.slice(0,10); //.slice(0,5);
+    return results; 
   }
 
   export function lz(docStr = '', dict = new Map(), name = 'unknown doc', opts = {}) {
@@ -276,23 +215,12 @@ export const State = {
     docStr = docStr.replace(/\p{P}+/gu, '');     // unicode replace all punctuation
     docStr = docStr.replace(/\p{Z}+/gu, ' ');     // unicode replace all separators
     docStr = docStr.replace(/[\n\r]+/gu, '  ');     // unicode replace all separators
-    if ( ! opts.noTrim ) {
-      docStr = docStr.trim();
-    }
+    docStr = docStr.trim();
     docStr = docStr.toLocaleLowerCase();
 
     factors.docStr = docStr;
 
     State.totalDocLength += docStr.length;
-
-    const BREAKERS = [
-      () => currentWord.length >= MAX_WORD_LENGTH_0 && Math.random() <= 0.618,
-      () => currentWord.length >= MAX_WORD_LENGTH_1
-    ]
-
-    let breakWord = BREAKERS[Math.random() <= BREAK_THRESH ? 0 : 1];
-
-    // this is how simple lz is, isn't it beautiful? :)
 
       for ( const nextChar of docStr ) {
         if ( ! dict.has(nextChar) ) {
@@ -316,7 +244,7 @@ export const State = {
             //console.log(codeId);
           }
         }
-        if ( ! dict.has(currentWord) || breakWord() ) {
+        if ( ! dict.has(currentWord) || currentWord.length >= MAX_WORD_LENGTH_1 ) {
           // save the new unseen token
             const data = {
               [NAME]: {
@@ -362,22 +290,6 @@ export const State = {
           // update the state
             wordFirstIndex = charIndex;
             currentWord = suffix;
-
-          // update the next break word function
-            breakWord = BREAKERS[Math.random() <= BREAK_THRESH ? 0 : 1];
-        } else if ( opts.addAllAsFactors && currentWord.length < MIN_ALL_FACTOR_LENGTH ) {
-          const data = JSON.parse(JSON.stringify(dict.get(currentWord)));
-          if ( data[COUNT] == MIN_COUNT ) {
-            data[FIRST_INDEX] = wordFirstIndex;
-          }
-          if ( !data[NAME][name] ) {
-            data[NAME][name] = {[COUNT]: MIN_COUNT};
-          } else {
-            data[NAME][name][COUNT] += 1;
-          }
-          data[COUNT]++;
-          factors.push(data);
-          toNormalize.add(data);
         }
 
         currentWord += nextChar;
@@ -462,78 +374,20 @@ export const State = {
             console.log(f, name);
           }
           switch( SCORE_METHOD ) {
-            case GEOAVG:
-              n[SCORE] = Math.sqrt(n[COUNT]*f[WORD].length / docStr.length);
-              n[SCORE] *= Math.sqrt(n[COUNT] / factors.length);
-              break;
-            case AVG:
-              n[SCORE] = 0.5*(n[COUNT]*f[WORD].length / docStr.length);
-              n[SCORE] += 0.5*(n[COUNT] / factors.length);
-              break;
-            case WAVG:
-              n[SCORE] = 0.2*(n[COUNT]*f[WORD].length / docStr.length);
-              n[SCORE] += 0.8*(n[COUNT] / factors.length);
-              break;
-            case NORMAL_RANKED:
-              // something like TF IDF
-              if ( USE_COVER ) {
-                n[SCORE] = (n[COUNT]*f[WORD].length / docStr.length);
-                n[SCORE] /= f[COUNT]*f[WORD].length/State.totalDocLength;
-                n[SCORE] *= SMULT;
-              } else {
-                n[SCORE] = (n[COUNT] / factors.length);
-                n[SCORE] /= f[COUNT]/State.totalFactorsLength;
-                n[SCORE] *= SMULT;
-              }
-              break;
             default:
             case NORMAL:
-              if ( USE_COVER ) {
-                n[SCORE] = n[COUNT]*f[WORD].length / docStr.length;
-                n[SCORE] *= SMULT;
-              } else {
-                n[SCORE] = n[COUNT] / factors.length;
-                n[SCORE] *= SMULT;
-              }
+              n[SCORE] = n[COUNT] / factors.length;
+              n[SCORE] *= SMULT;
               break;
           }
         });
         toNormalize.forEach(f => {
           const n = f[NAME][name];
           switch( SCORE_METHOD ) {
-            case GEOAVG:
-              n[SCORE] = Math.sqrt(FOUND_NOT_FACTOR_MULT*f[WORD].length / docStr.length);
-              n[SCORE] *= Math.sqrt(FOUND_NOT_FACTOR_MULT/ factors.length);
-              break;
-            case WAVG:
-              n[SCORE] = 0.2*(FOUND_NOT_FACTOR_MULT*f[WORD].length / docStr.length);
-              n[SCORE] += 0.8*(FOUND_NOT_FACTOR_MULT/ factors.length);
-              break;
-            case AVG:
-              n[SCORE] = 0.5*(FOUND_NOT_FACTOR_MULT*f[WORD].length / docStr.length);
-              n[SCORE] += 0.5*(FOUND_NOT_FACTOR_MULT/ factors.length);
-              break;
-            case NORMAL_RANKED:
-              // something like TF IDF
-              if ( USE_COVER ) {
-                n[SCORE] = (FOUND_NOT_FACTOR_MULT*f[WORD].length / docStr.length);
-                n[SCORE] /= f[COUNT]*f[WORD].length/State.totalDocLength;
-                n[SCORE] *= SMULT;
-              } else {
-                n[SCORE] = (FOUND_NOT_FACTOR_MULT / factors.length);
-                n[SCORE] /= f[COUNT]/State.totalFactorsLength;
-                n[SCORE] *= SMULT;
-              }
-              break;
             default:
             case NORMAL:
-              if ( USE_COVER ) {
-                n[SCORE] = FOUND_NOT_FACTOR_MULT * f[WORD].length / docStr.length;
-                n[SCORE] *= SMULT;
-              } else {
-                n[SCORE] = FOUND_NOT_FACTOR_MULT * 1 / factors.length;
-                n[SCORE] *= SMULT;
-              }
+              n[SCORE] = FOUND_NOT_FACTOR_MULT * 1 / factors.length;
+              n[SCORE] *= SMULT;
               break;
           }
         });
@@ -544,17 +398,14 @@ export const State = {
         dict.delete(word);
       });
     }
+
     return {factors, dict, docStr};
   }
 
-  export function ent(factors, run = 1, adjustLength = true, allFactorsLength) {
+  export function ent(factors) {
     let TotalLength = 0;
     let Ent = 0;
 
-    run = run || 1;
-
-    //console.log({run,adjustLength,allFactorsLength});
-    
     const dict = new Map(); 
 
     for( const f of factors ) {
@@ -567,38 +418,16 @@ export const State = {
       TotalLength += f[WORD].length;
     }
 
-    if ( adjustLength ) {
-      TotalLength *= run;
-    }
-
     for( const {[RUN_COUNT]:runCount,[COUNT]:count,[WORD]:word} of dict.values() ) {
-      let Count = runCount;
-      if ( run > 1 ) {
-        Count = count; 
-      }
-      let p = 0;
-      if ( USE_COVER ) {
-        p = Count*word.length/TotalLength;
-      } else {
-        if ( run > 1 ) {
-          p = Count/allFactorsLength;
-        } else {
-          p = Count/factors.length;
-        }
-      }
+      const Count = runCount;
+      const p = Count/factors.length;
       const ent = -p*Math.log2(p);
       Ent += ent;
     }
 
-    let check;
+    const check = factors.docStr.length == TotalLength;
 
-    if ( adjustLength ) {
-      check = factors.docStr.length*run == TotalLength;
-    } else {
-      check = factors.docStr.length == TotalLength;
-    }
-
-    console.assert(check, factors.docStr.length*run, TotalLength);
+    console.assert(check, factors.docStr.length, TotalLength);
 
     return Ent;
   }
@@ -612,12 +441,3 @@ export const State = {
     }
   }
 
-  function intersectionAdd(resultSet, keys) {
-    keys = new Set(keys);
-    for ( const key of resultSet.keys() ) {
-      if ( ! keys.has(key) ) {
-        resultSet.delete(key);
-      }
-    }
-    return resultSet;
-  }
