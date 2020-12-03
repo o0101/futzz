@@ -1,3 +1,5 @@
+- evaluation dataset (UFO544)
+  - set up futzz to be able to fun against this and measure precision and recall against the number of files returned by grep "search term"
 - answer question: why is short document so highly weighted, even without TF-IDF code?
   - i think because it's based on divisors that are factors.length or docStr.length so shorter docs are advantaged particularly if they are indexed earlier and so have shorter (higher count) codes
     - to ameliorate, we must normalize those divisors somwehow, as well as
