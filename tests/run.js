@@ -5,9 +5,12 @@ import JSON36 from 'json36';
 import {State, query, index, ent} from '../src/futzz.js';
 import readline from 'readline';
 
+const SHOW_RESULTS = false;
 const PAGE = 3;
 
-if ( process.argv[2] ) {
+const cat = process.argv[2];
+
+if ( cat ) {
   if ( process.argv[3] === 'disk' ) {
     runDisk();
   } else {
@@ -16,6 +19,16 @@ if ( process.argv[2] ) {
 } else {
   runAll();
 }
+
+  function getFiles(query, cat) {
+    const base = path.resolve('demo', 'data', cat, '*');
+    const files = execSync(`grep -R -l "${query}" ${base}`).toString()
+      .split(/\n/g)
+      .filter(n => n.trim().length)
+      .map(n => path.resolve(cat, n));
+    console.log(query, cat, files);
+    return new Set(files);
+  }
 
   async function runDisk() {
     console.log("Indexing documents...");
@@ -78,10 +91,10 @@ if ( process.argv[2] ) {
     let count = 0;
     let total = 0;
 
-    entries.push(...fs.readdirSync(path.resolve('demo','data', process.argv[2]), {withFileTypes:true}));
+    entries.push(...fs.readdirSync(path.resolve('demo','data', cat), {withFileTypes:true}));
     total = entries.length;
 
-    entries.map(dirent => dirent.basePath = path.resolve('demo', 'data', process.argv[2]));
+    entries.map(dirent => dirent.basePath = path.resolve('demo', 'data', cat));
 
     while( entries.length && count < limit ) {
       const entry = entries.shift();
@@ -128,21 +141,28 @@ if ( process.argv[2] ) {
         results = results.map(([name]) => ({name, start:fs.readFileSync(name).toString().trim().slice(300, 512)}));
 
         let i = 0;
-        for (const {name, start} of results ) {
-          console.log(name);
-          console.log(start);
-          console.log('\n');
-          i++;
-          if ( i % PAGE === 0 ) {
-            await new Promise(
-              res => terminal.question(
-                `Page ${i/PAGE} of ${Math.round(results.length/PAGE)}. ENTER for next`,
-                res
-              )
-            );
+        if ( SHOW_RESULTS ) {
+          for (const {name, start} of results ) {
+            console.log(name);
+            console.log(start);
+            console.log('\n');
+            i++;
+            if ( i % PAGE === 0 ) {
+              await new Promise(
+                res => terminal.question(
+                  `Page ${i/PAGE} of ${Math.round(results.length/PAGE)}. ENTER for next`,
+                  res
+                )
+              );
+            }
           }
         }
-        console.log({resultsLength: results.length});
+        console.log({q,cat});
+        const matchingFiles = getFiles(q, cat);
+        const matchingResults = results.filter(({name}) => matchingFiles.has(name));
+        const recall = matchingResults.length / matchingFiles.size;
+        const precision = matchingResults.length / results.length;
+        console.log({resultsLength: results.length, precision, recall});
       }
     } while( q !== '.exit' );
 
@@ -191,8 +211,8 @@ if ( process.argv[2] ) {
     score += query("the warring states period", [ "tao te ching - chinese", "wiki - tao te ching - english", "declaration of independence", "terminator 2"]);
     score += query("classical chinese history texts", [ "tao te ching - chinese", "wiki - tao te ching - english"]);
     score += query("the art of war", [ "wiki - tao te ching - english", "tao te ching - chinese"]);
-    if ( process.argv[2] ) {
-      score += query(process.argv[2], process.argv[3] ? [process.argv[3]] : [ ]);
+    if ( cat ) {
+      score += query(cat, process.argv[3] ? [process.argv[3]] : [ ]);
     }
 
     console.log({totalScore:score});

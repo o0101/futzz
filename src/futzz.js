@@ -8,12 +8,12 @@ import {BigMap} from 'big-associative';
   const MAX_ENT = 0;
   const TERMINATE_ON = MAX_ENT;
 
-  const MIN_ITERATION = 2;
+  const MIN_ITERATION = 3;
   const MAX_ITERATION = 12;
 
   const COUNT_ALL = false;
   const PRUNE = true;
-  const MAX_WORD_LENGTH_1 = 18;
+  const MAX_WORD_LENGTH_1 = 19;
 
   const MIN_COUNT = 1;
   const FOUND_NOT_FACTOR_MULT = 0.75;
