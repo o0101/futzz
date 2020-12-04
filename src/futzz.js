@@ -1,23 +1,16 @@
 import {BigMap} from 'big-associative';
 //import StrongMap from './node-strongmap-fast/index.js';
 
-// config
-  const NORMAL = 4;
-  const SCORE_METHOD = 4;
+const MIN_ITERATION = 3;
+const MAX_ITERATION = 12;
 
-  const MAX_ENT = 0;
-  const TERMINATE_ON = MAX_ENT;
+const COUNT_ALL = false;
+const PRUNE = true;
+const MAX_WORD_LENGTH_1 = 19;
 
-  const MIN_ITERATION = 3;
-  const MAX_ITERATION = 12;
-
-  const COUNT_ALL = false;
-  const PRUNE = true;
-  const MAX_WORD_LENGTH_1 = 19;
-
-  const MIN_COUNT = 1;
-  const FOUND_NOT_FACTOR_MULT = 0.75;
-  const SMULT = 1 << 32;
+const MIN_COUNT = 1;
+const FOUND_NOT_FACTOR_MULT = 0.75;
+const SMULT = 1 << 32;
 
 // serialize keys
   const WORD = 'w';
@@ -28,22 +21,11 @@ import {BigMap} from 'big-associative';
   const CODE_ID = 'i';
   const RUN_COUNT = 'r';
 
-const QUERY_PLACE_SCORE = [
-  10, 
-  5,
-  3,
-  1.618
-];
-
-//const zmap = new StrongMap();
-//zmap.name('fts');
-
 let nameId = 0;
 
 export const State = {
   dict: new BigMap(),
   names: new BigMap(),
-  // dict: zmap, 
   indexHistory: [],
   totalDocLength: 0,
   totalFactorsLength: 0
@@ -55,9 +37,7 @@ export const State = {
 
     const indexHistoryEntry = {
       docName: name, 
-      terminatorCondition: TERMINATE_ON == MAX_ENT ? 'maxEntropy' : 
-        TERMINATE_ON == MAX_TOT_ENT ? 'maxTotalEntropy' : 
-        'unknown',
+      terminatorCondition: 'maxEntropy',
       indexStart: new Date
     };
 
@@ -71,17 +51,12 @@ export const State = {
       const entropy = ent(factors);
       const total = entropy*factors.length;
       Ent.push({entropy, total: entropy*factors.length, name});
-      switch( TERMINATE_ON ) {
-        default:
-        case MAX_ENT: {
-          if ( entropy > maxEntropy ) {
-            maxFactors = factors;
-            maxEntropy = entropy;
-          } else if ( i >= MIN_ITERATION ) {
-            break indexingCycle;
-          }
-        } break;
-      } 
+      if ( entropy > maxEntropy ) {
+        maxFactors = factors;
+        maxEntropy = entropy;
+      } else if ( i >= MIN_ITERATION ) {
+        break indexingCycle;
+      }
       lastEntropy = entropy;
     }
 
@@ -93,12 +68,6 @@ export const State = {
   }
 
   export function query(words, right_answers = []) {
-    if ( right_answers.length > QUERY_PLACE_SCORE.length ) {
-      throw new TypeError(
-        `As we only score ${QUERY_PLACE_SCORE.length} answer slots, ` +
-        `there can only be ${QUERY_PLACE_SCORE.length} right answers.`
-      );
-    }
     const Answers = new Set(right_answers);
     const {dict} = State;
 
@@ -149,26 +118,6 @@ export const State = {
     if ( right_answers.length ) {
       if ( results.length ) {
         console.log(JSON.stringify({words, results}, null, 2));
-
-        /**
-        results.forEach(([doc], i) => {
-          const placeScores = doc == right_answers[i];
-          if ( i < QUERY_PLACE_SCORE.length && placeScores ) {
-            score += QUERY_PLACE_SCORE[i];
-            if ( i === 0 ) {
-              score += 100;
-            }
-          } else if ( Answers.has(doc) ) {
-            if ( i >= QUERY_PLACE_SCORE.length ) {
-              score += 1;
-            } else {
-              score += QUERY_PLACE_SCORE[i]/(right_answers.indexOf(doc)+1);
-            }
-          } else {
-            score -= 2;
-          }
-        });
-        **/
 
         let Sum;
         const recall = results.reduce(
@@ -397,24 +346,15 @@ export const State = {
           if ( ! n ) {
             console.log(f, name);
           }
-          switch( SCORE_METHOD ) {
-            default:
-            case NORMAL:
-              n[SCORE] = n[COUNT] / factors.length;
-              n[SCORE] *= SMULT;
-              //n[SCORE] *= -Math.log(Object.keys(f[NAME]).length/State.names.size);
-              break;
-          }
+          n[SCORE] = n[COUNT] / factors.length;
+          n[SCORE] *= SMULT;
+          //n[SCORE] *= -Math.log(Object.keys(f[NAME]).length/State.names.size);
         });
         toNormalize.forEach(f => {
           const n = f[NAME][name];
-          switch( SCORE_METHOD ) {
-            default:
-            case NORMAL:
-              n[SCORE] = FOUND_NOT_FACTOR_MULT * 1 / factors.length;
-              n[SCORE] *= SMULT;
-              break;
-          }
+          n[SCORE] = FOUND_NOT_FACTOR_MULT * 1 / factors.length;
+          n[SCORE] *= SMULT;
+          //n[SCORE] *= -Math.log(Object.keys(f[NAME]).length/State.names.size);
         });
         PRUNE && prune.forEach(f => (dict.delete(f[WORD]), dict.delete(f[CODE_ID])));
         //PRUNE && console.log({canPrune: prune.size});

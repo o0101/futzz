@@ -22,12 +22,16 @@ if ( cat ) {
 
   function getFiles(query, cat) {
     const base = path.resolve('demo', 'data', cat, '*');
-    const files = execSync(`grep -R -l "${query}" ${base}`).toString()
-      .split(/\n/g)
-      .filter(n => n.trim().length)
-      .map(n => path.resolve(cat, n));
-    console.log(query, cat, files);
-    return new Set(files);
+    try {
+      const files = execSync(`grep -R -l "${query}" ${base}`).toString()
+        .split(/\n/g)
+        .filter(n => n.trim().length)
+        .map(n => path.resolve(cat, n));
+      return new Set(files);
+    } catch(e) {
+      //console.warn(e);
+      return new Set();
+    }
   }
 
   async function runDisk() {
