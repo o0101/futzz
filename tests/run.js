@@ -2,7 +2,7 @@ import {execSync} from 'child_process';
 import fs from 'fs';
 import path from 'path';
 import JSON36 from 'json36';
-import {loadFromDisk, saveToDisk, query, index, ent} from '../src/futzz.js';
+import {State, loadFromDisk, saveToDisk, query, index, ent} from '../src/futzz.js';
 import readline from 'readline';
 
 const SHOW_RESULTS = false;
@@ -276,7 +276,7 @@ async function start() {
 
       console.log('Done!');
     } else {
-      count = State.names.size;
+      count = State.names.size/2;
     }
 
     if ( noTerminal ) {

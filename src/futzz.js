@@ -1,3 +1,5 @@
+import fs from 'fs';
+import path from 'path';
 import {BigMap} from 'big-associative';
 //import StrongMap from './node-strongmap-fast/index.js';
 
@@ -71,7 +73,6 @@ export const State = {
     words = simplify(words);
     const mainFactor = dict.get(words);
     if ( mainFactor ) {
-      //console.log({hasMainFactor:mainFactor, words});
       mainFactor[COUNT]++;
     }
     words = `${words} ${words} ${words}`;
@@ -96,13 +97,8 @@ export const State = {
         } 
         return [_, score];
       }))
-      //console.log({scores, name, word});
       // and add these to the summed scores per document for the other factors
       mergeAdd(merge, scores);
-      // result set does not really work
-      //const docs = Object.keys(name);
-      //intersectionAdd(resultSet, docs);
-      //console.log(JSON.stringify({word, scores}));
     });
 
     let results = Object.entries(merge);
@@ -111,7 +107,6 @@ export const State = {
 
     // sort the documents by the summed score
     results.sort(([,countA], [,countB]) => {
-      //console.log({countA, countB});
       return parseFloat(countB) - parseFloat(countA);
     });
 
@@ -198,9 +193,6 @@ export const State = {
             reverse.push(data);
           }
           codeId += 1;
-          if ( codeId%100 == 0) {
-            //console.log(codeId);
-          }
         }
         if ( ! dict.has(currentWord) || currentWord.length >= MAX_WORD_LENGTH_1 ) {
           // save the new unseen token
@@ -221,9 +213,6 @@ export const State = {
               reverse.push(data);
             }
             codeId += 1;
-            if ( codeId%100 == 0) {
-              //console.log(codeId);
-            }
 
           // get the factor 
             let suffix = '';
@@ -286,9 +275,6 @@ export const State = {
               reverse.push(data);
             }
             codeId += 1;
-            if ( codeId%100 == 0) {
-              //console.log(codeId);
-            }
 
           // get the factor 
             let suffix = '';
@@ -419,7 +405,7 @@ export const State = {
     return str;
   }
 
-  function saveToDisk(limit = Infinity) {
+  export async function saveToDisk(limit = Infinity) {
     if ( !fs.existsSync(path.resolve('dicts')) ) {
       fs.mkdirSync(path.resolve('dicts'), {recursive:true});
     }
@@ -458,7 +444,9 @@ export const State = {
       fs.writeSync(fd, "[");
 
       for( const [j, value] of chunk.entries() ) {
-        const closeOff = (i >= Math.min(limit - 1, (ValuesLength - 1)) || (j >= (chunk.length - 1));
+        const closeOff = (
+          (i >= Math.min(limit - 1, ValuesLength - 1)) || (j >= (chunk.length - 1))
+        );
         const string = JSON.stringify(value) + (closeOff ? "]" : ",");
         fs.writeSync(fd, string);
         if ( closeOff ) break;
@@ -477,20 +465,20 @@ export const State = {
     }
   }
 
-  function loadFromDisk(limit = Infinity) {
+  export async function loadFromDisk(limit = Infinity) {
     const entries = [];
 
-    const files = fs.readdirSync(path.resolve('dists'), {withFileType:true});
+    const files = fs.readdirSync(path.resolve('dicts'), {withFileTypes:true});
 
     console.log("Loading indexed document names...");
 
-    State.names = new BigMap(
-      JSON.parse(
-        fs.readFileSync(
-          path.resolve('dicts', 'names.json')
-        ).toString()
-      )
-    );
+    State.names = new BigMap();
+
+    JSON.parse(
+      fs.readFileSync(
+        path.resolve('dicts', 'names.json')
+      ).toString()
+    ).forEach(([k,v]) => State.names.set(k,v));
 
     console.log("Loading document index files...");
 
@@ -502,7 +490,7 @@ export const State = {
       fs.readFileSync(path.resolve('dicts', file.name))
         .toString()
         .slice(2,-2)
-        .split(/},{/g);
+        .split(/},{/g)
         .map(o => JSON.parse(`{${o}}`))
         .forEach(o => {
           if ( i < limit ) {
@@ -518,7 +506,8 @@ export const State = {
 
     console.log(`Creating dict with ${entries.length} entries...`);
 
-    State.dict = new BigMap(entries);
+    State.dict = new BigMap();
+    entries.forEach(([k,v]) => State.dict.set(k,v));
 
     console.log("Done!");
   }
