@@ -56,7 +56,7 @@ async function start() {
 
       console.log(`Running query set ${i+1} of ${files.length} with ${queries.length} queries...`);
       let isCorrelation = false;
-      let isAnti = true;
+      let isAnti = false;
 
       if ( group.startsWith('_') ) {
         isCorrelation = true;
