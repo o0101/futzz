@@ -24,7 +24,7 @@ if ( cat ) {
 }
 
   function runAuto() {
-    const files = fs.readdirSync(path.resolve('tests', 'queries'));
+    const files = fs.readdirSync(path.resolve('tests', 'queries'), {withFileTypes:true});
     const Summary = {
       precision: [],
       recall: [],
@@ -39,14 +39,37 @@ if ( cat ) {
       const queries = fs
         .readFileSync(path.resolve('tests', 'queries', group))
         .toString()
-        .split(/\n/g);
+        .split(/\n/g)
+        .map(q => q.trim())
+        .filter(q => q.length);
 
-      for( const q of queries ) {
-        const {precision, recall} = evaluateQuery(q);
-        Precision.push(precision);
-        Recall.push(recall);
-        Summary.precision.push(precision);
-        Summary.recall.push(recall);
+      let isCorrelation = false;
+
+      if ( group.startsWith('_') ) {
+        isCorrelation = true;
+        // it's a correlation group, so split each line
+        queries.forEach((q,i) => {
+          queries[i] = q.split(/\s*,\s*/);
+          console.log(group, queries[i]);
+        });
+      }
+
+      if ( isCorrelation ) {
+        for(  const [first, second] of queries ) {
+          const {precision, recall} = evaluateCorrelationQuery(first, second);
+          Precision.push(precision);
+          Recall.push(recall);
+          Summary.precision.push(precision);
+          Summary.recall.push(recall);
+        }
+      } else {
+        for( const q of queries ) {
+          const {precision, recall} = evaluateQuery(q);
+          Precision.push(precision);
+          Recall.push(recall);
+          Summary.precision.push(precision);
+          Summary.recall.push(recall);
+        }
       }
 
       Summary.groups.push({
@@ -108,7 +131,20 @@ if ( cat ) {
     }
   }
 
-  function getFiles(query, cat) {
+  function evaluateQuery(q) {
+    const results = query(q);
+    const matchingFiles = getFiles(q);
+    const matchingResults = results.filter(({name}) => matchingFiles.has(name));
+    const recall = matchingResults.length / matchingFiles.size;
+    const precision = matchingResults.length / results.length;
+    return {results, recall, precision};
+  }
+
+  function evaluateCorrelationQuery(q) {
+
+  }
+
+  function getFiles(query) {
     const base = path.resolve('demo', 'data', cat, '*');
     try {
       const files = execSync(`grep -R -l -i "${query}" ${base}`).toString()
@@ -228,7 +264,7 @@ if ( cat ) {
       q = await new Promise(res => terminal.question(`Query ${count} files> `, res));
       console.log({q});
       if ( q && q.length && q !== '.exit' ) {
-        let results = query(q);
+        let {precision, recall, results} = evaluateQuery(q);
 
         results = results.map(([name]) => ({name, start:fs.readFileSync(name).toString().trim().slice(300, 512)}));
 
@@ -249,11 +285,6 @@ if ( cat ) {
             }
           }
         }
-        console.log({q,cat});
-        const matchingFiles = getFiles(q, cat);
-        const matchingResults = results.filter(({name}) => matchingFiles.has(name));
-        const recall = matchingResults.length / matchingFiles.size;
-        const precision = matchingResults.length / results.length;
         console.log({resultsLength: results.length, precision, recall});
       }
     } while( q !== '.exit' );
