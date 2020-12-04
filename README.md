@@ -38,3 +38,7 @@ This is not terrible. It's a good multiple for a good quality FTS search system 
 ## Pruning!
 
 Pruning is a revelation. And a revolution. All I do is prune out all entries that are not counted, and results are still very good and index bytes size is much smaller. O(N). Awesome.
+
+## Target precision and recall
+
+I want to get both between 0.7 and 0.8 or 70% and 80%

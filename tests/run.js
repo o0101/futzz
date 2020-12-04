@@ -83,7 +83,7 @@ async function start() {
           const {precision, recall} = evaluateQuery(q);
           Precision.push(precision);
           Recall.push(recall);
-          if ( ! isAnti ) {
+          if ( ! isAnti && ! isCorrelation ) {
             Summary.precision.push(precision);
             Summary.recall.push(recall);
           }
