@@ -2,7 +2,7 @@ import {execSync} from 'child_process';
 import fs from 'fs';
 import path from 'path';
 import JSON36 from 'json36';
-import {State, query, index, ent} from '../src/futzz.js';
+import {saveToDisk, State, query, index, ent} from '../src/futzz.js';
 import readline from 'readline';
 
 const SHOW_RESULTS = false;
@@ -164,10 +164,10 @@ async function start() {
     return Summary;
   }
 
-  function evaluateQuery(q) {
+  function evaluateQuery(q, noThrow = false) {
     const results = query(q);
     const matchingFiles = getFiles(q);
-    if ( matchingFiles.size === 0 ) {
+    if ( matchingFiles.size === 0 && ! noThrow ) {
       throw new TypeError('Not enough matches to compare against');
     }
     const matchingResults = results.filter(([name]) => matchingFiles.has(name));
@@ -209,48 +209,7 @@ async function start() {
     console.log("Indexing documents...");
 
     await runNew(undefined, true);
-
-    if ( !fs.existsSync(path.resolve('dicts')) ) {
-      fs.mkdirSync(path.resolve('dicts'), {recursive:true});
-    }
-
-    console.log("Serializing values...");
-    let chunkId = 0;
-
-    const chunkSize = 5000000;
-
-    const values = [...State.dict.values()];
-
-    const ValuesLength = values.length;
-
-
-    let i = 0;
-
-    while(values.length) {
-      const chunk = values.splice(0, chunkSize);
-
-      process.stdout.write(`Writing chunk of ${Math.min(chunk.length, chunkSize)} values...`);
-
-      const fd = fs.openSync(
-        path.resolve('dicts', `dict.${(chunkId+'').padStart(5,'0')}.json`), 
-        "w"
-      );
-
-      fs.writeSync(fd, "[");
-
-      chunk.forEach((value, j) => {
-        const closeOff = (i >= (ValuesLength - 1)) || (j >= (chunk.length - 1));
-        const string = JSON.stringify(value) + (closeOff ? "]" : ",");
-        fs.writeSync(fd, string);
-        i += 1;
-      });
-
-      fs.closeSync(fd);
-
-      console.log("Done!");
-
-      chunkId++;
-    }
+    await saveToDisk();
   }
 
   async function runNew(limit = Infinity, noTerminal = false) {
@@ -311,7 +270,7 @@ async function start() {
       q = await new Promise(res => terminal.question(`Query ${count} files> `, res));
       console.log({q});
       if ( q && q.length && q !== '.exit' ) {
-        let {precision, recall, results} = evaluateQuery(q);
+        let {precision, recall, results} = evaluateQuery(q, true);
 
         results = results.map(([name]) => ({name, start:fs.readFileSync(name).toString().trim().slice(300, 512)}));
 

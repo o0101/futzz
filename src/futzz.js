@@ -424,3 +424,72 @@ export const State = {
     return str;
   }
 
+  function saveToDisk() {
+    if ( !fs.existsSync(path.resolve('dicts')) ) {
+      fs.mkdirSync(path.resolve('dicts'), {recursive:true});
+    }
+
+    console.log("Serializing values...");
+    let chunkId = 0;
+
+    const chunkSize = 5000000;
+
+    const values = [...State.dict.values()];
+
+    const ValuesLength = values.length;
+
+
+    let i = 0;
+
+    while(values.length) {
+      const chunk = values.splice(0, chunkSize);
+
+      process.stdout.write(`Writing chunk of ${Math.min(chunk.length, chunkSize)} values...`);
+
+      const fd = fs.openSync(
+        path.resolve('dicts', `dict.${(chunkId+'').padStart(5,'0')}.json`), 
+        "w"
+      );
+
+      fs.writeSync(fd, "[");
+
+      chunk.forEach((value, j) => {
+        const closeOff = (i >= (ValuesLength - 1)) || (j >= (chunk.length - 1));
+        const string = JSON.stringify(value) + (closeOff ? "]" : ",");
+        fs.writeSync(fd, string);
+        i += 1;
+      });
+
+      fs.closeSync(fd);
+
+      console.log("Done!");
+
+      chunkId++;
+    }
+  }
+
+  function loadFromDisk() {
+    const entries = [];
+
+    const files = fs.readdirSync(path.resolve('dists'), {withFileType:true});
+
+    console.log("Loading dict files...");
+
+    for( const file of files ) {
+      if ( file.isDirectory() ) continue;
+      console.log(`Reading dict file ${file.name}...`);
+      fs.readFileSync(path.resolve('dicts', file.name))
+        .toString()
+        .slice(2,-2)
+        .split(/},{/g);
+        .map(o => JSON.parse(`{${o}}`))
+        .forEach(o => {
+          entries.push([o[CODE_ID], o]);
+          entries.push([o[WORD], o]);
+        });
+    }
+
+    console.log(`Creatring dict with ${entries.length} entries...`);
+    State.dict = new BigMap(entries);
+  }
+
