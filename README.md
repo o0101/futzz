@@ -34,3 +34,7 @@ With a bit of other processing this can probably get down to 210Mb.
 So basically an index is 5 - 7 times as large as the text.
 
 This is not terrible. It's a good multiple for a good quality FTS search system like mine.
+
+## Pruning!
+
+Pruning is a revelation. And a revolution. All I do is prune out all entries that are not counted, and results are still very good and index bytes size is much smaller. O(N). Awesome.
