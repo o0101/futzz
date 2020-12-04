@@ -1,12 +1,12 @@
 import {BigMap} from 'big-associative';
 //import StrongMap from './node-strongmap-fast/index.js';
 
-const MIN_ITERATION = 3;
+const MIN_ITERATION = 2;
 const MAX_ITERATION = 12;
 
-const COUNT_ALL = false;
+const COUNT_ALL = true;
 const PRUNE = true;
-const MAX_WORD_LENGTH_1 = 19;
+const MAX_WORD_LENGTH_1 = Infinity;
 
 const MIN_COUNT = 1;
 const FOUND_NOT_FACTOR_MULT = 0.75;
@@ -354,13 +354,13 @@ export const State = {
           }
           n[SCORE] = n[COUNT] / factors.length;
           n[SCORE] *= SMULT;
-          //n[SCORE] *= -Math.log(Object.keys(f[NAME]).length/State.names.size);
+          n[SCORE] *= -Math.log(Object.keys(f[NAME]).length/State.names.size);
         });
         toNormalize.forEach(f => {
           const n = f[NAME][name];
           n[SCORE] = FOUND_NOT_FACTOR_MULT * 1 / factors.length;
           n[SCORE] *= SMULT;
-          //n[SCORE] *= -Math.log(Object.keys(f[NAME]).length/State.names.size);
+          n[SCORE] *= -Math.log(Object.keys(f[NAME]).length/State.names.size);
         });
         PRUNE && prune.forEach(f => (dict.delete(f[WORD]), dict.delete(f[CODE_ID])));
         //PRUNE && console.log({canPrune: prune.size});
