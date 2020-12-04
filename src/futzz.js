@@ -410,7 +410,7 @@ export const State = {
       fs.mkdirSync(path.resolve('dicts'), {recursive:true});
     }
 
-    console.log(`Saving ${State.names.size} indexed document names...`);
+    console.log(`Saving ${State.names.size/2} indexed document names...`);
 
     const names = [...State.names.entries()];
 
