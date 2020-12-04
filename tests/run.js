@@ -107,9 +107,9 @@ async function start() {
         Summary.avgPrecision = (Summary.precision.reduce((A,p) => A + p, 0)/pLen).toFixed(4);
         Summary.medianPrecision = (Array.from(Summary.precision)
           .sort()
-          .slice(...(pLen%2 == 0 ? [pLen/2-1,pLen/2+2] : [(pLen+1)/2, (pLen+1)/2+1]))
+          .slice(...(pLen%2 == 0 ? [pLen/2-1,pLen/2+1] : [(pLen+1)/2, (pLen+1)/2+1]))
           .reduce((A,p) => A + p, 0)/(pLen%2 == 0 ? 2 : 1)).toFixed(4);
-        Summary.modePrecision = (Object.entries(
+        Summary.modePrecision = parseFloat(Object.entries(
           Summary.precision
             .reduce((F,p) => (F[p] = (F[p] || 0) + 1, F), {})
         ).sort(([k,v], [k2,v2]) => v2 - v)[0][0]).toFixed(4);
@@ -118,9 +118,9 @@ async function start() {
         Summary.avgRecall = (Summary.recall.reduce((A,p) => A + p, 0)/pLen).toFixed(4);
         Summary.medianRecall = (Array.from(Summary.recall)
           .sort()
-          .slice(...(pLen%2 == 0 ? [pLen/2-1,pLen/2+2] : [(pLen+1)/2, (pLen+1)/2+1]))
+          .slice(...(pLen%2 == 0 ? [pLen/2-1,pLen/2+1] : [(pLen+1)/2, (pLen+1)/2+1]))
           .reduce((A,p) => A + p, 0)/(pLen%2 == 0 ? 2 : 1)).toFixed(4);
-        Summary.modeRecall = (Object.entries(
+        Summary.modeRecall = parseFloat(Object.entries(
           Summary.recall
             .reduce((F,p) => (F[p] = (F[p] || 0) + 1, F), {})
         ).sort(([k,v], [k2,v2]) => v2 - v)[0][0]).toFixed(4);
