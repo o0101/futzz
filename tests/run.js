@@ -163,8 +163,7 @@ async function start() {
     const matchingResults = resultsb.filter(([name]) => matchingFiles.has(name));
     const recall = matchingResults.length / (1+matchingFiles.size)*100;
     const precision = matchingResults.length / (1+resultsb.length)*100;
-    console.log({matchingFiles:matchingFiles, matchingResults:matchingResults,
-      recall, precision});
+    //console.log({matchingFiles:matchingFiles, matchingResults:matchingResults,recall, precision});
     return {recall, precision};
   }
 
