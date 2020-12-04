@@ -1,22 +1,33 @@
-- the ways these are scored (in the runAll) in stupid
-  - corrected to a simpler way, precision and recall, roughly, for now
-- i think we should break query up into many factors and create results from all of them, rather than just the single factorization. i'm thinking something between single factorization and all substrings. because we are clearly missing out on good results because of a mismatch of query factors and possible-result-doc factors
-  - no need because results are now great
-- consider "boosting query by also "indexing the query" against the "query doc" (max ent seems to help everything, I notice that second query is more accurate than first) 
-  - this doesn't really work
-- add a way to score results and then score the different methods we have
-- add chinese texts to tests
-- make index function
-- improve query function
-- turn indexes into real indexes
+// new
+- serialize index and reload index
 
-DONE !!! 
 
-Oorah! Fuck yeah!
-I am the fucking best!
 
-I'm the fucking best forever !!! 
 
-Ooorah :p ;) xxx fuck yeah!! ;p:) xxx
 
-XCHAKKA
+
+
+
+// old
+  - the ways these are scored (in the runAll) are an opportunity to improve
+    - created some improvements to a simpler way, precision and recall, roughly, for now
+  - i think we should break query up into many factors and create results from all of them, rather than just the single factorization. i'm thinking something between single factorization and all substrings. because we are clearly missing out on good results because of a mismatch of query factors and possible-result-doc factors
+    - no need because results are now great
+  - consider "boosting query by also "indexing the query" against the "query doc" (max ent seems to help everything, I notice that second query is more accurate than first) 
+    - this doesn't really work
+  - add a way to score results and then score the different methods we have
+  - add chinese texts to tests
+  - make index function
+  - improve query function
+  - turn indexes into real indexes
+
+  DONE !!! 
+
+  Oorah! Fuck yeah!
+  I am the fucking best!
+
+  I'm the fucking best forever !!! 
+
+  Ooorah :p ;) xxx fuck yeah!! ;p:) xxx
+
+  XCHAKKA
