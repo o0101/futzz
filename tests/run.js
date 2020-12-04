@@ -56,6 +56,7 @@ async function start() {
 
       console.log(`Running query set ${i+1} of ${files.length} with ${queries.length} queries...`);
       let isCorrelation = false;
+      let isAnti = true;
 
       if ( group.startsWith('_') ) {
         isCorrelation = true;
@@ -63,6 +64,10 @@ async function start() {
         queries.forEach((q,i) => {
           queries[i] = q.split(/\s*,\s*/);
         });
+      }
+
+      if ( group.startsWith('!') ) {
+        isAnti = true;
       }
 
       if ( isCorrelation ) {
@@ -78,8 +83,10 @@ async function start() {
           const {precision, recall} = evaluateQuery(q);
           Precision.push(precision);
           Recall.push(recall);
-          Summary.precision.push(precision);
-          Summary.recall.push(recall);
+          if ( ! isAnti ) {
+            Summary.precision.push(precision);
+            Summary.recall.push(recall);
+          }
         }
       }
 
@@ -101,22 +108,22 @@ async function start() {
         Summary.medianPrecision = (Array.from(Summary.precision)
           .sort()
           .slice(...(pLen%2 == 0 ? [pLen/2-1,pLen/2+2] : [(pLen+1)/2, (pLen+1)/2+1]))
-          .reduce((A,p) => A + p, 0)/(pLen%2 == 0 ? 2 : 1)*100).toFixed(4);
+          .reduce((A,p) => A + p, 0)/(pLen%2 == 0 ? 2 : 1)).toFixed(4);
         Summary.modePrecision = (Object.entries(
           Summary.precision
             .reduce((F,p) => (F[p] = (F[p] || 0) + 1, F), {})
-        ).sort(([k,v], [k2,v2]) => v2 - v)[0][0]*100).toFixed(4);
+        ).sort(([k,v], [k2,v2]) => v2 - v)[0][0]).toFixed(4);
 
       // summarise recall
         Summary.avgRecall = (Summary.recall.reduce((A,p) => A + p, 0)/pLen).toFixed(4);
         Summary.medianRecall = (Array.from(Summary.recall)
           .sort()
           .slice(...(pLen%2 == 0 ? [pLen/2-1,pLen/2+2] : [(pLen+1)/2, (pLen+1)/2+1]))
-          .reduce((A,p) => A + p, 0)/(pLen%2 == 0 ? 2 : 1)*100).toFixed(4);
+          .reduce((A,p) => A + p, 0)/(pLen%2 == 0 ? 2 : 1)).toFixed(4);
         Summary.modeRecall = (Object.entries(
           Summary.recall
             .reduce((F,p) => (F[p] = (F[p] || 0) + 1, F), {})
-        ).sort(([k,v], [k2,v2]) => v2 - v)[0][0]*100).toFixed(4);
+        ).sort(([k,v], [k2,v2]) => v2 - v)[0][0]).toFixed(4);
       
       const {
         avgPrecision, medianPrecision, modePrecision,
