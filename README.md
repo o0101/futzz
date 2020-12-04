@@ -42,3 +42,7 @@ Pruning is a revelation. And a revolution. All I do is prune out all entries tha
 ## Target precision and recall
 
 I want to get both between 0.7 and 0.8 or 70% and 80%
+
+Right now I'm basically at 0.3 to 0.4 or 30% to 40% for both. So I want to double it.
+
+And after that I want to work on ranking.
