@@ -11,6 +11,8 @@ import {BigMap} from 'big-associative';
   const MIN_ITERATION = 2;
   const MAX_ITERATION = 12;
 
+  const COUNT_ALL = false;
+  const PRUNE = true;
   const MAX_WORD_LENGTH_1 = 18;
 
   const MIN_COUNT = 1;
@@ -203,6 +205,11 @@ export const State = {
     let charIndex = 0;
     let currentWord = '';
     let reverse;
+    let prune;
+
+    if ( PRUNE ) {
+      prune = new Set();
+    }
 
     // idempotent in this function means 
     // provide a factorization but don't change the dict
@@ -233,6 +240,7 @@ export const State = {
             [COUNT]: MIN_COUNT,
             [CODE_ID]: codeId 
           }
+          PRUNE && prune.add(data);
           toNormalize.add(data);
           dict.set(codeId, data);
           dict.set(nextChar, data);
@@ -255,6 +263,7 @@ export const State = {
               [COUNT]: MIN_COUNT,
               [CODE_ID]: codeId 
             }
+            PRUNE && prune.add(data);
             toNormalize.add(data);
             dict.set(codeId, data);
             dict.set(currentWord, data);
@@ -284,12 +293,23 @@ export const State = {
               factor[COUNT]++;
 
               factors.push(factor);
+              PRUNE && prune.delete(factor);
               toNormalize.delete(factor);
             }
 
           // update the state
             wordFirstIndex = charIndex;
             currentWord = suffix;
+        } else if ( COUNT_ALL ) {
+          const data = dict.get(currentWord);
+          if ( !data[NAME][name] ) {
+            data[NAME][name] = {[COUNT]: MIN_COUNT+1};
+          } else {
+            data[NAME][name][COUNT]++;
+          }
+          data[COUNT]++;
+          toNormalize.add(data);
+          PRUNE && prune.delete(data);
         }
 
         currentWord += nextChar;
@@ -308,6 +328,7 @@ export const State = {
               [COUNT]: MIN_COUNT,
               [CODE_ID]: codeId 
             }
+            PRUNE && prune.add(data);
             toNormalize.add(data);
             dict.set(codeId, data);
             dict.set(currentWord, data);
@@ -332,6 +353,7 @@ export const State = {
               factor[COUNT]++;
 
               factors.push(factor);
+              PRUNE && prune.delete(factor);
               toNormalize.delete(factor);
 
               if ( !factor[NAME][name] ) {
@@ -343,6 +365,7 @@ export const State = {
               // in this case we push the last factor if any
                 const suffixFactor = dict.get(suffix);
                 factors.push(suffixFactor);
+                PRUNE && prune.delete(suffixFactor);
                 toNormalize.delete(suffixFactor);
 
                 if ( !suffixFactor[NAME][name] ) {
@@ -364,6 +387,7 @@ export const State = {
           factor[COUNT]++;
 
           factors.push(factor);
+          PRUNE && prune.delete(factor);
           toNormalize.delete(factor);
         }
 
@@ -378,6 +402,7 @@ export const State = {
             case NORMAL:
               n[SCORE] = n[COUNT] / factors.length;
               n[SCORE] *= SMULT;
+              //n[SCORE] *= -Math.log(Object.keys(f[NAME]).length/State.names.size);
               break;
           }
         });
@@ -391,6 +416,8 @@ export const State = {
               break;
           }
         });
+        PRUNE && prune.forEach(f => (dict.delete(f[WORD]), dict.delete(f[CODE_ID])));
+        //PRUNE && console.log({canPrune: prune.size});
 
     if ( opts.idempotent ) {
       reverse.forEach(({[WORD]:word,[CODE_ID]:codeId}) => {

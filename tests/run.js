@@ -159,7 +159,8 @@ if ( process.argv[2] ) {
     runIteration1(fs.readFileSync(path.resolve('samples', 'tao2.txt')).toString(), 'wiki - tao te ching - chinese');
     runIteration1(fs.readFileSync(path.resolve('samples', 'tao3.txt')).toString(), 'wiki - tao te ching - english');
     runIteration1(fs.readFileSync(path.resolve('samples', 'hm.txt')).toString(), 'haruki murakami - chinese');
-    runIteration1(fs.readFileSync(path.resolve('samples', 'hm2.txt')).toString(), 'haruki murakami - english');
+    const {dict} = runIteration1(fs.readFileSync(path.resolve('samples', 'hm2.txt')).toString(), 'haruki murakami - english');
+    console.log({dictSize: dict.size});
     score += query("terminator 2", [ "terminator 2"]);
 
     score += query("judgement day", ["terminator 2" ]);
