@@ -11,19 +11,29 @@ const PAGE = 3;
 const cat = process.argv[2];
 const act = process.argv[3];
 
-if ( cat ) {
-  if ( act === 'disk' ) {
-    runDisk();
-  } else if ( act === 'auto' ) {
-    runAuto();
+start();
+
+async function start() {
+  if ( cat ) {
+    if ( act === 'disk' ) {
+      await runDisk();
+    } else if ( act === 'auto' ) {
+      const S = await runAuto(parseInt(process.argv[4]) || Infinity);
+      console.log(JSON.stringify(S, null, 2));
+    } else {
+      await runNew(parseInt(cat) || Infinity);
+    }
   } else {
-    runNew(parseInt(process.argv[3]) || Infinity);
+    await runAll();
   }
-} else {
-  runAll();
 }
 
-  function runAuto() {
+  async function runAuto(limit) {
+    console.log("Indexing documents...");
+
+    await runNew(limit, true);
+
+    console.log("Running queries...");
     const files = fs.readdirSync(path.resolve('tests', 'queries'), {withFileTypes:true});
     const Summary = {
       precision: [],
@@ -31,11 +41,12 @@ if ( cat ) {
       groups: []
     };
 
-    for( const file of files ) {
-      if ( file.isDirectory() ) continue;
+    files.forEach((file,i) => {
+      if ( file.isDirectory() ) return;
       const Precision = [];
       const Recall = [];
       const group = file.name;
+      const name = group.replace('.dat', '');
       const queries = fs
         .readFileSync(path.resolve('tests', 'queries', group))
         .toString()
@@ -43,6 +54,7 @@ if ( cat ) {
         .map(q => q.trim())
         .filter(q => q.length);
 
+      console.log(`Running query set ${i+1} of ${files.length} with ${queries.length} queries...`);
       let isCorrelation = false;
 
       if ( group.startsWith('_') ) {
@@ -50,7 +62,6 @@ if ( cat ) {
         // it's a correlation group, so split each line
         queries.forEach((q,i) => {
           queries[i] = q.split(/\s*,\s*/);
-          console.log(group, queries[i]);
         });
       }
 
@@ -73,39 +84,39 @@ if ( cat ) {
       }
 
       Summary.groups.push({
-        name: group,
-        AvgPrecision: Precision.reduce((A,p) => A + p, 0),
-        AvgRecall: Recall.reduce((A,p) => A + p, 0),
+        name,
+        AvgPrecision: (Precision.reduce((A,p) => A + p, 0)/Precision.length).toFixed(4),
+        AvgRecall: (Recall.reduce((A,p) => A + p, 0)/Precision.length).toFixed(4),
         Precision,
         Recall,
         queries
       });
-    }
+    });
 
     const pLen = Summary.precision.length;
 
     if ( pLen ) {
       // summarise precision
-        Summary.avgPrecision = (Summary.precision.reduce((A,p) => A + p, 0)*100).toFixed(2);
+        Summary.avgPrecision = (Summary.precision.reduce((A,p) => A + p, 0)/pLen).toFixed(4);
         Summary.medianPrecision = (Array.from(Summary.precision)
           .sort()
           .slice(...(pLen%2 == 0 ? [pLen/2-1,pLen/2+2] : [(pLen+1)/2, (pLen+1)/2+1]))
-          .reduce((A,p) => A + p, 0)/(pLen%2 == 0 ? 2 : 1)*100).toFixed(2);
+          .reduce((A,p) => A + p, 0)/(pLen%2 == 0 ? 2 : 1)*100).toFixed(4);
         Summary.modePrecision = (Object.entries(
           Summary.precision
             .reduce((F,p) => (F[p] = (F[p] || 0) + 1, F), {})
-        ).sort(([k,v], [k2,v2]) => v2 - v)[0][0]*100).toFixed(2);
+        ).sort(([k,v], [k2,v2]) => v2 - v)[0][0]*100).toFixed(4);
 
       // summarise recall
-        Summary.avgRecall = (Summary.recall.reduce((A,p) => A + p, 0)*100).toFixed(2);
+        Summary.avgRecall = (Summary.recall.reduce((A,p) => A + p, 0)/pLen).toFixed(4);
         Summary.medianRecall = (Array.from(Summary.recall)
           .sort()
           .slice(...(pLen%2 == 0 ? [pLen/2-1,pLen/2+2] : [(pLen+1)/2, (pLen+1)/2+1]))
-          .reduce((A,p) => A + p, 0)/(pLen%2 == 0 ? 2 : 1)*100).toFixed(2);
+          .reduce((A,p) => A + p, 0)/(pLen%2 == 0 ? 2 : 1)*100).toFixed(4);
         Summary.modeRecall = (Object.entries(
           Summary.recall
             .reduce((F,p) => (F[p] = (F[p] || 0) + 1, F), {})
-        ).sort(([k,v], [k2,v2]) => v2 - v)[0][0]*100).toFixed(2);
+        ).sort(([k,v], [k2,v2]) => v2 - v)[0][0]*100).toFixed(4);
       
       const {
         avgPrecision, medianPrecision, modePrecision,
@@ -129,19 +140,32 @@ if ( cat ) {
         avgRecall, medianRecall, modeRecall 
       }, null, 2));
     }
+
+    console.log(`Ran ${pLen} experiments.`);
+
+    return Summary;
   }
 
   function evaluateQuery(q) {
     const results = query(q);
     const matchingFiles = getFiles(q);
-    const matchingResults = results.filter(({name}) => matchingFiles.has(name));
-    const recall = matchingResults.length / matchingFiles.size;
-    const precision = matchingResults.length / results.length;
+    const matchingResults = results.filter(([name]) => matchingFiles.has(name));
+    const recall = matchingResults.length / (1+matchingFiles.size)*100;
+    const precision = matchingResults.length / (1+results.length)*100;
     return {results, recall, precision};
   }
 
-  function evaluateCorrelationQuery(q) {
-
+  function evaluateCorrelationQuery(a, b) {
+    const resultsa = query(a);
+    const resultsb = query(b);
+    // b should align to a
+    const matchingFiles = new Set(resultsa.map(([name]) => name));
+    const matchingResults = resultsb.filter(([name]) => matchingFiles.has(name));
+    const recall = matchingResults.length / (1+matchingFiles.size)*100;
+    const precision = matchingResults.length / (1+resultsb.length)*100;
+    console.log({matchingFiles:matchingFiles, matchingResults:matchingResults,
+      recall, precision});
+    return {recall, precision};
   }
 
   function getFiles(query) {
@@ -158,7 +182,7 @@ if ( cat ) {
     }
   }
 
-  async function runDisk() {
+  async function runDisk(noSave = false) {
     console.log("Indexing documents...");
 
     await runNew(undefined, true);

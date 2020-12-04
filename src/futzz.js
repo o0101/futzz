@@ -74,7 +74,7 @@ export const State = {
     words = simplify(words);
     const mainFactor = dict.get(words);
     if ( mainFactor ) {
-      console.log({hasMainFactor:mainFactor, words});
+      //console.log({hasMainFactor:mainFactor, words});
       mainFactor[COUNT]++;
     }
     words = `${words} ${words} ${words}`;
