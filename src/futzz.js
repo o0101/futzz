@@ -482,29 +482,45 @@ export const State = {
 
     console.log("Loading document index files...");
 
+    const StringChunkSize = 1000000; 
     let i = 0;
 
     for( const file of files ) {
       if ( file.isDirectory() ) continue;
+      if ( !file.name.startsWith('dict') ) continue;
       console.log(`Reading dict file ${file.name}...`);
-      fs.readFileSync(path.resolve('dicts', file.name))
-        .toString()
-        .slice(2,-2)
-        .split(/},{/g)
-        .map(o => JSON.parse(`{${o}}`))
-        .forEach(o => {
-          if ( i < limit ) {
-            entries.push([o[CODE_ID], o]);
-            entries.push([o[WORD], o]);
-          }
-          i += 2;
-        });
+      const buf = fs.readFileSync(path.resolve('dicts', file.name));
+      let lastString = '';
+      for( let j = 2; j < buf.length-2; j) {
+        const str = lastString + buf.slice(j, j+StringChunkSize).toString();
+        let largestIndex = str.lastIndexOf('},{');
+        //console.log(str.slice(0,10), str.slice(largestIndex-10,largestIndex));
+        str.slice(0, largestIndex)
+          .split(/},{/g)
+          .map(o => {
+            try {
+              return JSON.parse(`{${o}}`);
+            } catch(e) {
+              console.log(o, e);
+              process.exit(1);
+            }
+          })
+          .forEach(o => {
+            if ( i < limit ) {
+              entries.push([o[CODE_ID], o]);
+              entries.push([o[WORD], o]);
+            }
+            i += 2;
+          });
+        j += StringChunkSize;
+        lastString = str.slice(largestIndex+3);
+      }
       if ( i >= limit ) {
         break;
       }
     }
 
-    console.log(`Creating dict with ${entries.length} entries...`);
+    console.log(`Creating dict with ${entries.length/2} factors...`);
 
     State.dict = new BigMap();
     entries.forEach(([k,v]) => State.dict.set(k,v));
