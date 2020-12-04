@@ -27,8 +27,6 @@ export const State = {
   dict: new BigMap(),
   names: new BigMap(),
   indexHistory: [],
-  totalDocLength: 0,
-  totalFactorsLength: 0
 };
 
   export function index(text, name) {
@@ -47,7 +45,6 @@ export const State = {
 
     indexingCycle: for( let i = 0; i < MAX_ITERATION; i++ ) {
       ({dict, factors, docStr} = lz(text, Dict, name)); 
-      State.totalFactorsLength += factors.length;
       const entropy = ent(factors);
       const total = entropy*factors.length;
       Ent.push({entropy, total: entropy*factors.length, name});
@@ -181,8 +178,6 @@ export const State = {
     docStr = simplify(docStr);
 
     factors.docStr = docStr;
-
-    State.totalDocLength += docStr.length;
 
       for ( const nextChar of docStr ) {
         if ( ! dict.has(nextChar) ) {
@@ -424,22 +419,31 @@ export const State = {
     return str;
   }
 
-  function saveToDisk() {
+  function saveToDisk(limit = Infinity) {
     if ( !fs.existsSync(path.resolve('dicts')) ) {
       fs.mkdirSync(path.resolve('dicts'), {recursive:true});
     }
 
-    console.log("Serializing values...");
+    console.log(`Saving ${State.names.size} indexed document names...`);
+
+    const names = [...State.names.entries()];
+
+    fs.writeFileSync(path.resolve("dicts", "names.json"), JSON.stringify(names));
+
+    console.log("Done");
+
+    console.log(`Collecting ${State.dict.size} in-memory values...`);
+
+    let i = 0;
     let chunkId = 0;
 
     const chunkSize = 5000000;
 
     const values = [...State.dict.values()];
 
+    console.log(`Serializing ${values.length} values...`);
+
     const ValuesLength = values.length;
-
-
-    let i = 0;
 
     while(values.length) {
       const chunk = values.splice(0, chunkSize);
@@ -453,27 +457,44 @@ export const State = {
 
       fs.writeSync(fd, "[");
 
-      chunk.forEach((value, j) => {
-        const closeOff = (i >= (ValuesLength - 1)) || (j >= (chunk.length - 1));
+      for( const [j, value] of chunk.entries() ) {
+        const closeOff = (i >= Math.min(limit - 1, (ValuesLength - 1)) || (j >= (chunk.length - 1));
         const string = JSON.stringify(value) + (closeOff ? "]" : ",");
         fs.writeSync(fd, string);
+        if ( closeOff ) break;
         i += 1;
-      });
+      }
 
       fs.closeSync(fd);
 
       console.log("Done!");
 
       chunkId++;
+
+      if ( i >= limit-1 ) {
+        break;
+      }
     }
   }
 
-  function loadFromDisk() {
+  function loadFromDisk(limit = Infinity) {
     const entries = [];
 
     const files = fs.readdirSync(path.resolve('dists'), {withFileType:true});
 
-    console.log("Loading dict files...");
+    console.log("Loading indexed document names...");
+
+    State.names = new BigMap(
+      JSON.parse(
+        fs.readFileSync(
+          path.resolve('dicts', 'names.json')
+        ).toString()
+      )
+    );
+
+    console.log("Loading document index files...");
+
+    let i = 0;
 
     for( const file of files ) {
       if ( file.isDirectory() ) continue;
@@ -484,12 +505,21 @@ export const State = {
         .split(/},{/g);
         .map(o => JSON.parse(`{${o}}`))
         .forEach(o => {
-          entries.push([o[CODE_ID], o]);
-          entries.push([o[WORD], o]);
+          if ( i < limit ) {
+            entries.push([o[CODE_ID], o]);
+            entries.push([o[WORD], o]);
+          }
+          i += 2;
         });
+      if ( i >= limit ) {
+        break;
+      }
     }
 
-    console.log(`Creatring dict with ${entries.length} entries...`);
+    console.log(`Creating dict with ${entries.length} entries...`);
+
     State.dict = new BigMap(entries);
+
+    console.log("Done!");
   }
 
