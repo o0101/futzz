@@ -23,7 +23,7 @@ if ( cat ) {
   function getFiles(query, cat) {
     const base = path.resolve('demo', 'data', cat, '*');
     try {
-      const files = execSync(`grep -R -l "${query}" ${base}`).toString()
+      const files = execSync(`grep -R -l -i "${query}" ${base}`).toString()
         .split(/\n/g)
         .filter(n => n.trim().length)
         .map(n => path.resolve(cat, n));

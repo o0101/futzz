@@ -1,37 +1,43 @@
-- does not work great for long indexes
-  - figure out why at 600 files 21 results for NASA, but at 3000 files only 2 results.
-  - overwriting? 
-  - factor too long? why?
-- evaluation dataset (UFO)
-  - set up futzz to be able to fun against this and measure precision and recall against the number of files returned by grep "search term"
-- answer question: why is short document so highly weighted, even without TF-IDF code?
-  - i think because it's based on divisors that are factors.length or docStr.length so shorter docs are advantaged particularly if they are indexed earlier and so have shorter (higher count) codes
-    - to ameliorate, we must normalize those divisors somwehow, as well as
-    - consider that we can add a stopping criterion that must first be met before we consider the normal stopping criterion, and that stopping criterion can be that the distribution of factors approaches the max factor length
-- snippets are important to evaluate the document
-- seems more recently indexed documents score higher (i think because the code length is longer)
-  - could try not using cover
-  - could also try using some sort of entropy metric or 'factor length  and frequency distribution' metric to ensure each document is indexed in a commensurate way
-- limit max length of code to documents are not divided into sets based on the length of their factors
-- when the dictionary has the code we add the current document to it
-- let's index a query but only the first time we get it?
-- i think we should look at all substrings of the query (all possible factorizations)
-- add evaluation dataset
-  - trying textfiles.com archives
-  - try those listed here: https://github.com/RediSearch/ftsb
-  - also consider https://the-eye.eu/public/AI/pile_preliminary_components/ which is also at 
-    https://archive.is/wip/vgsTc
-- don't pre-emptively optimise, keep the algorithm loose and open before it's thoroughly tested
-- add spanish
-- things we can try to improve performance:
-  - the usual parameters, cover, stopping condition, score calculation,1
-  - add new things like tf-idf for factors, cosine similarity (on what I don't yet know), boosting doc in (doc, query) based on how many times that doc has been the first clicked result for that query
-  - joining documents across factors rather than just summing scores.
-  - or summing scores, but multiplying across those factors that share a common document
-- turn dicts.json into {docNames:[...], values:[....]} to remove redundancy of doc name in every record
-- sync indexes to disk
-- create a way to do snippets (contextual snippets to put the search result in context of the document)
-- create a way to do instant (basically just indexing the queries, and querying those against the current query as it is typed)
+- implement .factor query function to show factors of a query of a document given a name
+- auto test precision and recall
+- lz on the query until entropy condition is reached
+
+
+// old
+  - does not work great for long indexes
+    - figure out why at 600 files 21 results for NASA, but at 3000 files only 2 results.
+    - overwriting? 
+    - factor too long? why?
+  - evaluation dataset (UFO)
+    - set up futzz to be able to fun against this and measure precision and recall against the number of files returned by grep "search term"
+  - answer question: why is short document so highly weighted, even without TF-IDF code?
+    - i think because it's based on divisors that are factors.length or docStr.length so shorter docs are advantaged particularly if they are indexed earlier and so have shorter (higher count) codes
+      - to ameliorate, we must normalize those divisors somwehow, as well as
+      - consider that we can add a stopping criterion that must first be met before we consider the normal stopping criterion, and that stopping criterion can be that the distribution of factors approaches the max factor length
+  - snippets are important to evaluate the document
+  - seems more recently indexed documents score higher (i think because the code length is longer)
+    - could try not using cover
+    - could also try using some sort of entropy metric or 'factor length  and frequency distribution' metric to ensure each document is indexed in a commensurate way
+  - limit max length of code to documents are not divided into sets based on the length of their factors
+  - when the dictionary has the code we add the current document to it
+  - let's index a query but only the first time we get it?
+  - i think we should look at all substrings of the query (all possible factorizations)
+  - add evaluation dataset
+    - trying textfiles.com archives
+    - try those listed here: https://github.com/RediSearch/ftsb
+    - also consider https://the-eye.eu/public/AI/pile_preliminary_components/ which is also at 
+      https://archive.is/wip/vgsTc
+  - don't pre-emptively optimise, keep the algorithm loose and open before it's thoroughly tested
+  - add spanish
+  - things we can try to improve performance:
+    - the usual parameters, cover, stopping condition, score calculation,1
+    - add new things like tf-idf for factors, cosine similarity (on what I don't yet know), boosting doc in (doc, query) based on how many times that doc has been the first clicked result for that query
+    - joining documents across factors rather than just summing scores.
+    - or summing scores, but multiplying across those factors that share a common document
+  - turn dicts.json into {docNames:[...], values:[....]} to remove redundancy of doc name in every record
+  - sync indexes to disk
+  - create a way to do snippets (contextual snippets to put the search result in context of the document)
+  - create a way to do instant (basically just indexing the queries, and querying those against the current query as it is typed)
 
 
 

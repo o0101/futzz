@@ -71,8 +71,18 @@ export const State = {
     const Answers = new Set(right_answers);
     const {dict} = State;
 
+    words = simplify(words);
+    const mainFactor = dict.get(words);
+    if ( mainFactor ) {
+      console.log({hasMainFactor:mainFactor, words});
+      mainFactor[COUNT]++;
+    }
     words = `${words} ${words} ${words}`;
     const {factors} = lz(words, dict, 'query', {idempotent:true});
+    if ( mainFactor ) {
+      factors.push(mainFactor);
+    }
+
     let willExit = false;
 
     let score = 0;
@@ -168,11 +178,7 @@ export const State = {
 
     // a tiny bit of preProcessing
 
-    docStr = docStr.replace(/\p{P}+/gu, '');     // unicode replace all punctuation
-    docStr = docStr.replace(/\p{Z}+/gu, ' ');     // unicode replace all separators
-    docStr = docStr.replace(/[\n\r]+/gu, '  ');     // unicode replace all separators
-    docStr = docStr.trim();
-    docStr = docStr.toLocaleLowerCase();
+    docStr = simplify(docStr);
 
     factors.docStr = docStr;
 
@@ -406,5 +412,15 @@ export const State = {
       }
       result[key] += source[key];
     }
+  }
+
+  function simplify(str) {
+    str = str.replace(/\p{P}+/gu, '');     // unicode replace all punctuation
+    str = str.replace(/\p{Z}+/gu, ' ');     // unicode replace all separators
+    str = str.replace(/[\n\r]+/gu, '  ');     // unicode replace all separators
+    str = str.trim();
+    str = str.toLocaleLowerCase();
+
+    return str;
   }
 
