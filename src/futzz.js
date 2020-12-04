@@ -415,8 +415,9 @@ export const State = {
   }
 
   function simplify(str) {
-    str = str.replace(/[\p{P}.,-_;:+#(){}\[\]]+/gu, ' ');     // unicode replace all punctuation
-    str = str.replace(/[\p{Z} \n\r\t]+/gu, ' ');     // unicode replace all separators
+    str = str.replace(/\p{P}+/gu, ' ');     // unicode replace all punctuation
+    str = str.replace(/\p{Z}+/gu, ' ');     // unicode replace all separators
+    str = str.replace(/[\n\r]+/gu, ' ');     // unicode replace all separators
     str = str.trim();
     str = str.toLocaleLowerCase();
 
