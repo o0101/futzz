@@ -6,6 +6,7 @@ import {State, query, index, ent} from '../src/futzz.js';
 import readline from 'readline';
 
 const SHOW_RESULTS = false;
+const SAVE_CORRELATION = false;
 const PAGE = 3;
 
 const cat = process.argv[2];
@@ -72,20 +73,30 @@ async function start() {
 
       if ( isCorrelation ) {
         for(  const [first, second] of queries ) {
-          const {precision, recall} = evaluateCorrelationQuery(first, second);
-          Precision.push(precision);
-          Recall.push(recall);
-          Summary.precision.push(precision);
-          Summary.recall.push(recall);
+          try {
+            const {precision, recall} = evaluateCorrelationQuery(first, second);
+            Precision.push(precision);
+            Recall.push(recall);
+            if ( SAVE_CORRELATION ) {
+              Summary.precision.push(precision);
+              Summary.recall.push(recall);
+            }
+          } catch(e) {
+            continue;
+          }
         }
       } else {
         for( const q of queries ) {
-          const {precision, recall} = evaluateQuery(q);
-          Precision.push(precision);
-          Recall.push(recall);
-          if ( ! isAnti && ! isCorrelation ) {
-            Summary.precision.push(precision);
-            Summary.recall.push(recall);
+          try {
+            const {precision, recall} = evaluateQuery(q);
+            Precision.push(precision);
+            Recall.push(recall);
+            if ( ! isAnti ) {
+              Summary.precision.push(precision);
+              Summary.recall.push(recall);
+            }
+          } catch(e) {
+            continue;
           }
         }
       }
@@ -156,6 +167,9 @@ async function start() {
   function evaluateQuery(q) {
     const results = query(q);
     const matchingFiles = getFiles(q);
+    if ( matchingFiles.size === 0 ) {
+      throw new TypeError('Not enough matches to compare against');
+    }
     const matchingResults = results.filter(([name]) => matchingFiles.has(name));
     const recall = matchingResults.length / (1+matchingFiles.size)*100;
     const precision = matchingResults.length / (1+results.length)*100;
@@ -167,6 +181,9 @@ async function start() {
     const resultsb = query(b);
     // b should align to a
     const matchingFiles = new Set(resultsa.map(([name]) => name));
+    if ( matchingFiles.size === 0 ) {
+      throw new TypeError('Not enough matches to compare against');
+    }
     const matchingResults = resultsb.filter(([name]) => matchingFiles.has(name));
     const recall = matchingResults.length / (1+matchingFiles.size)*100;
     const precision = matchingResults.length / (1+resultsb.length)*100;
