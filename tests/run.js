@@ -9,16 +9,104 @@ const SHOW_RESULTS = false;
 const PAGE = 3;
 
 const cat = process.argv[2];
+const act = process.argv[3];
 
 if ( cat ) {
-  if ( process.argv[3] === 'disk' ) {
+  if ( act === 'disk' ) {
     runDisk();
+  } else if ( act === 'auto' ) {
+    runAuto();
   } else {
     runNew(parseInt(process.argv[3]) || Infinity);
   }
 } else {
   runAll();
 }
+
+  function runAuto() {
+    const files = fs.readdirSync(path.resolve('tests', 'queries'));
+    const Summary = {
+      precision: [],
+      recall: [],
+      groups: []
+    };
+
+    for( const file of files ) {
+      if ( file.isDirectory() ) continue;
+      const Precision = [];
+      const Recall = [];
+      const group = file.name;
+      const queries = fs
+        .readFileSync(path.resolve('tests', 'queries', group))
+        .toString()
+        .split(/\n/g);
+
+      for( const q of queries ) {
+        const {precision, recall} = evaluateQuery(q);
+        Precision.push(precision);
+        Recall.push(recall);
+        Summary.precision.push(precision);
+        Summary.recall.push(recall);
+      }
+
+      Summary.groups.push({
+        name: group,
+        AvgPrecision: Precision.reduce((A,p) => A + p, 0),
+        AvgRecall: Recall.reduce((A,p) => A + p, 0),
+        Precision,
+        Recall,
+        queries
+      });
+    }
+
+    const pLen = Summary.precision.length;
+
+    if ( pLen ) {
+      // summarise precision
+        Summary.avgPrecision = (Summary.precision.reduce((A,p) => A + p, 0)*100).toFixed(2);
+        Summary.medianPrecision = (Array.from(Summary.precision)
+          .sort()
+          .slice(...(pLen%2 == 0 ? [pLen/2-1,pLen/2+2] : [(pLen+1)/2, (pLen+1)/2+1]))
+          .reduce((A,p) => A + p, 0)/(pLen%2 == 0 ? 2 : 1)*100).toFixed(2);
+        Summary.modePrecision = (Object.entries(
+          Summary.precision
+            .reduce((F,p) => (F[p] = (F[p] || 0) + 1, F), {})
+        ).sort(([k,v], [k2,v2]) => v2 - v)[0][0]*100).toFixed(2);
+
+      // summarise recall
+        Summary.avgRecall = (Summary.recall.reduce((A,p) => A + p, 0)*100).toFixed(2);
+        Summary.medianRecall = (Array.from(Summary.recall)
+          .sort()
+          .slice(...(pLen%2 == 0 ? [pLen/2-1,pLen/2+2] : [(pLen+1)/2, (pLen+1)/2+1]))
+          .reduce((A,p) => A + p, 0)/(pLen%2 == 0 ? 2 : 1)*100).toFixed(2);
+        Summary.modeRecall = (Object.entries(
+          Summary.recall
+            .reduce((F,p) => (F[p] = (F[p] || 0) + 1, F), {})
+        ).sort(([k,v], [k2,v2]) => v2 - v)[0][0]*100).toFixed(2);
+      
+      const {
+        avgPrecision, medianPrecision, modePrecision,
+        avgRecall, medianRecall, modeRecall 
+      } = Summary;
+      
+      for( const group of Summary.groups ) {
+        const {AvgPrecision, AvgRecall} = group;
+
+        console.log(`\nGroup ${group.name}`);
+        console.log(JSON.stringify({
+          group: group.name,
+          AvgPrecision,
+          AvgRecall
+        }, null, 2));
+      }
+
+      console.log(`\n\nOverall for category ${cat}`);
+      console.log(JSON.stringify({
+        avgPrecision, medianPrecision, modePrecision,
+        avgRecall, medianRecall, modeRecall 
+      }, null, 2));
+    }
+  }
 
   function getFiles(query, cat) {
     const base = path.resolve('demo', 'data', cat, '*');
