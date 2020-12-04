@@ -43,6 +43,9 @@ Pruning is a revelation. And a revolution. All I do is prune out all entries tha
 
 I want to get both between 0.7 and 0.8 or 70% and 80%
 
-Right now I'm basically at 0.3 to 0.4 or 30% to 40% for both. So I want to double it.
+Right now I'm basically at 0.35 to 0.6 or 30% to 60% for both. So I want to double it.
+(37.5% and 55.4%)
+
+
 
 And after that I want to work on ranking.
