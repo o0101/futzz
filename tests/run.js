@@ -46,7 +46,7 @@ async function start() {
       console.log(JSON.stringify(S, null, 2));
     } else {
       console.log("Q&A mode");
-      await runNew(parseInt(cat) || Infinity);
+      await runNew(parseInt(act) || Infinity);
     }
   } else {
     console.log("Simple test mode");
@@ -297,8 +297,8 @@ async function start() {
     return Summary;
   }
 
-  function evaluateQuery(q, noThrow = false) {
-    const results = query(q);
+  function evaluateQuery(q, noThrow = false, opts) {
+    const {results, ...rest} = query(q, undefined, opts);
     const matchingFiles = getFiles(q);
     if ( matchingFiles.size === 0 && ! noThrow ) {
       throw new TypeError('Not enough matches to compare against');
@@ -306,12 +306,12 @@ async function start() {
     const matchingResults = results.filter(([name]) => matchingFiles.has(name));
     const recall = matchingResults.length / (1+matchingFiles.size)*100;
     const precision = matchingResults.length / (1+results.length)*100;
-    return {results, recall, precision};
+    return {results, recall, precision, ...rest};
   }
 
-  function evaluateCorrelationQuery(a, b) {
-    const resultsa = query(a);
-    const resultsb = query(b);
+  function evaluateCorrelationQuery(a, b, opts) {
+    const {results:resultsa, ...resta} = query(a, undefined, opts);
+    const {results:resultsb, ...restb} = query(b, undefined, opts);
     // b should align to a
     const matchingFiles = new Set(resultsa.map(([name]) => name));
     if ( matchingFiles.size === 0 ) {
@@ -419,30 +419,56 @@ async function start() {
     let q
     do {
       q = await new Promise(res => terminal.question(`Query ${count} files> `, res));
-      console.log({q});
+      q = q && q.trim();
       if ( q && q.length && q !== '.exit' ) {
-        let {precision, recall, results} = evaluateQuery(q, true);
+        let extra;
+        let noQuery = false;
+        let command;
+        if ( q.startsWith('.') ) {
+          const firstSpace = q.indexOf(' ');
+          if ( firstSpace >= 0 ) {
+            command = q.slice(1, firstSpace); 
+            q = q.slice(firstSpace+1);
+            console.log({command,q});
+          }
 
-        results = results.map(([name]) => ({name, start:fs.readFileSync(name).toString().trim().slice(300, 512)}));
-
-        let i = 0;
-        if ( SHOW_RESULTS ) {
-          for (const {name, start} of results ) {
-            console.log(name);
-            console.log(start);
-            console.log('\n');
-            i++;
-            if ( i % PAGE === 0 ) {
-              await new Promise(
-                res => terminal.question(
-                  `Page ${i/PAGE} of ${Math.round(results.length/PAGE)}. ENTER for next`,
-                  res
-                )
-              );
-            }
+          if ( fs.existsSync(path.resolve(q)) ) {
+            ({[command]: extra} = index(fs.readFileSync(path.resolve(q)).toString(), q));
+            noQuery = true;
           }
         }
-        console.log({resultsLength: results.length, precision, recall});
+        let precision, recall, results;
+
+        if ( ! noQuery ) {
+          ({precision, recall, results, [command]: extra} = evaluateQuery(q, true, {[command]:true}));
+        }
+
+        if ( command && extra ) {
+          console.log({[command]:extra});
+        }
+
+        if ( results && results.length ) {
+          results = results.map(([name]) => ({name, start:fs.readFileSync(name).toString().trim().slice(300, 512)}));
+
+          let i = 0;
+          if ( SHOW_RESULTS ) {
+            for (const {name, start} of results ) {
+              console.log(name);
+              console.log(start);
+              console.log('\n');
+              i++;
+              if ( i % PAGE === 0 ) {
+                await new Promise(
+                  res => terminal.question(
+                    `Page ${i/PAGE} of ${Math.round(results.length/PAGE)}. ENTER for next`,
+                    res
+                  )
+                );
+              }
+            }
+          }
+          console.log({resultsLength: results.length, precision, recall});
+        }
       }
     } while( q !== '.exit' );
 

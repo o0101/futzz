@@ -34,6 +34,7 @@ export const State = {
 };
 
   export function index(text, name) {
+    const Factors = [];
     const Ent = [];
     const sortKey = RUN_COUNT;
 
@@ -43,6 +44,7 @@ export const State = {
 
     indexingCycle: for( let i = 0; i < MAX_ITERATION; i++ ) {
       ({dict, factors, docStr} = lz(text, Dict, name)); 
+      Factors.push(...factors);
       const entropy = ent(factors);
       const total = entropy*factors.length;
       Ent.push({entropy, total: entropy*factors.length, name});
@@ -55,10 +57,10 @@ export const State = {
       lastEntropy = entropy;
     }
 
-    return {dict, factors: maxFactors || factors};
+    return {dict, factors: maxFactors || factors, Factors};
   }
 
-  export function query(words, right_answers = []) {
+  export function query(words, right_answers = [], opts = {}) {
     const Answers = new Set(right_answers);
     const {dict} = State;
 
@@ -129,7 +131,11 @@ export const State = {
       return score;
     }
 
-    return results; 
+    if ( opts.factors ) {
+      return {results, factors};
+    } else {
+      return {results};
+    }
   }
 
   export function lz(docStr = '', dict = new Map(), name = 'unknown doc', opts = {}) {
@@ -164,7 +170,7 @@ export const State = {
 
     docStr = simplify(docStr);
 
-    factors.docStr = docStr;
+    factors.docStrLength = docStr.length;
 
       for ( const nextChar of docStr ) {
         if ( ! dict.has(nextChar) ) {
@@ -374,9 +380,9 @@ export const State = {
       Ent += ent;
     }
 
-    const check = factors.docStr.length == TotalLength;
+    const check = factors.docStrLength == TotalLength;
 
-    console.assert(check, factors.docStr.length, TotalLength);
+    console.assert(check, factors.docStrLength, TotalLength);
 
     return Ent;
   }
