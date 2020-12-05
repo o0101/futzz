@@ -9,10 +9,20 @@ const SHOW_RESULTS = true;
 const SAVE_CORRELATION = false;
 const PAGE = 3;
 
+const PARAM_RANGES = {
+  "minIteration": [0,3,6],
+  "maxWordLength": [7,13,19,29],
+  "prune": [false, true],
+  "countAll": [false, true],
+  "addAllAsFactors": [false, true],
+  "minCount": [1,5]
+}
+
 const cat = process.argv[2];
 const act = process.argv[3];
 const num = parseInt(process.argv[4]) || Infinity;
 const ak = process.argv[5];
+const jap = process.argv[6];
 
 start();
 
@@ -35,13 +45,30 @@ async function start() {
   }
 }
 
-  async function runAuto(limit, fromDisk = true) {
+  async function runMultiAuto(limit) {
+    const allConfigs = enumerateConfigs(PARAM_RANGES);
+    let test = 0;
+    for( const config of allConfigs ) {
+      const outPath = path.resolve('results', 'configtests', test);
+      if ( !fs.existsSync(outPath) ) {
+        fs.mkdirSync(outPath, {recursive:true});
+      }
 
-    if ( fromDisk === 'no' ) {
-      fromDisk = false;
+      fs.writeFileSync(path.resolve('config.json'), JSON.stringify(config,null,2));
+      fs.writeFileSync(path.resolve(outPath, 'config.json'), JSON.stringify(config,null,2));
+
+      const result = execSync(`npm test ufo auto ${limit} no no-progress`);
+
+      fs.writeFileSync(path.resolve(outPath, 'result.txt'), result);
+    }
+  }
+
+  async function runAuto(limit, loadIndexFromDisk = true) {
+    if ( loadIndexFromDisk === 'no' ) {
+      loadIndexFromDisk = false;
     }
 
-    if ( ! fromDisk ) {
+    if ( ! loadIndexFromDisk ) {
       console.log("Indexing documents...");
 
       await runNew(limit, true);
@@ -277,13 +304,15 @@ async function start() {
           const filePath = path.resolve(entry.basePath, entry.name);
           runIteration1(fs.readFileSync(filePath).toString(), filePath);
           count ++;
-          process.stdout.clearLine();
-          process.stdout.cursorTo(0);
-          process.stdout.write(
-            `Indexed ${count}/${Math.min(limit,total)} \t\t\t(${
-              (count/Math.min(limit,total)*100).toFixed(2)
-            }%) files...`
-          );
+          if ( jap !== 'no-progress' ) {
+            process.stdout.clearLine();
+            process.stdout.cursorTo(0);
+            process.stdout.write(
+              `Indexed ${count}/${Math.min(limit,total)} \t\t\t(${
+                (count/Math.min(limit,total)*100).toFixed(2)
+              }%) files...`
+            );
+          }
         }
       }
 
