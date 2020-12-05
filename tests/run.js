@@ -5,23 +5,27 @@ import JSON36 from 'json36';
 import {State, loadFromDisk, saveToDisk, query, index, ent} from '../src/futzz.js';
 import readline from 'readline';
 
-const SHOW_RESULTS = false;
+const SHOW_RESULTS = true;
 const SAVE_CORRELATION = false;
 const PAGE = 3;
 
 const cat = process.argv[2];
 const act = process.argv[3];
+const num = parseInt(process.argv[4]) || Infinity;
+const ak = process.argv[5];
 
 start();
 
 async function start() {
   if ( cat ) {
-    if ( act === 'load' ) {
-      await runLoad(parseInt(process.argv[4]) || Infinity);
+    if ( act === 'multiauto') {
+      await runMultiAuto(num);
+    } else if ( act === 'load' ) {
+      await runLoad(num);
     } else if ( act === 'disk' ) {
-      await runDisk(parseInt(process.argv[4]) || Infinity);
+      await runDisk(num);
     } else if ( act === 'auto' ) {
-      const S = await runAuto(parseInt(process.argv[4]) || Infinity);
+      const S = await runAuto(num, ak);
       console.log(JSON.stringify(S, null, 2));
     } else {
       await runNew(parseInt(cat) || Infinity);
@@ -31,10 +35,19 @@ async function start() {
   }
 }
 
-  async function runAuto(limit) {
-    console.log("Indexing documents...");
+  async function runAuto(limit, fromDisk = true) {
 
-    await runNew(limit, true);
+    if ( fromDisk === 'no' ) {
+      fromDisk = false;
+    }
+
+    if ( ! fromDisk ) {
+      console.log("Indexing documents...");
+
+      await runNew(limit, true);
+    } else {
+      await loadFromDisk();
+    }
 
     console.log("Running queries...");
     const files = fs.readdirSync(path.resolve('tests', 'queries'), {withFileTypes:true});

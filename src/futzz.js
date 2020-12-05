@@ -3,14 +3,17 @@ import path from 'path';
 import {BigMap} from 'big-associative';
 //import StrongMap from './node-strongmap-fast/index.js';
 
-const MIN_ITERATION = 2;
+const CONFIG = JSON.parse(fs.readFileSync('config.json').toString());
+
+const MIN_ITERATION = CONFIG.minIteration;
 const MAX_ITERATION = 12;
 
-const COUNT_ALL = true;
-const PRUNE = true;
-const MAX_WORD_LENGTH_1 = Infinity;
+const AAAF = CONFIG.addAllAsFactors;
+const COUNT_ALL = CONFIG.countAll;
+const PRUNE = CONFIG.prune;
+const MAX_WORD_LENGTH_1 = CONFIG.maxWordLength || Infinity;
 
-const MIN_COUNT = 1;
+const MIN_COUNT = CONFIG.minCount;
 const FOUND_NOT_FACTOR_MULT = 0.75;
 const SMULT = 1 << 32;
 
@@ -28,18 +31,11 @@ let nameId = 0;
 export const State = {
   dict: new BigMap(),
   names: new BigMap(),
-  indexHistory: [],
 };
 
   export function index(text, name) {
     const Ent = [];
     const sortKey = RUN_COUNT;
-
-    const indexHistoryEntry = {
-      docName: name, 
-      terminatorCondition: 'maxEntropy',
-      indexStart: new Date
-    };
 
     let dict, docStr, factors, lastEntropy = 0, maxEntropy = 0, maxFactors;
 
@@ -59,10 +55,6 @@ export const State = {
       lastEntropy = entropy;
     }
 
-    indexHistoryEntry.indexEndAt = new Date;
-
-    State.indexHistory.push(indexHistoryEntry);
-
     return {dict, factors: maxFactors || factors};
   }
 
@@ -76,7 +68,7 @@ export const State = {
       mainFactor[COUNT]++;
     }
     words = `${words} ${words} ${words}`;
-    const {factors} = lz(words, dict, 'query', {idempotent:true});
+    const {factors} = lz(words, dict, 'query', {idempotent:true, addAllAsFactors: AAAF});
     if ( mainFactor ) {
       factors.push(mainFactor);
     }
@@ -239,7 +231,7 @@ export const State = {
           // update the state
             wordFirstIndex = charIndex;
             currentWord = suffix;
-        } else if ( COUNT_ALL ) {
+        } else if ( COUNT_ALL || opts.addAllAsFactors ) {
           const data = dict.get(currentWord);
           if ( !data[NAME][name] ) {
             data[NAME][name] = {[COUNT]: MIN_COUNT+1};
@@ -249,6 +241,9 @@ export const State = {
           data[COUNT]++;
           toNormalize.add(data);
           PRUNE && prune.delete(data);
+          if ( opts.addAllAsFactors ) {
+            factors.push(data);
+          }
         }
 
         currentWord += nextChar;
