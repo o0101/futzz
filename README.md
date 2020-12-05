@@ -61,3 +61,26 @@ Ignore count_all factors below a certain min weight?
 Prune the dict more aggressively at a higher min count?
 
 As fas as I can tell I solved the "recall" problem. We get a great representation of matching documents.
+
+## OK So the best results are found
+
+{
+  "minIteration": 3,
+  "maxWordLength": 29,
+  "prune": true,
+  "countAll": true,
+  "addAllAsFactors": false,
+  "minCount": 1
+}
+
+Basically the method works, and these results establish that more work:
+
+- higher min iteration
+- longer word length
+- counting all 
+
+Are valuable
+
+Given that, I think I should focus on more aggressive pruning, to see if that can push up precision.
+
+Results are 55% and 70% for precision and recall.
