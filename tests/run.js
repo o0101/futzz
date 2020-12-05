@@ -1,4 +1,4 @@
-import {execSync} from 'child_process';
+import {exec,execSync} from 'child_process';
 import fs from 'fs';
 import path from 'path';
 import os from 'os';
@@ -29,25 +29,67 @@ start();
 
 async function start() {
   if ( cat ) {
-    if ( act === 'multiauto') {
+    if ( act === 'multi') {
+      console.log("Multi auto mode");
       await runMultiAuto(num);
     } else if ( act === 'load' ) {
+      console.log("Load mode");
       await runLoad(num);
     } else if ( act === 'disk' ) {
+      console.log("Save mode");
       await runDisk(num);
     } else if ( act === 'auto' ) {
+      console.log("Auto mode");
       const S = await runAuto(num, ak);
       console.log(JSON.stringify(S, null, 2));
     } else {
+      console.log("Q&A mode");
       await runNew(parseInt(cat) || Infinity);
     }
   } else {
+    console.log("Simple test mode");
     await runAll();
   }
 }
 
+  function enumerateConfigs(ranges) {
+    const MAX = Array(Object.keys(ranges).length);
+    Object.values(ranges).forEach((vArray, i) => MAX[i] = vArray.length);
+
+    const values = Array(Object.keys(ranges).length);
+    Object.values(ranges).forEach((vArray, i) => values[i] = vArray);
+
+    const units = Array(Object.keys(ranges).length);
+    units.fill(0);
+
+    const enumeration = [];
+    let k = 0;
+
+    enumerating: while(units[0] != MAX[0]) {
+      enumeration.push(units.map((i, j) => values[j][i]));  
+      k++;
+      for(let i = units.length-1; i >= 0; i--) {
+        if ( units[i] < MAX[i]-1 ) {
+          units[i]++;
+          break;
+        } else if ( i > 0 ) {
+          units[i] = 0;
+        } else {
+          break enumerating;
+        }
+      }
+    }
+
+    console.log(`Enumerated ${k} possibilities.`);
+
+    console.assert(k === enumeration.length);
+
+    return enumeration;
+  }
+
   async function runMultiAuto(limit) {
     const allConfigs = enumerateConfigs(PARAM_RANGES);
+    //console.log(JSON.stringify({allConfigs}));
     const POOL_SIZE = os.cpus().length - 2; // 1 for OS and 1 for this process
     const runner = [];
     let notifyComplete;
@@ -55,7 +97,7 @@ async function start() {
     let test = 0;
     for( const config of allConfigs ) {
       runner.push(() => {
-        const outPath = path.resolve('results', 'configtests', test);
+        const outPath = path.resolve('results', 'configtests', test+'');
         if ( !fs.existsSync(outPath) ) {
           fs.mkdirSync(outPath, {recursive:true});
         }
@@ -72,6 +114,7 @@ async function start() {
           notifyComplete();
         });
       });
+      test++;
     }
 
     await startRun();
@@ -84,7 +127,7 @@ async function start() {
           const startNextJob = runner.shift();
           startNextJob();
           running += 1;
-          console.log({jobStarted:{running}});
+          console.log({jobStarted:{running}, remaining: runner.length});
         } else {
           await completionNotified();
           running -= 1;
