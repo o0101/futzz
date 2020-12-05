@@ -96,8 +96,9 @@ async function start() {
     let running = 0;
     let test = 0;
     for( const config of allConfigs ) {
+      const dirname = test+'';
       runner.push(() => {
-        const outPath = path.resolve('results', 'configtests', test+'');
+        const outPath = path.resolve('results', 'configtests', dirname);
         if ( !fs.existsSync(outPath) ) {
           fs.mkdirSync(outPath, {recursive:true});
         }
