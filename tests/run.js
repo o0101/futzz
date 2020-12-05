@@ -297,8 +297,8 @@ async function start() {
     return Summary;
   }
 
-  function evaluateQuery(q, noThrow = false) {
-    const results = query(q);
+  function evaluateQuery(q, noThrow = false, opts) {
+    const {results} = query(q);
     const matchingFiles = getFiles(q);
     if ( matchingFiles.size === 0 && ! noThrow ) {
       throw new TypeError('Not enough matches to compare against');
@@ -419,9 +419,19 @@ async function start() {
     let q
     do {
       q = await new Promise(res => terminal.question(`Query ${count} files> `, res));
-      console.log({q});
+      q = q && q.trim();
       if ( q && q.length && q !== '.exit' ) {
-        let {precision, recall, results} = evaluateQuery(q, true);
+        let command;
+        if ( q.startsWith('.') ) {
+          const firstSpace = q.indexOf(' ');
+          if ( firstSpace >= 0 ) {
+            command = q.slice(1, firstSpace); 
+            q = q.slice(firstSpace+1);
+          }
+        }
+        let {precision, recall, results, [command]: extra} = evaluateQuery(q, true, {[command]:true});
+
+        console.log({[command]:extra});
 
         results = results.map(([name]) => ({name, start:fs.readFileSync(name).toString().trim().slice(300, 512)}));
 

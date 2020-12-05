@@ -46,6 +46,18 @@ I want to get both between 0.7 and 0.8 or 70% and 80%
 Right now I'm basically at 0.35 to 0.6 or 30% to 60% for both. So I want to double it.
 (37.5% and 55.4%)
 
-
-
 And after that I want to work on ranking.
+
+## My recall is great
+
+It's basically up to 0.7 or 70% (using count_all)
+
+But my precision is only around 55%
+
+How do I increase precision? Weed out irrelevant factors.
+
+Maybe prune the dict for count_all factors below a certain length?
+Ignore count_all factors below a certain min weight?
+Prune the dict more aggressively at a higher min count?
+
+As fas as I can tell I solved the "recall" problem. We get a great representation of matching documents.

@@ -58,7 +58,7 @@ export const State = {
     return {dict, factors: maxFactors || factors};
   }
 
-  export function query(words, right_answers = []) {
+  export function query(words, right_answers = [], opts = {}) {
     const Answers = new Set(right_answers);
     const {dict} = State;
 
@@ -129,7 +129,11 @@ export const State = {
       return score;
     }
 
-    return results; 
+    if ( opts.factors ) {
+      return {results, factors};
+    } else {
+      return {results};
+    }
   }
 
   export function lz(docStr = '', dict = new Map(), name = 'unknown doc', opts = {}) {
