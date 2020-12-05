@@ -84,3 +84,7 @@ Are valuable
 Given that, I think I should focus on more aggressive pruning, to see if that can push up precision.
 
 Results are 55% and 70% for precision and recall.
+
+## Way forward
+
+What we really want I think is the discriminatory power of the "right" factors, and to weed out the wrong ones.
