@@ -1,0 +1,742 @@
+
+> futzz@1.0.0 test /home/cris/futzz
+> clear && node --max-old-space-size=20000 -r esm tests/run.js "ufo" "auto" "nolimit" "no" "no-progress"
+
+[H[2J[3JAuto mode
+undefined no
+Indexing documents...
+Done!
+Running queries...
+Running query set 1 of 6 with 57 queries...
+Running query set 2 of 6 with 22 queries...
+Running query set 3 of 6 with 33 queries...
+Running query set 4 of 6 with 12 queries...
+Running query set 5 of 6 with 16 queries...
+Running query set 6 of 6 with 33 queries...
+
+Group !unrelated_terms
+{
+  "group": "!unrelated_terms",
+  "AvgPrecision": "26.8101",
+  "AvgRecall": "55.2500"
+}
+
+Group _concepts
+{
+  "group": "_concepts",
+  "AvgPrecision": "42.4925",
+  "AvgRecall": "45.3769"
+}
+
+Group general_terms
+{
+  "group": "general_terms",
+  "AvgPrecision": "43.7715",
+  "AvgRecall": "74.3386"
+}
+
+Group long_terms
+{
+  "group": "long_terms",
+  "AvgPrecision": "4.9282",
+  "AvgRecall": "76.5476"
+}
+
+Group short_terms
+{
+  "group": "short_terms",
+  "AvgPrecision": "60.1289",
+  "AvgRecall": "81.5021"
+}
+
+Group specifc_entities
+{
+  "group": "specifc_entities",
+  "AvgPrecision": "44.7735",
+  "AvgRecall": "71.4591"
+}
+
+
+Overall for category ufo
+{
+  "avgPrecision": "45.6013",
+  "medianPrecision": "51.1589",
+  "modePrecision": "99.9642",
+  "avgRecall": "74.8784",
+  "medianRecall": "77.5316",
+  "modeRecall": "75.0000"
+}
+Ran 74 experiments.
+{
+  "precision": [
+    99.96415770609319,
+    2.7027027027027026,
+    99.42196531791907,
+    99.46236559139786,
+    24.509803921568626,
+    3.902439024390244,
+    0.125,
+    94.73684210526315,
+    21.100917431192663,
+    2.4271844660194173,
+    4.841149773071105,
+    7.535321821036106,
+    0.8333333333333334,
+    87.61061946902655,
+    4.098360655737705,
+    0.24288688410825815,
+    21.100917431192663,
+    99.66442953020133,
+    99.00990099009901,
+    99.47916666666666,
+    0.21141649048625794,
+    98,
+    23.079805170475833,
+    99.95475113122171,
+    0.2717391304347826,
+    0.7874015748031495,
+    0.9592326139088728,
+    17.010309278350515,
+    0.9560229445506693,
+    96.85314685314685,
+    1.6064257028112447,
+    97.11815561959655,
+    79.6969696969697,
+    29.834494773519165,
+    99.84802431610942,
+    55.095541401273884,
+    56.34012928891099,
+    99.96415770609319,
+    0.7692307692307693,
+    32.146341463414636,
+    98.43912591050989,
+    1.1760094080752646,
+    99.91617770326907,
+    13.304093567251464,
+    99.95475113122171,
+    47.22222222222222,
+    98.61111111111111,
+    81.48148148148148,
+    97.11815561959655,
+    6.80379746835443,
+    18.248175182481752,
+    79.6969696969697,
+    29.834494773519165,
+    1.6064257028112447,
+    16.19718309859155,
+    9.215017064846416,
+    86.76470588235294,
+    4.032258064516129,
+    9.595959595959595,
+    95.3405017921147,
+    99.55947136563876,
+    94.62025316455697,
+    99.32432432432432,
+    0.21337126600284498,
+    70.83333333333334,
+    59.61538461538461,
+    0.07984031936127745,
+    0.1564945226917058,
+    0.21834061135371177,
+    0.4815409309791332,
+    3.278688524590164,
+    0.25157232704402516,
+    96.36363636363636,
+    91.66666666666666
+  ],
+  "recall": [
+    98.72566371681415,
+    96.29629629629629,
+    66.66666666666666,
+    70.34220532319392,
+    68.18181818181817,
+    80,
+    50,
+    40,
+    84.40366972477065,
+    71.42857142857143,
+    82.05128205128204,
+    98.96907216494846,
+    75,
+    70.71428571428572,
+    38.46153846153847,
+    87.5,
+    84.40366972477065,
+    81.14754098360656,
+    64.93506493506493,
+    84.51327433628319,
+    80,
+    57.647058823529406,
+    99.51534733441034,
+    77.56320224719101,
+    50,
+    83.33333333333334,
+    57.14285714285714,
+    94.28571428571428,
+    71.42857142857143,
+    83.18318318318319,
+    80,
+    76.41723356009071,
+    71.11952406706328,
+    94.74412171507606,
+    42.41446094254358,
+    95.38249483115094,
+    89.00235663786331,
+    98.72566371681415,
+    87.5,
+    88.93387314439946,
+    64.48534423994546,
+    96.7741935483871,
+    71.1217183770883,
+    86.66666666666667,
+    77.56320224719101,
+    35.41666666666667,
+    46.71052631578947,
+    86.27450980392157,
+    76.41723356009071,
+    82.6923076923077,
+    78.125,
+    71.11952406706328,
+    94.74412171507606,
+    80,
+    46.93877551020408,
+    79.41176470588235,
+    78.1456953642384,
+    86.53846153846155,
+    95,
+    74.30167597765363,
+    69.75308641975309,
+    73.64532019704434,
+    78.6096256684492,
+    75,
+    64.15094339622641,
+    77.5,
+    66.66666666666666,
+    75,
+    50,
+    75,
+    88.88888888888889,
+    66.66666666666666,
+    64.11290322580645,
+    35.483870967741936
+  ],
+  "groups": [
+    {
+      "name": "!unrelated_terms",
+      "AvgPrecision": "26.8101",
+      "AvgRecall": "55.2500",
+      "Precision": [
+        0,
+        0.29239766081871343,
+        90,
+        1.3761467889908259,
+        0.062266500622665005,
+        1.4957264957264957,
+        94.44444444444444
+      ],
+      "Recall": [
+        0,
+        50,
+        56.25,
+        75,
+        50,
+        87.5,
+        68
+      ],
+      "queries": [
+        "chemopercpetion",
+        "anodye aguilla turncoat",
+        "topcat specialist minataur",
+        "tophat anaheim jumpsuit",
+        "candid serenade photography",
+        "specialise armadillo hairpiece",
+        "halloween party",
+        "doctor phd thesis",
+        "matriculation of 1 million students",
+        "the chinese sichuan restaurant of the year",
+        "machining tool lathe",
+        "hacksaw",
+        "carbon rope",
+        "IBM integrated circuit",
+        "linen and bedding",
+        "accountant supply warehouse",
+        "actuarial studies on the rhine",
+        "the germanic people",
+        "history of the french-english wars",
+        "charlemagne beheaded",
+        "joan of arc still alive shock",
+        "william gibson assassinated",
+        "1984 george orwell",
+        "palindromous",
+        "perplexing synchronicities",
+        "serendipitous coincidences",
+        "unbelievable facts",
+        "courteous broadway actors",
+        "the academy awards",
+        "won an emmy",
+        "Tom Hanks",
+        "Lizette Smithsorn",
+        "CHarlize Theron",
+        "Bob Marley",
+        "And the wailers",
+        "Or is it the Whalers?",
+        "The Japanese penitentiary system at the turn of the first millenium",
+        "Fine japanese cuisie in aseda",
+        "highline",
+        "highrise",
+        "skyline",
+        "the AIA building",
+        "Keanu reeves",
+        "ycombinator",
+        "forgotten generation",
+        "the youth and children of hong kong",
+        "those poor peoples",
+        "indigenous natives",
+        "native americans",
+        "time apocalypse",
+        "time before time",
+        "time after death",
+        "time unending",
+        "universal law",
+        "cannon",
+        "rhododendrum",
+        "lattice cryptography"
+      ]
+    },
+    {
+      "name": "_concepts",
+      "AvgPrecision": "42.4925",
+      "AvgRecall": "45.3769",
+      "Precision": [
+        17.32776617954071,
+        5.822887181560858,
+        5.6375838926174495,
+        24.53917050691244,
+        37.37864077669903,
+        71.24528301886792,
+        92.3076923076923,
+        46.54545454545455,
+        88.43226788432268,
+        95.28718703976435,
+        10.479846449136277,
+        17.68368617683686,
+        47.65957446808511,
+        38.670694864048336,
+        36.6412213740458,
+        55.78512396694215,
+        83.01886792452831,
+        67.47169811320755,
+        22.830188679245282,
+        38.095238095238095,
+        8.558030480656505,
+        23.417721518987342
+      ],
+      "Recall": [
+        56.4625850340136,
+        97.95918367346938,
+        56.00000000000001,
+        51.57384987893463,
+        16.008316008316008,
+        57.21212121212121,
+        30.313588850174217,
+        38.90577507598784,
+        28.89109895574341,
+        25.75636942675159,
+        98.20143884892086,
+        58.67768595041323,
+        16.944024205748864,
+        23.925233644859816,
+        17.712177121771216,
+        14.673913043478262,
+        33.902036323610346,
+        63.5846372688478,
+        55.8891454965358,
+        50.20242914979757,
+        53.67647058823529,
+        51.820728291316534
+      ],
+      "queries": [
+        [
+          "john f kennedy",
+          "the assassinated american president"
+        ],
+        [
+          "john f kennedy",
+          "the grassy knoll sniper shot"
+        ],
+        [
+          "nasa shuttle",
+          "reusable space vehicle system"
+        ],
+        [
+          "uri gagarin",
+          "first human in space"
+        ],
+        [
+          "luna",
+          "another name for the moon"
+        ],
+        [
+          "cia",
+          "spooks and spycraft"
+        ],
+        [
+          "nsa",
+          "signals and geeks"
+        ],
+        [
+          "dia",
+          "planners and pen pushers"
+        ],
+        [
+          "oni",
+          "the no hat office"
+        ],
+        [
+          "osi",
+          "project paperclip ahahaha"
+        ],
+        [
+          "deviant",
+          "all spies"
+        ],
+        [
+          "the adversary",
+          "an AI that seeks to take over the galaxy or the universe"
+        ],
+        [
+          "reptilian",
+          "the secret rules of the planet"
+        ],
+        [
+          "alien-human hybrid",
+          "the real purpose of aliens and the alien agenda"
+        ],
+        [
+          "roswell crash",
+          "us government alien coverup"
+        ],
+        [
+          "anunaki",
+          "original creators of the human race"
+        ],
+        [
+          "president einsenhower",
+          "the creator of majestic 12"
+        ],
+        [
+          "president roosevelt",
+          "teddy president"
+        ],
+        [
+          "marilyn monroe",
+          "famous person who was an alien"
+        ],
+        [
+          "valiant thor",
+          "alien who worked for us government"
+        ],
+        [
+          "area 51",
+          "us military installation housing aliens and crashed disc debris"
+        ],
+        [
+          "money and trade",
+          "why is there secrecy around aliens"
+        ]
+      ]
+    },
+    {
+      "name": "general_terms",
+      "AvgPrecision": "43.7715",
+      "AvgRecall": "74.3386",
+      "Precision": [
+        99.96415770609319,
+        2.7027027027027026,
+        99.42196531791907,
+        99.46236559139786,
+        24.509803921568626,
+        3.902439024390244,
+        0.125,
+        94.73684210526315,
+        21.100917431192663,
+        2.4271844660194173,
+        4.841149773071105,
+        7.535321821036106,
+        0.8333333333333334,
+        87.61061946902655,
+        4.098360655737705,
+        0.24288688410825815,
+        21.100917431192663,
+        99.66442953020133,
+        99.00990099009901,
+        99.47916666666666,
+        0.21141649048625794,
+        98,
+        23.079805170475833,
+        99.95475113122171,
+        0.2717391304347826
+      ],
+      "Recall": [
+        98.72566371681415,
+        96.29629629629629,
+        66.66666666666666,
+        70.34220532319392,
+        68.18181818181817,
+        80,
+        50,
+        40,
+        84.40366972477065,
+        71.42857142857143,
+        82.05128205128204,
+        98.96907216494846,
+        75,
+        70.71428571428572,
+        38.46153846153847,
+        87.5,
+        84.40366972477065,
+        81.14754098360656,
+        64.93506493506493,
+        84.51327433628319,
+        80,
+        57.647058823529406,
+        99.51534733441034,
+        77.56320224719101,
+        50
+      ],
+      "queries": [
+        "UFO",
+        "antigravity",
+        "disc craft",
+        "spaceship",
+        "satellite",
+        "alien beings",
+        "grey alien",
+        "tall white",
+        "nordic alien",
+        "alien race",
+        "alien abduction",
+        "insectoid",
+        "reptilian",
+        "underground base",
+        "radar data",
+        "ufo crash",
+        "crashed disc",
+        "photograph of alien",
+        "video of alien",
+        "photograph of ufo",
+        "video of ufo",
+        "alien abduction",
+        "abductee",
+        "contactee",
+        "psychic",
+        "remote viewer",
+        "telepathy",
+        "extraterrestrial",
+        "ET",
+        "chronovisor",
+        "age regression",
+        "genetic farmer races",
+        "alien-human hybrid"
+      ]
+    },
+    {
+      "name": "long_terms",
+      "AvgPrecision": "4.9282",
+      "AvgRecall": "76.5476",
+      "Precision": [
+        0.7874015748031495,
+        0.9592326139088728,
+        17.010309278350515,
+        0.9560229445506693
+      ],
+      "Recall": [
+        83.33333333333334,
+        57.14285714285714,
+        94.28571428571428,
+        71.42857142857143
+      ],
+      "queries": [
+        "special access program",
+        "sensitive compartmentalized information",
+        "special compartmentalized intelligence",
+        "the office of the president",
+        "stanford research institute",
+        "department of defense",
+        "alien genetic program",
+        "extraterrestrial biological entity",
+        "blackbudget",
+        "unacknowledged program",
+        "project looking glass",
+        "project center lane"
+      ]
+    },
+    {
+      "name": "short_terms",
+      "AvgPrecision": "60.1289",
+      "AvgRecall": "81.5021",
+      "Precision": [
+        96.85314685314685,
+        1.6064257028112447,
+        97.11815561959655,
+        79.6969696969697,
+        29.834494773519165,
+        99.84802431610942,
+        55.095541401273884,
+        56.34012928891099,
+        99.96415770609319,
+        0.7692307692307693,
+        32.146341463414636,
+        98.43912591050989,
+        1.1760094080752646,
+        99.91617770326907,
+        13.304093567251464,
+        99.95475113122171
+      ],
+      "Recall": [
+        83.18318318318319,
+        80,
+        76.41723356009071,
+        71.11952406706328,
+        94.74412171507606,
+        42.41446094254358,
+        95.38249483115094,
+        89.00235663786331,
+        98.72566371681415,
+        87.5,
+        88.93387314439946,
+        64.48534423994546,
+        96.7741935483871,
+        71.1217183770883,
+        86.66666666666667,
+        77.56320224719101
+      ],
+      "queries": [
+        "mj-12",
+        "noaa",
+        "nasa",
+        "cia",
+        "nsa",
+        "dia",
+        "osi",
+        "oni",
+        "ufo",
+        "flir",
+        "sap",
+        "sci",
+        "sri",
+        "sai",
+        "dod",
+        "ET"
+      ]
+    },
+    {
+      "name": "specifc_entities",
+      "AvgPrecision": "44.7735",
+      "AvgRecall": "71.4591",
+      "Precision": [
+        47.22222222222222,
+        98.61111111111111,
+        81.48148148148148,
+        97.11815561959655,
+        6.80379746835443,
+        18.248175182481752,
+        79.6969696969697,
+        29.834494773519165,
+        1.6064257028112447,
+        16.19718309859155,
+        9.215017064846416,
+        86.76470588235294,
+        4.032258064516129,
+        9.595959595959595,
+        95.3405017921147,
+        99.55947136563876,
+        94.62025316455697,
+        99.32432432432432,
+        0.21337126600284498,
+        70.83333333333334,
+        59.61538461538461,
+        0.07984031936127745,
+        0.1564945226917058,
+        0.21834061135371177,
+        0.4815409309791332,
+        3.278688524590164,
+        0.25157232704402516,
+        96.36363636363636,
+        91.66666666666666
+      ],
+      "Recall": [
+        35.41666666666667,
+        46.71052631578947,
+        86.27450980392157,
+        76.41723356009071,
+        82.6923076923077,
+        78.125,
+        71.11952406706328,
+        94.74412171507606,
+        80,
+        46.93877551020408,
+        79.41176470588235,
+        78.1456953642384,
+        86.53846153846155,
+        95,
+        74.30167597765363,
+        69.75308641975309,
+        73.64532019704434,
+        78.6096256684492,
+        75,
+        64.15094339622641,
+        77.5,
+        66.66666666666666,
+        75,
+        50,
+        75,
+        88.88888888888889,
+        66.66666666666666,
+        64.11290322580645,
+        35.483870967741936
+      ],
+      "queries": [
+        "majestic 12",
+        "maryland",
+        "bob lazar",
+        "NASA",
+        "Central Intelligence Agency",
+        "National Security Agency",
+        "CIA",
+        "NSA",
+        "NOAA",
+        "Denver, Colorado",
+        "Nellis AFB",
+        "Area 51",
+        "Nevada Test Site",
+        "Groom Lake, Nevada",
+        "New Mexico",
+        "Roswell",
+        "New York",
+        "Australia",
+        "president roosevelt",
+        "president eisenhower",
+        "president kennedy",
+        "armadillo",
+        "russel targ",
+        "hal puthoff",
+        "stanford research institute",
+        "science applications international",
+        "lockheed skunkworks",
+        "skunkworks",
+        "general electric",
+        "raytheon",
+        "pine gap australia",
+        "blue book",
+        "yellow book"
+      ]
+    }
+  ],
+  "avgPrecision": "45.6013",
+  "medianPrecision": "51.1589",
+  "modePrecision": "99.9642",
+  "avgRecall": "74.8784",
+  "medianRecall": "77.5316",
+  "modeRecall": "75.0000"
+}

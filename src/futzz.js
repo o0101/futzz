@@ -12,6 +12,7 @@ const AAAF = CONFIG.addAllAsFactors;
 const COUNT_ALL = CONFIG.countAll;
 const PRUNE = CONFIG.prune;
 const MAX_WORD_LENGTH_1 = CONFIG.maxWordLength || Infinity;
+const USE_Q_INDEX = CONFIG.useQ;
 
 const MIN_COUNT = CONFIG.minCount;
 const FOUND_NOT_FACTOR_MULT = 0.75;
@@ -33,7 +34,7 @@ export const State = {
   names: new BigMap(),
 };
 
-  export function index(text, name) {
+  export function index(text, name, opts) {
     const Factors = [];
     const Ent = [];
     const sortKey = RUN_COUNT;
@@ -43,7 +44,7 @@ export const State = {
     let Dict = State.dict;
 
     indexingCycle: for( let i = 0; i < MAX_ITERATION; i++ ) {
-      ({dict, factors, docStr} = lz(text, Dict, name)); 
+      ({dict, factors, docStr} = lz(text, Dict, name, opts)); 
       Factors.push(...factors);
       const entropy = ent(factors);
       const total = entropy*factors.length;
@@ -69,8 +70,15 @@ export const State = {
     if ( mainFactor ) {
       mainFactor[COUNT]++;
     }
-    words = `${words} ${words} ${words}`;
-    const {factors} = lz(words, dict, 'query', {idempotent:true, addAllAsFactors: AAAF});
+    let factors;
+
+    if ( USE_Q_INDEX ) { 
+      ({Factors:factors} = index(words, 'query', {idempotent:true, addAllAsFactors: AAAF}));
+    } else {
+      words = `${words} ${words} ${words}`;
+      ({factors} = lz(words, dict, 'query', {idempotent:true, addAllAsFactors: AAAF}));
+    }
+
     if ( mainFactor ) {
       factors.push(mainFactor);
     }
