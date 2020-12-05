@@ -1,0 +1,16 @@
+
+> futzz@1.0.0 test /home/cris/futzz
+> clear && node --max-old-space-size=13000 -r esm tests/run.js "ufo" "multi"
+
+[H[2J[3JMulti auto mode
+Enumerated 192 possibilities.
+{ jobStarted: { running: 1 }, remaining: 191 }
+{ jobStarted: { running: 2 }, remaining: 190 }
+{ jobStarted: { running: 3 }, remaining: 189 }
+{ jobStarted: { running: 4 }, remaining: 188 }
+{ jobStarted: { running: 5 }, remaining: 187 }
+{ jobStarted: { running: 6 }, remaining: 186 }
+{ jobStarted: { running: 7 }, remaining: 185 }
+{ jobStarted: { running: 8 }, remaining: 184 }
+{ jobStarted: { running: 9 }, remaining: 183 }
+{ jobStarted: { running: 10 }, remaining: 182 }
