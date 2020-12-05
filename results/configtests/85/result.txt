@@ -1,0 +1,8 @@
+Error: Command failed: npm test ufo auto nolimit no no-progress
+/home/cris/futzz/tests/run.js:26
+const jap = process.argv[6] ? process.argv[6] : process.argv[5];
+^
+
+SyntaxError: Invalid or unexpected token
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+npm ERR! Test failed.  See above for more details.

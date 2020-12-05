@@ -1,0 +1,31 @@
+Error: Command failed: npm test ufo auto nolimit no no-progress
+
+<--- Last few GCs --->
+
+[52130:0x5efdca0]   392038 ms: Scavenge 16234.1 (16808.2) -> 16219.8 (16807.8) MB, 46.1 / 0.0 ms  (average mu = 0.819, current mu = 0.784) allocation failure 
+[52130:0x5efdca0]   392186 ms: Scavenge 16235.9 (16808.5) -> 16221.7 (16807.8) MB, 49.9 / 0.0 ms  (average mu = 0.819, current mu = 0.784) allocation failure 
+[52130:0x5efdca0]   392356 ms: Scavenge 16237.6 (16808.0) -> 16224.1 (16808.2) MB, 52.3 / 0.0 ms  (average mu = 0.819, current mu = 0.784) allocation failure 
+
+
+<--- JS stacktrace --->
+
+FATAL ERROR: NewSpace::Rebalance Allocation failed - JavaScript heap out of memory
+ 1: 0xa03530 node::Abort() [node]
+ 2: 0x94e471 node::FatalError(char const*, char const*) [node]
+ 3: 0xb7773e v8::Utils::ReportOOMFailure(v8::internal::Isolate*, char const*, bool) [node]
+ 4: 0xb77ab7 v8::internal::V8::FatalProcessOutOfMemory(v8::internal::Isolate*, char const*, bool) [node]
+ 5: 0xd32345  [node]
+ 6: 0xd72197  [node]
+ 7: 0xd838c1 v8::internal::MarkCompactCollector::CollectGarbage() [node]
+ 8: 0xd3fbe8 v8::internal::Heap::MarkCompact() [node]
+ 9: 0xd416d8 v8::internal::Heap::CollectGarbage(v8::internal::AllocationSpace, v8::internal::GarbageCollectionReason, v8::GCCallbackFlags) [node]
+10: 0xd44b1c v8::internal::Heap::AllocateRawWithRetryOrFailSlowPath(int, v8::internal::AllocationType, v8::internal::AllocationOrigin, v8::internal::AllocationAlignment) [node]
+11: 0xd0a422 v8::internal::Factory::AllocateRaw(int, v8::internal::AllocationType, v8::internal::AllocationAlignment) [node]
+12: 0xd06672 v8::internal::FactoryBase<v8::internal::Factory>::AllocateRawArray(int, v8::internal::AllocationType) [node]
+13: 0xd06724 v8::internal::FactoryBase<v8::internal::Factory>::NewFixedArrayWithFiller(v8::internal::Handle<v8::internal::Map>, int, v8::internal::Handle<v8::internal::Oddball>, v8::internal::AllocationType) [node]
+14: 0xf4cefb v8::internal::OrderedHashTable<v8::internal::OrderedHashSet, 1>::Allocate(v8::internal::Isolate*, int, v8::internal::AllocationType) [node]
+15: 0xf4d08f v8::internal::OrderedHashTable<v8::internal::OrderedHashSet, 1>::Rehash(v8::internal::Isolate*, v8::internal::Handle<v8::internal::OrderedHashSet>, int) [node]
+16: 0x103caf8 v8::internal::Runtime_SetGrow(int, unsigned long*, v8::internal::Isolate*) [node]
+17: 0x13ff179  [node]
+Aborted (core dumped)
+npm ERR! Test failed.  See above for more details.

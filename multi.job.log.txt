@@ -3,7 +3,7 @@
 > clear && node --max-old-space-size=20000 -r esm tests/run.js "ufo" "multi"
 
 [H[2J[3JMulti auto mode
-Infinity
+undefined
 Enumerated 96 possibilities.
 { jobStarted: { running: 1 }, remaining: 95 }
 { jobStarted: { running: 2 }, remaining: 94 }
@@ -15,23 +15,3 @@ Enumerated 96 possibilities.
 { jobStarted: { running: 8 }, remaining: 88 }
 { jobStarted: { running: 9 }, remaining: 87 }
 { jobStarted: { running: 10 }, remaining: 86 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 85 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 84 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 83 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 82 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 81 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 80 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 79 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 78 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 77 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 76 }

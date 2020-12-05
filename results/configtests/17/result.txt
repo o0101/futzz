@@ -1,0 +1,5 @@
+Error: Command failed: npm test ufo auto nolimit no no-progress
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+Aborted (core dumped)
+npm ERR! Test failed.  See above for more details.

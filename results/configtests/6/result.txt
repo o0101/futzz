@@ -1,0 +1,14 @@
+Error: Command failed: npm test ufo auto nolimit no no-progress
+
+<--- Last few GCs --->
+
+[52133:0x46c3ca0]   378748 ms: Scavenge 16248.7 (16816.1) -> 16248.2 (16816.1) MB, 236.5 / 0.0 ms  (average mu = 0.866, current mu = 0.894) allocation failure 
+[52133:0x46c3ca0]   378985 ms: Scavenge 16248.8 (16816.1) -> 16248.6 (16816.1) MB, 233.9 / 0.0 ms  (average mu = 0.866, current mu = 0.894) allocation failure 
+[52133:0x46c3ca0]   379252 ms: Scavenge 16248.8 (16816.1) -> 16248.6 (16816.1) MB, 266.1 / 0.0 ms  (average mu = 0.866, current mu = 0.894) allocation failure 
+
+
+<--- JS stacktrace --->
+
+FATAL ERROR: Scavenger: semi-space copy Allocation failed - JavaScript heap out of memory
+Segmentation fault (core dumped)
+npm ERR! Test failed.  See above for more details.

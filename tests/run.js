@@ -22,7 +22,7 @@ const PARAM_RANGES = {
 const cat = process.argv[2];
 const act = process.argv[3];
 const num = parseInt(process.argv[4]) || undefined;
-const ak = num === undefined ? process.argv[4] : process.argv[5];
+const ak = num || process.argv[4] === 'nolimit' ? process.argv[5] : process.argv[4];
 const jap = process.argv[6] ? process.argv[6] : process.argv[5];
 
 start();
@@ -55,13 +55,14 @@ async function start() {
 }
 
   function enumerateConfigs(ranges) {
-    const MAX = Array(Object.keys(ranges).length);
+    const keys = Object.keys(ranges);
+    const MAX = Array(keys.length);
     Object.values(ranges).forEach((vArray, i) => MAX[i] = vArray.length);
 
-    const values = Array(Object.keys(ranges).length);
+    const values = Array(keys.length);
     Object.values(ranges).forEach((vArray, i) => values[i] = vArray);
 
-    const units = Array(Object.keys(ranges).length);
+    const units = Array(keys.length);
     units.fill(0);
 
     const enumeration = [];
@@ -86,7 +87,13 @@ async function start() {
 
     console.assert(k === enumeration.length);
 
-    return enumeration;
+    return enumeration.map(vals => {
+      const c = {};
+      vals.forEach((v,i) => {
+        c[keys[i]] = v;   
+      });
+      return c;
+    });
   }
 
   async function runMultiAuto(limit = 'nolimit') {
