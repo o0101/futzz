@@ -1,6 +1,7 @@
 import {execSync} from 'child_process';
 import fs from 'fs';
 import path from 'path';
+import os from 'os';
 import JSON36 from 'json36';
 import {State, loadFromDisk, saveToDisk, query, index, ent} from '../src/futzz.js';
 import readline from 'readline';
@@ -47,19 +48,56 @@ async function start() {
 
   async function runMultiAuto(limit) {
     const allConfigs = enumerateConfigs(PARAM_RANGES);
+    const POOL_SIZE = os.cpus().length - 2; // 1 for OS and 1 for this process
+    const runner = [];
+    let notifyComplete;
+    let running = 0;
     let test = 0;
     for( const config of allConfigs ) {
-      const outPath = path.resolve('results', 'configtests', test);
-      if ( !fs.existsSync(outPath) ) {
-        fs.mkdirSync(outPath, {recursive:true});
+      runner.push(() => {
+        const outPath = path.resolve('results', 'configtests', test);
+        if ( !fs.existsSync(outPath) ) {
+          fs.mkdirSync(outPath, {recursive:true});
+        }
+
+        fs.writeFileSync(path.resolve('config.json'), JSON.stringify(config,null,2));
+        fs.writeFileSync(path.resolve(outPath, 'config.json'), JSON.stringify(config,null,2));
+
+        exec(`npm test ufo auto ${limit} no no-progress`, (err, stdout, stderr) => {
+          if ( err ) {
+            console.warn(err);
+          }
+          const result = (err || stdout).toString();
+          fs.writeFileSync(path.resolve(outPath, 'result.txt'), result);
+          notifyComplete();
+        });
+      });
+    }
+
+    await startRun();
+
+    console.log("Done!");
+
+    async function startRun() {
+      while(runner.length) {
+        if ( running < POOL_SIZE ) {
+          const startNextJob = runner.shift();
+          startNextJob();
+          running += 1;
+          console.log({jobStarted:{running}});
+        } else {
+          await completionNotified();
+          running -= 1;
+          console.log({jobCompleted:{running}});
+        }
       }
+    }
 
-      fs.writeFileSync(path.resolve('config.json'), JSON.stringify(config,null,2));
-      fs.writeFileSync(path.resolve(outPath, 'config.json'), JSON.stringify(config,null,2));
-
-      const result = execSync(`npm test ufo auto ${limit} no no-progress`);
-
-      fs.writeFileSync(path.resolve(outPath, 'result.txt'), result);
+    function completionNotified() {
+      let resolver;
+      const p = new Promise(res => resolver = res);
+      notifyComplete = resolver;
+      return p;
     }
   }
 
