@@ -1,8 +1,8 @@
-[
-  6,
-  13,
-  true,
-  true,
-  false,
-  5
-]
+{
+  "minIteration": 6,
+  "maxWordLength": 13,
+  "prune": true,
+  "countAll": true,
+  "addAllAsFactors": false,
+  "minCount": 5
+}
