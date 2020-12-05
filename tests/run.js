@@ -21,9 +21,9 @@ const PARAM_RANGES = {
 
 const cat = process.argv[2];
 const act = process.argv[3];
-const num = parseInt(process.argv[4]) || Infinity;
-const ak = num === Infinity ? process.argv[4] : process.argv[5];
-const jap = process.argv[6];
+const num = parseInt(process.argv[4]) || undefined;
+const ak = num === undefined ? process.argv[4] : process.argv[5];
+const jap = process.argv[6] ? process.argv[6] : process.argv[5];
 
 start();
 
@@ -31,6 +31,7 @@ async function start() {
   if ( cat ) {
     if ( act === 'multi') {
       console.log("Multi auto mode");
+      console.log(num);
       await runMultiAuto(num);
     } else if ( act === 'load' ) {
       console.log("Load mode");
@@ -40,6 +41,7 @@ async function start() {
       await runDisk(num);
     } else if ( act === 'auto' ) {
       console.log("Auto mode");
+      console.log(num, ak);
       const S = await runAuto(num, ak);
       console.log(JSON.stringify(S, null, 2));
     } else {
@@ -87,7 +89,7 @@ async function start() {
     return enumeration;
   }
 
-  async function runMultiAuto(limit) {
+  async function runMultiAuto(limit = 'nolimit') {
     const allConfigs = enumerateConfigs(PARAM_RANGES);
     //console.log(JSON.stringify({allConfigs}));
     const POOL_SIZE = os.cpus().length - 4; // 1 for OS and 1 for this process, and 2 spare
