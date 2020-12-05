@@ -1,16 +1,241 @@
 
 > futzz@1.0.0 test /home/cris/futzz
-> clear && node --max-old-space-size=13000 -r esm tests/run.js "ufo" "multi"
+> clear && node --max-old-space-size=20000 -r esm tests/run.js "ufo" "multi"
 
 [H[2J[3JMulti auto mode
-Enumerated 192 possibilities.
-{ jobStarted: { running: 1 }, remaining: 191 }
-{ jobStarted: { running: 2 }, remaining: 190 }
-{ jobStarted: { running: 3 }, remaining: 189 }
-{ jobStarted: { running: 4 }, remaining: 188 }
-{ jobStarted: { running: 5 }, remaining: 187 }
-{ jobStarted: { running: 6 }, remaining: 186 }
-{ jobStarted: { running: 7 }, remaining: 185 }
-{ jobStarted: { running: 8 }, remaining: 184 }
-{ jobStarted: { running: 9 }, remaining: 183 }
-{ jobStarted: { running: 10 }, remaining: 182 }
+Enumerated 96 possibilities.
+{ jobStarted: { running: 1 }, remaining: 95 }
+{ jobStarted: { running: 2 }, remaining: 94 }
+{ jobStarted: { running: 3 }, remaining: 93 }
+{ jobStarted: { running: 4 }, remaining: 92 }
+{ jobStarted: { running: 5 }, remaining: 91 }
+{ jobStarted: { running: 6 }, remaining: 90 }
+{ jobStarted: { running: 7 }, remaining: 89 }
+{ jobStarted: { running: 8 }, remaining: 88 }
+{ jobStarted: { running: 9 }, remaining: 87 }
+{ jobStarted: { running: 10 }, remaining: 86 }
+Error: Command failed: npm test ufo auto Infinity no no-progress
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+Aborted (core dumped)
+npm ERR! Test failed.  See above for more details.
+
+    at ChildProcess.exithandler (child_process.js:308:12)
+    at ChildProcess.emit (events.js:315:20)
+    at ChildProcess.EventEmitter.emit (domain.js:486:12)
+    at maybeClose (internal/child_process.js:1048:16)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:288:5) {
+  killed: false,
+  code: 1,
+  signal: null,
+  cmd: 'npm test ufo auto Infinity no no-progress'
+}
+{ jobCompleted: { running: 9 } }
+{ jobStarted: { running: 10 }, remaining: 85 }
+Error: Command failed: npm test ufo auto Infinity no no-progress
+
+<--- Last few GCs --->
+
+[2161:0x470eca0]   321933 ms: Scavenge 16177.7 (16814.1) -> 16177.7 (16814.1) MB, 49.0 / 0.0 ms  (average mu = 0.965, current mu = 0.966) allocation failure 
+[2161:0x470eca0]   321982 ms: Scavenge 16177.7 (16814.1) -> 16177.6 (16814.1) MB, 48.8 / 0.0 ms  (average mu = 0.965, current mu = 0.966) allocation failure 
+[2161:0x470eca0]   322029 ms: Scavenge 16177.7 (16814.1) -> 16177.7 (16814.1) MB, 47.2 / 0.0 ms  (average mu = 0.965, current mu = 0.966) allocation failure 
+
+
+<--- JS stacktrace --->
+
+FATAL ERROR: Scavenger: semi-space copy Allocation failed - JavaScript heap out of memory
+Segmentation fault (core dumped)
+npm ERR! Test failed.  See above for more details.
+
+    at ChildProcess.exithandler (child_process.js:308:12)
+    at ChildProcess.emit (events.js:315:20)
+    at ChildProcess.EventEmitter.emit (domain.js:486:12)
+    at maybeClose (internal/child_process.js:1048:16)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:288:5) {
+  killed: false,
+  code: 1,
+  signal: null,
+  cmd: 'npm test ufo auto Infinity no no-progress'
+}
+{ jobCompleted: { running: 9 } }
+{ jobStarted: { running: 10 }, remaining: 84 }
+Error: Command failed: npm test ufo auto Infinity no no-progress
+
+<--- Last few GCs --->
+
+[2164:0x5a77ca0]   322305 ms: Scavenge 16187.6 (16814.2) -> 16185.8 (16814.2) MB, 45.5 / 0.0 ms  (average mu = 0.966, current mu = 0.967) allocation failure 
+[2164:0x5a77ca0]   322368 ms: Scavenge 16187.7 (16814.2) -> 16187.3 (16814.2) MB, 56.7 / 0.0 ms  (average mu = 0.966, current mu = 0.967) allocation failure 
+[2164:0x5a77ca0]   322418 ms: Scavenge 16187.7 (16814.2) -> 16187.5 (16814.2) MB, 49.1 / 0.0 ms  (average mu = 0.966, current mu = 0.967) allocation failure 
+
+
+<--- JS stacktrace --->
+
+FATAL ERROR: Scavenger: semi-space copy Allocation failed - JavaScript heap out of memory
+Segmentation fault (core dumped)
+npm ERR! Test failed.  See above for more details.
+
+    at ChildProcess.exithandler (child_process.js:308:12)
+    at ChildProcess.emit (events.js:315:20)
+    at ChildProcess.EventEmitter.emit (domain.js:486:12)
+    at maybeClose (internal/child_process.js:1048:16)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:288:5) {
+  killed: false,
+  code: 1,
+  signal: null,
+  cmd: 'npm test ufo auto Infinity no no-progress'
+}
+{ jobCompleted: { running: 9 } }
+{ jobStarted: { running: 10 }, remaining: 83 }
+Error: Command failed: npm test ufo auto Infinity no no-progress
+
+<--- Last few GCs --->
+
+[2186:0x4711ca0]   322706 ms: Scavenge 16182.0 (16812.0) -> 16181.2 (16812.0) MB, 46.6 / 0.0 ms  (average mu = 0.966, current mu = 0.968) allocation failure 
+[2186:0x4711ca0]   322752 ms: Scavenge 16182.1 (16812.0) -> 16182.0 (16812.0) MB, 43.5 / 0.0 ms  (average mu = 0.966, current mu = 0.968) allocation failure 
+[2186:0x4711ca0]   322798 ms: Scavenge 16182.1 (16812.0) -> 16182.0 (16812.0) MB, 44.7 / 0.0 ms  (average mu = 0.966, current mu = 0.968) allocation failure 
+
+
+<--- JS stacktrace --->
+
+FATAL ERROR: Scavenger: semi-space copy Allocation failed - JavaScript heap out of memory
+Segmentation fault (core dumped)
+npm ERR! Test failed.  See above for more details.
+
+    at ChildProcess.exithandler (child_process.js:308:12)
+    at ChildProcess.emit (events.js:315:20)
+    at ChildProcess.EventEmitter.emit (domain.js:486:12)
+    at maybeClose (internal/child_process.js:1048:16)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:288:5) {
+  killed: false,
+  code: 1,
+  signal: null,
+  cmd: 'npm test ufo auto Infinity no no-progress'
+}
+{ jobCompleted: { running: 9 } }
+{ jobStarted: { running: 10 }, remaining: 82 }
+Error: Command failed: npm test ufo auto Infinity no no-progress
+
+<--- Last few GCs --->
+
+[2221:0x63a9ca0]   322747 ms: Scavenge 16183.9 (16812.3) -> 16181.7 (16812.3) MB, 45.0 / 0.0 ms  (average mu = 0.966, current mu = 0.967) allocation failure 
+[2221:0x63a9ca0]   322803 ms: Scavenge 16184.0 (16812.3) -> 16183.5 (16812.3) MB, 49.7 / 0.0 ms  (average mu = 0.966, current mu = 0.967) allocation failure 
+[2221:0x63a9ca0]   322853 ms: Scavenge 16184.1 (16812.3) -> 16184.0 (16812.3) MB, 48.0 / 0.0 ms  (average mu = 0.966, current mu = 0.967) allocation failure 
+
+
+<--- JS stacktrace --->
+
+FATAL ERROR: Scavenger: semi-space copy Allocation failed - JavaScript heap out of memory
+Segmentation fault (core dumped)
+npm ERR! Test failed.  See above for more details.
+
+    at ChildProcess.exithandler (child_process.js:308:12)
+    at ChildProcess.emit (events.js:315:20)
+    at ChildProcess.EventEmitter.emit (domain.js:486:12)
+    at maybeClose (internal/child_process.js:1048:16)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:288:5) {
+  killed: false,
+  code: 1,
+  signal: null,
+  cmd: 'npm test ufo auto Infinity no no-progress'
+}
+{ jobCompleted: { running: 9 } }
+{ jobStarted: { running: 10 }, remaining: 81 }
+Error: Command failed: npm test ufo auto Infinity no no-progress
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+Aborted (core dumped)
+npm ERR! Test failed.  See above for more details.
+
+    at ChildProcess.exithandler (child_process.js:308:12)
+    at ChildProcess.emit (events.js:315:20)
+    at ChildProcess.EventEmitter.emit (domain.js:486:12)
+    at maybeClose (internal/child_process.js:1048:16)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:288:5) {
+  killed: false,
+  code: 1,
+  signal: null,
+  cmd: 'npm test ufo auto Infinity no no-progress'
+}
+{ jobCompleted: { running: 9 } }
+{ jobStarted: { running: 10 }, remaining: 80 }
+Error: Command failed: npm test ufo auto Infinity no no-progress
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+Aborted (core dumped)
+npm ERR! Test failed.  See above for more details.
+
+    at ChildProcess.exithandler (child_process.js:308:12)
+    at ChildProcess.emit (events.js:315:20)
+    at ChildProcess.EventEmitter.emit (domain.js:486:12)
+    at maybeClose (internal/child_process.js:1048:16)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:288:5) {
+  killed: false,
+  code: 1,
+  signal: null,
+  cmd: 'npm test ufo auto Infinity no no-progress'
+}
+{ jobCompleted: { running: 9 } }
+{ jobStarted: { running: 10 }, remaining: 79 }
+Error: Command failed: npm test ufo auto Infinity no no-progress
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+Aborted (core dumped)
+npm ERR! Test failed.  See above for more details.
+
+    at ChildProcess.exithandler (child_process.js:308:12)
+    at ChildProcess.emit (events.js:315:20)
+    at ChildProcess.EventEmitter.emit (domain.js:486:12)
+    at maybeClose (internal/child_process.js:1048:16)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:288:5) {
+  killed: false,
+  code: 1,
+  signal: null,
+  cmd: 'npm test ufo auto Infinity no no-progress'
+}
+{ jobCompleted: { running: 9 } }
+{ jobStarted: { running: 10 }, remaining: 78 }
+Error: Command failed: npm test ufo auto Infinity no no-progress
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+Aborted (core dumped)
+npm ERR! Test failed.  See above for more details.
+
+    at ChildProcess.exithandler (child_process.js:308:12)
+    at ChildProcess.emit (events.js:315:20)
+    at ChildProcess.EventEmitter.emit (domain.js:486:12)
+    at maybeClose (internal/child_process.js:1048:16)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:288:5) {
+  killed: false,
+  code: 1,
+  signal: null,
+  cmd: 'npm test ufo auto Infinity no no-progress'
+}
+{ jobCompleted: { running: 9 } }
+{ jobStarted: { running: 10 }, remaining: 77 }
+Error: Command failed: npm test ufo auto Infinity no no-progress
+
+<--- Last few GCs --->
+
+[2147:0x56f1ca0]   322962 ms: Scavenge 15991.0 (16810.3) -> 15981.2 (16811.6) MB, 47.5 / 0.0 ms  (average mu = 0.867, current mu = 0.828) allocation failure 
+[2147:0x56f1ca0]   323050 ms: Scavenge 15992.8 (16811.6) -> 15986.3 (16811.6) MB, 46.4 / 0.0 ms  (average mu = 0.867, current mu = 0.828) allocation failure 
+[2147:0x56f1ca0]   323136 ms: Scavenge 15992.9 (16811.6) -> 15988.2 (16811.6) MB, 58.4 / 0.0 ms  (average mu = 0.867, current mu = 0.828) allocation failure 
+
+
+<--- JS stacktrace --->
+
+FATAL ERROR: MarkCompactCollector: young object promotion failed Allocation failed - JavaScript heap out of memory
+Segmentation fault (core dumped)
+npm ERR! Test failed.  See above for more details.
+
+    at ChildProcess.exithandler (child_process.js:308:12)
+    at ChildProcess.emit (events.js:315:20)
+    at ChildProcess.EventEmitter.emit (domain.js:486:12)
+    at maybeClose (internal/child_process.js:1048:16)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:288:5) {
+  killed: false,
+  code: 1,
+  signal: null,
+  cmd: 'npm test ufo auto Infinity no no-progress'
+}
+{ jobCompleted: { running: 9 } }
+{ jobStarted: { running: 10 }, remaining: 76 }

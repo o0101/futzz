@@ -1,0 +1,14 @@
+Error: Command failed: npm test ufo auto Infinity no no-progress
+
+<--- Last few GCs --->
+
+[2147:0x56f1ca0]   322962 ms: Scavenge 15991.0 (16810.3) -> 15981.2 (16811.6) MB, 47.5 / 0.0 ms  (average mu = 0.867, current mu = 0.828) allocation failure 
+[2147:0x56f1ca0]   323050 ms: Scavenge 15992.8 (16811.6) -> 15986.3 (16811.6) MB, 46.4 / 0.0 ms  (average mu = 0.867, current mu = 0.828) allocation failure 
+[2147:0x56f1ca0]   323136 ms: Scavenge 15992.9 (16811.6) -> 15988.2 (16811.6) MB, 58.4 / 0.0 ms  (average mu = 0.867, current mu = 0.828) allocation failure 
+
+
+<--- JS stacktrace --->
+
+FATAL ERROR: MarkCompactCollector: young object promotion failed Allocation failed - JavaScript heap out of memory
+Segmentation fault (core dumped)
+npm ERR! Test failed.  See above for more details.

@@ -13,7 +13,7 @@ const PAGE = 3;
 const PARAM_RANGES = {
   "minIteration": [0,3,6],
   "maxWordLength": [7,13,19,29],
-  "prune": [false, true],
+  "prune": [true],
   "countAll": [false, true],
   "addAllAsFactors": [false, true],
   "minCount": [1,5]
@@ -22,7 +22,7 @@ const PARAM_RANGES = {
 const cat = process.argv[2];
 const act = process.argv[3];
 const num = parseInt(process.argv[4]) || Infinity;
-const ak = process.argv[5];
+const ak = num === Infinity ? process.argv[4] : process.argv[5];
 const jap = process.argv[6];
 
 start();
@@ -90,7 +90,7 @@ async function start() {
   async function runMultiAuto(limit) {
     const allConfigs = enumerateConfigs(PARAM_RANGES);
     //console.log(JSON.stringify({allConfigs}));
-    const POOL_SIZE = os.cpus().length - 2; // 1 for OS and 1 for this process
+    const POOL_SIZE = os.cpus().length - 4; // 1 for OS and 1 for this process, and 2 spare
     const runner = [];
     let notifyComplete;
     let running = 0;
@@ -155,7 +155,7 @@ async function start() {
 
       await runNew(limit, true);
     } else {
-      await loadFromDisk();
+      await loadFromDisk(limit);
     }
 
     console.log("Running queries...");
