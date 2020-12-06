@@ -4,170 +4,123 @@
 
 [H[2J[3JMulti auto mode
 undefined
-Enumerated 256 possibilities.
-{ jobStarted: { running: 1 }, remaining: 255 }
-{ jobStarted: { running: 2 }, remaining: 254 }
-{ jobStarted: { running: 3 }, remaining: 253 }
-{ jobStarted: { running: 4 }, remaining: 252 }
-{ jobStarted: { running: 5 }, remaining: 251 }
-{ jobStarted: { running: 6 }, remaining: 250 }
-{ jobStarted: { running: 7 }, remaining: 249 }
-{ jobStarted: { running: 8 }, remaining: 248 }
-{ jobStarted: { running: 9 }, remaining: 247 }
-{ jobStarted: { running: 10 }, remaining: 246 }
+Enumerated 64 possibilities.
+{ jobStarted: { running: 1 }, remaining: 63 }
+{ jobStarted: { running: 2 }, remaining: 62 }
+{ jobStarted: { running: 3 }, remaining: 61 }
+{ jobStarted: { running: 4 }, remaining: 60 }
+{ jobStarted: { running: 5 }, remaining: 59 }
+{ jobStarted: { running: 6 }, remaining: 58 }
+{ jobStarted: { running: 7 }, remaining: 57 }
+{ jobStarted: { running: 8 }, remaining: 56 }
+{ jobStarted: { running: 9 }, remaining: 55 }
+{ jobStarted: { running: 10 }, remaining: 54 }
 { jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 245 }
+{ jobStarted: { running: 10 }, remaining: 53 }
 { jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 244 }
+{ jobStarted: { running: 10 }, remaining: 52 }
 { jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 243 }
+{ jobStarted: { running: 10 }, remaining: 51 }
 { jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 242 }
+{ jobStarted: { running: 10 }, remaining: 50 }
 { jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 241 }
+{ jobStarted: { running: 10 }, remaining: 49 }
 { jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 240 }
+{ jobStarted: { running: 10 }, remaining: 48 }
 { jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 239 }
+{ jobStarted: { running: 10 }, remaining: 47 }
 { jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 238 }
+{ jobStarted: { running: 10 }, remaining: 46 }
 { jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 237 }
+{ jobStarted: { running: 10 }, remaining: 45 }
 { jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 236 }
+{ jobStarted: { running: 10 }, remaining: 44 }
 { jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 235 }
+{ jobStarted: { running: 10 }, remaining: 43 }
 { jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 234 }
+{ jobStarted: { running: 10 }, remaining: 42 }
 { jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 233 }
+{ jobStarted: { running: 10 }, remaining: 41 }
 { jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 232 }
+{ jobStarted: { running: 10 }, remaining: 40 }
 { jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 231 }
+{ jobStarted: { running: 10 }, remaining: 39 }
 { jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 230 }
+{ jobStarted: { running: 10 }, remaining: 38 }
 { jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 229 }
+{ jobStarted: { running: 10 }, remaining: 37 }
 { jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 228 }
+{ jobStarted: { running: 10 }, remaining: 36 }
 { jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 227 }
+{ jobStarted: { running: 10 }, remaining: 35 }
 { jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 226 }
+{ jobStarted: { running: 10 }, remaining: 34 }
 { jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 225 }
+{ jobStarted: { running: 10 }, remaining: 33 }
 { jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 224 }
+{ jobStarted: { running: 10 }, remaining: 32 }
 { jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 223 }
+{ jobStarted: { running: 10 }, remaining: 31 }
 { jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 222 }
+{ jobStarted: { running: 10 }, remaining: 30 }
 { jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 221 }
+{ jobStarted: { running: 10 }, remaining: 29 }
 { jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 220 }
+{ jobStarted: { running: 10 }, remaining: 28 }
 { jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 219 }
+{ jobStarted: { running: 10 }, remaining: 27 }
 { jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 218 }
+{ jobStarted: { running: 10 }, remaining: 26 }
 { jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 217 }
+{ jobStarted: { running: 10 }, remaining: 25 }
 { jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 216 }
+{ jobStarted: { running: 10 }, remaining: 24 }
 { jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 215 }
+{ jobStarted: { running: 10 }, remaining: 23 }
 { jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 214 }
+{ jobStarted: { running: 10 }, remaining: 22 }
 { jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 213 }
+{ jobStarted: { running: 10 }, remaining: 21 }
 { jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 212 }
+{ jobStarted: { running: 10 }, remaining: 20 }
 { jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 211 }
+{ jobStarted: { running: 10 }, remaining: 19 }
 { jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 210 }
+{ jobStarted: { running: 10 }, remaining: 18 }
 { jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 209 }
+{ jobStarted: { running: 10 }, remaining: 17 }
 { jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 208 }
+{ jobStarted: { running: 10 }, remaining: 16 }
 { jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 207 }
+{ jobStarted: { running: 10 }, remaining: 15 }
 { jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 206 }
+{ jobStarted: { running: 10 }, remaining: 14 }
 { jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 205 }
+{ jobStarted: { running: 10 }, remaining: 13 }
 { jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 204 }
+{ jobStarted: { running: 10 }, remaining: 12 }
 { jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 203 }
+{ jobStarted: { running: 10 }, remaining: 11 }
 { jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 202 }
+{ jobStarted: { running: 10 }, remaining: 10 }
 { jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 201 }
+{ jobStarted: { running: 10 }, remaining: 9 }
 { jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 200 }
+{ jobStarted: { running: 10 }, remaining: 8 }
 { jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 199 }
+{ jobStarted: { running: 10 }, remaining: 7 }
 { jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 198 }
+{ jobStarted: { running: 10 }, remaining: 6 }
 { jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 197 }
+{ jobStarted: { running: 10 }, remaining: 5 }
 { jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 196 }
+{ jobStarted: { running: 10 }, remaining: 4 }
 { jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 195 }
+{ jobStarted: { running: 10 }, remaining: 3 }
 { jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 194 }
+{ jobStarted: { running: 10 }, remaining: 2 }
 { jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 193 }
+{ jobStarted: { running: 10 }, remaining: 1 }
 { jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 192 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 191 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 190 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 189 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 188 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 187 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 186 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 185 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 184 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 183 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 182 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 181 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 180 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 179 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 178 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 177 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 176 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 175 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 174 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 173 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 172 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 171 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 170 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 169 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 168 }
+{ jobStarted: { running: 10 }, remaining: 0 }
+Done!

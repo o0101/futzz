@@ -4,8 +4,8 @@
   "minAddAllLength": 3,
   "prune": true,
   "useQ": false,
-  "extend": false,
-  "countAll": false,
+  "extend": true,
+  "countAll": true,
   "addAllAsFactors": true,
-  "minCount": 3
+  "minCount": 1
 }

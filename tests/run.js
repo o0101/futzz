@@ -16,10 +16,10 @@ const PARAM_RANGES = {
   "minAddAllLength": [3,11],
   "prune": [true],
   "useQ": [false, true],
-  "extend": [false, true],
+  "extend": [true],
   "countAll": [false, true],
   "addAllAsFactors": [false, true],
-  "minCount": [1, 3]
+  "minCount": [1]
 }
 
 const cat = process.argv[2];
@@ -44,7 +44,6 @@ async function start() {
       await runDisk(num);
     } else if ( act === 'auto' ) {
       console.log("Auto mode");
-      console.log(num, ak);
       const S = await runAuto(num, ak);
       console.log(JSON.stringify(S, null, 2));
     } else {
@@ -258,7 +257,7 @@ async function start() {
           .reduce((A,p) => A + p, 0)/(pLen%2 == 0 ? 2 : 1)).toFixed(4);
         Summary.modePrecision = parseFloat(Object.entries(
           Summary.precision
-            .reduce((F,p) => (F[p] = (F[p] || 0) + 1, F), {})
+            .reduce((F,p) => (p = Math.round(p), F[p] = (F[p] || 0) + 1, F), {})
         ).sort(([k,v], [k2,v2]) => v2 - v)[0][0]).toFixed(4);
 
       // summarise recall
@@ -269,33 +268,39 @@ async function start() {
           .reduce((A,p) => A + p, 0)/(pLen%2 == 0 ? 2 : 1)).toFixed(4);
         Summary.modeRecall = parseFloat(Object.entries(
           Summary.recall
-            .reduce((F,p) => (F[p] = (F[p] || 0) + 1, F), {})
+            .reduce((F,p) => (p = Math.round(p), F[p] = (F[p] || 0) + 1, F), {})
         ).sort(([k,v], [k2,v2]) => v2 - v)[0][0]).toFixed(4);
+
+        Summary.score = Summary.avgRecall + Summary.avgPrecision;
       
       const {
         avgPrecision, medianPrecision, modePrecision,
         avgRecall, medianRecall, modeRecall 
       } = Summary;
       
-      for( const group of Summary.groups ) {
-        const {AvgPrecision, AvgRecall} = group;
+      if ( jap !== 'no-progress' ) {
+        for( const group of Summary.groups ) {
+          const {AvgPrecision, AvgRecall} = group;
 
-        console.log(`\nGroup ${group.name}`);
+          console.log(`\nGroup ${group.name}`);
+          console.log(JSON.stringify({
+            group: group.name,
+            AvgPrecision,
+            AvgRecall
+          }, null, 2));
+        }
+
+        console.log(`\n\nOverall for category ${cat}`);
         console.log(JSON.stringify({
-          group: group.name,
-          AvgPrecision,
-          AvgRecall
+          avgPrecision, medianPrecision, modePrecision,
+          avgRecall, medianRecall, modeRecall 
         }, null, 2));
       }
-
-      console.log(`\n\nOverall for category ${cat}`);
-      console.log(JSON.stringify({
-        avgPrecision, medianPrecision, modePrecision,
-        avgRecall, medianRecall, modeRecall 
-      }, null, 2));
     }
 
-    console.log(`Ran ${pLen} experiments.`);
+    if ( jap !== 'no-progress' ) {
+      console.log(`Ran ${pLen} experiments.`);
+    }
 
     return Summary;
   }

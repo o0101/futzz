@@ -3,9 +3,9 @@
   "maxWordLength": 18,
   "minAddAllLength": 3,
   "prune": true,
-  "useQ": false,
-  "extend": false,
-  "countAll": true,
+  "useQ": true,
+  "extend": true,
+  "countAll": false,
   "addAllAsFactors": false,
   "minCount": 1
 }
