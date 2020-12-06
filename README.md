@@ -88,3 +88,19 @@ Results are 55% and 70% for precision and recall.
 ## Way forward
 
 What we really want I think is the discriminatory power of the "right" factors, and to weed out the wrong ones.
+
+## More way forward
+
+Focus on getting a high recall, and then whittle down those factors to only ones that give maximally relevant results. There has to be some set of factors of the query that gives the best results.
+
+I think one way forward could be based on filtering count all based on min length,
+
+but another could be based on something like TF-IDF, in other words, score. 
+
+So we count all significant factors. 
+
+And we also generate a lot of factors from the query and count all significant ones.
+
+We probably already have the score metrics in here to do that.
+
+
