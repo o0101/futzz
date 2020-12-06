@@ -1,9 +1,9 @@
 {
   "minIteration": 2,
   "maxWordLength": 31,
-  "minAddAllLength": 11,
+  "minAddAllLength": 1,
   "prune": true,
-  "useQ": false,
+  "useQ": true,
   "extend": true,
   "countAll": false,
   "addAllAsFactors": false,

@@ -2,7 +2,6 @@ import {exec,execSync} from 'child_process';
 import fs from 'fs';
 import path from 'path';
 import os from 'os';
-import JSON36 from 'json36';
 import {State, loadFromDisk, saveToDisk, query, index, ent} from '../src/futzz.js';
 import readline from 'readline';
 
