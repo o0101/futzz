@@ -11,15 +11,16 @@ const SAVE_CORRELATION = false;
 const PAGE = 3;
 
 const PARAM_RANGES = {
-  "minIteration": [2,3],
-  "maxWordLength": [18,31],
-  "minAddAllLength": [3,11],
+  "minIteration": [2,4],
+  "maxWordLength": [31,97],
+  "minAddAllLength": [1,13],
   "prune": [true],
   "useQ": [false, true],
-  "extend": [true],
+  "extend": [false, true],
   "countAll": [false, true],
   "addAllAsFactors": [false, true],
-  "minCount": [1]
+  "codedSimplify": [false, true],
+  "minCount": [1, 3]
 }
 
 const cat = process.argv[2];
