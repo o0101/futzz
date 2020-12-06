@@ -1,0 +1,9 @@
+grep -R '{\
+  "minIteration": 2,\
+  "maxWordLength": 29,\
+  "prune": true,\
+  "useQ": false,\
+  "countAll": true,\
+  "addAllAsFactors": false,\
+  "minCount": 1\
+}' *

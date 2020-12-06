@@ -70,14 +70,19 @@ export const State = {
     if ( mainFactor ) {
       mainFactor[COUNT]++;
     }
-    let factors;
+    let factors, Factors;
 
     if ( USE_Q_INDEX ) { 
-      ({Factors:factors} = index(words, 'query', {idempotent:true, addAllAsFactors: AAAF}));
-    } else {
-      words = `${words} ${words} ${words}`;
-      ({factors} = lz(words, dict, 'query', {idempotent:true, addAllAsFactors: AAAF}));
+      ({Factors} = index(words, 'query', {idempotent:true, addAllAsFactors: AAAF}));
     }
+
+    words = `${words} ${words} ${words}`;
+    ({factors} = lz(words, dict, 'query', {idempotent:true, addAllAsFactors: AAAF}));
+
+    if ( Factors ) {
+      factors.push(...Factors);
+    }
+   
 
     if ( mainFactor ) {
       factors.push(mainFactor);
