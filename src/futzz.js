@@ -47,7 +47,7 @@ export const State = {
     indexingCycle: for( let i = 0; i < MAX_ITERATION; i++ ) {
       ({dict, factors, docStr} = lz(text, Dict, name, opts)); 
       Factors.push(...factors);
-      const entropy = ent(factors);
+      const entropy = ent(factors, opts);
       const total = entropy*factors.length;
       Ent.push({entropy, total: entropy*factors.length, name});
       if ( entropy > maxEntropy ) {
@@ -73,11 +73,12 @@ export const State = {
     }
     let factors, Factors;
 
+    //words = `${words} ${words} ${words}`;
+
     if ( USE_Q_INDEX ) { 
       ({Factors} = index(words, 'query', {idempotent:true, addAllAsFactors: AAAF}));
     }
 
-    words = `${words} ${words} ${words}`;
     ({factors} = lz(words, dict, 'query', {idempotent:true, addAllAsFactors: AAAF}));
 
     if ( Factors ) {
@@ -371,7 +372,7 @@ export const State = {
     return {factors, dict, docStr};
   }
 
-  export function ent(factors) {
+  export function ent(factors, opts) {
     let TotalLength = 0;
     let Ent = 0;
 
@@ -394,9 +395,11 @@ export const State = {
       Ent += ent;
     }
 
-    const check = factors.docStrLength == TotalLength;
+    if ( ! opts.addAllAsFactors ) {
+      const check = factors.docStrLength == TotalLength;
 
-    console.assert(check, factors.docStrLength, TotalLength);
+      console.assert(check, factors.docStrLength, TotalLength);
+    }
 
     return Ent;
   }
