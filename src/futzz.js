@@ -11,6 +11,7 @@ const MAX_ITERATION = 12;
 const AAAF = CONFIG.addAllAsFactors;
 const COUNT_ALL = CONFIG.countAll;
 const PRUNE = CONFIG.prune;
+const EXTEND = CONFIG.extend;
 const MIN_ADD_ALL_LENGTH = CONFIG.minAddAllLength || 1;
 const MAX_WORD_LENGTH_1 = CONFIG.maxWordLength || Infinity;
 const USE_Q_INDEX = CONFIG.useQ;
@@ -73,7 +74,7 @@ export const State = {
     }
     let factors, Factors;
 
-    //words = `${words} ${words} ${words}`;
+    words = EXTEND ? `${words} ${words} ${words}` : words;
 
     if ( USE_Q_INDEX ) { 
       ({Factors} = index(words, 'query', {idempotent:true, addAllAsFactors: AAAF}));
@@ -85,7 +86,6 @@ export const State = {
       factors.push(...Factors);
     }
    
-
     if ( mainFactor ) {
       factors.push(mainFactor);
     }
@@ -164,7 +164,7 @@ export const State = {
     }
     const toNormalize = new Set();
     const factors = [];
-    let codeId = dict.size/2;
+    let codeId = Math.ceil(dict.size/2);
     let wordFirstIndex = -1;
     let charIndex = 0;
     let currentWord = '';
@@ -372,7 +372,7 @@ export const State = {
     return {factors, dict, docStr};
   }
 
-  export function ent(factors, opts) {
+  export function ent(factors, opts = {}) {
     let TotalLength = 0;
     let Ent = 0;
 
@@ -414,9 +414,9 @@ export const State = {
   }
 
   function simplify(str) {
+    str = str.replace(/\p{P}+/gu, ' ');            // unicode replace all punctuation -> single space
+    str = str.replace(/\p{Z}+/gu, ' ');            // unicode replace all separators -> single space
     str = str.replace(/[\n\r\t\0\b]+/gu, ' ');     // unicode replace all ASCII noise -> single space
-    str = str.replace(/\p{P}+/gu, ' ');     // unicode replace all punctuation -> single space
-    str = str.replace(/\p{Z}+/gu, ' ');     // unicode replace all separators -> single space
     str = str.trim();
     str = str.toLocaleLowerCase();
 

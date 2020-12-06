@@ -12,13 +12,14 @@ const PAGE = 3;
 
 const PARAM_RANGES = {
   "minIteration": [2,3],
-  "maxWordLength": [18,19,29],
-  "minAddAllLength": [1,7,11],
+  "maxWordLength": [18,31],
+  "minAddAllLength": [3,11],
   "prune": [true],
   "useQ": [false, true],
+  "extend": [false, true],
   "countAll": [false, true],
   "addAllAsFactors": [false, true],
-  "minCount": [0.5,1]
+  "minCount": [1, 3]
 }
 
 const cat = process.argv[2];
@@ -401,7 +402,11 @@ async function start() {
             process.stdout.clearLine();
             process.stdout.cursorTo(0);
             process.stdout.write(
-              `Indexed ${count}/${Math.min(limit,total)} \t\t\t(${
+              `Indexed ${count}/${
+                Math.min(limit,total)
+               } \t (${
+                Math.round(State.dict.size/2)
+               } codes) \t (${
                 (count/Math.min(limit,total)*100).toFixed(2)
               }%) files...`
             );
