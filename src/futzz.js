@@ -11,7 +11,10 @@ const MAX_ITERATION = 12;
 const AAAF = CONFIG.addAllAsFactors;
 const COUNT_ALL = CONFIG.countAll;
 const PRUNE = CONFIG.prune;
+const EXTEND = CONFIG.extend;
+const MIN_ADD_ALL_LENGTH = CONFIG.minAddAllLength || 1;
 const MAX_WORD_LENGTH_1 = CONFIG.maxWordLength || Infinity;
+const USE_Q_INDEX = CONFIG.useQ;
 
 const MIN_COUNT = CONFIG.minCount;
 const FOUND_NOT_FACTOR_MULT = 0.75;
@@ -33,7 +36,7 @@ export const State = {
   names: new BigMap(),
 };
 
-  export function index(text, name) {
+  export function index(text, name, opts) {
     const Factors = [];
     const Ent = [];
     const sortKey = RUN_COUNT;
@@ -43,9 +46,9 @@ export const State = {
     let Dict = State.dict;
 
     indexingCycle: for( let i = 0; i < MAX_ITERATION; i++ ) {
-      ({dict, factors, docStr} = lz(text, Dict, name)); 
+      ({dict, factors, docStr} = lz(text, Dict, name, opts)); 
       Factors.push(...factors);
-      const entropy = ent(factors);
+      const entropy = ent(factors, opts);
       const total = entropy*factors.length;
       Ent.push({entropy, total: entropy*factors.length, name});
       if ( entropy > maxEntropy ) {
@@ -69,8 +72,20 @@ export const State = {
     if ( mainFactor ) {
       mainFactor[COUNT]++;
     }
-    words = `${words} ${words} ${words}`;
-    const {factors} = lz(words, dict, 'query', {idempotent:true, addAllAsFactors: AAAF});
+    let factors, Factors;
+
+    words = EXTEND ? `${words} ${words} ${words}` : words;
+
+    if ( USE_Q_INDEX ) { 
+      ({Factors} = index(words, 'query', {idempotent:true, addAllAsFactors: AAAF}));
+    }
+
+    ({factors} = lz(words, dict, 'query', {idempotent:true, addAllAsFactors: AAAF}));
+
+    if ( Factors ) {
+      factors.push(...Factors);
+    }
+   
     if ( mainFactor ) {
       factors.push(mainFactor);
     }
@@ -149,7 +164,7 @@ export const State = {
     }
     const toNormalize = new Set();
     const factors = [];
-    let codeId = dict.size/2;
+    let codeId = Math.ceil(dict.size/2);
     let wordFirstIndex = -1;
     let charIndex = 0;
     let currentWord = '';
@@ -237,7 +252,7 @@ export const State = {
           // update the state
             wordFirstIndex = charIndex;
             currentWord = suffix;
-        } else if ( COUNT_ALL || opts.addAllAsFactors ) {
+        } else if ( (COUNT_ALL || opts.addAllAsFactors) && currentWord.length >= MIN_ADD_ALL_LENGTH ) {
           const data = dict.get(currentWord);
           if ( !data[NAME][name] ) {
             data[NAME][name] = {[COUNT]: MIN_COUNT+1};
@@ -357,7 +372,7 @@ export const State = {
     return {factors, dict, docStr};
   }
 
-  export function ent(factors) {
+  export function ent(factors, opts = {}) {
     let TotalLength = 0;
     let Ent = 0;
 
@@ -380,9 +395,11 @@ export const State = {
       Ent += ent;
     }
 
-    const check = factors.docStrLength == TotalLength;
+    if ( ! opts.addAllAsFactors ) {
+      const check = factors.docStrLength == TotalLength;
 
-    console.assert(check, factors.docStrLength, TotalLength);
+      console.assert(check, factors.docStrLength, TotalLength);
+    }
 
     return Ent;
   }
@@ -397,9 +414,9 @@ export const State = {
   }
 
   function simplify(str) {
-    str = str.replace(/\p{P}+/gu, ' ');     // unicode replace all punctuation
-    str = str.replace(/\p{Z}+/gu, ' ');     // unicode replace all separators
-    str = str.replace(/[\n\r]+/gu, ' ');     // unicode replace all separators
+    str = str.replace(/\p{P}+/gu, ' ');            // unicode replace all punctuation -> single space
+    str = str.replace(/\p{Z}+/gu, ' ');            // unicode replace all separators -> single space
+    str = str.replace(/[\n\r]+/gu, ' ');     // unicode replace all ASCII noise -> single space
     str = str.trim();
     str = str.toLocaleLowerCase();
 
