@@ -3,7 +3,7 @@
   "maxWordLength": 29,
   "prune": true,
   "useQ": true,
-  "countAll": true,
-  "addAllAsFactors": true,
+  "countAll": false,
+  "addAllAsFactors": false,
   "minCount": 1
 }

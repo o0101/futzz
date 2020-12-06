@@ -1,0 +1,109 @@
+==> 69/config.json <==   125.9
+{
+  "minIteration": 6,
+  "maxWordLength": 19,
+  "prune": true,
+  "useQ": false,
+  "countAll": true,
+  "addAllAsFactors": false,
+  "minCount": 1
+}
+==> 69/result.txt <==
+      ]
+    }
+  ],
+  "avgPrecision": "53.4089",
+  "medianPrecision": "39.5088",
+  "modePrecision": "99.9642",
+  "avgRecall": "72.5222",
+  "medianRecall": "75.0000",
+  "modeRecall": "75.0000"
+}
+
+==> 77/config.json <==      124
+{
+  "minIteration": 6,
+  "maxWordLength": 19,
+  "prune": true,
+  "useQ": true,
+  "countAll": true,
+  "addAllAsFactors": false,
+  "minCount": 1
+}
+==> 77/result.txt <==
+      ]
+    }
+  ],
+  "avgPrecision": "66.0967",
+  "medianPrecision": "91.4286",
+  "modePrecision": "75.0000",
+  "avgRecall": "57.8668",
+  "medianRecall": "60.0000",
+  "modeRecall": "75.0000"
+}
+
+==> 84/config.json <== 
+{
+  "minIteration": 6,
+  "maxWordLength": 29,
+  "prune": true,
+  "useQ": false,
+  "countAll": true,
+  "addAllAsFactors": false,
+  "minCount": 0.025
+}
+==> 84/result.txt <==
+      ]
+    }
+  ],
+  "avgPrecision": "53.1621",
+  "medianPrecision": "72.7941",
+  "modePrecision": "99.9642",
+  "avgRecall": "69.8696",
+  "medianRecall": "73.4279",
+  "modeRecall": "75.0000"
+}
+
+==> 85/config.json <==
+{
+  "minIteration": 6,
+  "maxWordLength": 29,
+  "prune": true,
+  "useQ": false,
+  "countAll": true,
+  "addAllAsFactors": false,
+  "minCount": 1
+}
+==> 85/result.txt <==      124.9
+      ]
+    }
+  ],
+  "avgPrecision": "52.2938",
+  "medianPrecision": "73.6282",
+  "modePrecision": "99.9642",
+  "avgRecall": "72.5559",
+  "medianRecall": "75.0000",
+  "modeRecall": "75.0000"
+}
+
+==> 93/config.json <== 125.2
+{
+  "minIteration": 6,
+  "maxWordLength": 29,
+  "prune": true,
+  "useQ": true,
+  "countAll": true,
+  "addAllAsFactors": false,
+  "minCount": 1
+}
+==> 93/result.txt <==
+      ]
+    }
+  ],
+  "avgPrecision": "69.4853",
+  "medianPrecision": "90.9091",
+  "modePrecision": "75.0000",
+  "avgRecall": "55.7151",
+  "medianRecall": "58.7072",
+  "modeRecall": "75.0000"
+}
