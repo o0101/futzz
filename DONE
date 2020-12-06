@@ -1,4 +1,6 @@
 // new
+- lz on the query until entropy condition is reached
+  - this seems to reverse precision and recall (higher precision, lower recall)
 - auto test precision and recall
 - implement .factor query function to show factors of a query of a document given a name
 - serialize index and reload index
@@ -7,6 +9,30 @@
 
 
 // old
+  - limit max length of code so documents are not divided into sets based on the length of their factors
+  - does not work great for long indexes
+    - figure out why at 600 files 21 results for NASA, but at 3000 files only 2 results.
+    - overwriting? 
+    - factor too long? why?
+  - evaluation dataset (UFO)
+    - set up futzz to be able to fun against this and measure precision and recall against the number of files returned by grep "search term"
+  - answer question: why is short document so highly weighted, even without TF-IDF code?
+    - i think because it's based on divisors that are factors.length or docStr.length so shorter docs are advantaged particularly if they are indexed earlier and so have shorter (higher count) codes
+      - to ameliorate, we must normalize those divisors somwehow, as well as
+      - consider that we can add a stopping criterion that must first be met before we consider the normal stopping criterion, and that stopping criterion can be that the distribution of factors approaches the max factor length
+  - seems more recently indexed documents score higher (i think because the code length is longer)
+    - could try not using cover
+    - could also try using some sort of entropy metric or 'factor length  and frequency distribution' metric to ensure each document is indexed in a commensurate way
+  - i think we should look at all substrings of the query (all possible factorizations)
+    (add all as factors, done)
+  - turn dicts.json into {docNames:[...], values:[....]} to remove redundancy of doc name in every record
+  - add evaluation dataset
+    - trying textfiles.com archives
+    - try those listed here: https://github.com/RediSearch/ftsb
+    - also consider https://the-eye.eu/public/AI/pile_preliminary_components/ which is also at 
+      https://archive.is/wip/vgsTc
+  - when the dictionary has the code we add the current document to it
+  - let's index a query but only the first time we get it?
   - the ways these are scored (in the runAll) are an opportunity to improve
     - created some improvements to a simpler way, precision and recall, roughly, for now
   - i think we should break query up into many factors and create results from all of them, rather than just the single factorization. i'm thinking something between single factorization and all substrings. because we are clearly missing out on good results because of a mismatch of query factors and possible-result-doc factors

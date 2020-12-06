@@ -11,6 +11,7 @@ const MAX_ITERATION = 12;
 const AAAF = CONFIG.addAllAsFactors;
 const COUNT_ALL = CONFIG.countAll;
 const PRUNE = CONFIG.prune;
+const MIN_ADD_ALL_LENGTH = CONFIG.minAddAllLength || 1;
 const MAX_WORD_LENGTH_1 = CONFIG.maxWordLength || Infinity;
 const USE_Q_INDEX = CONFIG.useQ;
 
@@ -250,7 +251,7 @@ export const State = {
           // update the state
             wordFirstIndex = charIndex;
             currentWord = suffix;
-        } else if ( COUNT_ALL || opts.addAllAsFactors ) {
+        } else if ( (COUNT_ALL || opts.addAllAsFactors) && currentWord.length >= MIN_ADD_ALL_LENGTH ) {
           const data = dict.get(currentWord);
           if ( !data[NAME][name] ) {
             data[NAME][name] = {[COUNT]: MIN_COUNT+1};
