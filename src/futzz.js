@@ -12,7 +12,6 @@ const AAAF = CONFIG.addAllAsFactors;
 const COUNT_ALL = CONFIG.countAll;
 const PRUNE = CONFIG.prune;
 const EXTEND = CONFIG.extend;
-const CODED_SIMPLIFY = CONFIG.codedSimplify;
 const MIN_ADD_ALL_LENGTH = CONFIG.minAddAllLength || 1;
 const MAX_WORD_LENGTH_1 = CONFIG.maxWordLength || Infinity;
 const USE_Q_INDEX = CONFIG.useQ;
@@ -254,6 +253,8 @@ export const State = {
             wordFirstIndex = charIndex;
             currentWord = suffix;
         } else if ( (COUNT_ALL || opts.addAllAsFactors) && currentWord.length >= MIN_ADD_ALL_LENGTH ) {
+          // we could add a [SCORE] to data and check it here 
+          // and if it's above some thresh we could use count that
           const data = dict.get(currentWord);
           if ( !data[NAME][name] ) {
             data[NAME][name] = {[COUNT]: MIN_COUNT+1};
@@ -415,15 +416,8 @@ export const State = {
   }
 
   function simplify(str) {
-    if ( CODED_SIMPLIFY ) {
-      str = str.replace(/\p{P}+/gu, ' ');      // unicode replace all punctuation -> single space
-      str = str.replace(/\p{Z}+/gu, ' ');      // unicode replace all separators -> single space
-      str = str.replace(/[\n\r]+/gu, ' ');     // unicode replace all ASCII noise -> single space
-    } else {
-      str = str.replace(/\p{P}+/gu, ' , ');     // unicode replace all punctuation -> single space
-      str = str.replace(/\p{Z}+/gu, ' . ');     // unicode replace all separators -> single space
-      str = str.replace(/[\n\r]+/gu, ' / ');    // unicode replace all ASCII noise -> single space
-    }
+    str = str.replace(/[\p{P}\p{Z}\p{C}]+/gu, ' ');      
+    str = str.replace(/[\x00-\x1f\x7f]+/gu, '\n');  
     str = str.trim();
     str = str.toLocaleLowerCase();
 

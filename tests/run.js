@@ -19,7 +19,6 @@ const PARAM_RANGES = {
   "extend": [false, true],
   "countAll": [false, true],
   "addAllAsFactors": [false, true],
-  "codedSimplify": [false, true],
   "minCount": [1, 3]
 }
 
@@ -251,28 +250,28 @@ async function start() {
 
     if ( pLen ) {
       // summarise precision
-        Summary.avgPrecision = (Summary.precision.reduce((A,p) => A + p, 0)/pLen).toFixed(4);
+        Summary.avgPrecision = (Summary.precision.reduce((A,p) => A + p, 0)/pLen).toFixed(2);
         Summary.medianPrecision = (Array.from(Summary.precision)
           .sort()
           .slice(...(pLen%2 == 0 ? [pLen/2-1,pLen/2+1] : [(pLen+1)/2, (pLen+1)/2+1]))
-          .reduce((A,p) => A + p, 0)/(pLen%2 == 0 ? 2 : 1)).toFixed(4);
+          .reduce((A,p) => A + p, 0)/(pLen%2 == 0 ? 2 : 1)).toFixed(2);
         Summary.modePrecision = parseFloat(Object.entries(
           Summary.precision
             .reduce((F,p) => (p = Math.round(p), F[p] = (F[p] || 0) + 1, F), {})
-        ).sort(([k,v], [k2,v2]) => v2 - v)[0][0]).toFixed(4);
+        ).sort(([k,v], [k2,v2]) => v2 - v)[0][0]).toFixed(2);
 
       // summarise recall
-        Summary.avgRecall = (Summary.recall.reduce((A,p) => A + p, 0)/pLen).toFixed(4);
+        Summary.avgRecall = (Summary.recall.reduce((A,p) => A + p, 0)/pLen).toFixed(2);
         Summary.medianRecall = (Array.from(Summary.recall)
           .sort()
           .slice(...(pLen%2 == 0 ? [pLen/2-1,pLen/2+1] : [(pLen+1)/2, (pLen+1)/2+1]))
-          .reduce((A,p) => A + p, 0)/(pLen%2 == 0 ? 2 : 1)).toFixed(4);
+          .reduce((A,p) => A + p, 0)/(pLen%2 == 0 ? 2 : 1)).toFixed(2);
         Summary.modeRecall = parseFloat(Object.entries(
           Summary.recall
             .reduce((F,p) => (p = Math.round(p), F[p] = (F[p] || 0) + 1, F), {})
-        ).sort(([k,v], [k2,v2]) => v2 - v)[0][0]).toFixed(4);
+        ).sort(([k,v], [k2,v2]) => v2 - v)[0][0]).toFixed(2);
 
-        Summary.score = Summary.avgRecall + Summary.avgPrecision;
+        Summary.score = (parseFloat(Summary.avgRecall) + parseFloat(Summary.avgPrecision)).toFixed(2);
       
       const {
         avgPrecision, medianPrecision, modePrecision,
