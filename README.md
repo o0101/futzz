@@ -103,4 +103,18 @@ And we also generate a lot of factors from the query and count all significant o
 
 We probably already have the score metrics in here to do that.
 
+## So
+
+After exploring the parameter space, and adjusting how we prune, I found that I could get both precision and recall within 0.6 to 0.7 , with a sum of over 1.3
+
+Pretty good. 
+
+But right now I want to pull back to the time we got 70 recall and 50 precision, and try to work out something between my current results and that.
+
+See if I can't get anything higher.
+
+Then I want to push forward to the next stage, taking the best set out of this stage, and developing a better way to prune, most likely based on the score, rather than just the length.
+
+Also I want to see if I can aggressively prune the dict periodically to remove low information, or low frequency factors that nevertheless made it through other rounds of pruning, but whose value has not borne out over time.
+
 

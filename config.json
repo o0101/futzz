@@ -2,7 +2,7 @@
   "minIteration": 3,
   "maxWordLength": 118,
   "minAddAllLength": 3,
-  "prune": false,
+  "prune": true,
   "useQ": false,
   "extend": true,
   "countAll": true,

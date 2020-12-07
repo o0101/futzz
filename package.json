@@ -6,6 +6,7 @@
   "scripts": {
     "auto": "npm test ufo auto",
     "test": "clear && node --max-old-space-size=20000 -r esm tests/run.js",
+    "bigtest": "clear && node --max-old-space-size=220000 -r esm tests/run.js",
     "profile": "node --inspect-brk=0.0.0.0:9229 -r esm tests/run.js"
   },
   "repository": {
