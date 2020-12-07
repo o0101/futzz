@@ -75,6 +75,7 @@ export const State = {
   export function query(words, right_answers = [], opts = {}) {
     const Answers = new Set(right_answers);
     const {dict} = State;
+    let factors, mainFactor, Factors;
 
     words = simplify(words);
 
@@ -84,8 +85,6 @@ export const State = {
         mainFactor[COUNT]++;
       }
     }
-
-    let factors, Factors;
 
     words = EXTEND ? `${words} ${words} ${words}` : words;
 

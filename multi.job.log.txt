@@ -4,27 +4,13 @@
 
 [H[2J[3JMulti auto mode
 undefined
-Enumerated 16 possibilities.
-{ jobStarted: { running: 1 }, remaining: 15 }
-{ jobStarted: { running: 2 }, remaining: 14 }
-{ jobStarted: { running: 3 }, remaining: 13 }
-{ jobStarted: { running: 4 }, remaining: 12 }
-{ jobStarted: { running: 5 }, remaining: 11 }
-{ jobStarted: { running: 6 }, remaining: 10 }
-{ jobStarted: { running: 7 }, remaining: 9 }
-{ jobStarted: { running: 8 }, remaining: 8 }
-{ jobStarted: { running: 9 }, remaining: 7 }
-{ jobStarted: { running: 10 }, remaining: 6 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 5 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 4 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 3 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 2 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 1 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 0 }
+Enumerated 8 possibilities.
+{ jobStarted: { running: 1 }, remaining: 7 }
+{ jobStarted: { running: 2 }, remaining: 6 }
+{ jobStarted: { running: 3 }, remaining: 5 }
+{ jobStarted: { running: 4 }, remaining: 4 }
+{ jobStarted: { running: 5 }, remaining: 3 }
+{ jobStarted: { running: 6 }, remaining: 2 }
+{ jobStarted: { running: 7 }, remaining: 1 }
+{ jobStarted: { running: 8 }, remaining: 0 }
 Done!
