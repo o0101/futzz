@@ -2,7 +2,7 @@ import {exec,execSync} from 'child_process';
 import fs from 'fs';
 import path from 'path';
 import os from 'os';
-import {State, loadFromDisk, saveToDisk, query, index, ent} from '../src/futzz.js';
+import {simplify, State, loadFromDisk, saveToDisk, query, index, ent} from '../src/futzz.js';
 import readline from 'readline';
 
 const SHOW_RESULTS = true;
@@ -11,14 +11,14 @@ const PAGE = 3;
 
 const PARAM_RANGES = {
   "minIteration": [2,4],
-  "maxWordLength": [31,97],
+  "maxWordLength": [31,118],
   "minAddAllLength": [1,13],
   "prune": [true],
   "useQ": [false, true],
   "extend": [false, true],
   "countAll": [false, true],
   "addAllAsFactors": [false, true],
-  "minCount": [1, 3]
+  "minCount": [1]
 }
 
 const cat = process.argv[2];
@@ -305,6 +305,7 @@ async function start() {
   }
 
   function evaluateQuery(q, noThrow = false, opts) {
+    q = simplify(q);
     const {results, ...rest} = query(q, undefined, opts);
     const matchingFiles = getFiles(q);
     if ( matchingFiles.size === 0 && ! noThrow ) {
@@ -317,6 +318,7 @@ async function start() {
   }
 
   function evaluateCorrelationQuery(a, b, opts) {
+    q = simplify(q);
     const {results:resultsa, ...resta} = query(a, undefined, opts);
     const {results:resultsb, ...restb} = query(b, undefined, opts);
     // b should align to a
@@ -334,6 +336,7 @@ async function start() {
   function getFiles(query) {
     const base = path.resolve('demo', 'data', cat, '*');
     try {
+      query = query.split(/\s+/gu).join('.*');
       const files = execSync(`grep -R -l -i "${query}" ${base}`).toString()
         .split(/\n/g)
         .filter(n => n.trim().length)

@@ -6,6 +6,6 @@
   "useQ": false,
   "extend": false,
   "countAll": false,
-  "addAllAsFactors": false,
-  "minCount": 3
+  "addAllAsFactors": true,
+  "minCount": 1
 }

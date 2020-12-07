@@ -415,9 +415,10 @@ export const State = {
     }
   }
 
-  function simplify(str) {
-    str = str.replace(/[\p{P}\p{Z}\p{C}]+/gu, ' ');      
-    str = str.replace(/[\x00-\x1f\x7f]+/gu, '\n');  
+  export function simplify(str) {
+    str = str.replace(/\p{Z}+/gu, ' ');
+    str = str.replace(/[\p{P}\p{C}]+/gu, '\n');      
+    str = str.replace(/[\x00-\x1f\x7f]+/gu, '\n\n');  
     str = str.trim();
     str = str.toLocaleLowerCase();
 
