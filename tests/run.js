@@ -10,15 +10,15 @@ const SAVE_CORRELATION = false;
 const PAGE = 3;
 
 const PARAM_RANGES = {
-  "minIteration": [2,4],
-  "maxWordLength": [31,118],
-  "minAddAllLength": [1,13],
+  "minIteration": [3],
+  "maxWordLength": [31,140],
+  "minAddAllLength": [3],
   "prune": [true],
-  "useQ": [false, true],
-  "extend": [false, true],
+  "useQ": [false],
+  "extend": [false],
   "countAll": [false, true],
   "addAllAsFactors": [false, true],
-  "minCount": [1]
+  "minCount": [1,5]
 }
 
 const cat = process.argv[2];
