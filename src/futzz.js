@@ -448,7 +448,7 @@ export const State = {
     let i = 0;
     let chunkId = 0;
 
-    const chunkSize = 1000000;
+    const chunkSize = 500000;
 
     const values = [...State.dict.values()];
 
