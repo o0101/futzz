@@ -15,6 +15,7 @@ const EXTEND = CONFIG.extend;
 const MIN_ADD_ALL_LENGTH = CONFIG.minAddAllLength || 1;
 const MAX_WORD_LENGTH_1 = CONFIG.maxWordLength || Infinity;
 const USE_Q_INDEX = CONFIG.useQ;
+const MAIN_FACTOR = CONFIG.mainFactor;
 
 const MIN_COUNT = CONFIG.minCount;
 const FOUND_NOT_FACTOR_MULT = 0.75;
@@ -76,10 +77,14 @@ export const State = {
     const {dict} = State;
 
     words = simplify(words);
-    const mainFactor = dict.get(words);
-    if ( mainFactor ) {
-      mainFactor[COUNT]++;
+
+    if ( MAIN_FACTOR ) {
+      mainFactor = dict.get(words);
+      if ( mainFactor ) {
+        mainFactor[COUNT]++;
+      }
     }
+
     let factors, Factors;
 
     words = EXTEND ? `${words} ${words} ${words}` : words;
@@ -94,7 +99,7 @@ export const State = {
       factors.push(...Factors);
     }
    
-    if ( mainFactor ) {
+    if ( MAIN_FACTOR && mainFactor ) {
       factors.push(mainFactor);
     }
 
@@ -417,8 +422,8 @@ export const State = {
   }
 
   export function simplify(str) {
-    str = str.replace(/[\x00-\x1f\x7f]+/gu, ' ');  
     str = str.replace(/[\p{Z}\p{P}\p{C}]+/gu, ' ');      
+    str = str.replace(/[\x00-\x1f\x7f]+/gu, ' ');  
     str = str.trim();
     str = str.toLocaleLowerCase();
 

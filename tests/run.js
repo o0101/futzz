@@ -13,12 +13,13 @@ const PARAM_RANGES = {
   "minIteration": [3],
   "maxWordLength": [31,140],
   "minAddAllLength": [3],
+  "mainFactor": [false, true],
   "prune": [true],
   "useQ": [false],
-  "extend": [false],
-  "countAll": [false, true],
-  "addAllAsFactors": [false, true],
-  "minCount": [1,5]
+  "extend": [false, true],
+  "countAll": [true],
+  "addAllAsFactors": [false],
+  "minCount": [1]
 }
 
 const cat = process.argv[2];
