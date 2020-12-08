@@ -2,7 +2,20 @@
 > futzz@1.0.0 test /home/cris/futzz
 > clear && node --max-old-space-size=20000 -r esm tests/run.js "ufo" "multi"
 
-[H[2J[3JMulti auto mode
+[H[2J[3J/home/cris/futzz
+{
+  minIteration: 3,
+  maxWordLength: 13,
+  minAddAllLength: 1,
+  mainFactor: false,
+  prune: true,
+  useQ: false,
+  extend: false,
+  countAll: true,
+  addAllAsFactors: false,
+  minCount: 1
+}
+Multi auto mode
 undefined
 Enumerated 384 possibilities.
 { jobStarted: { running: 1 }, remaining: 383 }
@@ -15,63 +28,23 @@ Enumerated 384 possibilities.
 { jobStarted: { running: 8 }, remaining: 376 }
 { jobStarted: { running: 9 }, remaining: 375 }
 { jobStarted: { running: 10 }, remaining: 374 }
-Error: Command failed: npm test ufo auto nolimit no no-progress /home/cris/futzz/results/configtests/5
-Killed
-npm ERR! Test failed.  See above for more details.
-
-    at ChildProcess.exithandler (child_process.js:308:12)
-    at ChildProcess.emit (events.js:315:20)
-    at ChildProcess.EventEmitter.emit (domain.js:486:12)
-    at maybeClose (internal/child_process.js:1048:16)
-    at Process.ChildProcess._handle.onexit (internal/child_process.js:288:5) {
-  killed: false,
-  code: 1,
-  signal: null,
-  cmd{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 1519 }
 { jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 1518 }
+{ jobStarted: { running: 10 }, remaining: 373 }
 { jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 1517 }
+{ jobStarted: { running: 10 }, remaining: 372 }
 { jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 1516 }
+{ jobStarted: { running: 10 }, remaining: 371 }
 { jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 1515 }
+{ jobStarted: { running: 10 }, remaining: 370 }
 { jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 1514 }
+{ jobStarted: { running: 10 }, remaining: 369 }
 { jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 1513 }
+{ jobStarted: { running: 10 }, remaining: 368 }
 { jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 1512 }
+{ jobStarted: { running: 10 }, remaining: 367 }
 { jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 1511 }
+{ jobStarted: { running: 10 }, remaining: 366 }
 { jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 1510 }
+{ jobStarted: { running: 10 }, remaining: 365 }
 { jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 1{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 363 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 362 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 361 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 360 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 359 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 358 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 357 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 356 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 355 }
-aining: 1500 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 1499 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 1498 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 1497 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 1496 }
+{ jobStarted: { running: 10 }, remaining: 364 }
