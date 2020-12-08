@@ -8,6 +8,7 @@ const OP = (process.argv[7] ? process.argv[7] : process.argv[6] ) || '.';
 console.log(path.resolve(OP));
 
 const CONFIG = JSON.parse(fs.readFileSync(path.resolve(OP,'config.json')).toString());
+console.log(CONFIG);
 
 const MIN_ITERATION = CONFIG.minIteration;
 const MAX_ITERATION = 12;
@@ -451,7 +452,7 @@ export const State = {
     let i = 0;
     let chunkId = 0;
 
-    const chunkSize = 500000;
+    const chunkSize = 250000;
 
     const values = [...State.dict.values()];
 
