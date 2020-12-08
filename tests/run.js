@@ -11,14 +11,14 @@ const PAGE = 3;
 
 const PARAM_RANGES = {
   "minIteration": [3],
-  "maxWordLength": [31,140],
-  "minAddAllLength": [3],
+  "maxWordLength": [13,31,58,141],
+  "minAddAllLength": [1,3,9],
   "mainFactor": [false, true],
   "prune": [true],
-  "useQ": [false],
+  "useQ": [false, true],
   "extend": [false, true],
-  "countAll": [true],
-  "addAllAsFactors": [false],
+  "countAll": [false, true],
+  "addAllAsFactors": [false, true],
   "minCount": [1]
 }
 

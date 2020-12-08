@@ -117,4 +117,16 @@ Then I want to push forward to the next stage, taking the best set out of this s
 
 Also I want to see if I can aggressively prune the dict periodically to remove low information, or low frequency factors that nevertheless made it through other rounds of pruning, but whose value has not borne out over time.
 
+## So far
 
+Good results. Max score around 1.34 now, with either 72% prec, 60% rec, or 67% prec, 67% rec.
+
+If you think about it this means that 82% of queries, and 82% of documents have index terms that overlap in a relevant way. This is pretty solid but I would still like to get up to both 0.7 to 0.8
+
+Let's see.
+
+And then I wanna cut down on the index size.
+
+And I need to solve the problem that some terms (like "nasa shuttle") fail out under some configs (like 0). It gives 1 result! WTF.
+
+I'm gonna run a comprehensive test suite overnight with a bunch of open up parameters.

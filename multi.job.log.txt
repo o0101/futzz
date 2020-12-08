@@ -4,21 +4,14 @@
 
 [H[2J[3JMulti auto mode
 undefined
-Enumerated 8 possibilities.
-{ jobStarted: { running: 1 }, remaining: 7 }
-{ jobStarted: { running: 2 }, remaining: 6 }
-{ jobStarted: { running: 3 }, remaining: 5 }
-{ jobStarted: { running: 4 }, remaining: 4 }
-{ jobStarted: { running: 5 }, remaining: 3 }
-{ jobStarted: { running: 6 }, remaining: 2 }
-{ jobStarted: { running: 7 }, remaining: 1 }
-{ jobStarted: { running: 8 }, remaining: 0 }
-{ jobCompleted: { running: 7 } }
-(node:412339) UnhandledPromiseRejectionWarning: TypeError: startNextJob is not a function
-    at startRun (/home/cris/futzz/tests/run.js:140:11)
-    at processTicksAndRejections (internal/process/task_queues.js:93:5)
-    at async runMultiAuto (/home/cris/futzz/tests/run.js:132:5)
-    at async start (/home/cris/futzz/tests/run.js:39:7)
-(Use `node --trace-warnings ...` to show where the warning was created)
-(node:412339) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 1)
-(node:412339) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+Enumerated 384 possibilities.
+{ jobStarted: { running: 1 }, remaining: 383 }
+{ jobStarted: { running: 2 }, remaining: 382 }
+{ jobStarted: { running: 3 }, remaining: 381 }
+{ jobStarted: { running: 4 }, remaining: 380 }
+{ jobStarted: { running: 5 }, remaining: 379 }
+{ jobStarted: { running: 6 }, remaining: 378 }
+{ jobStarted: { running: 7 }, remaining: 377 }
+{ jobStarted: { running: 8 }, remaining: 376 }
+{ jobStarted: { running: 9 }, remaining: 375 }
+{ jobStarted: { running: 10 }, remaining: 374 }
