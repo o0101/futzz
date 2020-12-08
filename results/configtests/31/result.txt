@@ -1,15 +1,15 @@
 
 > futzz@1.0.0 test /home/cris/futzz
-> clear && node --max-old-space-size=20000 -r esm tests/run.js "ufo" "auto" "nolimit" "no" "no-progress" "/home/cris/futzz/results/configtests/23"
+> clear && node --max-old-space-size=20000 -r esm tests/run.js "ufo" "auto" "nolimit" "no" "no-progress" "/home/cris/futzz/results/configtests/31"
 
-[H[2J[3J/home/cris/futzz/results/configtests/23
+[H[2J[3J/home/cris/futzz/results/configtests/31
 {
   minIteration: 3,
   maxWordLength: 13,
   minAddAllLength: 1,
   mainFactor: true,
   prune: true,
-  useQ: false,
+  useQ: true,
   extend: true,
   countAll: true,
   addAllAsFactors: true,

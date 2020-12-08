@@ -4,9 +4,9 @@
   "minAddAllLength": 3,
   "mainFactor": false,
   "prune": true,
-  "useQ": false,
+  "useQ": true,
   "extend": true,
-  "countAll": true,
-  "addAllAsFactors": false,
+  "countAll": false,
+  "addAllAsFactors": true,
   "minCount": 1
 }
