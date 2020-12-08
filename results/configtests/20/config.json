@@ -1,5 +1,5 @@
 {
-  "minIteration": 3,
+  "minIteration": 1,
   "maxWordLength": 13,
   "minAddAllLength": 1,
   "mainFactor": false,
@@ -7,6 +7,6 @@
   "useQ": true,
   "extend": false,
   "countAll": true,
-  "addAllAsFactors": true,
+  "addAllAsFactors": false,
   "minCount": 1
 }
