@@ -4,6 +4,9 @@ import {BigSet,BigMap} from 'big-associative';
 //import StrongMap from './node-strongmap-fast/index.js';
 
 const OP = (process.argv[7] ? process.argv[7] : process.argv[6] ) || '.';
+
+console.log(path.resolve(OP));
+
 const CONFIG = JSON.parse(fs.readFileSync(path.resolve(OP,'config.json')).toString());
 
 const MIN_ITERATION = CONFIG.minIteration;

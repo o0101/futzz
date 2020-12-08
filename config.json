@@ -5,8 +5,8 @@
   "mainFactor": false,
   "prune": true,
   "useQ": false,
-  "extend": true,
-  "countAll": false,
-  "addAllAsFactors": true,
+  "extend": false,
+  "countAll": true,
+  "addAllAsFactors": false,
   "minCount": 1
 }
