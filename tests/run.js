@@ -337,7 +337,7 @@ async function start() {
   function getFiles(query) {
     const base = path.resolve('demo', 'data', cat, '*');
     try {
-      query = query.split(/\s+/gu).join('.*');
+      //query = query.split(/\s+/gu).join('.*');
       const files = execSync(`grep -R -l -i "${query}" ${base}`).toString()
         .split(/\n/g)
         .filter(n => n.trim().length)

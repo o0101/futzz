@@ -2,7 +2,20 @@
 > futzz@1.0.0 test /home/cris/futzz
 > clear && node --max-old-space-size=20000 -r esm tests/run.js "ufo" "auto" "nolimit" "no" "no-progress" "/home/cris/futzz/results/configtests/17"
 
-[H[2J[3JAuto mode
+[H[2J[3J/home/cris/futzz/results/configtests/17
+{
+  minIteration: 3,
+  maxWordLength: 13,
+  minAddAllLength: 1,
+  mainFactor: true,
+  prune: true,
+  useQ: false,
+  extend: false,
+  countAll: false,
+  addAllAsFactors: true,
+  minCount: 1
+}
+Auto mode
 Indexing documents...
 Done!
 Running queries...
