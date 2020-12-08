@@ -3,7 +3,8 @@ import path from 'path';
 import {BigSet,BigMap} from 'big-associative';
 //import StrongMap from './node-strongmap-fast/index.js';
 
-const CONFIG = JSON.parse(fs.readFileSync('config.json').toString());
+const OP = (process.argv[7] ? process.argv[7] : process.argv[6] ) || '.';
+const CONFIG = JSON.parse(fs.readFileSync(path.resolve(OP,'config.json')).toString());
 
 const MIN_ITERATION = CONFIG.minIteration;
 const MAX_ITERATION = 12;

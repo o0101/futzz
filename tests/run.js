@@ -27,6 +27,7 @@ const act = process.argv[3];
 const num = parseInt(process.argv[4]) || undefined;
 const ak = num || process.argv[4] === 'nolimit' ? process.argv[5] : process.argv[4];
 const jap = process.argv[6] ? process.argv[6] : process.argv[5];
+const zang = process.argv[7] ? process.argv[7] : process.argv[6];
 
 start();
 
@@ -114,10 +115,9 @@ async function start() {
           fs.mkdirSync(outPath, {recursive:true});
         }
 
-        fs.writeFileSync(path.resolve('config.json'), JSON.stringify(config,null,2));
         fs.writeFileSync(path.resolve(outPath, 'config.json'), JSON.stringify(config,null,2));
 
-        exec(`npm test ufo auto ${limit} no no-progress`, (err, stdout, stderr) => {
+        exec(`npm test ufo auto ${limit} no no-progress ${outPath}`, (err, stdout, stderr) => {
           if ( err ) {
             console.warn(err);
           }
@@ -134,8 +134,8 @@ async function start() {
     console.log("Done!");
 
     async function startRun() {
-      while(runner.length) {
-        if ( running < POOL_SIZE ) {
+      while(runner.length || running > 0) {
+        if ( running < Math.min(allConfigs.length, POOL_SIZE) ) {
           const startNextJob = runner.shift();
           startNextJob();
           running += 1;

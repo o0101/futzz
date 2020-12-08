@@ -13,12 +13,12 @@ Enumerated 8 possibilities.
 { jobStarted: { running: 6 }, remaining: 2 }
 { jobStarted: { running: 7 }, remaining: 1 }
 { jobStarted: { running: 8 }, remaining: 0 }
-Done!
-TypeError: notifyComplete is not a function
-    at /home/cris/futzz/tests/run.js:126:11
-    at ChildProcess.exithandler (child_process.js:299:7)
-    at ChildProcess.emit (events.js:315:20)
-    at ChildProcess.EventEmitter.emit (domain.js:486:12)
-    at maybeClose (internal/child_process.js:1048:16)
-    at Process.ChildProcess._handle.onexit (internal/child_process.js:288:5)
-npm ERR! Test failed.  See above for more details.
+{ jobCompleted: { running: 7 } }
+(node:412339) UnhandledPromiseRejectionWarning: TypeError: startNextJob is not a function
+    at startRun (/home/cris/futzz/tests/run.js:140:11)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async runMultiAuto (/home/cris/futzz/tests/run.js:132:5)
+    at async start (/home/cris/futzz/tests/run.js:39:7)
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:412339) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 1)
+(node:412339) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
