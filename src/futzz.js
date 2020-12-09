@@ -166,7 +166,7 @@ export const State = {
       return score;
     }
 
-    if ( AAFI && results.length <= AAFI_MIN_RESULT_LENGTH ) {
+    if ( AAFI && results.length <= AAFI_MIN_RESULT_LENGTH && ! opts.addAllAsFactors ) {
       const newOpts = JSON.parse(JSON.stringify(opts));
       newOpts.addAllAsFactors = true;
       return query(oWords, right_answers, newOpts);
@@ -200,6 +200,10 @@ export const State = {
     // provide a factorization but don't change the dict
     if ( opts.idempotent ) {
       reverse = [];
+    }
+
+    if ( opts.addAllAsFactors ) {
+      console.log({aaaf:{docStr}, opts});
     }
 
     // a tiny bit of preProcessing
@@ -287,6 +291,9 @@ export const State = {
           prune && prune.delete(data);
           if ( opts.addAllAsFactors ) {
             factors.push(data);
+          }
+          if ( opts.addAllAsFactors ) {
+            console.log(data);
           }
         }
 
