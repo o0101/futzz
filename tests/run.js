@@ -8,17 +8,24 @@ import readline from 'readline';
 const SHOW_RESULTS = true;
 const SAVE_CORRELATION = false;
 const PAGE = 3;
+const NAMES_ONLY_PAGE_LENGTH = 10;
+
+const NOLIST = new Set([
+  'factors',
+  'stats'
+]);
 
 const PARAM_RANGES = {
-  "minIteration": [3],
-  "maxWordLength": [13,31,58,141],
-  "minAddAllLength": [1,3,9],
-  "mainFactor": [false, true],
+  "minIteration": [2, 3],
+  "maxWordLength": [31],
+  "minAddAllLength": [1,2,3],
+  "mainFactor": [true],
   "prune": [true],
-  "useQ": [false, true],
-  "extend": [false, true],
+  "useQ": [false],
+  "extend": [true],
   "countAll": [false, true],
-  "addAllAsFactors": [false, true],
+  "addAllAsFactors": [false],
+  "addAllAsFactorsIntervention": [false, true],
   "minCount": [1]
 }
 
@@ -184,6 +191,7 @@ async function start() {
       if ( file.isDirectory() ) return;
       const Precision = [];
       const Recall = [];
+      const Record = [];
       const group = file.name;
       const name = group.replace('.dat', '');
       const queries = fs
@@ -215,6 +223,7 @@ async function start() {
             const {precision, recall} = evaluateCorrelationQuery(first, second);
             Precision.push(precision);
             Recall.push(recall);
+            Record.push([first, second, precision, recall]);
             if ( SAVE_CORRELATION ) {
               Summary.precision.push(precision);
               Summary.recall.push(recall);
@@ -229,6 +238,7 @@ async function start() {
             const {precision, recall} = evaluateQuery(q);
             Precision.push(precision);
             Recall.push(recall);
+            Record.push([q, precision, recall]);
             if ( ! isAnti ) {
               Summary.precision.push(precision);
               Summary.recall.push(recall);
@@ -243,9 +253,7 @@ async function start() {
         name,
         AvgPrecision: (Precision.reduce((A,p) => A + p, 0)/Precision.length).toFixed(4),
         AvgRecall: (Recall.reduce((A,p) => A + p, 0)/Precision.length).toFixed(4),
-        Precision,
-        Recall,
-        queries
+        Record
       });
     });
 
@@ -261,7 +269,7 @@ async function start() {
         Summary.modePrecision = parseFloat(Object.entries(
           Summary.precision
             .reduce((F,p) => (p = Math.round(p), F[p] = (F[p] || 0) + 1, F), {})
-        ).sort(([k,v], [k2,v2]) => v2 - v)[0][0]).toFixed(2);
+        ).sort(([k,v], [k2,v2]) => v2 - v)[0][0]).toFixed(0);
 
       // summarise recall
         Summary.avgRecall = (Summary.recall.reduce((A,p) => A + p, 0)/pLen).toFixed(2);
@@ -272,7 +280,7 @@ async function start() {
         Summary.modeRecall = parseFloat(Object.entries(
           Summary.recall
             .reduce((F,p) => (p = Math.round(p), F[p] = (F[p] || 0) + 1, F), {})
-        ).sort(([k,v], [k2,v2]) => v2 - v)[0][0]).toFixed(2);
+        ).sort(([k,v], [k2,v2]) => v2 - v)[0][0]).toFixed(0);
 
         Summary.score = (parseFloat(Summary.avgRecall) + parseFloat(Summary.avgPrecision)).toFixed(2);
       
@@ -457,6 +465,11 @@ async function start() {
         }
         let precision, recall, results;
 
+        let Page = PAGE;
+        if ( command === 'names' ) {
+          Page = NAMES_ONLY_PAGE_LENGTH;
+        }
+
         if ( ! noQuery ) {
           ({precision, recall, results, [command]: extra} = evaluateQuery(q, true, {[command]:true}));
         }
@@ -465,28 +478,31 @@ async function start() {
           console.log({[command]:extra});
         }
 
-        if ( results && results.length ) {
+        if ( results && results.length && !NOLIST.has(command)) {
           results = results.map(([name]) => ({name, start:fs.readFileSync(name).toString().trim().slice(300, 512)}));
 
           let i = 0;
           if ( SHOW_RESULTS ) {
             for (const {name, start} of results ) {
               console.log(name);
-              console.log(start);
-              console.log('\n');
+              if ( command !== 'names' ) {
+                console.log(start);
+                console.log('\n');
+              }
               i++;
-              if ( i % PAGE === 0 ) {
+              if ( i % Page === 0 ) {
                 await new Promise(
                   res => terminal.question(
-                    `Page ${i/PAGE} of ${Math.round(results.length/PAGE)}. ENTER for next`,
+                    `Page ${i/Page} of ${Math.round(results.length/Page)}. ENTER for next`,
                     res
                   )
                 );
               }
             }
           }
-          console.log({resultsLength: results.length, precision, recall});
         }
+
+        console.log({resultsLength: results.length, precision, recall});
       }
     } while( q !== '.exit' );
 

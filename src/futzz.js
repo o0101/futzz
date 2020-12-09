@@ -14,6 +14,8 @@ const MIN_ITERATION = CONFIG.minIteration;
 const MAX_ITERATION = 12;
 
 const AAAF = CONFIG.addAllAsFactors;
+const AAFI = CONFIG.addAllAsFactorsIntervention;
+const AAFI_MIN_RESULT_LENGTH = 4;
 const COUNT_ALL = CONFIG.countAll;
 const PRUNE = CONFIG.prune;
 const EXTEND = CONFIG.extend;
@@ -78,6 +80,7 @@ export const State = {
   }
 
   export function query(words, right_answers = [], opts = {}) {
+    const oWords = words;
     const Answers = new Set(right_answers);
     const {dict} = State;
     let factors, mainFactor, Factors;
@@ -161,6 +164,12 @@ export const State = {
       }
       
       return score;
+    }
+
+    if ( AAFI && results.length <= AAFI_MIN_RESULT_LENGTH ) {
+      const newOpts = JSON.parse(JSON.stringify(opts));
+      newOpts.addAllAsFactors = true;
+      return query(oWords, right_answers, newOpts);
     }
 
     if ( opts.factors ) {

@@ -1,0 +1,91 @@
+==> ofbest/118/config.json <==
+{
+  "minIteration": 3,
+  "maxWordLength": 31,
+  "minAddAllLength": 1,
+  "mainFactor": true,
+  "prune": true,
+  "useQ": false,
+  "extend": true,
+  "countAll": true,
+  "addAllAsFactors": false,
+  "minCount": 1
+}
+==> ofbest/126/config.json <==
+{
+  "minIteration": 3,
+  "maxWordLength": 31,
+  "minAddAllLength": 1,
+  "mainFactor": true,
+  "prune": true,
+  "useQ": true,
+  "extend": true,
+  "countAll": true,
+  "addAllAsFactors": false,
+  "minCount": 1
+}
+==> ofbest/150/config.json <==
+{
+  "minIteration": 3,
+  "maxWordLength": 31,
+  "minAddAllLength": 3,
+  "mainFactor": true,
+  "prune": true,
+  "useQ": false,
+  "extend": true,
+  "countAll": true,
+  "addAllAsFactors": false,
+  "minCount": 1
+}
+==> ofbest/158/config.json <==
+{
+  "minIteration": 3,
+  "maxWordLength": 31,
+  "minAddAllLength": 3,
+  "mainFactor": true,
+  "prune": true,
+  "useQ": true,
+  "extend": true,
+  "countAll": true,
+  "addAllAsFactors": false,
+  "minCount": 1
+}
+==> ofbest/214/config.json <==
+{
+  "minIteration": 3,
+  "maxWordLength": 58,
+  "minAddAllLength": 1,
+  "mainFactor": true,
+  "prune": true,
+  "useQ": false,
+  "extend": true,
+  "countAll": true,
+  "addAllAsFactors": false,
+  "minCount": 1
+}
+==> ofbest/222/config.json <==
+{
+  "minIteration": 3,
+  "maxWordLength": 58,
+  "minAddAllLength": 1,
+  "mainFactor": true,
+  "prune": true,
+  "useQ": true,
+  "extend": true,
+  "countAll": true,
+  "addAllAsFactors": false,
+  "minCount": 1
+}
+==> ofbest/246/config.json <==
+{
+  "minIteration": 3,
+  "maxWordLength": 58,
+  "minAddAllLength": 3,
+  "mainFactor": true,
+  "prune": true,
+  "useQ": false,
+  "extend": true,
+  "countAll": true,
+  "addAllAsFactors": false,
+  "minCount": 1
+}
