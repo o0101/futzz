@@ -137,6 +137,9 @@ async function start() {
       while(runner.length || running > 0) {
         if ( running < Math.min(allConfigs.length, POOL_SIZE) ) {
           const startNextJob = runner.shift();
+          if ( ! startNextJob ) {
+            break;
+          }
           startNextJob();
           running += 1;
           console.log({jobStarted:{running}, remaining: runner.length});
