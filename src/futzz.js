@@ -15,9 +15,9 @@ const MAX_ITERATION = 12;
 
 const AAAF = CONFIG.addAllAsFactors;
 const AAFI = CONFIG.addAllAsFactorsIntervention;
-const AAFI_MIN_RESULT_LENGTH = 4;
-const AAFI_THRESH_LENGTH = 10;
-const MINIMA_O_ADD_LENGTH = 4;
+const AAFI_MIN_RESULT_LENGTH = 5;
+const AAFI_THRESH_LENGTH = 50;
+const MINIMA_O_ADD_LENGTH = 3;
 const COUNT_ALL = CONFIG.countAll;
 const PRUNE = CONFIG.prune;
 const EXTEND = CONFIG.extend;
@@ -176,15 +176,22 @@ export const State = {
       return score;
     }
 
-    if ( AAFI && results.length <= AAFI_MIN_RESULT_LENGTH && ! opts.addAllAsFactors ) {
+    if ( AAFI && (
+        results.length <= AAFI_MIN_RESULT_LENGTH || 
+        (opts.runStart && opts.resultsLength < AAFI_THRESH_LENGTH) 
+    )) {
       const newOpts = JSON.parse(JSON.stringify(opts));
+      console.log("Again?", results, newOpts);
       newOpts.addAllAsFactors = true;
+      newOpts.runStart = true;
+      newOpts.resultsLength = (newOpts.resultsLength || 0) + results.length;
       if ( ! newOpts.minAddLength ) {
         newOpts.minAddLength = oWords.length - 1;
       } else {
         newOpts.minAddLength--;
       }
       if ( newOpts.minAddLength >= MINIMA_O_ADD_LENGTH ) {
+        console.log("Again", results, newOpts, oWords);
         const {results:Results, factors: Factors} = query(oWords, right_answers, newOpts);
         results.push(...Results);
         if ( Factors ) {
