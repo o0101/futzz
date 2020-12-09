@@ -16,6 +16,7 @@ const MAX_ITERATION = 12;
 const AAAF = CONFIG.addAllAsFactors;
 const AAFI = CONFIG.addAllAsFactorsIntervention;
 const AAFI_MIN_RESULT_LENGTH = 4;
+const MINIMA_O_ADD_LENGTH = 3;
 const COUNT_ALL = CONFIG.countAll;
 const PRUNE = CONFIG.prune;
 const EXTEND = CONFIG.extend;
@@ -97,10 +98,18 @@ export const State = {
     words = EXTEND ? `${words} ${words} ${words}` : words;
 
     if ( USE_Q_INDEX ) { 
-      ({Factors} = index(words, 'query', {idempotent:true, addAllAsFactors: AAAF}));
+      ({Factors} = index(words, 'query', {
+        idempotent:true, 
+        addAllAsFactors: AAAF || opts.addAllAsFactors,
+        minAddLength: opts.minAddLength
+      }));
     }
 
-    ({factors} = lz(words, dict, 'query', {idempotent:true, addAllAsFactors: AAAF}));
+    ({factors} = lz(words, dict, 'query', {
+      idempotent:true, 
+      addAllAsFactors: AAAF || opts.addAllAsFactors,
+      minAddLength: opts.minAddLength
+    }));
 
     if ( Factors ) {
       factors.push(...Factors);
@@ -169,7 +178,17 @@ export const State = {
     if ( AAFI && results.length <= AAFI_MIN_RESULT_LENGTH && ! opts.addAllAsFactors ) {
       const newOpts = JSON.parse(JSON.stringify(opts));
       newOpts.addAllAsFactors = true;
-      return query(oWords, right_answers, newOpts);
+      if ( ! newOpts.minAddLength ) {
+        newOpts.minAddLength = oWords.length - 1;
+      } else {
+        newOpts.minAddLength--;
+      }
+      if ( newOpts.minAddLength >= MINIMA_O_ADD_LENGTH ) {
+        const {results:Results, factors: Factors} = query(oWords, right_answers, newOpts);
+        results.push(...Results);
+        factors.push(...Factors);
+        return {results,factors};
+      } 
     }
 
     if ( opts.factors ) {
