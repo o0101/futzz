@@ -1,12 +1,4 @@
-- command to show result titles only
-- .factors should not also show results
-- use something like addAllAsFactors IFF the factors list is too small or result list is too small
-  - some ideas:
-    - chop up query string randomly (or not randomly, but shortly)
-    - insert something randomly, 
-      for eg: nasa shuttle - 1 result
-      nasa space shuttle - many relevant results
-- collate results so i can see query, prec, acuracy in results.txt in one tuple
+- use  find -type f -exec awk -v RS='.' '{IGNORECASE=1;}/nasa/&&/shuttle/{print FILENAME}' {} \;
 - fix concep queries
 - make chunks dependent on byte size rather than value length 
 (and stay under 2gb per file limit)

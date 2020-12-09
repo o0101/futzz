@@ -1,4 +1,13 @@
 // new
+- command to show result titles only
+- .factors should not also show results
+- use something like addAllAsFactors IFF the factors list is too small or result list is too small
+  - some ideas:
+    - chop up query string randomly (or not randomly, but shortly)
+    - insert something randomly, 
+      for eg: nasa shuttle - 1 result
+      nasa space shuttle - many relevant results
+- collate results so i can see query, prec, acuracy in results.txt in one tuple
 - GOT 69% prec and 70% recall and 70% and 69% accuracy
 - lz on the query until entropy condition is reached
   - this seems to reverse precision and recall (higher precision, lower recall)
