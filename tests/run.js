@@ -179,6 +179,7 @@ async function start() {
       await loadFromDisk(limit);
     }
 
+    console.log(`Indexing created ${Math.round(State.dict.size/2)} factors`);
     console.log("Running queries...");
     const files = fs.readdirSync(path.resolve('tests', 'queries'), {withFileTypes:true});
     const Summary = {
