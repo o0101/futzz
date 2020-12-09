@@ -16,7 +16,8 @@ const MAX_ITERATION = 12;
 const AAAF = CONFIG.addAllAsFactors;
 const AAFI = CONFIG.addAllAsFactorsIntervention;
 const AAFI_MIN_RESULT_LENGTH = 4;
-const MINIMA_O_ADD_LENGTH = 3;
+const AAFI_THRESH_LENGTH = 10;
+const MINIMA_O_ADD_LENGTH = 4;
 const COUNT_ALL = CONFIG.countAll;
 const PRUNE = CONFIG.prune;
 const EXTEND = CONFIG.extend;
@@ -223,10 +224,6 @@ export const State = {
       reverse = [];
     }
 
-    if ( opts.addAllAsFactors ) {
-      console.log({aaaf:{docStr}, opts});
-    }
-
     // a tiny bit of preProcessing
 
     docStr = simplify(docStr);
@@ -255,7 +252,7 @@ export const State = {
         }
         if ( ! dict.has(currentWord) || currentWord.length >= MAX_WORD_LENGTH_1 ) {
           // save the new unseen token
-            const data = {
+            const data = dict.get(currentWord) || {
               [NAME]: {
                 [name]: {[COUNT]: MIN_COUNT}
               }, 
@@ -264,14 +261,16 @@ export const State = {
               [COUNT]: MIN_COUNT,
               [CODE_ID]: codeId 
             }
-            prune && prune.add(data);
-            toNormalize.add(data);
-            dict.set(codeId, data);
-            dict.set(currentWord, data);
-            if ( opts.idempotent ) {
-              reverse.push(data);
+            if ( ! dict.has(currentWord) ) {
+              prune && prune.add(data);
+              toNormalize.add(data);
+              dict.set(codeId, data);
+              dict.set(currentWord, data);
+              if ( opts.idempotent ) {
+                reverse.push(data);
+              }
+              codeId += 1;
             }
-            codeId += 1;
 
           // get the factor 
             let suffix = '';
@@ -298,7 +297,7 @@ export const State = {
           // update the state
             wordFirstIndex = charIndex;
             currentWord = suffix;
-        } else if ( (COUNT_ALL || opts.addAllAsFactors) && currentWord.length >= MIN_ADD_ALL_LENGTH ) {
+        } else if ( (COUNT_ALL || opts.addAllAsFactors) && currentWord.length >= Math.max(opts.minAddLength || 1, MIN_ADD_ALL_LENGTH) ) {
           // we could add a [SCORE] to data and check it here 
           // and if it's above some thresh we could use count that
           const data = dict.get(currentWord);
@@ -312,9 +311,6 @@ export const State = {
           prune && prune.delete(data);
           if ( opts.addAllAsFactors ) {
             factors.push(data);
-          }
-          if ( opts.addAllAsFactors ) {
-            console.log(data);
           }
         }
 
