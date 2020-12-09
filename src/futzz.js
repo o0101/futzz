@@ -186,7 +186,9 @@ export const State = {
       if ( newOpts.minAddLength >= MINIMA_O_ADD_LENGTH ) {
         const {results:Results, factors: Factors} = query(oWords, right_answers, newOpts);
         results.push(...Results);
-        factors.push(...Factors);
+        if ( Factors ) {
+          factors.push(...Factors);
+        }
         return {results,factors};
       } 
     }
