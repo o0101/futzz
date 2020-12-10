@@ -10,6 +10,9 @@ const SHOW_RESULTS = true;
 const SAVE_CORRELATION = false;
 const PAGE = 3;
 const NAMES_ONLY_PAGE_LENGTH = 10;
+const EXEC_OPTS = {
+  maxBuffer: 1024*1024*16
+};
 
 const NOLIST = new Set([
   'factors',
@@ -376,7 +379,8 @@ async function start() {
                 base
               } -type f -exec awk -v RS='.' '{IGNORECASE=1;}/${
                 query
-              }/{print FILENAME}' {} \\;`
+              }/{print FILENAME}' {} \\;`,
+              EXEC_OPTS
             )
             .toString()
             .split(/\n/g)
