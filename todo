@@ -1,8 +1,8 @@
-- make chunks dependent on byte size rather than value length 
-(and stay under 2gb per file limit)
-- eval queries by hand using latest (prec: 67, rec: 66)
 - switch back to "old best" (prec: 55, rec: 70)
 - try to mix the lastest best and old best, and see if we can improve
+- use new evaluation
+- make chunks dependent on byte size rather than value length 
+(and stay under 2gb per file limit)
 - then go forward and using what we have try to prune more aggressively and on a metric like score, or something, to create even more improvements
 
 - get prec and rec between 70 and 80 
