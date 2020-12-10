@@ -234,6 +234,7 @@ async function start() {
               Summary.recall.push(recall);
             }
           } catch(e) {
+            console.log(e);
             continue;
           }
         }
@@ -335,7 +336,8 @@ async function start() {
   }
 
   function evaluateCorrelationQuery(a, b, opts) {
-    q = simplify(q);
+    a = simplify(a);
+    b = simplify(b);
     const {results:resultsa, ...resta} = query(a, undefined, opts);
     const {results:resultsb, ...restb} = query(b, undefined, opts);
     // b should align to a

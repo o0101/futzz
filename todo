@@ -1,4 +1,3 @@
-- fix concep queries
 - make chunks dependent on byte size rather than value length 
 (and stay under 2gb per file limit)
 - eval queries by hand using latest (prec: 67, rec: 66)
