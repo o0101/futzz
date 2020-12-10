@@ -6,55 +6,26 @@
 {
   minIteration: 3,
   maxWordLength: 31,
-  minAddAllLength: 3,
+  minAddAllLength: 2,
   mainFactor: true,
   prune: true,
   useQ: false,
   extend: true,
   countAll: true,
   addAllAsFactors: false,
+  addAllAsFactorsIntervention: true,
   minCount: 1
 }
 Multi auto mode
 undefined
-Enumerated 24 possibilities.
-{ jobStarted: { running: 1 }, remaining: 23 }
-{ jobStarted: { running: 2 }, remaining: 22 }
-{ jobStarted: { running: 3 }, remaining: 21 }
-{ jobStarted: { running: 4 }, remaining: 20 }
-{ jobStarted: { running: 5 }, remaining: 19 }
-{ jobStarted: { running: 6 }, remaining: 18 }
-{ jobStarted: { running: 7 }, remaining: 17 }
-{ jobStarted: { running: 8 }, remaining: 16 }
-{ jobStarted: { running: 9 }, remaining: 15 }
-{ jobStarted: { running: 10 }, remaining: 14 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 13 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 12 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 11 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 10 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 9 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 8 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 7 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 6 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 5 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 4 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 3 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 2 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 1 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 0 }
-{ jobCompleted: { running: 9 } }
-Done!
+Enumerated 32 possibilities.
+{ jobStarted: { running: 1 }, remaining: 31 }
+{ jobStarted: { running: 2 }, remaining: 30 }
+{ jobStarted: { running: 3 }, remaining: 29 }
+{ jobStarted: { running: 4 }, remaining: 28 }
+{ jobStarted: { running: 5 }, remaining: 27 }
+{ jobStarted: { running: 6 }, remaining: 26 }
+{ jobStarted: { running: 7 }, remaining: 25 }
+{ jobStarted: { running: 8 }, remaining: 24 }
+{ jobStarted: { running: 9 }, remaining: 23 }
+{ jobStarted: { running: 10 }, remaining: 22 }

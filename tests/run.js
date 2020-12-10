@@ -21,8 +21,8 @@ const NOLIST = new Set([
 
 const PARAM_RANGES = {
   "minIteration": [2, 3],
-  "maxWordLength": [31],
-  "minAddAllLength": [1,2,3],
+  "maxWordLength": [31,101],
+  "minAddAllLength": [3,5],
   "mainFactor": [true],
   "prune": [true],
   "useQ": [false],
