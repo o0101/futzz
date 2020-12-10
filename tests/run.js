@@ -526,7 +526,7 @@ async function start() {
         }
 
         if ( command && extra ) {
-          console.log({[command]:extra});
+          console.log(JSON.stringify({[command]:extra},null,2));
         }
 
         if ( results && results.length && !NOLIST.has(command)) {
