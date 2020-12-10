@@ -142,11 +142,9 @@ export const State = {
       mergeAdd(merge, scores);
     });
 
-    let results = Object.entries(merge);
+    let results = dedup(Object.entries(merge), 0);
 
     results = results.filter(([doc]) => State.names.get(doc) !== "query");
-
-    results = dedup(results, true);
 
     // sort the documents by the summed score
     results.sort(([,countA], [,countB]) => {
@@ -201,13 +199,11 @@ export const State = {
         if ( Factors ) {
           factors.push(...Factors);
         }
-
-        results = dedup(results, true);
-        factors = dedup(factors);
-
-        return {results,factors};
       } 
     }
+
+    results = dedup(results, 0);
+    factors = dedup(factors);
 
     if ( opts.factors ) {
       return {results, factors};
@@ -605,14 +601,34 @@ export const State = {
     console.log("Done!");
   }
 
-  export function dedup(list, jsonify = false) {
+  export function dedup(list, key, jsonify = false) {
+    const oList = Array.from(list);
+    let map;
+
+    if ( key !== undefined ) {
+      map = new Map();
+      list = list.map(o => {
+        map.set(o[key], o);
+        return o[key];
+      });
+    }
+
     if ( jsonify ) {
       list = list.map(o => JSON.stringify(o));
     }
-    let deduped = [...(new Set(list)).keys()];
+
+    let deduped = new Set(list);
+    
+    deduped = [...deduped.keys()];
+
+    if ( key !== undefined ) {
+      deduped = deduped.map(k => map.get(k));
+    } 
+
     if ( jsonify ) {
       deduped = deduped.map(s => JSON.parse(s));
     }
+
     return deduped;
   }
 
