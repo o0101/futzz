@@ -1,7 +1,7 @@
 {
-  "minIteration": 3,
-  "maxWordLength": 31,
-  "minAddAllLength": 1,
+  "minIteration": 2,
+  "maxWordLength": 101,
+  "minAddAllLength": 5,
   "mainFactor": true,
   "prune": true,
   "useQ": false,
