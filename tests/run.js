@@ -1,9 +1,10 @@
-import {exec,execSync} from 'child_process';
 import fs from 'fs';
 import path from 'path';
 import os from 'os';
-import {simplify, State, loadFromDisk, saveToDisk, query, index, ent} from '../src/futzz.js';
 import readline from 'readline';
+import {exec,execSync} from 'child_process';
+import {discohash} from 'bebb4185';
+import {dedup, simplify, State, loadFromDisk, saveToDisk, query, index, ent} from '../src/futzz.js';
 
 const SHOW_RESULTS = true;
 const SAVE_CORRELATION = false;
@@ -349,11 +350,56 @@ async function start() {
   function getFiles(query) {
     const base = path.resolve('demo', 'data', cat, '*');
     try {
-      //query = query.split(/\s+/gu).join('.*');
-      const files = execSync(`grep -R -l -i "${query}" ${base}`).toString()
-        .split(/\n/g)
-        .filter(n => n.trim().length)
-        .map(n => path.resolve(cat, n));
+      query = query.split(/\s+/gu).join('/&&/');
+      const qHash = discohash(query).toString(16);
+      const qResultPath = path.resolve(
+        'tests', 'queries', 'precomputed-results-filenames', `${qHash}.dat` 
+      );
+      let files = [], needsSave = false;
+
+      if ( fs.existsSync(qResultPath) ) {
+        try {
+          files = JSON.parse(fs.readFileSync(qResultPath).toString());
+        } catch(e) {
+          console.warn("File exists but reading as JSON threw an error", e);
+          needsSave = true;
+        }
+      } else {
+        needsSave = true;
+      }
+
+      if ( needsSave ) {
+        console.log({saving:{query, location:qResultPath}});
+        try {
+          files = execSync(
+              `find ${
+                base
+              } -type f -exec awk -v RS='.' '{IGNORECASE=1;}/${
+                query
+              }/{print FILENAME}' {} \\;`
+            )
+            .toString()
+            .split(/\n/g)
+            .filter(n => n.trim().length)
+            .map(n => path.resolve(cat, n));
+          files = dedup(files);
+          console.log({files});
+          if ( ! fs.existsSync(path.dirname(qResultPath) ) ) {
+            console.log({creating: path.dirname(qResultPath)});
+            fs.mkdirSync(path.dirname(qResultPath), {recursive:true});
+          }
+          try {
+            fs.writeFileSync(qResultPath, JSON.stringify(files,null,2));
+          } catch(e) {
+            console.warn(e);
+            fs.writeFileSync('error.last.txt', e.toString());
+            process.exit(1);
+          }
+        } catch(e2) {
+          console.warn(e2);
+        }
+      }
+
       return new Set(files);
     } catch(e) {
       //console.warn(e);

@@ -126,6 +126,8 @@ export const State = {
 
     const merge = {};
 
+    factors = dedup(factors);
+
     factors.forEach(f => {
       const {[NAME]:name, [WORD]:word} = f;
       // discard the count information and just keep the scores per document name
@@ -143,6 +145,8 @@ export const State = {
     let results = Object.entries(merge);
 
     results = results.filter(([doc]) => State.names.get(doc) !== "query");
+
+    results = dedup(results);
 
     // sort the documents by the summed score
     results.sort(([,countA], [,countB]) => {
@@ -197,6 +201,10 @@ export const State = {
         if ( Factors ) {
           factors.push(...Factors);
         }
+
+        results = dedup(results);
+        factors = dedup(factors);
+
         return {results,factors};
       } 
     }
@@ -595,5 +603,9 @@ export const State = {
     entries.forEach(([k,v]) => State.dict.set(k,v));
 
     console.log("Done!");
+  }
+
+  export function dedup(list) {
+    return [...(new Set(list)).keys()];
   }
 

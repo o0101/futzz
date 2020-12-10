@@ -1,6 +1,3 @@
-- precompute the awk results sets for each query because otherwise it will be too slow
-- pass results, and factors through a set filter to remove duplicates
-- use  find -type f -exec awk -v RS='.' '{IGNORECASE=1;}/nasa/&&/shuttle/{print FILENAME}' {} \;
 - fix concep queries
 - make chunks dependent on byte size rather than value length 
 (and stay under 2gb per file limit)

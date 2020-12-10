@@ -1,4 +1,7 @@
 // new
+- precompute the awk results sets for each query because otherwise it will be too slow
+- pass results, and factors through a set filter to remove duplicates
+- use  find -type f -exec awk -v RS='.' '{IGNORECASE=1;}/nasa/&&/shuttle/{print FILENAME}' {} \;
 - command to show result titles only
 - .factors should not also show results
 - use something like addAllAsFactors IFF the factors list is too small or result list is too small
