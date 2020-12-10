@@ -146,7 +146,7 @@ export const State = {
 
     results = results.filter(([doc]) => State.names.get(doc) !== "query");
 
-    results = dedup(results);
+    results = dedup(results, true);
 
     // sort the documents by the summed score
     results.sort(([,countA], [,countB]) => {
@@ -202,7 +202,7 @@ export const State = {
           factors.push(...Factors);
         }
 
-        results = dedup(results);
+        results = dedup(results, true);
         factors = dedup(factors);
 
         return {results,factors};
@@ -605,7 +605,14 @@ export const State = {
     console.log("Done!");
   }
 
-  export function dedup(list) {
-    return [...(new Set(list)).keys()];
+  export function dedup(list, jsonify = false) {
+    if ( jsonify ) {
+      list = list.map(o => JSON.stringify(o));
+    }
+    let deduped = [...(new Set(list)).keys()];
+    if ( jsonify ) {
+      deduped = deduped.map(s => JSON.parse(s));
+    }
+    return deduped;
   }
 
