@@ -6,8 +6,8 @@
   "prune": true,
   "useQ": false,
   "extend": true,
-  "countAll": true,
+  "countAll": false,
   "addAllAsFactors": false,
-  "addAllAsFactorsIntervention": false,
+  "addAllAsFactorsIntervention": true,
   "minCount": 1
 }
