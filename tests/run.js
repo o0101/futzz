@@ -226,12 +226,16 @@ async function start() {
         for(  const [first, second] of queries ) {
           try {
             const {precision, recall} = evaluateCorrelationQuery(first, second);
-            Precision.push(precision);
-            Recall.push(recall);
+            if ( precision !== 0 && recall !== 0 ) {
+              Precision.push(precision);
+              Recall.push(recall);
+            }
             Record.push([first, second, precision, recall]);
             if ( SAVE_CORRELATION ) {
-              Summary.precision.push(precision);
-              Summary.recall.push(recall);
+              if ( precision !== 0 && recall !== 0 ) {
+                Summary.precision.push(precision);
+                Summary.recall.push(recall);
+              }
             }
           } catch(e) {
             console.log(e);
@@ -242,12 +246,16 @@ async function start() {
         for( const q of queries ) {
           try {
             const {precision, recall} = evaluateQuery(q);
-            Precision.push(precision);
-            Recall.push(recall);
+            if ( precision !== 0 && recall !== 0 ) {
+              Precision.push(precision);
+              Recall.push(recall);
+            }
             Record.push([q, precision, recall]);
             if ( ! isAnti ) {
-              Summary.precision.push(precision);
-              Summary.recall.push(recall);
+              if ( precision !== 0 && recall !== 0 ) {
+                Summary.precision.push(precision);
+                Summary.recall.push(recall);
+              }
             }
           } catch(e) {
             continue;
