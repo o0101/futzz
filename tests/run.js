@@ -382,7 +382,7 @@ async function start() {
         const qResultPath = path.resolve(
           'tests', 'queries', 'precomputed-results-filenames', `${qHash}.dat` 
         );
-        let files = [], needsSave = false;
+        let needsSave = false;
 
         if ( fs.existsSync(qResultPath) ) {
           try {
@@ -427,9 +427,8 @@ async function start() {
             console.warn(e2);
           }
         }
-
       } catch(e) {
-        //console.warn(e);
+        console.warn(e);
         return new Set();
       }
     }
