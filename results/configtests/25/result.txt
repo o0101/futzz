@@ -1,0 +1,204 @@
+
+> futzz@1.0.0 test /home/cris/futzz
+> clear && node --max-old-space-size=20000 -r esm tests/run.js "ufo" "auto" "nolimit" "no" "no-progress" "/home/cris/futzz/results/configtests/25"
+
+[H[2J[3J/home/cris/futzz/results/configtests/25
+{
+  minIteration: 3,
+  maxWordLength: 31,
+  minAddAllLength: 3,
+  mainFactor: true,
+  prune: true,
+  useQ: false,
+  extend: true,
+  countAll: false,
+  addAllAsFactors: false,
+  addAllAsFactorsIntervention: true,
+  minCount: 1
+}
+Auto mode
+Indexing documents...
+Done!
+Indexing created 3112755 factors
+Running queries...
+Running query set 1 of 7 with 57 queries...
+Running query set 2 of 7 with 22 queries...
+Running query set 3 of 7 with 34 queries...
+Running query set 4 of 7 with 12 queries...
+Running query set 6 of 7 with 16 queries...
+Running query set 7 of 7 with 34 queries...
+{
+  "precision": [],
+  "recall": [],
+  "groups": [
+    {
+      "name": "!unrelated_terms",
+      "AvgPrecision": "NaN",
+      "AvgRecall": "NaN",
+      "Record": []
+    },
+    {
+      "name": "_concepts",
+      "AvgPrecision": "7.3915",
+      "AvgRecall": "15.5448",
+      "Record": [
+        [
+          "john f kennedy",
+          "the assassinated american president",
+          10.869565217391305,
+          38.46153846153847
+        ],
+        [
+          "john f kennedy",
+          "the grassy knoll sniper shot",
+          12.903225806451612,
+          30.76923076923077
+        ],
+        [
+          "nasa shuttle",
+          "reusable space vehicle system",
+          25,
+          10.81081081081081
+        ],
+        [
+          "uri gagarin",
+          "first human in space",
+          2.1505376344086025,
+          18.181818181818183
+        ],
+        [
+          "luna",
+          "another name for the moon",
+          6.0606060606060606,
+          6.451612903225806
+        ],
+        [
+          "cia",
+          "spooks and spycraft",
+          9.333333333333334,
+          11.666666666666666
+        ],
+        [
+          "nsa",
+          "signals and geeks",
+          6.382978723404255,
+          9.67741935483871
+        ],
+        [
+          "dia",
+          "planners and pen pushers",
+          6.024096385542169,
+          16.129032258064516
+        ],
+        [
+          "oni",
+          "the no hat office",
+          6.25,
+          4.25531914893617
+        ],
+        [
+          "osi",
+          "project paperclip ahahaha",
+          8.695652173913043,
+          6.779661016949152
+        ],
+        [
+          "deviant",
+          "all spies",
+          4.597701149425287,
+          9.30232558139535
+        ],
+        [
+          "the adversary",
+          "an AI that seeks to take over the galaxy or the universe",
+          3.508771929824561,
+          20
+        ],
+        [
+          "reptilian",
+          "the secret rules of the planet",
+          1.9801980198019802,
+          13.333333333333334
+        ],
+        [
+          "alien-human hybrid",
+          "the real purpose of aliens and the alien agenda",
+          3.076923076923077,
+          13.333333333333334
+        ],
+        [
+          "roswell crash",
+          "us government alien coverup",
+          3.8461538461538463,
+          10.714285714285714
+        ],
+        [
+          "anunaki",
+          "original creators of the human race",
+          6.8181818181818175,
+          16.216216216216218
+        ],
+        [
+          "president einsenhower",
+          "the creator of majestic 12",
+          7.042253521126761,
+          9.803921568627452
+        ],
+        [
+          "president roosevelt",
+          "teddy president",
+          13.333333333333334,
+          16.216216216216218
+        ],
+        [
+          "marilyn monroe",
+          "famous person who was an alien",
+          7.2992700729927,
+          21.27659574468085
+        ],
+        [
+          "valiant thor",
+          "alien who worked for us government",
+          12.5,
+          11.428571428571429
+        ],
+        [
+          "area 51",
+          "us military installation housing aliens and crashed disc debris",
+          2.083333333333333,
+          37.5
+        ],
+        [
+          "money and trade",
+          "why is there secrecy around aliens",
+          2.857142857142857,
+          9.67741935483871
+        ]
+      ]
+    },
+    {
+      "name": "general_terms",
+      "AvgPrecision": "NaN",
+      "AvgRecall": "NaN",
+      "Record": []
+    },
+    {
+      "name": "long_terms",
+      "AvgPrecision": "NaN",
+      "AvgRecall": "NaN",
+      "Record": []
+    },
+    {
+      "name": "short_terms",
+      "AvgPrecision": "NaN",
+      "AvgRecall": "NaN",
+      "Record": []
+    },
+    {
+      "name": "specifc_entities",
+      "AvgPrecision": "NaN",
+      "AvgRecall": "NaN",
+      "Record": []
+    }
+  ]
+}
