@@ -1,17 +1,15 @@
-- once I get the numbers at this stage to where I want them, then
-
+- evaluate out of memory (range error) condition using bigmap (which shouldn't happen)
+  - try to double add (via some random "code id" now that we have removed code id)
+  - limit max old space size and try to recreate the out of memory condition
+  - then increase max old space size and see if we can remove the out of memory condition
+  - also add debug line to bigmap code (done!) that shows the condition of the child dictionary when the set fails
 - remove all old code
 - purge and prune dictionary to get it as small as possible while maintaining results
 
 // mid
-  - switch back to "old best" (prec: 55, rec: 70)
-  - try to mix the lastest best and old best, and see if we can improve
-  - use new evaluation
   - make chunks dependent on byte size rather than value length 
   (and stay under 2gb per file limit)
   - then go forward and using what we have try to prune more aggressively and on a metric like score, or something, to create even more improvements
-
-  - get prec and rec between 70 and 80 
   - snippets are important to evaluate the document
   - multicore indexing (if available), which would be split across a list of documents and merge, complexity from having a shared dictionary, IPC comms?
 

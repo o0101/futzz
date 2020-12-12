@@ -1,4 +1,9 @@
 // new
+- get prec and rec between 70 and 80 
+- switch back to "old best" (prec: 55, rec: 70)
+- try to mix the lastest best and old best, and see if we can improve
+- use new evaluation
+- get the numbers in this stage to where I want them
 - add new evaluation datasets 
   - actually this will not give us much, so not going to do it
 - fix eval for awk
@@ -23,7 +28,12 @@
 - implement .factor query function to show factors of a query of a document given a name
 - serialize index and reload index
 
+FUCK YEAH I AM SO FUCKING AWESOME
 
+woo hoo fuck yeah! ;P ;) xxx
+xchakka
+
+got the average to > 140 so we can take that to be 0.7 and 0.7 for prec and rec. Yay.
 
 
 // old

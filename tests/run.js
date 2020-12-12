@@ -6,7 +6,7 @@ import {exec,execSync} from 'child_process';
 import {discohash} from 'bebb4185';
 import {dedup, simplify, State, loadFromDisk, saveToDisk, query, index, ent} from '../src/futzz.js';
 
-const USE_AWK = false;
+const USE_AWK = true;
 const AWK_QUERY_EVAL = USE_AWK;
 const GREP_QUERY_EVAL = !USE_AWK;
 const SHOW_RESULTS = true;
