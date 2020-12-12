@@ -120,14 +120,14 @@ export const State = {
     factors = dedup(factors);
 
     factors.forEach(f => {
-      const {[NAME]:name, [WORD]:word} = f;
+      const {[NAME]:docCounts, [WORD]:word} = f;
       // discard the count information and just keep the scores per document name
-      const scores = Object.fromEntries([...Object.entries(name)].map(([_,{[SCORE]:score}]) => {
+      const scores = Object.fromEntries([...Object.entries(docCounts)].map(([docId,[,score]]) => {
         if ( score == null ) {
-          console.log(f, name, word);
+          console.log(f, docId, word);
           willExit = true;
         } 
-        return [_, score];
+        return [docId, score];
       }))
       // and add these to the summed scores per document for the other factors
       mergeAdd(merge, scores);
