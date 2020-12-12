@@ -29,6 +29,8 @@ const MIN_COUNT = CONFIG.minCount;
 const FOUND_NOT_FACTOR_MULT = 0.75;
 const SMULT = 1 << 32;
 
+const NULL_OBJ = Object.create(null);
+
 // serialize keys
   const WORD = 'w';
   const NAME = 'n';
@@ -36,6 +38,9 @@ const SMULT = 1 << 32;
   const SCORE = 's';
   const FIRST_INDEX = 'x';
   const RUN_COUNT = 'r';
+
+  const MIN_PROPS = new Set([WORD,NAME,COUNT,SCORE,RUN_COUNT]);
+  const MIN_PROPS_SIZE = MIN_PROPS.size;
 
 let nameId = 0;
 
@@ -119,9 +124,10 @@ export const State = {
     factors = dedup(factors);
 
     factors.forEach(f => {
-      const {[NAME]:name, [WORD]:word} = f;
+      const {[WORD]:word, ...rest} = f;
       // discard the count information and just keep the scores per document name
-      const scores = Object.fromEntries([...Object.entries(name)].map(([_,{[SCORE]:score}]) => {
+      const name = Object.entries(rest).filter(([k,v]) => Number.isInteger(parseInt(k)));
+      const scores = Object.fromEntries(name.map(([_,{[SCORE]:score}]) => {
         if ( score == null ) {
           console.log(f, name, word);
           willExit = true;
@@ -232,14 +238,12 @@ export const State = {
 
       for ( const nextChar of docStr ) {
         if ( ! dict.has(nextChar) ) {
-          const data = {
-            [NAME]: {
-              [name]: {[COUNT]: MIN_COUNT}
-            }, 
+          const data = min({
+            [name]: min({[COUNT]: MIN_COUNT}),
             [WORD]: nextChar,
             [FIRST_INDEX]: charIndex,
             [COUNT]: MIN_COUNT,
-          }
+          });
           prune && prune.add(data);
           toNormalize.add(data);
           dict.set(nextChar, data);
@@ -249,14 +253,12 @@ export const State = {
         }
         if ( ! dict.has(currentWord) || currentWord.length >= MAX_WORD_LENGTH_1 ) {
           // save the new unseen token
-            const data = dict.get(currentWord) || {
-              [NAME]: {
-                [name]: {[COUNT]: MIN_COUNT}
-              }, 
+            const data = dict.get(currentWord) || min({
+              [name]: {[COUNT]: MIN_COUNT},
               [WORD]: currentWord,
               [FIRST_INDEX]: undefined,
               [COUNT]: MIN_COUNT,
-            }
+            })
             if ( ! dict.has(currentWord) ) {
               prune && prune.add(data);
               toNormalize.add(data);
@@ -276,10 +278,10 @@ export const State = {
               if ( factor[COUNT] == 1 ) {
                 factor[FIRST_INDEX] = wordFirstIndex;
               }
-              if ( !factor[NAME][name] ) {
-                factor[NAME][name] = {[COUNT]: MIN_COUNT+1};
+              if ( !factor[name] ) {
+                factor[name] = min({[COUNT]: MIN_COUNT+1});
               } else {
-                factor[NAME][name][COUNT] += 1;
+                factor[name][COUNT] += 1;
               }
               factor[COUNT]++;
 
@@ -295,10 +297,10 @@ export const State = {
           // we could add a [SCORE] to data and check it here 
           // and if it's above some thresh we could use count that
           const data = dict.get(currentWord);
-          if ( !data[NAME][name] ) {
-            data[NAME][name] = {[COUNT]: MIN_COUNT+1};
+          if ( !data[name] ) {
+            data[name] = min({[COUNT]: MIN_COUNT+1});
           } else {
-            data[NAME][name][COUNT]++;
+            data[name][COUNT]++;
           }
           data[COUNT]++;
           toNormalize.add(data);
@@ -315,14 +317,12 @@ export const State = {
       // empty any state into the dictionary and factors list
         if ( ! dict.has(currentWord) ) {
           // save the new unseen token
-            const data = {
-              [NAME]: {
-                [name]: {[COUNT]: MIN_COUNT}
-              }, 
+            const data = min({
+              [name]: min({[COUNT]: MIN_COUNT}),
               [WORD]: currentWord,
               [FIRST_INDEX]: undefined,
               [COUNT]: MIN_COUNT,
-            }
+            })
             prune && prune.add(data);
             toNormalize.add(data);
             dict.set(currentWord, data);
@@ -346,10 +346,10 @@ export const State = {
               prune && prune.delete(factor);
               toNormalize.delete(factor);
 
-              if ( !factor[NAME][name] ) {
-                factor[NAME][name] = {[COUNT]: MIN_COUNT };
+              if ( !factor[name] ) {
+                factor[name] = min({[COUNT]: MIN_COUNT });
               } else {
-                factor[NAME][name][COUNT] += 1;
+                factor[name][COUNT] += 1;
               }
 
               // in this case we push the last factor if any
@@ -358,10 +358,10 @@ export const State = {
                 prune && prune.delete(suffixFactor);
                 toNormalize.delete(suffixFactor);
 
-                if ( !suffixFactor[NAME][name] ) {
-                  suffixFactor[NAME][name] = {[COUNT]: MIN_COUNT};
+                if ( !suffixFactor[name] ) {
+                  suffixFactor[name] = min({[COUNT]: MIN_COUNT});
                 } else {
-                  suffixFactor[NAME][name][COUNT] += 1;
+                  suffixFactor[name][COUNT] += 1;
                 }
             }
         } else {
@@ -369,10 +369,10 @@ export const State = {
           if ( factor[COUNT] == MIN_COUNT ) {
             factor[FIRST_INDEX] = wordFirstIndex;
           }
-          if ( !factor[NAME][name] ) {
-            factor[NAME][name] = {[COUNT]: MIN_COUNT };
+          if ( !factor[name] ) {
+            factor[name] = min({[COUNT]: MIN_COUNT });
           } else {
-            factor[NAME][name][COUNT] += 1;
+            factor[name][COUNT] += 1;
           }
           factor[COUNT]++;
 
@@ -383,19 +383,19 @@ export const State = {
 
     // normalize factors
         factors.forEach(f => {
-          const n = f[NAME][name];
+          const n = f[name];
           if ( ! n ) {
             console.log(f, name);
           }
           n[SCORE] = n[COUNT] / factors.length;
           n[SCORE] *= SMULT;
-          //n[SCORE] *= -Math.log(Object.keys(f[NAME]).length/State.names.size);
+          //n[SCORE] *= -Math.log((Object.keys(f).length-MIN_PROPS_SIZE)/State.names.size);
         });
         toNormalize.forEach(f => {
-          const n = f[NAME][name];
+          const n = f[name];
           n[SCORE] = FOUND_NOT_FACTOR_MULT * 1 / factors.length;
           n[SCORE] *= SMULT;
-          //n[SCORE] *= -Math.log(Object.keys(f[NAME]).length/State.names.size);
+          //n[SCORE] *= -Math.log((Object.keys(f).length-MIN_PROPS_SIZE)/State.names.size);
         });
 
     if ( opts.idempotent ) {
@@ -549,7 +549,7 @@ export const State = {
           .split(/},{/g)
           .map(o => {
             try {
-              return JSON.parse(`{${o}}`);
+              return JSON.parse(`{${o}}`, minReviver);
             } catch(e) {
               console.log(o, e);
               process.exit(1);
@@ -606,5 +606,18 @@ export const State = {
     }
 
     return deduped;
+  }
+
+  function min(o) {
+    return Object.assign(Object.create(null), o);
+  }
+
+  function minReviver(key, val) {
+    const jsonVal = this[key];
+    if ( typeof jsonVal === "string" && jsonVal.startsWith('{') /* is an object */ ) {
+      return min(val);
+    } else {
+      return val;
+    }
   }
 

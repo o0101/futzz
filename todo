@@ -1,3 +1,6 @@
+- move from using floating point to integer scores
+- investigate nature of dictionary (frequency, etc)
+- compress objects even more making each an array (rather than obj)
 - evaluate out of memory (range error) condition using bigmap (which shouldn't happen)
   - try to double add (via some random "code id" now that we have removed code id)
   - limit max old space size and try to recreate the out of memory condition

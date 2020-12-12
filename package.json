@@ -7,7 +7,7 @@
     "auto": "npm test ufo auto",
     "test": "clear && node --max-old-space-size=40000 -r esm tests/run.js",
     "bigtest": "clear && node --max-old-space-size=220000 -r esm tests/run.js",
-    "profile": "node --inspect --max-old-space-size=40000 -r esm tests/run.js"
+    "profile": "node --inspect-brk --max-old-space-size=40000 -r esm tests/run.js"
   },
   "repository": {
     "type": "git",
