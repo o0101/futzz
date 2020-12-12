@@ -609,7 +609,7 @@ export const State = {
   }
 
   function min(o) {
-    return Object.assign(Object.create(null), o);
+    return o;
   }
 
   function minReviver(key, val) {
