@@ -23,7 +23,6 @@ const PRUNE = CONFIG.prune;
 const EXTEND = CONFIG.extend;
 const MIN_ADD_ALL_LENGTH = CONFIG.minAddAllLength || 1;
 const MAX_WORD_LENGTH_1 = CONFIG.maxWordLength || Infinity;
-const USE_Q_INDEX = CONFIG.useQ;
 const MAIN_FACTOR = CONFIG.mainFactor;
 
 const MIN_COUNT = CONFIG.minCount;
@@ -36,7 +35,6 @@ const SMULT = 1 << 32;
   const COUNT = 'c';
   const SCORE = 's';
   const FIRST_INDEX = 'x';
-  const CODE_ID = 'i';
   const RUN_COUNT = 'r';
 
 let nameId = 0;
@@ -76,7 +74,7 @@ export const State = {
       lastEntropy = entropy;
     }
 
-    prune && prune.forEach(f => (dict.delete(f[WORD]), dict.delete(f[CODE_ID])));
+    prune && prune.forEach(f => dict.delete(f[WORD]));
 
     return {dict, factors: maxFactors || factors, Factors};
   }
@@ -97,14 +95,6 @@ export const State = {
     }
 
     words = EXTEND ? `${words} ${words} ${words}` : words;
-
-    if ( USE_Q_INDEX ) { 
-      ({Factors} = index(words, 'query', {
-        idempotent:true, 
-        addAllAsFactors: AAAF || opts.addAllAsFactors,
-        minAddLength: opts.minAddLength
-      }));
-    }
 
     ({factors} = lz(words, dict, 'query', {
       idempotent:true, 
@@ -250,11 +240,10 @@ export const State = {
             [WORD]: nextChar,
             [FIRST_INDEX]: charIndex,
             [COUNT]: MIN_COUNT,
-            [CODE_ID]: codeId 
           }
           prune && prune.add(data);
           toNormalize.add(data);
-          dict.set(codeId, data);
+          //dict.set(codeId, data);
           dict.set(nextChar, data);
           if ( opts.idempotent ) {
             reverse.push(data);
@@ -268,14 +257,13 @@ export const State = {
                 [name]: {[COUNT]: MIN_COUNT}
               }, 
               [WORD]: currentWord,
-              [FIRST_INDEX]: null,
+              [FIRST_INDEX]: undefined,
               [COUNT]: MIN_COUNT,
-              [CODE_ID]: codeId 
             }
             if ( ! dict.has(currentWord) ) {
               prune && prune.add(data);
               toNormalize.add(data);
-              dict.set(codeId, data);
+              //dict.set(codeId, data);
               dict.set(currentWord, data);
               if ( opts.idempotent ) {
                 reverse.push(data);
@@ -337,13 +325,12 @@ export const State = {
                 [name]: {[COUNT]: MIN_COUNT}
               }, 
               [WORD]: currentWord,
-              [FIRST_INDEX]: null,
+              [FIRST_INDEX]: undefined,
               [COUNT]: MIN_COUNT,
-              [CODE_ID]: codeId 
             }
             prune && prune.add(data);
             toNormalize.add(data);
-            dict.set(codeId, data);
+            //dict.set(codeId, data);
             dict.set(currentWord, data);
             if ( opts.idempotent ) {
               reverse.push(data);
@@ -419,8 +406,8 @@ export const State = {
         });
 
     if ( opts.idempotent ) {
-      reverse.forEach(({[WORD]:word,[CODE_ID]:codeId}) => {
-        dict.delete(codeId);
+      reverse.forEach(({[WORD]:word}) => {
+        //dict.delete(codeId);
         dict.delete(word);
       });
     }
@@ -437,7 +424,6 @@ export const State = {
     for( const f of factors ) {
       if ( !dict.has(f[WORD]) ) {
         dict.set(f[WORD], f);
-        dict.set(f[CODE_ID], f);
         f[RUN_COUNT] = MIN_COUNT;
       }
       f[RUN_COUNT] += 1;
@@ -567,7 +553,6 @@ export const State = {
       for( let j = 2; j < buf.length-2; j) {
         const str = lastString + buf.slice(j, j+StringChunkSize).toString();
         let largestIndex = str.lastIndexOf('},{');
-        //console.log(str.slice(0,10), str.slice(largestIndex-10,largestIndex));
         str.slice(0, largestIndex)
           .split(/},{/g)
           .map(o => {
@@ -580,7 +565,6 @@ export const State = {
           })
           .forEach(o => {
             if ( i < limit ) {
-              entries.push([o[CODE_ID], o]);
               entries.push([o[WORD], o]);
             }
             i += 2;

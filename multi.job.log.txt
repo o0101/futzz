@@ -29,3 +29,131 @@ Enumerated 10 possibilities.
 { jobStarted: { running: 8 }, remaining: 2 }
 { jobStarted: { running: 9 }, remaining: 1 }
 { jobStarted: { running: 10 }, remaining: 0 }
+/home/cris/futzz/results/configtests/1 (node:715323) UnhandledPromiseRejectionWarning: RangeError: Value undefined out of range for undefined options property undefined
+    at Map.set (<anonymous>)
+    at /home/cris/futzz/node_modules/big-associative/lib/BigMap.js:86:66
+    at BigMap.WeakBase._Insert (/home/cris/futzz/node_modules/big-associative/lib/internal/WeakBase.js:85:9)
+    at BigMap.set (/home/cris/futzz/node_modules/big-associative/lib/BigMap.js:86:21)
+    at lz (/home/cris/futzz/src/futzz.js:278:20)
+    at index (/home/cris/futzz/src/futzz.js:65:34)
+    at runIteration1 (/home/cris/futzz/tests/run.js:653:12)
+    at runNew (/home/cris/futzz/tests/run.js:497:11)
+    at runAuto (/home/cris/futzz/tests/run.js:187:13)
+    at start (/home/cris/futzz/tests/run.js:62:23)
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:715323) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 2)
+
+{ jobCompleted: { running: 9 } }
+Done!
+/home/cris/futzz/results/configtests/2 (node:715331) UnhandledPromiseRejectionWarning: RangeError: Value undefined out of range for undefined options property undefined
+    at Map.set (<anonymous>)
+    at /home/cris/futzz/node_modules/big-associative/lib/BigMap.js:86:66
+    at BigMap.WeakBase._Insert (/home/cris/futzz/node_modules/big-associative/lib/internal/WeakBase.js:85:9)
+    at BigMap.set (/home/cris/futzz/node_modules/big-associative/lib/BigMap.js:86:21)
+    at lz (/home/cris/futzz/src/futzz.js:279:20)
+    at index (/home/cris/futzz/src/futzz.js:65:34)
+    at runIteration1 (/home/cris/futzz/tests/run.js:653:12)
+    at runNew (/home/cris/futzz/tests/run.js:497:11)
+    at runAuto (/home/cris/futzz/tests/run.js:187:13)
+    at start (/home/cris/futzz/tests/run.js:62:23)
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:715331) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 2)
+
+/home/cris/futzz/results/configtests/8 (node:715395) UnhandledPromiseRejectionWarning: RangeError: Value undefined out of range for undefined options property undefined
+    at Map.set (<anonymous>)
+    at /home/cris/futzz/node_modules/big-associative/lib/BigMap.js:86:66
+    at BigMap.WeakBase._Insert (/home/cris/futzz/node_modules/big-associative/lib/internal/WeakBase.js:85:9)
+    at BigMap.set (/home/cris/futzz/node_modules/big-associative/lib/BigMap.js:86:21)
+    at lz (/home/cris/futzz/src/futzz.js:279:20)
+    at index (/home/cris/futzz/src/futzz.js:65:34)
+    at runIteration1 (/home/cris/futzz/tests/run.js:653:12)
+    at runNew (/home/cris/futzz/tests/run.js:497:11)
+    at runAuto (/home/cris/futzz/tests/run.js:187:13)
+    at start (/home/cris/futzz/tests/run.js:62:23)
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:715395) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 2)
+
+/home/cris/futzz/results/configtests/3 (node:715345) UnhandledPromiseRejectionWarning: RangeError: Value undefined out of range for undefined options property undefined
+    at Map.set (<anonymous>)
+    at /home/cris/futzz/node_modules/big-associative/lib/BigMap.js:86:66
+    at BigMap.WeakBase._Insert (/home/cris/futzz/node_modules/big-associative/lib/internal/WeakBase.js:85:9)
+    at BigMap.set (/home/cris/futzz/node_modules/big-associative/lib/BigMap.js:86:21)
+    at lz (/home/cris/futzz/src/futzz.js:278:20)
+    at index (/home/cris/futzz/src/futzz.js:65:34)
+    at runIteration1 (/home/cris/futzz/tests/run.js:653:12)
+    at runNew (/home/cris/futzz/tests/run.js:497:11)
+    at runAuto (/home/cris/futzz/tests/run.js:187:13)
+    at start (/home/cris/futzz/tests/run.js:62:23)
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:715345) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 2)
+
+/home/cris/futzz/results/configtests/7 (node:715386) UnhandledPromiseRejectionWarning: RangeError: Value undefined out of range for undefined options property undefined
+    at Map.set (<anonymous>)
+    at /home/cris/futzz/node_modules/big-associative/lib/BigMap.js:86:66
+    at BigMap.WeakBase._Insert (/home/cris/futzz/node_modules/big-associative/lib/internal/WeakBase.js:85:9)
+    at BigMap.set (/home/cris/futzz/node_modules/big-associative/lib/BigMap.js:86:21)
+    at lz (/home/cris/futzz/src/futzz.js:279:20)
+    at index (/home/cris/futzz/src/futzz.js:65:34)
+    at runIteration1 (/home/cris/futzz/tests/run.js:653:12)
+    at runNew (/home/cris/futzz/tests/run.js:497:11)
+    at runAuto (/home/cris/futzz/tests/run.js:187:13)
+    at start (/home/cris/futzz/tests/run.js:62:23)
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:715386) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 2)
+
+/home/cris/futzz/results/configtests/6 (node:715368) UnhandledPromiseRejectionWarning: RangeError: Value undefined out of range for undefined options property undefined
+    at Map.set (<anonymous>)
+    at /home/cris/futzz/node_modules/big-associative/lib/BigMap.js:86:66
+    at BigMap.WeakBase._Insert (/home/cris/futzz/node_modules/big-associative/lib/internal/WeakBase.js:85:9)
+    at BigMap.set (/home/cris/futzz/node_modules/big-associative/lib/BigMap.js:86:21)
+    at lz (/home/cris/futzz/src/futzz.js:279:20)
+    at index (/home/cris/futzz/src/futzz.js:65:34)
+    at runIteration1 (/home/cris/futzz/tests/run.js:653:12)
+    at runNew (/home/cris/futzz/tests/run.js:497:11)
+    at runAuto (/home/cris/futzz/tests/run.js:187:13)
+    at start (/home/cris/futzz/tests/run.js:62:23)
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:715368) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 2)
+
+/home/cris/futzz/results/configtests/9 (node:715401) UnhandledPromiseRejectionWarning: RangeError: Value undefined out of range for undefined options property undefined
+    at Map.set (<anonymous>)
+    at /home/cris/futzz/node_modules/big-associative/lib/BigMap.js:86:66
+    at BigMap.WeakBase._Insert (/home/cris/futzz/node_modules/big-associative/lib/internal/WeakBase.js:85:9)
+    at BigMap.set (/home/cris/futzz/node_modules/big-associative/lib/BigMap.js:86:21)
+    at lz (/home/cris/futzz/src/futzz.js:279:20)
+    at index (/home/cris/futzz/src/futzz.js:65:34)
+    at runIteration1 (/home/cris/futzz/tests/run.js:653:12)
+    at runNew (/home/cris/futzz/tests/run.js:497:11)
+    at runAuto (/home/cris/futzz/tests/run.js:187:13)
+    at start (/home/cris/futzz/tests/run.js:62:23)
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:715401) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 2)
+
+/home/cris/futzz/results/configtests/5 (node:715377) UnhandledPromiseRejectionWarning: RangeError: Value undefined out of range for undefined options property undefined
+    at Map.set (<anonymous>)
+    at /home/cris/futzz/node_modules/big-associative/lib/BigMap.js:86:66
+    at BigMap.WeakBase._Insert (/home/cris/futzz/node_modules/big-associative/lib/internal/WeakBase.js:85:9)
+    at BigMap.set (/home/cris/futzz/node_modules/big-associative/lib/BigMap.js:86:21)
+    at lz (/home/cris/futzz/src/futzz.js:279:20)
+    at index (/home/cris/futzz/src/futzz.js:65:34)
+    at runIteration1 (/home/cris/futzz/tests/run.js:653:12)
+    at runNew (/home/cris/futzz/tests/run.js:497:11)
+    at runAuto (/home/cris/futzz/tests/run.js:187:13)
+    at start (/home/cris/futzz/tests/run.js:62:23)
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:715377) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 2)
+
+/home/cris/futzz/results/configtests/4 (node:715346) UnhandledPromiseRejectionWarning: RangeError: Value undefined out of range for undefined options property undefined
+    at Map.set (<anonymous>)
+    at /home/cris/futzz/node_modules/big-associative/lib/BigMap.js:86:66
+    at BigMap.WeakBase._Insert (/home/cris/futzz/node_modules/big-associative/lib/internal/WeakBase.js:85:9)
+    at BigMap.set (/home/cris/futzz/node_modules/big-associative/lib/BigMap.js:86:21)
+    at lz (/home/cris/futzz/src/futzz.js:278:20)
+    at index (/home/cris/futzz/src/futzz.js:65:34)
+    at runIteration1 (/home/cris/futzz/tests/run.js:653:12)
+    at runNew (/home/cris/futzz/tests/run.js:497:11)
+    at runAuto (/home/cris/futzz/tests/run.js:187:13)
+    at start (/home/cris/futzz/tests/run.js:62:23)
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:715346) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 2)
+
