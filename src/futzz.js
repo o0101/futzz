@@ -213,7 +213,6 @@ export const State = {
     }
     const toNormalize = new Set();
     const factors = [];
-    let codeId = Math.ceil(dict.size/2);
     let wordFirstIndex = -1;
     let charIndex = 0;
     let currentWord = '';
@@ -243,12 +242,10 @@ export const State = {
           }
           prune && prune.add(data);
           toNormalize.add(data);
-          //dict.set(codeId, data);
           dict.set(nextChar, data);
           if ( opts.idempotent ) {
             reverse.push(data);
           }
-          codeId += 1;
         }
         if ( ! dict.has(currentWord) || currentWord.length >= MAX_WORD_LENGTH_1 ) {
           // save the new unseen token
@@ -263,12 +260,10 @@ export const State = {
             if ( ! dict.has(currentWord) ) {
               prune && prune.add(data);
               toNormalize.add(data);
-              //dict.set(codeId, data);
               dict.set(currentWord, data);
               if ( opts.idempotent ) {
                 reverse.push(data);
               }
-              codeId += 1;
             }
 
           // get the factor 
@@ -330,12 +325,10 @@ export const State = {
             }
             prune && prune.add(data);
             toNormalize.add(data);
-            //dict.set(codeId, data);
             dict.set(currentWord, data);
             if ( opts.idempotent ) {
               reverse.push(data);
             }
-            codeId += 1;
 
           // get the factor 
             let suffix = '';
@@ -407,7 +400,6 @@ export const State = {
 
     if ( opts.idempotent ) {
       reverse.forEach(({[WORD]:word}) => {
-        //dict.delete(codeId);
         dict.delete(word);
       });
     }
