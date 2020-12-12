@@ -130,3 +130,57 @@ And then I wanna cut down on the index size.
 And I need to solve the problem that some terms (like "nasa shuttle") fail out under some configs (like 0). It gives 1 result! WTF.
 
 I'm gonna run a comprehensive test suite overnight with a bunch of open up parameters.
+
+## Results
+
+Got scope up to 140, using 5 iterations and 31 max word length
+
+
+{
+  "minIteration": 5,
+  "maxWordLength": 31,
+  "minAddAllLength": 3,
+  "mainFactor": true,
+  "prune": true,
+  "useQ": false,
+  "extend": true,
+  "countAll": true,
+  "addAllAsFactors": false,
+  "addAllAsFactorsIntervention": true,
+  "minCount": 1
+}
+
+  "avgPrecision": "68.20",
+  "medianPrecision": "93.75",
+  "modePrecision": "100",
+  "avgRecall": "71.84",
+  "medianRecall": "77.14",
+  "modeRecall": "83",
+  "score": "140.04"
+
+Or with 3 iterations and 83 max word length:
+
+{
+  "minIteration": 3,
+  "maxWordLength": 83,
+  "minAddAllLength": 3,
+  "mainFactor": true,
+  "prune": true,
+  "useQ": false,
+  "extend": true,
+  "countAll": true,
+  "addAllAsFactors": false,
+  "addAllAsFactorsIntervention": true,
+  "minCount": 1
+}
+
+  "avgPrecision": "64.77",
+  "medianPrecision": "94.85",
+  "modePrecision": "100",
+  "avgRecall": "70.01",
+  "medianRecall": "75.00",
+  "modeRecall": "75",
+  "score": "134.78"
+
+
+Both sets are very good
