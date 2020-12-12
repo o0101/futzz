@@ -1,6 +1,6 @@
 
 > futzz@1.0.0 test /home/cris/futzz
-> clear && node --max-old-space-size=20000 -r esm tests/run.js "ufo" "multi"
+> clear && node --max-old-space-size=29000 -r esm tests/run.js "ufo" "multi"
 
 [H[2J[3J/home/cris/futzz
 {
@@ -29,23 +29,3 @@ Enumerated 20 possibilities.
 { jobStarted: { running: 8 }, remaining: 12 }
 { jobStarted: { running: 9 }, remaining: 11 }
 { jobStarted: { running: 10 }, remaining: 10 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 9 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 8 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 7 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 6 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 5 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 4 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 3 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 2 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 1 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 0 }
