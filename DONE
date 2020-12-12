@@ -1,4 +1,6 @@
 // new
+- move from using floating point to integer scores
+- compress objects even more making each an array (rather than obj)
 - get prec and rec between 70 and 80 
 - switch back to "old best" (prec: 55, rec: 70)
 - try to mix the lastest best and old best, and see if we can improve

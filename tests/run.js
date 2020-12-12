@@ -189,7 +189,7 @@ async function start() {
       await loadFromDisk(limit);
     }
 
-    console.log(`Indexing created ${Math.round(State.dict.size/2)} factors`);
+    console.log(`Indexing created ${Math.round(State.dict.size)} factors`);
     console.log("Running queries...");
     const files = fs.readdirSync(path.resolve('tests', 'queries'), {withFileTypes:true});
     const Summary = {
@@ -503,7 +503,7 @@ async function start() {
               `Indexed ${count}/${
                 Math.min(limit,total)
                } \t (${
-                Math.round(State.dict.size/2)
+                Math.round(State.dict.size)
                } codes) \t (${
                 (count/Math.min(limit,total)*100).toFixed(2)
               }%) files...`
