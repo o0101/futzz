@@ -1,10 +1,16 @@
 #!/bin/bash
 
+while IFS= read -r line; do
+  curl -L -O -J $line
+  sleep 3
+done < textfiles.archives.dat
 
-#while IFS= read -r line; do
-#  curl -L -O -J $line
-#  sleep 3
-#done < textfiles.archives.dat
+mkdir data
+mv *.tar.gz data/
+
+cd data/
+tar -xvzf *.tar.gz
+cd ..
 
 mkdir ir-data
 cd ir-data
@@ -40,20 +46,25 @@ tar -xvzf cacm.tar.gz
 cd ..
 
 mkdir time
+cd time
 curl -O -J -L http://ir.dcs.gla.ac.uk/resources/test_collections/time/time.tar.gz
 tar -xvzf time.tar.gz
+cd ..
 
 mkdir medline
+cd medline
 curl -O -J -L http://ir.dcs.gla.ac.uk/resources/test_collections/medl/med.tar.gz
 tar -xvzf med.tar.gz
 cd ..
 
 mkdir adi
+cd adi
 curl -O -J -L http://ir.dcs.gla.ac.uk/resources/test_collections/adi/adi.tar.gz
 tar -xvzf adi.tar.gz
 cd ..
 
 mkdir reuters
+cd reuters
 curl -O -J -L http://kdd.ics.uci.edu/databases/reuters21578/reuters21578.tar.gz
 tar -xvzf returers21578.tar.gz
 cd ..
