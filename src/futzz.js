@@ -27,7 +27,7 @@ const MAIN_FACTOR = CONFIG.mainFactor;
 
 const MIN_COUNT = CONFIG.minCount;
 const FOUND_NOT_FACTOR_MULT = 0.75;
-const SMULT = 1 << 47;
+const SMULT = 1 << 48;
 
 // serialize keys
   const WORD = 'w';
