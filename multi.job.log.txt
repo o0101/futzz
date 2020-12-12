@@ -29,3 +29,5 @@ Enumerated 10 possibilities.
 { jobStarted: { running: 8 }, remaining: 2 }
 { jobStarted: { running: 9 }, remaining: 1 }
 { jobStarted: { running: 10 }, remaining: 0 }
+{ jobCompleted: { running: 9 } }
+Done!
