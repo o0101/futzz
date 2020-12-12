@@ -1,6 +1,6 @@
 
 > futzz@1.0.0 test /home/cris/futzz
-> clear && node --max-old-space-size=20000 -r esm tests/run.js "ufo" "auto" "nolimit" "no" "no-progress" "/home/cris/futzz/results/configtests/2"
+> clear && node --max-old-space-size=29000 -r esm tests/run.js "ufo" "auto" "nolimit" "no" "no-progress" "/home/cris/futzz/results/configtests/2"
 
 [H[2J[3J/home/cris/futzz/results/configtests/2
 {
