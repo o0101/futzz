@@ -1,4 +1,5 @@
 // new
+- fix eval for awk
 - eval queries by hand using latest (prec: 67, rec: 66)
 - fix concep queries
 - precompute the awk results sets for each query because otherwise it will be too slow
