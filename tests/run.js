@@ -6,7 +6,7 @@ import {exec,execSync} from 'child_process';
 import {discohash} from 'bebb4185';
 import {dedup, simplify, State, loadFromDisk, saveToDisk, query, index, ent} from '../src/futzz.js';
 
-const USE_AWK = true;
+const USE_AWK = false;
 const AWK_QUERY_EVAL = USE_AWK;
 const GREP_QUERY_EVAL = !USE_AWK;
 const SHOW_RESULTS = true;
@@ -17,24 +17,24 @@ const EXEC_OPTS = {
   maxBuffer: 1024*1024*16
 };
 
-const NOLIST = new Set([
-  'factors',
-  'stats'
-]);
-
 const PARAM_RANGES = {
-  "minIteration": [2, 3, 4],
-  "maxWordLength": [31,71,101],
-  "minAddAllLength": [3,5],
+  "minIteration": [3, 5],
+  "maxWordLength": [13, 23, 31, 41, 53, 61, 71, 83, 97, 101],
+  "minAddAllLength": [3],
   "mainFactor": [true],
   "prune": [true],
   "useQ": [false],
   "extend": [true],
-  "countAll": [false, true],
+  "countAll": [true],
   "addAllAsFactors": [false],
-  "addAllAsFactorsIntervention": [false, true],
+  "addAllAsFactorsIntervention": [true],
   "minCount": [1]
 }
+
+const NOLIST = new Set([
+  'factors',
+  'stats'
+]);
 
 const cat = process.argv[2];
 const act = process.argv[3];
