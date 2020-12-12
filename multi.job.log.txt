@@ -18,36 +18,14 @@
 }
 Multi auto mode
 undefined
-Enumerated 20 possibilities.
-{ jobStarted: { running: 1 }, remaining: 19 }
-{ jobStarted: { running: 2 }, remaining: 18 }
-{ jobStarted: { running: 3 }, remaining: 17 }
-{ jobStarted: { running: 4 }, remaining: 16 }
-{ jobStarted: { running: 5 }, remaining: 15 }
-{ jobStarted: { running: 6 }, remaining: 14 }
-{ jobStarted: { running: 7 }, remaining: 13 }
-{ jobStarted: { running: 8 }, remaining: 12 }
-{ jobStarted: { running: 9 }, remaining: 11 }
-{ jobStarted: { running: 10 }, remaining: 10 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 9 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 8 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 7 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 6 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 5 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 4 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 3 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 2 }
-{ jobCompleted: { running: 9 } }
-{ jobStarted: { running: 10 }, remaining: 1 }
-{ jobCompleted: { running: 9 } }
+Enumerated 10 possibilities.
+{ jobStarted: { running: 1 }, remaining: 9 }
+{ jobStarted: { running: 2 }, remaining: 8 }
+{ jobStarted: { running: 3 }, remaining: 7 }
+{ jobStarted: { running: 4 }, remaining: 6 }
+{ jobStarted: { running: 5 }, remaining: 5 }
+{ jobStarted: { running: 6 }, remaining: 4 }
+{ jobStarted: { running: 7 }, remaining: 3 }
+{ jobStarted: { running: 8 }, remaining: 2 }
+{ jobStarted: { running: 9 }, remaining: 1 }
 { jobStarted: { running: 10 }, remaining: 0 }
-{ jobCompleted: { running: 9 } }
-Done!
