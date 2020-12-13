@@ -1,4 +1,5 @@
-# futzz
+# futzz ![kindness](https://api.kindspeech.org/v1/badge)
+
 
 A polyglot (language-agnostic) full text search system based on the lempel ziv factoring of a document.
 
