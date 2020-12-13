@@ -547,7 +547,7 @@ export const State = {
         const str = lastString + buf.slice(j, j+StringChunkSize).toString();
         let largestIndex = str.lastIndexOf('],[');
         str.slice(0, largestIndex)
-          .split(/],[/g)
+          .split(/\],\[/g)
           .map(o => {
             try {
               return JSON.parse(`[${o}]`);

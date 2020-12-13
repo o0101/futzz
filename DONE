@@ -1,6 +1,7 @@
 // new
 - switch to rounded values and retest to ensure we keep the 140
   - 140 is preserved!
+  - 7 million factor dict is 1.2 Gb in size on disk
 - ensure 140 is kept on disk load
   - it is!
 - move from using floating point to integer scores

@@ -1,4 +1,7 @@
 - make main object an array with [NAME] object at end
+  - old style (object) min dict size ~ 7 million facotrs 1.2 Gb uncompressed 355 Mb compressed
+  - compressed index approx 10x the uncompressed text. Not bad so far.
+  - new style (array) min dict size ~ 7 million factors:
 - remove ==== and other punctuation not covered by unicode regex categories
   - the unicode property for this is 'S' so /\p{S}/u will match symbols LET'S ROCK IT! :p ;P ;) xx
   - i think i should remove all sequences of 2 or more symbols, any any "other symbols" but
