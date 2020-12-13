@@ -16,7 +16,7 @@
   addAllAsFactorsIntervention: true,
   minCount: 1
 }
-97482
+97831
 Multi auto mode
 undefined
 Enumerated 10 possibilities.
@@ -27,6 +27,3 @@ Enumerated 10 possibilities.
 { jobStarted: { running: 5 }, remaining: 5 }
 { jobStarted: { running: 6 }, remaining: 4 }
 { jobStarted: { running: 7 }, remaining: 3 }
-{ jobStarted: { running: 8 }, remaining: 2 }
-{ jobStarted: { running: 9 }, remaining: 1 }
-{ jobStarted: { running: 10 }, remaining: 0 }

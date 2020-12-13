@@ -117,7 +117,7 @@ async function start() {
   async function runMultiAuto(limit = 'nolimit') {
     const allConfigs = enumerateConfigs(PARAM_RANGES);
     //console.log(JSON.stringify({allConfigs}));
-    const POOL_SIZE = Math.max(7,os.cpus().length - 4); // 1 for OS and 1 for this process, and 2 spare
+    const POOL_SIZE = Math.min(7,os.cpus().length - 4); // 1 for OS and 1 for this process, and 2 spare
     const runner = [];
     let notifyComplete;
     let running = 0;
