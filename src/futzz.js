@@ -33,8 +33,8 @@ const SMULT = 1 << 48;
   const WORD = 0;
   const COUNT = 1;
   const NAME = 2;
-  const FIRST_INDEX = 3;
-  const RUN_COUNT = 4;
+  const RUN_COUNT = 3;
+  const FIRST_INDEX = 4;
   const NCOUNT = 0;
   const SCORE = 1;
 
