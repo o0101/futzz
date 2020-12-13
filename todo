@@ -5,7 +5,9 @@
   - and check effect on dictionary size
   - also ensure 140 is preserved
 - investigate nature of dictionary (frequency, etc)
-- what if we trim dictionary entries of surrounding whitespace, and also trim the word when we check for it. It might save some space as well as some time?
+  - limit number of entries in dict?
+  - limit entries added per indexed document?
+  - what if we trim dictionary entries of surrounding whitespace, and also trim the word when we check for it. It might save some space as well as some time?
 - evaluate out of memory (range error) condition using bigmap (which shouldn't happen)
   - try to double add (via some random "code id" now that we have removed code id)
   - limit max old space size and try to recreate the out of memory condition
