@@ -1,8 +1,10 @@
+- make main object an array with [NAME] object at end
 - remove ==== and other punctuation not covered by unicode regex categories
   - the unicode property for this is 'S' so /\p{S}/u will match symbols LET'S ROCK IT! :p ;P ;) xx
   - i think i should remove all sequences of 2 or more symbols, any any "other symbols" but
   leave single instances to preserve stuff like "$1.50" and "1/2"
-- make main object an array with [NAME] object at end
+  - and check effect on dictionary size
+  - also ensure 140 is preserved
 - investigate nature of dictionary (frequency, etc)
 - evaluate out of memory (range error) condition using bigmap (which shouldn't happen)
   - try to double add (via some random "code id" now that we have removed code id)
