@@ -13,7 +13,7 @@ console.log(CONFIG);
 const MIN_ITERATION = CONFIG.minIteration;
 const MAX_ITERATION = 12;
 
-const REP_SYMBOLS = true;
+const REP_SYMBOLS = false;
 const AAAF = CONFIG.addAllAsFactors;
 const AAFI = CONFIG.addAllAsFactorsIntervention;
 const AAFI_MIN_RESULT_LENGTH = 5;
@@ -450,7 +450,7 @@ export const State = {
   }
 
   export function simplify(str) {
-    str = str.replace(/[\p{Z}\p{P}\p{C}]+/gu, ' ');      
+    str = str.replace(/[\p{S}\p{Z}\p{P}\p{C}]+/gu, ' ');      
     str = str.replace(/[\x00-\x1f\x7f]+/gu, ' ');  
     if ( REP_SYMBOLS ) {
       str = str.replace(/(\p{S})\p{S}+/gu, '$1');      
