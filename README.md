@@ -184,3 +184,7 @@ Or with 3 iterations and 83 max word length:
 
 
 Both sets are very good
+
+## Limitations
+
+Won't search APL / BQN code because we remove any sequences of length 2 ore more matching /\p{S}/u which is the "Symbol" Unicode property. But there's a code flag in src/futzz.js you can switch this off with, and then it can search the APL / BQN code.
