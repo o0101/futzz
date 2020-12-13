@@ -27,3 +27,11 @@ Enumerated 10 possibilities.
 { jobStarted: { running: 5 }, remaining: 5 }
 { jobStarted: { running: 6 }, remaining: 4 }
 { jobStarted: { running: 7 }, remaining: 3 }
+{ jobCompleted: { running: 6 } }
+{ jobStarted: { running: 7 }, remaining: 2 }
+{ jobCompleted: { running: 6 } }
+{ jobStarted: { running: 7 }, remaining: 1 }
+{ jobCompleted: { running: 6 } }
+{ jobStarted: { running: 7 }, remaining: 0 }
+{ jobCompleted: { running: 6 } }
+Done!

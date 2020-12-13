@@ -451,12 +451,14 @@ export const State = {
 
   export function simplify(str) {
     if ( REP_SYMBOLS ) {
-      str = str.replace(/\p{S}{2,}/gu, ' ');      
+      str = str.replace(/\p{S}{2,}/gu, '');      
     }
     str = str.replace(/[\p{Z}\p{P}\p{C}]+/gu, ' ');      
     str = str.replace(/[\x00-\x1f\x7f]+/gu, ' ');  
     str = str.trim();
     str = str.toLocaleLowerCase();
+
+    //console.log({str});
 
     return str;
   }

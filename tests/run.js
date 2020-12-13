@@ -605,6 +605,7 @@ async function start() {
     runIteration1(fs.readFileSync(path.resolve('samples', 'tao2.txt')).toString(), 'wiki - tao te ching - chinese');
     runIteration1(fs.readFileSync(path.resolve('samples', 'tao3.txt')).toString(), 'wiki - tao te ching - english');
     runIteration1(fs.readFileSync(path.resolve('samples', 'hm.txt')).toString(), 'haruki murakami - chinese');
+    runIteration1(fs.readFileSync(path.resolve('samples', 'e84_asc.txt')).toString(), 'nineteen eighty-four - english');
     const {dict} = runIteration1(fs.readFileSync(path.resolve('samples', 'hm2.txt')).toString(), 'haruki murakami - english');
     console.log({dictSize: dict.size});
     score += query("terminator 2", [ "terminator 2"]);
@@ -637,6 +638,11 @@ async function start() {
     score += query("the warring states period", [ "tao te ching - chinese", "wiki - tao te ching - english", "declaration of independence", "terminator 2"]);
     score += query("classical chinese history texts", [ "tao te ching - chinese", "wiki - tao te ching - english"]);
     score += query("the art of war", [ "wiki - tao te ching - english", "tao te ching - chinese"]);
+    score += query("newspeak", [ "nineteen eighty-four - english" ]);
+    score += query("the two minutes hate", [ "nineteen eighty-four - english" ]);
+    score += query("victory gin", [ "nineteen eighty-four - english" ]);
+    score += query("goldstein", [ "nineteen eighty-four - english" ]);
+    score += query("ministry of truth", [ "nineteen eighty-four - english" ]);
     if ( cat ) {
       score += query(cat, process.argv[3] ? [process.argv[3]] : [ ]);
     }
