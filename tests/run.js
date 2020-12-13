@@ -373,10 +373,15 @@ async function start() {
 
     if ( GREP_QUERY_EVAL ) {
       query = query.split(/\s+/gu).join('.*');
-      files = execSync(`grep -R -l -i "${query}" ${base}`).toString()
-        .split(/\n/g)
-        .filter(n => n.trim().length)
-        .map(n => path.resolve(cat, n));
+      try {
+        files = execSync(`grep -R -l -i "${query}" ${base}`).toString()
+          .split(/\n/g)
+          .filter(n => n.trim().length)
+          .map(n => path.resolve(cat, n));
+      } catch(e) {
+        console.info("Grep failed", e.toString(), query, base);
+        console.log("This probably means there were no files greppable with this query");
+      }
     }
 
     if ( AWK_QUERY_EVAL ) {
@@ -428,7 +433,8 @@ async function start() {
               process.exit(1);
             }
           } catch(e2) {
-            console.warn(e2);
+            console.info("awk failed", e2.toString(), query, base);
+            console.log("This probably means there were no files awkable with this query.");
           }
         }
       } catch(e) {

@@ -570,7 +570,7 @@ export const State = {
       }
     }
 
-    console.log(`Creating dict with ${entries.length/2} factors...`);
+    console.log(`Creating dict with ${entries.length} factors...`);
 
     State.dict = new BigMap();
     entries.forEach(([k,v]) => State.dict.set(k,v));
