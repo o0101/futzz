@@ -4,6 +4,7 @@
   - new style (array) min dict size ~ 7 million factors 1.1 Gb uncompressed 288 Mb compressed
     - compressed index approx 7x the uncompressed text. Pretty good so far.
     - but there are many nulls, we should put the null field at the end
+  - removing the nulls by making the empty key the last in the array gives 1 Gb uncompressed
 - remove ==== and other punctuation not covered by unicode regex categories
   - the unicode property for this is 'S' so /\p{S}/u will match symbols LET'S ROCK IT! :p ;P ;) xx
   - i think i should remove all sequences of 2 or more symbols, any any "other symbols" but
