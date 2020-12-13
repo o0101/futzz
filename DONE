@@ -1,6 +1,15 @@
-// new
+- make main object an array with [NAME] object at end
+  - old style (object) min dict size ~ 7 million facotrs 1.2 Gb uncompressed 355 Mb compressed
+    - compressed index approx 10x the uncompressed text. Not bad so far.
+  - new style (array) min dict size ~ 7 million factors 1.1 Gb uncompressed 288 Mb compressed
+    - compressed index approx 7x the uncompressed text. Pretty good so far.
+    - but there are many nulls, we should put the null field at the end
+  - removing the nulls by making the empty key the last in the array gives 1 Gb uncompressed 316 Mb compressed with normal and 269 Mb compressed with -9
+    - compressed index approx 7x the uncompressed text. Pretty good so far.
+  - loading this saved smaller index from disk results in 140 preserved. Great!
 - switch to rounded values and retest to ensure we keep the 140
   - 140 is preserved!
+  - 7 million factor dict is 1.2 Gb in size on disk
 - ensure 140 is kept on disk load
   - it is!
 - move from using floating point to integer scores

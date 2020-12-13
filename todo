@@ -3,7 +3,12 @@
   - the unicode property for this is 'S' so /\p{S}/u will match symbols LET'S ROCK IT! :p ;P ;) xx
   - i think i should remove all sequences of 2 or more symbols, any any "other symbols" but
   leave single instances to preserve stuff like "$1.50" and "1/2"
+  - and check effect on dictionary size
+  - also ensure 140 is preserved
 - investigate nature of dictionary (frequency, etc)
+  - limit number of entries in dict?
+  - limit entries added per indexed document?
+  - what if we trim dictionary entries of surrounding whitespace, and also trim the word when we check for it. It might save some space as well as some time?
 - evaluate out of memory (range error) condition using bigmap (which shouldn't happen)
   - try to double add (via some random "code id" now that we have removed code id)
   - limit max old space size and try to recreate the out of memory condition

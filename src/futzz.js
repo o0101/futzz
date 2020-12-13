@@ -30,13 +30,13 @@ const FOUND_NOT_FACTOR_MULT = 0.75;
 const SMULT = 1 << 48;
 
 // serialize keys
-  const WORD = 'w';
-  const NAME = 'n';
-  const COUNT = 'c';
+  const WORD = 0;
+  const COUNT = 1;
+  const NAME = 2;
+  const RUN_COUNT = 3;
+  const FIRST_INDEX = 4;
   const NCOUNT = 0;
   const SCORE = 1;
-  const FIRST_INDEX = 'x';
-  const RUN_COUNT = 'r';
 
 let nameId = 0;
 
@@ -233,14 +233,13 @@ export const State = {
 
       for ( const nextChar of docStr ) {
         if ( ! dict.has(nextChar) ) {
-          const data = {
-            [NAME]: {
-              [name]: [MIN_COUNT, 0]
-            }, 
-            [WORD]: nextChar,
-            [FIRST_INDEX]: charIndex,
-            [COUNT]: MIN_COUNT,
-          }
+          const data = Array(4);
+          data[WORD] = nextChar;
+          data[COUNT] = MIN_COUNT;
+          data[NAME] = {
+            [name]: [MIN_COUNT, 0]
+          };
+          data[FIRST_INDEX] = charIndex;
           prune && prune.add(data);
           toNormalize.add(data);
           dict.set(nextChar, data);
@@ -250,17 +249,20 @@ export const State = {
         }
         if ( ! dict.has(currentWord) || currentWord.length >= MAX_WORD_LENGTH_1 ) {
           // save the new unseen token
-            const data = dict.get(currentWord) || {
-              [NAME]: {
+            let data;
+            if ( dict.has(currentWord) ) {
+              data = dict.get(currentWord);
+            } else {
+              data = Array(3);
+              data[WORD] = currentWord;
+              data[COUNT] = MIN_COUNT;
+              data[NAME] = {
                 [name]: [MIN_COUNT, 0]
-              }, 
-              [WORD]: currentWord,
-              [FIRST_INDEX]: undefined,
-              [COUNT]: MIN_COUNT,
-            }
-            if ( ! dict.has(currentWord) ) {
+              };
+
               prune && prune.add(data);
               toNormalize.add(data);
+
               dict.set(currentWord, data);
               if ( opts.idempotent ) {
                 reverse.push(data);
@@ -316,14 +318,12 @@ export const State = {
       // empty any state into the dictionary and factors list
         if ( ! dict.has(currentWord) ) {
           // save the new unseen token
-            const data = {
-              [NAME]: {
-                [name]: [MIN_COUNT, 0]
-              }, 
-              [WORD]: currentWord,
-              [FIRST_INDEX]: undefined,
-              [COUNT]: MIN_COUNT,
-            }
+            const data = Array(3);
+            data[WORD] = currentWord;
+            data[COUNT] = MIN_COUNT;
+            data[NAME] = {
+              [name]: [MIN_COUNT, 0]
+            };
             prune && prune.add(data);
             toNormalize.add(data);
             dict.set(currentWord, data);
@@ -383,21 +383,21 @@ export const State = {
         }
 
     // normalize factors
-        factors.forEach(f => {
-          const n = f[NAME][name];
-          if ( ! n ) {
-            console.log(f, name);
-          }
-          n[SCORE] = n[NCOUNT] / factors.length;
-          n[SCORE] = Math.round(n[SCORE] * SMULT);
-          //n[SCORE] *= -Math.log(Object.keys(f[NAME]).length/State.names.size);
-        });
-        toNormalize.forEach(f => {
-          const n = f[NAME][name];
-          n[SCORE] = FOUND_NOT_FACTOR_MULT * 1 / factors.length;
-          n[SCORE] = Math.round(n[SCORE] * SMULT);
-          //n[SCORE] *= -Math.log(Object.keys(f[NAME]).length/State.names.size);
-        });
+      factors.forEach(f => {
+        const n = f[NAME][name];
+        if ( ! n ) {
+          console.log(f, name);
+        }
+        n[SCORE] = n[NCOUNT] / factors.length;
+        n[SCORE] = Math.round(n[SCORE] * SMULT);
+        //n[SCORE] *= -Math.log(Object.keys(f[NAME]).length/State.names.size);
+      });
+      toNormalize.forEach(f => {
+        const n = f[NAME][name];
+        n[SCORE] = FOUND_NOT_FACTOR_MULT * 1 / factors.length;
+        n[SCORE] = Math.round(n[SCORE] * SMULT);
+        //n[SCORE] *= -Math.log(Object.keys(f[NAME]).length/State.names.size);
+      });
 
     if ( opts.idempotent ) {
       reverse.forEach(({[WORD]:word}) => {
@@ -545,12 +545,12 @@ export const State = {
       let lastString = '';
       for( let j = 2; j < buf.length-2; j) {
         const str = lastString + buf.slice(j, j+StringChunkSize).toString();
-        let largestIndex = str.lastIndexOf('},{');
+        let largestIndex = str.lastIndexOf('],[');
         str.slice(0, largestIndex)
-          .split(/},{/g)
+          .split(/\],\[/g)
           .map(o => {
             try {
-              return JSON.parse(`{${o}}`);
+              return JSON.parse(`[${o}]`);
             } catch(e) {
               console.log(o, e);
               process.exit(1);
