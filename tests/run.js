@@ -46,6 +46,7 @@ const zang = process.argv[7] ? process.argv[7] : process.argv[6];
 start();
 
 async function start() {
+  console.log(process.pid);
   if ( cat ) {
     if ( act === 'multi') {
       console.log("Multi auto mode");
