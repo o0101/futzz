@@ -1,3 +1,4 @@
+- switch to rounded values and retest to ensure we keep the 140
 - make main object an array with [NAME] object at end
 - investigate nature of dictionary (frequency, etc)
 - evaluate out of memory (range error) condition using bigmap (which shouldn't happen)

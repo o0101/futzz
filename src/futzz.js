@@ -389,13 +389,13 @@ export const State = {
             console.log(f, name);
           }
           n[SCORE] = n[NCOUNT] / factors.length;
-          n[SCORE] = (n[SCORE] * SMULT);
+          n[SCORE] = Math.round(n[SCORE] * SMULT);
           //n[SCORE] *= -Math.log(Object.keys(f[NAME]).length/State.names.size);
         });
         toNormalize.forEach(f => {
           const n = f[NAME][name];
           n[SCORE] = FOUND_NOT_FACTOR_MULT * 1 / factors.length;
-          n[SCORE] = (n[SCORE] * SMULT);
+          n[SCORE] = Math.round(n[SCORE] * SMULT);
           //n[SCORE] *= -Math.log(Object.keys(f[NAME]).length/State.names.size);
         });
 
