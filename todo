@@ -1,10 +1,3 @@
-- make main object an array with [NAME] object at end
-  - old style (object) min dict size ~ 7 million facotrs 1.2 Gb uncompressed 355 Mb compressed
-    - compressed index approx 10x the uncompressed text. Not bad so far.
-  - new style (array) min dict size ~ 7 million factors 1.1 Gb uncompressed 288 Mb compressed
-    - compressed index approx 7x the uncompressed text. Pretty good so far.
-    - but there are many nulls, we should put the null field at the end
-  - removing the nulls by making the empty key the last in the array gives 1 Gb uncompressed
 - remove ==== and other punctuation not covered by unicode regex categories
   - the unicode property for this is 'S' so /\p{S}/u will match symbols LET'S ROCK IT! :p ;P ;) xx
   - i think i should remove all sequences of 2 or more symbols, any any "other symbols" but
@@ -12,6 +5,7 @@
   - and check effect on dictionary size
   - also ensure 140 is preserved
 - investigate nature of dictionary (frequency, etc)
+- what if we trim dictionary entries of surrounding whitespace, and also trim the word when we check for it. It might save some space as well as some time?
 - evaluate out of memory (range error) condition using bigmap (which shouldn't happen)
   - try to double add (via some random "code id" now that we have removed code id)
   - limit max old space size and try to recreate the out of memory condition
