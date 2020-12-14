@@ -13,7 +13,7 @@ console.log(CONFIG);
 const MIN_ITERATION = CONFIG.minIteration;
 const MAX_ITERATION = 12;
 
-const REP_SYMBOLS = false;
+const REP_SYMBOLS = true;
 const AAAF = CONFIG.addAllAsFactors;
 const AAFI = CONFIG.addAllAsFactorsIntervention;
 const AAFI_MIN_RESULT_LENGTH = 5;
@@ -63,7 +63,7 @@ export const State = {
 
     indexingCycle: for( let i = 0; i < MAX_ITERATION; i++ ) {
       ({dict, factors, docStr} = lz(text, Dict, name, opts, prune)); 
-      Factors.push(...factors);
+      Factors.concat(factors);
       const entropy = ent(factors, opts);
       const total = entropy*factors.length;
       Ent.push({entropy, total: entropy*factors.length, name});
@@ -450,6 +450,9 @@ export const State = {
   }
 
   export function simplify(str) {
+    if ( REP_SYMBOLS ) {
+      str = str.replace(/(\p{S})\p{S}*/gu, ' $1 ');
+    }
     str = str.replace(/[\p{Z}\p{P}\p{C}]+/gu, ' ');      
     str = str.replace(/[\x00-\x1f\x7f]+/gu, ' ');  
     str = str.trim();
