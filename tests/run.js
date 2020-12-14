@@ -18,8 +18,8 @@ const EXEC_OPTS = {
 };
 
 const PARAM_RANGES = {
-  "minIteration": [3,5],
-  "maxWordLength": [13, 23, 31, 41, 53, 61, 71, 83, 97, 101],
+  "minIteration": [3,4,5],
+  "maxWordLength": [31, 44, 57, 70 ,83],
   "minAddAllLength": [3],
   "mainFactor": [true],
   "prune": [true],
