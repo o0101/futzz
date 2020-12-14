@@ -1,3 +1,5 @@
+- let's use concept tests again (may as well add them)
+  - not great
 - remove ==== and other punctuation not covered by unicode regex categories
   - the unicode property for this is 'S' so /\p{S}/u will match symbols LET'S ROCK IT! :p ;P ;) xx
   - i think i should remove all sequences of 2 or more symbols, any any "other symbols" but

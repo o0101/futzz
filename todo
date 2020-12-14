@@ -1,5 +1,6 @@
-- let's use concept tests again (may as well add them)
-- investigate nature of dictionary (frequency, etc)
+- add .save (to save dictionary to disk) to Q&A mode
+- make a tool, a separate file, program, to investigate nature of dictionary (frequency, etc)
+  - find useless entries that we can prune
   - limit number of entries in dict?
   - limit entries added per indexed document?
   - what if we trim dictionary entries of surrounding whitespace, and also trim the word when we check for it. It might save some space as well as some time?
