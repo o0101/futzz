@@ -16,42 +16,14 @@
   addAllAsFactorsIntervention: true,
   minCount: 1
 }
-135938
+173472
 Multi auto mode
 undefined
-Enumerated 20 possibilities.
-{ jobStarted: { running: 1 }, remaining: 19 }
-{ jobStarted: { running: 2 }, remaining: 18 }
-{ jobStarted: { running: 3 }, remaining: 17 }
-{ jobStarted: { running: 4 }, remaining: 16 }
-{ jobStarted: { running: 5 }, remaining: 15 }
-{ jobStarted: { running: 6 }, remaining: 14 }
-{ jobStarted: { running: 7 }, remaining: 13 }
-{ jobCompleted: { running: 6 } }
-{ jobStarted: { running: 7 }, remaining: 12 }
-{ jobCompleted: { running: 6 } }
-{ jobStarted: { running: 7 }, remaining: 11 }
-{ jobCompleted: { running: 6 } }
-{ jobStarted: { running: 7 }, remaining: 10 }
-{ jobCompleted: { running: 6 } }
-{ jobStarted: { running: 7 }, remaining: 9 }
-{ jobCompleted: { running: 6 } }
+Enumerated 15 possibilities.
+{ jobStarted: { running: 1 }, remaining: 14 }
+{ jobStarted: { running: 2 }, remaining: 13 }
+{ jobStarted: { running: 3 }, remaining: 12 }
+{ jobStarted: { running: 4 }, remaining: 11 }
+{ jobStarted: { running: 5 }, remaining: 10 }
+{ jobStarted: { running: 6 }, remaining: 9 }
 { jobStarted: { running: 7 }, remaining: 8 }
-{ jobCompleted: { running: 6 } }
-{ jobStarted: { running: 7 }, remaining: 7 }
-{ jobCompleted: { running: 6 } }
-{ jobStarted: { running: 7 }, remaining: 6 }
-{ jobCompleted: { running: 6 } }
-{ jobStarted: { running: 7 }, remaining: 5 }
-{ jobCompleted: { running: 6 } }
-{ jobStarted: { running: 7 }, remaining: 4 }
-{ jobCompleted: { running: 6 } }
-{ jobStarted: { running: 7 }, remaining: 3 }
-{ jobCompleted: { running: 6 } }
-{ jobStarted: { running: 7 }, remaining: 2 }
-{ jobCompleted: { running: 6 } }
-{ jobStarted: { running: 7 }, remaining: 1 }
-{ jobCompleted: { running: 6 } }
-{ jobStarted: { running: 7 }, remaining: 0 }
-{ jobCompleted: { running: 6 } }
-Done!
