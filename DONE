@@ -1,3 +1,12 @@
+- remove ==== and other punctuation not covered by unicode regex categories
+  - the unicode property for this is 'S' so /\p{S}/u will match symbols LET'S ROCK IT! :p ;P ;) xx
+  - i think i should remove all sequences of 2 or more symbols, any any "other symbols" but
+  leave single instances to preserve stuff like "$1.50" and "1/2"
+  - and check effect on dictionary size
+  - also ensure 140 is preserved
+  - 140 is NOT preserved. It is a little bit less. That's not good. 
+  - Investigate further see if I can find a better "simplify" function to improve rate, but still remove symbols. 
+  - After extensive investigation I find it's not possible to preserve 140 and remove symbols. Somehow they are necessary.
 - make main object an array with [NAME] object at end
   - old style (object) min dict size ~ 7 million facotrs 1.2 Gb uncompressed 355 Mb compressed
     - compressed index approx 10x the uncompressed text. Not bad so far.

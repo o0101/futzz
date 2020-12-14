@@ -450,11 +450,8 @@ export const State = {
   }
 
   export function simplify(str) {
-    str = str.replace(/[\p{S}\p{Z}\p{P}\p{C}]+/gu, ' ');      
+    str = str.replace(/[\p{Z}\p{P}\p{C}]+/gu, ' ');      
     str = str.replace(/[\x00-\x1f\x7f]+/gu, ' ');  
-    if ( REP_SYMBOLS ) {
-      str = str.replace(/(\p{S})\p{S}+/gu, '$1');      
-    }
     str = str.trim();
     str = str.toLocaleLowerCase();
 
