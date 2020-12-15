@@ -1,3 +1,9 @@
+- recover best prec (202, 74 ~ 139), ~ dec 8 / 9. 
+  - compare with "modern" v of recov best prec (current, 76 ~ 136)
+  - make best out of those
+  - start high prec, search space try to increase rec and keep prec.
+    - RECOVERED! But it's even better
+    - (78 ~ 139)
 - let's use concept tests again (may as well add them)
   - not great
 - remove ==== and other punctuation not covered by unicode regex categories

@@ -1,8 +1,5 @@
+- test best prec around parameters
 - add option to use on disk dictionary (sirdb)
-- recover best prec (202, 74 ~ 139), ~ dec 8 / 9. 
-  - compare with "modern" v of recov best prec (current, 76 ~ 136)
-  - make best out of those
-  - start high prec, search space try to increase rec and keep prec.
 - then proc to next stage
 - add .save (to save dictionary to disk) to Q&A mode
 - make a tool, a separate file, program, to investigate nature of dictionary (frequency, etc)
