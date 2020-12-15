@@ -1,3 +1,5 @@
+- name, doc name is currently a number, which becomes a text key in the JSON
+let's convert the number to its base36 rep as its a string anyway. saves a few bytes
 - test best prec around parameters
 - add option to use on disk dictionary (sirdb)
 - then proc to next stage
