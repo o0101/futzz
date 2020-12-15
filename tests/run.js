@@ -24,7 +24,7 @@ const PARAM_RANGES = {
   "mainFactor": [true],
   "prune": [true],
   "useQ": [true, false],
-  "extend": [false, true],
+  "extend": [false],
   "countAll": [true],
   "addAllAsFactors": [false],
   "addAllAsFactorsIntervention": [false, true],
