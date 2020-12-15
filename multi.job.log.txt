@@ -27,3 +27,17 @@ Enumerated 108 possibilities.
 { jobStarted: { running: 5 }, remaining: 103 }
 { jobStarted: { running: 6 }, remaining: 102 }
 { jobStarted: { running: 7 }, remaining: 101 }
+{ jobCompleted: { running: 6 } }
+{ jobStarted: { running: 7 }, remaining: 100 }
+{ jobCompleted: { running: 6 } }
+{ jobStarted: { running: 7 }, remaining: 99 }
+{ jobCompleted: { running: 6 } }
+{ jobStarted: { running: 7 }, remaining: 98 }
+{ jobCompleted: { running: 6 } }
+{ jobStarted: { running: 7 }, remaining: 97 }
+{ jobCompleted: { running: 6 } }
+{ jobStarted: { running: 7 }, remaining: 96 }
+{ jobCompleted: { running: 6 } }
+{ jobStarted: { running: 7 }, remaining: 95 }
+{ jobCompleted: { running: 6 } }
+{ jobStarted: { running: 7 }, remaining: 94 }
