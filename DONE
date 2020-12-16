@@ -1,3 +1,10 @@
+- test best prec around parameters
+  - can get up to 78 (but with high iterations)
+  - but seen 75/57 prec/rec on 1 iteration length 83 (24)
+    - Good (as predicted with my power 83 seems to be best)
+  - idea is to take lowest resource usage with highest prec, and then 
+  add simple things to increase rec, but seriously 75/57 is good
+- then proc to next stage
 - recover best prec (202, 74 ~ 139), ~ dec 8 / 9. 
   - compare with "modern" v of recov best prec (current, 76 ~ 136)
   - make best out of those
