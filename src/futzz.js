@@ -175,7 +175,7 @@ export const State = {
         (opts.runStart && opts.resultsLength < AAFI_THRESH_LENGTH) 
     )) {
       const newOpts = JSON.parse(JSON.stringify(opts));
-      //console.log("Again?", results, newOpts);
+      console.log("Again?", results, newOpts);
       newOpts.addAllAsFactors = true;
       newOpts.runStart = true;
       newOpts.resultsLength = (newOpts.resultsLength || 0) + results.length;
@@ -185,7 +185,7 @@ export const State = {
         newOpts.minAddLength--;
       }
       if ( newOpts.minAddLength >= MINIMA_O_ADD_LENGTH ) {
-        //console.log("Again", results, newOpts, oWords);
+        console.log("Again", results, newOpts, oWords);
         const {results:Results, factors: Factors} = query(oWords, right_answers, newOpts);
         results.push(...Results);
         if ( Factors ) {
