@@ -1,0 +1,895 @@
+
+> futzz@1.0.0 test /home/cris/futzz
+> clear && node --max-old-space-size=40000 -r esm tests/run.js "ufo" "auto" "nolimit" "no" "no-progress" "/home/cris/futzz/results/configtests/84"
+
+[H[2J[3J/home/cris/futzz/results/configtests/84
+{
+  minIteration: 5,
+  maxWordLength: 58,
+  minAddAllLength: 1,
+  mainFactor: true,
+  prune: true,
+  useQ: true,
+  extend: false,
+  countAll: true,
+  addAllAsFactors: false,
+  addAllAsFactorsIntervention: false,
+  minCount: 1
+}
+302468
+Auto mode
+Indexing documents...
+Done!
+Indexing created 7289041 factors
+Running queries...
+Running query set 1 of 8 with 57 queries...
+Grep failed Error: Command failed: grep -R -l -i "chemopercpetion" /home/cris/futzz/demo/data/ufo/* chemopercpetion /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "anodye aguilla turncoat" /home/cris/futzz/demo/data/ufo/* anodye aguilla turncoat /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "topcat specialist minataur" /home/cris/futzz/demo/data/ufo/* topcat specialist minataur /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "tophat anaheim jumpsuit" /home/cris/futzz/demo/data/ufo/* tophat anaheim jumpsuit /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "candid serenade photography" /home/cris/futzz/demo/data/ufo/* candid serenade photography /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "specialise armadillo hairpiece" /home/cris/futzz/demo/data/ufo/* specialise armadillo hairpiece /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "doctor phd thesis" /home/cris/futzz/demo/data/ufo/* doctor phd thesis /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "matriculation of 1 million students" /home/cris/futzz/demo/data/ufo/* matriculation of 1 million students /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "the chinese sichuan restaurant of the year" /home/cris/futzz/demo/data/ufo/* the chinese sichuan restaurant of the year /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "machining tool lathe" /home/cris/futzz/demo/data/ufo/* machining tool lathe /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "hacksaw" /home/cris/futzz/demo/data/ufo/* hacksaw /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "carbon rope" /home/cris/futzz/demo/data/ufo/* carbon rope /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "ibm integrated circuit" /home/cris/futzz/demo/data/ufo/* ibm integrated circuit /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "linen and bedding" /home/cris/futzz/demo/data/ufo/* linen and bedding /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "accountant supply warehouse" /home/cris/futzz/demo/data/ufo/* accountant supply warehouse /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "actuarial studies on the rhine" /home/cris/futzz/demo/data/ufo/* actuarial studies on the rhine /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "the germanic people" /home/cris/futzz/demo/data/ufo/* the germanic people /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "history of the french english wars" /home/cris/futzz/demo/data/ufo/* history of the french english wars /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "charlemagne beheaded" /home/cris/futzz/demo/data/ufo/* charlemagne beheaded /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "joan of arc still alive shock" /home/cris/futzz/demo/data/ufo/* joan of arc still alive shock /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "william gibson assassinated" /home/cris/futzz/demo/data/ufo/* william gibson assassinated /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "1984 george orwell" /home/cris/futzz/demo/data/ufo/* 1984 george orwell /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "palindromous" /home/cris/futzz/demo/data/ufo/* palindromous /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "perplexing synchronicities" /home/cris/futzz/demo/data/ufo/* perplexing synchronicities /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "serendipitous coincidences" /home/cris/futzz/demo/data/ufo/* serendipitous coincidences /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "unbelievable facts" /home/cris/futzz/demo/data/ufo/* unbelievable facts /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "courteous broadway actors" /home/cris/futzz/demo/data/ufo/* courteous broadway actors /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "the academy awards" /home/cris/futzz/demo/data/ufo/* the academy awards /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "won an emmy" /home/cris/futzz/demo/data/ufo/* won an emmy /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "lizette smithsorn" /home/cris/futzz/demo/data/ufo/* lizette smithsorn /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "charlize theron" /home/cris/futzz/demo/data/ufo/* charlize theron /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "bob marley" /home/cris/futzz/demo/data/ufo/* bob marley /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "and the wailers" /home/cris/futzz/demo/data/ufo/* and the wailers /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "or is it the whalers" /home/cris/futzz/demo/data/ufo/* or is it the whalers /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "the japanese penitentiary system at the turn of the first millenium" /home/cris/futzz/demo/data/ufo/* the japanese penitentiary system at the turn of the first millenium /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "fine japanese cuisie in aseda" /home/cris/futzz/demo/data/ufo/* fine japanese cuisie in aseda /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "highline" /home/cris/futzz/demo/data/ufo/* highline /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "highrise" /home/cris/futzz/demo/data/ufo/* highrise /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "the aia building" /home/cris/futzz/demo/data/ufo/* the aia building /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "keanu reeves" /home/cris/futzz/demo/data/ufo/* keanu reeves /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "ycombinator" /home/cris/futzz/demo/data/ufo/* ycombinator /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "forgotten generation" /home/cris/futzz/demo/data/ufo/* forgotten generation /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "the youth and children of hong kong" /home/cris/futzz/demo/data/ufo/* the youth and children of hong kong /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "those poor peoples" /home/cris/futzz/demo/data/ufo/* those poor peoples /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "indigenous natives" /home/cris/futzz/demo/data/ufo/* indigenous natives /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "time apocalypse" /home/cris/futzz/demo/data/ufo/* time apocalypse /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "time after death" /home/cris/futzz/demo/data/ufo/* time after death /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "time unending" /home/cris/futzz/demo/data/ufo/* time unending /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "rhododendrum" /home/cris/futzz/demo/data/ufo/* rhododendrum /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "lattice cryptography" /home/cris/futzz/demo/data/ufo/* lattice cryptography /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Running query set 2 of 8 with 22 queries...
+Running query set 4 of 8 with 33 queries...
+Grep failed Error: Command failed: grep -R -l -i "disc craft" /home/cris/futzz/demo/data/ufo/* disc craft /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "tall white" /home/cris/futzz/demo/data/ufo/* tall white /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "photograph of alien" /home/cris/futzz/demo/data/ufo/* photograph of alien /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "video of alien" /home/cris/futzz/demo/data/ufo/* video of alien /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "photograph of ufo" /home/cris/futzz/demo/data/ufo/* photograph of ufo /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "chronovisor" /home/cris/futzz/demo/data/ufo/* chronovisor /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "genetic farmer races" /home/cris/futzz/demo/data/ufo/* genetic farmer races /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "alien human hybrid" /home/cris/futzz/demo/data/ufo/* alien human hybrid /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Running query set 5 of 8 with 12 queries...
+Grep failed Error: Command failed: grep -R -l -i "sensitive compartmentalized information" /home/cris/futzz/demo/data/ufo/* sensitive compartmentalized information /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "special compartmentalized intelligence" /home/cris/futzz/demo/data/ufo/* special compartmentalized intelligence /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "stanford research institute" /home/cris/futzz/demo/data/ufo/* stanford research institute /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "alien genetic program" /home/cris/futzz/demo/data/ufo/* alien genetic program /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "blackbudget" /home/cris/futzz/demo/data/ufo/* blackbudget /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "unacknowledged program" /home/cris/futzz/demo/data/ufo/* unacknowledged program /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "project looking glass" /home/cris/futzz/demo/data/ufo/* project looking glass /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "project center lane" /home/cris/futzz/demo/data/ufo/* project center lane /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Running query set 7 of 8 with 16 queries...
+Running query set 8 of 8 with 32 queries...
+Grep failed Error: Command failed: grep -R -l -i "denver colorado" /home/cris/futzz/demo/data/ufo/* denver colorado /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "groom lake nevada" /home/cris/futzz/demo/data/ufo/* groom lake nevada /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "russel targ" /home/cris/futzz/demo/data/ufo/* russel targ /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "stanford research institute" /home/cris/futzz/demo/data/ufo/* stanford research institute /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "lockheed skunkworks" /home/cris/futzz/demo/data/ufo/* lockheed skunkworks /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+Grep failed Error: Command failed: grep -R -l -i "pine gap australia" /home/cris/futzz/demo/data/ufo/* pine gap australia /home/cris/futzz/demo/data/ufo/*
+This probably means there were no files greppable with this query
+{
+  "precision": [
+    99.95814148179154,
+    66.66666666666666,
+    99.37106918238993,
+    99.4186046511628,
+    89.65517241379311,
+    83.33333333333334,
+    0.09302325581395349,
+    84.21052631578947,
+    90.9090909090909,
+    80,
+    96.29629629629629,
+    91.25,
+    0.3712871287128713,
+    82.39999999999999,
+    75,
+    75,
+    90.9090909090909,
+    99.63369963369964,
+    99.1304347826087,
+    99.375,
+    75,
+    97.72727272727273,
+    99.79296066252587,
+    99.96319470003681,
+    0.4524886877828055,
+    0.19538882375928096,
+    1.0810810810810811,
+    95.83333333333334,
+    55.55555555555556,
+    5.2264808362369335,
+    66.66666666666666,
+    99.72752043596729,
+    99.921875,
+    99.82486865148861,
+    99.90958408679927,
+    99.90697674418605,
+    99.88839285714286,
+    99.95814148179154,
+    83.33333333333334,
+    99.79919678714859,
+    99.91431019708654,
+    95.45454545454545,
+    99.92774566473989,
+    98.71794871794873,
+    99.96319470003681,
+    45,
+    99.06542056074767,
+    82.75862068965517,
+    99.72752043596729,
+    71.7948717948718,
+    70.1492537313433,
+    99.921875,
+    99.82486865148861,
+    66.66666666666666,
+    95.45454545454545,
+    87.14285714285714,
+    81.57894736842105,
+    95.09803921568627,
+    99.62406015037594,
+    94.4927536231884,
+    99.21259842519686,
+    0.7874015748031495,
+    93.18181818181817,
+    91.66666666666666,
+    50,
+    0.5405405405405406,
+    0.8875739644970414,
+    90.9090909090909,
+    10,
+    96.55172413793103,
+    91.66666666666666
+  ],
+  "recall": [
+    84.53097345132743,
+    7.4074074074074066,
+    61.240310077519375,
+    65.0190114068441,
+    47.27272727272727,
+    50,
+    50,
+    35.55555555555556,
+    64.22018348623854,
+    57.14285714285714,
+    66.66666666666666,
+    75.25773195876289,
+    75,
+    73.57142857142858,
+    34.61538461538461,
+    37.5,
+    64.22018348623854,
+    74.31693989071039,
+    74.02597402597402,
+    70.35398230088495,
+    60,
+    50.588235294117645,
+    77.86752827140549,
+    95.36516853932584,
+    50,
+    83.33333333333334,
+    57.14285714285714,
+    65.71428571428571,
+    71.42857142857143,
+    93.75,
+    40,
+    82.99319727891157,
+    69.17252568956192,
+    78.83817427385893,
+    71.33634602969657,
+    74.01791867677464,
+    70.30636292223095,
+    84.53097345132743,
+    62.5,
+    67.0715249662618,
+    79.48193592365371,
+    67.74193548387096,
+    82.51789976133651,
+    73.33333333333333,
+    95.36516853932584,
+    56.25,
+    69.73684210526315,
+    94.11764705882352,
+    82.99319727891157,
+    53.84615384615385,
+    73.4375,
+    69.17252568956192,
+    78.83817427385893,
+    40,
+    61.76470588235294,
+    80.79470198675497,
+    59.61538461538461,
+    81.28491620111731,
+    81.79012345679013,
+    80.29556650246306,
+    67.37967914438502,
+    25,
+    77.35849056603774,
+    82.5,
+    50,
+    50,
+    75,
+    55.55555555555556,
+    33.33333333333333,
+    56.451612903225815,
+    70.96774193548387
+  ],
+  "groups": [
+    {
+      "name": "!unrelated_terms",
+      "AvgPrecision": "51.0829",
+      "AvgRecall": "53.0000",
+      "Record": [
+        [
+          "halloween party",
+          0,
+          0
+        ],
+        [
+          "Tom Hanks",
+          0.32679738562091504,
+          50
+        ],
+        [
+          "skyline",
+          92.3076923076923,
+          75
+        ],
+        [
+          "native americans",
+          50,
+          25
+        ],
+        [
+          "time before time",
+          0.05321979776476849,
+          50
+        ],
+        [
+          "universal law",
+          66.66666666666666,
+          50
+        ],
+        [
+          "cannon",
+          97.14285714285714,
+          68
+        ]
+      ]
+    },
+    {
+      "name": "_concepts",
+      "AvgPrecision": "24.9676",
+      "AvgRecall": "49.9478",
+      "Record": [
+        [
+          "john f kennedy",
+          "the assassinated american president",
+          4.942965779467681,
+          61.904761904761905
+        ],
+        [
+          "john f kennedy",
+          "the grassy knoll sniper shot",
+          0,
+          0
+        ],
+        [
+          "nasa shuttle",
+          "reusable space vehicle system",
+          0.14285714285714285,
+          50
+        ],
+        [
+          "uri gagarin",
+          "first human in space",
+          77.96610169491525,
+          2.3601847101077476
+        ],
+        [
+          "luna",
+          "another name for the moon",
+          3.614457831325301,
+          99.05660377358491
+        ],
+        [
+          "cia",
+          "spooks and spycraft",
+          57.86350148367953,
+          45.703125
+        ],
+        [
+          "nsa",
+          "signals and geeks",
+          50,
+          0.5253940455341506
+        ],
+        [
+          "dia",
+          "planners and pen pushers",
+          41.3726250484684,
+          96.47377938517178
+        ],
+        [
+          "oni",
+          "the no hat office",
+          32.22543352601156,
+          99.55357142857143
+        ],
+        [
+          "osi",
+          "project paperclip ahahaha",
+          62.96296296296296,
+          1.5813953488372092
+        ],
+        [
+          "deviant",
+          "all spies",
+          0.20869565217391303,
+          85.71428571428571
+        ],
+        [
+          "the adversary",
+          "an AI that seeks to take over the galaxy or the universe",
+          71.96261682242991,
+          23.765432098765434
+        ],
+        [
+          "reptilian",
+          "the secret rules of the planet",
+          2.8528528528528527,
+          70.37037037037037
+        ],
+        [
+          "alien-human hybrid",
+          "the real purpose of aliens and the alien agenda",
+          8.47457627118644,
+          37.3134328358209
+        ],
+        [
+          "roswell crash",
+          "us government alien coverup",
+          5.347593582887701,
+          27.027027027027028
+        ],
+        [
+          "anunaki",
+          "original creators of the human race",
+          17.41329479768786,
+          97.96747967479675
+        ],
+        [
+          "president einsenhower",
+          "the creator of majestic 12",
+          17.704517704517706,
+          58.70445344129555
+        ],
+        [
+          "president roosevelt",
+          "teddy president",
+          2.857142857142857,
+          0.7874015748031495
+        ],
+        [
+          "marilyn monroe",
+          "famous person who was an alien",
+          0.628930817610063,
+          66.66666666666666
+        ],
+        [
+          "valiant thor",
+          "alien who worked for us government",
+          47.49034749034749,
+          14.677804295942721
+        ],
+        [
+          "area 51",
+          "us military installation housing aliens and crashed disc debris",
+          8.860759493670885,
+          10
+        ],
+        [
+          "money and trade",
+          "why is there secrecy around aliens",
+          9.427207637231504,
+          98.75
+        ]
+      ]
+    },
+    {
+      "name": "general_terms",
+      "AvgPrecision": "79.0367",
+      "AvgRecall": "60.0695",
+      "Record": [
+        [
+          "UFO",
+          99.95814148179154,
+          84.53097345132743
+        ],
+        [
+          "antigravity",
+          66.66666666666666,
+          7.4074074074074066
+        ],
+        [
+          "spaceship",
+          99.37106918238993,
+          61.240310077519375
+        ],
+        [
+          "satellite",
+          99.4186046511628,
+          65.0190114068441
+        ],
+        [
+          "alien beings",
+          89.65517241379311,
+          47.27272727272727
+        ],
+        [
+          "grey alien",
+          83.33333333333334,
+          50
+        ],
+        [
+          "nordic alien",
+          0.09302325581395349,
+          50
+        ],
+        [
+          "alien race",
+          84.21052631578947,
+          35.55555555555556
+        ],
+        [
+          "alien abduction",
+          90.9090909090909,
+          64.22018348623854
+        ],
+        [
+          "insectoid",
+          80,
+          57.14285714285714
+        ],
+        [
+          "reptilian",
+          96.29629629629629,
+          66.66666666666666
+        ],
+        [
+          "underground base",
+          91.25,
+          75.25773195876289
+        ],
+        [
+          "radar data",
+          0.3712871287128713,
+          75
+        ],
+        [
+          "ufo crash",
+          82.39999999999999,
+          73.57142857142858
+        ],
+        [
+          "crashed disc",
+          75,
+          34.61538461538461
+        ],
+        [
+          "video of ufo",
+          75,
+          37.5
+        ],
+        [
+          "alien abduction",
+          90.9090909090909,
+          64.22018348623854
+        ],
+        [
+          "abductee",
+          99.63369963369964,
+          74.31693989071039
+        ],
+        [
+          "contactee",
+          99.1304347826087,
+          74.02597402597402
+        ],
+        [
+          "psychic",
+          99.375,
+          70.35398230088495
+        ],
+        [
+          "remote viewer",
+          75,
+          60
+        ],
+        [
+          "telepathy",
+          97.72727272727273,
+          50.588235294117645
+        ],
+        [
+          "extraterrestrial",
+          99.79296066252587,
+          77.86752827140549
+        ],
+        [
+          "ET",
+          99.96319470003681,
+          95.36516853932584
+        ],
+        [
+          "age regression",
+          0.4524886877828055,
+          50
+        ]
+      ]
+    },
+    {
+      "name": "long_terms",
+      "AvgPrecision": "38.1663",
+      "AvgRecall": "69.4048",
+      "Record": [
+        [
+          "special access program",
+          0.19538882375928096,
+          83.33333333333334
+        ],
+        [
+          "the office of the president",
+          1.0810810810810811,
+          57.14285714285714
+        ],
+        [
+          "department of defense",
+          95.83333333333334,
+          65.71428571428571
+        ],
+        [
+          "extraterrestrial biological entity",
+          55.55555555555556,
+          71.42857142857143
+        ]
+      ]
+    },
+    {
+      "name": "short_terms",
+      "AvgPrecision": "90.5088",
+      "AvgRecall": "74.5598",
+      "Record": [
+        [
+          "mj-12",
+          5.2264808362369335,
+          93.75
+        ],
+        [
+          "noaa",
+          66.66666666666666,
+          40
+        ],
+        [
+          "nasa",
+          99.72752043596729,
+          82.99319727891157
+        ],
+        [
+          "cia",
+          99.921875,
+          69.17252568956192
+        ],
+        [
+          "nsa",
+          99.82486865148861,
+          78.83817427385893
+        ],
+        [
+          "dia",
+          99.90958408679927,
+          71.33634602969657
+        ],
+        [
+          "osi",
+          99.90697674418605,
+          74.01791867677464
+        ],
+        [
+          "oni",
+          99.88839285714286,
+          70.30636292223095
+        ],
+        [
+          "ufo",
+          99.95814148179154,
+          84.53097345132743
+        ],
+        [
+          "flir",
+          83.33333333333334,
+          62.5
+        ],
+        [
+          "sap",
+          99.79919678714859,
+          67.0715249662618
+        ],
+        [
+          "sci",
+          99.91431019708654,
+          79.48193592365371
+        ],
+        [
+          "sri",
+          95.45454545454545,
+          67.74193548387096
+        ],
+        [
+          "sai",
+          99.92774566473989,
+          82.51789976133651
+        ],
+        [
+          "dod",
+          98.71794871794873,
+          73.33333333333333
+        ],
+        [
+          "ET",
+          99.96319470003681,
+          95.36516853932584
+        ]
+      ]
+    },
+    {
+      "name": "specifc_entities",
+      "AvgPrecision": "73.6040",
+      "AvgRecall": "65.6725",
+      "Record": [
+        [
+          "majestic 12",
+          45,
+          56.25
+        ],
+        [
+          "maryland",
+          99.06542056074767,
+          69.73684210526315
+        ],
+        [
+          "bob lazar",
+          82.75862068965517,
+          94.11764705882352
+        ],
+        [
+          "NASA",
+          99.72752043596729,
+          82.99319727891157
+        ],
+        [
+          "Central Intelligence Agency",
+          71.7948717948718,
+          53.84615384615385
+        ],
+        [
+          "National Security Agency",
+          70.1492537313433,
+          73.4375
+        ],
+        [
+          "CIA",
+          99.921875,
+          69.17252568956192
+        ],
+        [
+          "NSA",
+          99.82486865148861,
+          78.83817427385893
+        ],
+        [
+          "NOAA",
+          66.66666666666666,
+          40
+        ],
+        [
+          "Nellis AFB",
+          95.45454545454545,
+          61.76470588235294
+        ],
+        [
+          "Area 51",
+          87.14285714285714,
+          80.79470198675497
+        ],
+        [
+          "Nevada Test Site",
+          81.57894736842105,
+          59.61538461538461
+        ],
+        [
+          "New Mexico",
+          95.09803921568627,
+          81.28491620111731
+        ],
+        [
+          "Roswell",
+          99.62406015037594,
+          81.79012345679013
+        ],
+        [
+          "New York",
+          94.4927536231884,
+          80.29556650246306
+        ],
+        [
+          "Australia",
+          99.21259842519686,
+          67.37967914438502
+        ],
+        [
+          "president roosevelt",
+          0.7874015748031495,
+          25
+        ],
+        [
+          "president eisenhower",
+          93.18181818181817,
+          77.35849056603774
+        ],
+        [
+          "president kennedy",
+          91.66666666666666,
+          82.5
+        ],
+        [
+          "hal puthoff",
+          50,
+          50
+        ],
+        [
+          "science applications international",
+          0.5405405405405406,
+          50
+        ],
+        [
+          "skunkworks",
+          0.8875739644970414,
+          75
+        ],
+        [
+          "general electric",
+          90.9090909090909,
+          55.55555555555556
+        ],
+        [
+          "raytheon",
+          10,
+          33.33333333333333
+        ],
+        [
+          "blue book",
+          96.55172413793103,
+          56.451612903225815
+        ],
+        [
+          "yellow book",
+          91.66666666666666,
+          70.96774193548387
+        ]
+      ]
+    }
+  ],
+  "avgPrecision": "77.33",
+  "medianPrecision": "93.18",
+  "modePrecision": "100",
+  "avgRecall": "65.91",
+  "medianRecall": "7.41",
+  "modeRecall": "50",
+  "score": "143.24"
+}
