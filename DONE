@@ -1,3 +1,8 @@
+- look at all results, and pick the best parameters, given that
+  - we want low resource usage
+  - we want to be able to build up recall as required (to some reasonable limit)
+  - we want high precision from the outset
+  - so basically, highest precision, lowest resource usage, and reasonable recall
 - test best prec around parameters
   - can get up to 78 (but with high iterations)
   - but seen 75/57 prec/rec on 1 iteration length 83 (24)

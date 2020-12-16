@@ -1,8 +1,4 @@
-- look at all results, and pick the best parameters, given that
-  - we want low resource usage
-  - we want to be able to build up recall as required (to some reasonable limit)
-  - we want high precision from the outset
-  - so basically, highest precision, lowest resource usage, and reasonable recall
+- Get AAFI to work on best sets it seems to fail on our old "nasa shuttle" 
 
 - name, doc name is currently a number, which becomes a text key in the JSON
 let's convert the number to its base36 rep as its a string anyway. saves a few bytes
