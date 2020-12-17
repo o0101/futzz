@@ -16,7 +16,7 @@
   addAllAsFactorsIntervention: true,
   minCount: 1
 }
-379764
+389418
 Multi auto mode
 undefined
 Enumerated 16 possibilities.
@@ -27,3 +27,17 @@ Enumerated 16 possibilities.
 { jobStarted: { running: 5 }, remaining: 11 }
 { jobStarted: { running: 6 }, remaining: 10 }
 { jobStarted: { running: 7 }, remaining: 9 }
+{ jobCompleted: { running: 6 } }
+{ jobStarted: { running: 7 }, remaining: 8 }
+{ jobCompleted: { running: 6 } }
+{ jobStarted: { running: 7 }, remaining: 7 }
+{ jobCompleted: { running: 6 } }
+{ jobStarted: { running: 7 }, remaining: 6 }
+{ jobCompleted: { running: 6 } }
+{ jobStarted: { running: 7 }, remaining: 5 }
+{ jobCompleted: { running: 6 } }
+{ jobStarted: { running: 7 }, remaining: 4 }
+{ jobCompleted: { running: 6 } }
+{ jobStarted: { running: 7 }, remaining: 3 }
+{ jobCompleted: { running: 6 } }
+{ jobStarted: { running: 7 }, remaining: 2 }
