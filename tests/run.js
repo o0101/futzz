@@ -18,15 +18,15 @@ const EXEC_OPTS = {
 };
 
 const PARAM_RANGES = {
-  "minIteration": [1,3,5],
-  "maxWordLength": [31, 58 ,83],
-  "minAddAllLength": [1,3,5],
+  "minIteration": [1],
+  "maxWordLength": [83],
+  "minAddAllLength": [1, 13],
   "mainFactor": [true],
   "prune": [true],
-  "useQ": [true, false],
-  "extend": [false],
+  "useQ": [true],
+  "extend": [false, true],
   "countAll": [true],
-  "addAllAsFactors": [false],
+  "addAllAsFactors": [false, true],
   "addAllAsFactorsIntervention": [false, true],
   "minCount": [1]
 }
