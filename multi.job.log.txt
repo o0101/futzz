@@ -41,3 +41,9 @@ Enumerated 16 possibilities.
 { jobStarted: { running: 7 }, remaining: 3 }
 { jobCompleted: { running: 6 } }
 { jobStarted: { running: 7 }, remaining: 2 }
+{ jobCompleted: { running: 6 } }
+{ jobStarted: { running: 7 }, remaining: 1 }
+{ jobCompleted: { running: 6 } }
+{ jobStarted: { running: 7 }, remaining: 0 }
+{ jobCompleted: { running: 6 } }
+Done!
