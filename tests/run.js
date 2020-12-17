@@ -6,7 +6,7 @@ import {exec,execSync} from 'child_process';
 import {discohash} from 'bebb4185';
 import {dedup, simplify, State, loadFromDisk, saveToDisk, query, index, ent} from '../src/futzz.js';
 
-const USE_AWK = true;
+const USE_AWK = false;
 const AWK_QUERY_EVAL = USE_AWK;
 const GREP_QUERY_EVAL = !USE_AWK;
 const SHOW_RESULTS = true;
@@ -557,7 +557,11 @@ async function start() {
         }
 
         if ( ! noQuery ) {
-          ({precision, recall, results, [command]: extra} = evaluateQuery(q, true, {[command]:true}));
+          if ( command ) {
+            ({precision, recall, results, [command]: extra} = evaluateQuery(q, true, {[command]:true}));
+          } else {
+            ({precision, recall, results} = evaluateQuery(q, true));
+          }
         }
 
         if ( command && extra ) {

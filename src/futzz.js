@@ -100,14 +100,26 @@ export const State = {
     words = EXTEND ? `${words} ${words} ${words}` : words;
 
     if ( USE_Q_INDEX ) { 
-      ({Factors} = index(words, 'query', {idempotent:true, addAllAsFactors: AAAF}));
+      ({Factors} = lz(words, dict, 'query', {
+        idempotent:true,
+        addAllAsFactors: AAAF || opts.addAllAsFactors,
+        minAddLength: opts.minAddLength
+      }));
     }
 
-    ({factors} = lz(words, dict, 'query', {idempotent:true, addAllAsFactors: AAAF}));
+    ({factors} = lz(words, dict, 'query', {
+      idempotent:true,
+      addAllAsFactors: AAAF || opts.addAllAsFactors,
+      minAddLength: opts.minAddLength
+    }));
+
 
     if ( Factors ) {
       factors.push(...Factors);
     }
+
+    console.log(JSON.stringfiy({factors,Factors,mainFactor},null,2));
+
     if ( MAIN_FACTOR && mainFactor ) {
       factors.push(mainFactor);
     }
