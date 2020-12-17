@@ -1,0 +1,6133 @@
+
+> futzz@1.0.0 test /home/cris/futzz
+> clear && node --max-old-space-size=40000 -r esm tests/run.js "ufo" "auto" "nolimit" "no" "no-progress" "/home/cris/futzz/results/configtests/9"
+
+[H[2J[3J/home/cris/futzz/results/configtests/9
+{
+  minIteration: 1,
+  maxWordLength: 83,
+  minAddAllLength: 13,
+  mainFactor: true,
+  prune: true,
+  useQ: true,
+  extend: false,
+  countAll: true,
+  addAllAsFactors: false,
+  addAllAsFactorsIntervention: true,
+  minCount: 1
+}
+375113
+Auto mode
+Indexing documents...
+Done!
+Indexing created 2967234 factors
+Running queries...
+Running query set 1 of 8 with 57 queries...
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1164.ufo', 384 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1648.ufo', 275 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1284.ufo', 254 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1641.ufo', 83 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/.windex.html', 20 ]
+] {}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1164.ufo', 384 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1648.ufo', 275 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1284.ufo', 254 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1641.ufo', 83 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/.windex.html', 20 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 5,
+  minAddLength: 6
+} skyline
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1164.ufo', 384 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1648.ufo', 275 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1284.ufo', 254 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1641.ufo', 83 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/.windex.html', 20 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 5,
+  minAddLength: 6
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1164.ufo', 384 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1648.ufo', 275 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1284.ufo', 254 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1641.ufo', 83 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/.windex.html', 20 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 10,
+  minAddLength: 5
+} skyline
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1164.ufo', 384 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1648.ufo', 275 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1284.ufo', 254 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1641.ufo', 83 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/.windex.html', 20 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 10,
+  minAddLength: 5
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1164.ufo', 384 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1648.ufo', 275 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1284.ufo', 254 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1641.ufo', 83 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/.windex.html', 20 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 15,
+  minAddLength: 4
+} skyline
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1164.ufo', 384 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1648.ufo', 275 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1284.ufo', 254 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1641.ufo', 83 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/.windex.html', 20 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 15,
+  minAddLength: 4
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1164.ufo', 384 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1648.ufo', 275 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1284.ufo', 254 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1641.ufo', 83 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/.windex.html', 20 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 20,
+  minAddLength: 3
+} skyline
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1164.ufo', 384 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1648.ufo', 275 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1284.ufo', 254 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1641.ufo', 83 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/.windex.html', 20 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 20,
+  minAddLength: 3
+}
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3326.ufo', 62 ],
+  [ '/home/cris/futzz/demo/data/ufo/fenwick', 8 ]
+] {}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3326.ufo', 62 ],
+  [ '/home/cris/futzz/demo/data/ufo/fenwick', 8 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 2,
+  minAddLength: 15
+} native americans
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3326.ufo', 62 ],
+  [ '/home/cris/futzz/demo/data/ufo/fenwick', 8 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 2,
+  minAddLength: 15
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3326.ufo', 62 ],
+  [ '/home/cris/futzz/demo/data/ufo/fenwick', 8 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 4,
+  minAddLength: 14
+} native americans
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3326.ufo', 62 ],
+  [ '/home/cris/futzz/demo/data/ufo/fenwick', 8 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 4,
+  minAddLength: 14
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3326.ufo', 62 ],
+  [ '/home/cris/futzz/demo/data/ufo/fenwick', 8 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 6,
+  minAddLength: 13
+} native americans
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3326.ufo', 62 ],
+  [ '/home/cris/futzz/demo/data/ufo/fenwick', 8 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 6,
+  minAddLength: 13
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3326.ufo', 62 ],
+  [ '/home/cris/futzz/demo/data/ufo/fenwick', 8 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 8,
+  minAddLength: 12
+} native americans
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3326.ufo', 62 ],
+  [ '/home/cris/futzz/demo/data/ufo/fenwick', 8 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 8,
+  minAddLength: 12
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3326.ufo', 62 ],
+  [ '/home/cris/futzz/demo/data/ufo/fenwick', 8 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 10,
+  minAddLength: 11
+} native americans
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3326.ufo', 62 ],
+  [ '/home/cris/futzz/demo/data/ufo/fenwick', 8 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 10,
+  minAddLength: 11
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3326.ufo', 62 ],
+  [ '/home/cris/futzz/demo/data/ufo/fenwick', 8 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 12,
+  minAddLength: 10
+} native americans
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3326.ufo', 62 ],
+  [ '/home/cris/futzz/demo/data/ufo/fenwick', 8 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 12,
+  minAddLength: 10
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3326.ufo', 62 ],
+  [ '/home/cris/futzz/demo/data/ufo/fenwick', 8 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 14,
+  minAddLength: 9
+} native americans
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3326.ufo', 62 ],
+  [ '/home/cris/futzz/demo/data/ufo/fenwick', 8 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 14,
+  minAddLength: 9
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3326.ufo', 62 ],
+  [ '/home/cris/futzz/demo/data/ufo/fenwick', 8 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 16,
+  minAddLength: 8
+} native americans
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3326.ufo', 62 ],
+  [ '/home/cris/futzz/demo/data/ufo/fenwick', 8 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 16,
+  minAddLength: 8
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3326.ufo', 62 ],
+  [ '/home/cris/futzz/demo/data/ufo/fenwick', 8 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 18,
+  minAddLength: 7
+} native americans
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3326.ufo', 62 ],
+  [ '/home/cris/futzz/demo/data/ufo/fenwick', 8 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 18,
+  minAddLength: 7
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3326.ufo', 62 ],
+  [ '/home/cris/futzz/demo/data/ufo/fenwick', 8 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 20,
+  minAddLength: 6
+} native americans
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3326.ufo', 62 ],
+  [ '/home/cris/futzz/demo/data/ufo/fenwick', 8 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 20,
+  minAddLength: 6
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3326.ufo', 62 ],
+  [ '/home/cris/futzz/demo/data/ufo/fenwick', 8 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 22,
+  minAddLength: 5
+} native americans
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3326.ufo', 62 ],
+  [ '/home/cris/futzz/demo/data/ufo/fenwick', 8 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 22,
+  minAddLength: 5
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3326.ufo', 62 ],
+  [ '/home/cris/futzz/demo/data/ufo/fenwick', 8 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 24,
+  minAddLength: 4
+} native americans
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3326.ufo', 62 ],
+  [ '/home/cris/futzz/demo/data/ufo/fenwick', 8 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 24,
+  minAddLength: 4
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3326.ufo', 62 ],
+  [ '/home/cris/futzz/demo/data/ufo/fenwick', 8 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 26,
+  minAddLength: 3
+} native americans
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3326.ufo', 62 ],
+  [ '/home/cris/futzz/demo/data/ufo/fenwick', 8 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 26,
+  minAddLength: 3
+}
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3262.ufo', 874 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ]
+] {}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3262.ufo', 874 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 2,
+  minAddLength: 15
+} time after death
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3262.ufo', 874 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 2,
+  minAddLength: 15
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3262.ufo', 874 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 4,
+  minAddLength: 14
+} time after death
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3262.ufo', 874 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 4,
+  minAddLength: 14
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3262.ufo', 874 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 6,
+  minAddLength: 13
+} time after death
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3262.ufo', 874 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 6,
+  minAddLength: 13
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3262.ufo', 874 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 8,
+  minAddLength: 12
+} time after death
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3262.ufo', 874 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 8,
+  minAddLength: 12
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3262.ufo', 874 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 10,
+  minAddLength: 11
+} time after death
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3262.ufo', 874 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 10,
+  minAddLength: 11
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3262.ufo', 874 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 12,
+  minAddLength: 10
+} time after death
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3262.ufo', 874 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 12,
+  minAddLength: 10
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3262.ufo', 874 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 14,
+  minAddLength: 9
+} time after death
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3262.ufo', 874 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 14,
+  minAddLength: 9
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3262.ufo', 874 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 16,
+  minAddLength: 8
+} time after death
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3262.ufo', 874 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 16,
+  minAddLength: 8
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3262.ufo', 874 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 18,
+  minAddLength: 7
+} time after death
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3262.ufo', 874 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 18,
+  minAddLength: 7
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3262.ufo', 874 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 20,
+  minAddLength: 6
+} time after death
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3262.ufo', 874 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 20,
+  minAddLength: 6
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3262.ufo', 874 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 22,
+  minAddLength: 5
+} time after death
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3262.ufo', 874 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 22,
+  minAddLength: 5
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3262.ufo', 874 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 24,
+  minAddLength: 4
+} time after death
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3262.ufo', 874 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 24,
+  minAddLength: 4
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3262.ufo', 874 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 26,
+  minAddLength: 3
+} time after death
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3262.ufo', 874 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 26,
+  minAddLength: 3
+}
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/cannon.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/addit.txt', 22 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ]
+] {}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/cannon.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/addit.txt', 22 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 3,
+  minAddLength: 5
+} cannon
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/cannon.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/addit.txt', 22 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 3,
+  minAddLength: 5
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/cannon.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/addit.txt', 22 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 6,
+  minAddLength: 4
+} cannon
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/cannon.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/addit.txt', 22 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 6,
+  minAddLength: 4
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/cannon.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/addit.txt', 22 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 9,
+  minAddLength: 3
+} cannon
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/cannon.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/addit.txt', 22 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 9,
+  minAddLength: 3
+}
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3234.ufo', 91 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1905.ufo', 25 ]
+] {}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3234.ufo', 91 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1905.ufo', 25 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 2,
+  minAddLength: 19
+} lattice cryptography
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3234.ufo', 91 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1905.ufo', 25 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 2,
+  minAddLength: 19
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3234.ufo', 91 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1905.ufo', 25 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 4,
+  minAddLength: 18
+} lattice cryptography
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3234.ufo', 91 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1905.ufo', 25 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 4,
+  minAddLength: 18
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3234.ufo', 91 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1905.ufo', 25 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 6,
+  minAddLength: 17
+} lattice cryptography
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3234.ufo', 91 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1905.ufo', 25 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 6,
+  minAddLength: 17
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3234.ufo', 91 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1905.ufo', 25 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 8,
+  minAddLength: 16
+} lattice cryptography
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3234.ufo', 91 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1905.ufo', 25 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 8,
+  minAddLength: 16
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3234.ufo', 91 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1905.ufo', 25 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 10,
+  minAddLength: 15
+} lattice cryptography
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3234.ufo', 91 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1905.ufo', 25 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 10,
+  minAddLength: 15
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3234.ufo', 91 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1905.ufo', 25 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 12,
+  minAddLength: 14
+} lattice cryptography
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3234.ufo', 91 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1905.ufo', 25 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 12,
+  minAddLength: 14
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3234.ufo', 91 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1905.ufo', 25 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 14,
+  minAddLength: 13
+} lattice cryptography
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3234.ufo', 91 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1905.ufo', 25 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 14,
+  minAddLength: 13
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3234.ufo', 91 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1905.ufo', 25 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 16,
+  minAddLength: 12
+} lattice cryptography
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3234.ufo', 91 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1905.ufo', 25 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 16,
+  minAddLength: 12
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3234.ufo', 91 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1905.ufo', 25 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 18,
+  minAddLength: 11
+} lattice cryptography
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3234.ufo', 91 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1905.ufo', 25 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 18,
+  minAddLength: 11
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3234.ufo', 91 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1905.ufo', 25 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 20,
+  minAddLength: 10
+} lattice cryptography
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3234.ufo', 91 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1905.ufo', 25 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 20,
+  minAddLength: 10
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3234.ufo', 91 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1905.ufo', 25 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 22,
+  minAddLength: 9
+} lattice cryptography
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3234.ufo', 91 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1905.ufo', 25 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 22,
+  minAddLength: 9
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3234.ufo', 91 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1905.ufo', 25 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 24,
+  minAddLength: 8
+} lattice cryptography
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3234.ufo', 91 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1905.ufo', 25 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 24,
+  minAddLength: 8
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3234.ufo', 91 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1905.ufo', 25 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 26,
+  minAddLength: 7
+} lattice cryptography
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3234.ufo', 91 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1905.ufo', 25 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 26,
+  minAddLength: 7
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3234.ufo', 91 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1905.ufo', 25 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 28,
+  minAddLength: 6
+} lattice cryptography
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3234.ufo', 91 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1905.ufo', 25 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 28,
+  minAddLength: 6
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3234.ufo', 91 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1905.ufo', 25 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 30,
+  minAddLength: 5
+} lattice cryptography
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3234.ufo', 91 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1905.ufo', 25 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 30,
+  minAddLength: 5
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3234.ufo', 91 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1905.ufo', 25 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 32,
+  minAddLength: 4
+} lattice cryptography
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3234.ufo', 91 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1905.ufo', 25 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 32,
+  minAddLength: 4
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3234.ufo', 91 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1905.ufo', 25 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 34,
+  minAddLength: 3
+} lattice cryptography
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3234.ufo', 91 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1905.ufo', 25 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 34,
+  minAddLength: 3
+}
+Running query set 2 of 8 with 22 queries...
+Again? [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 4 ] ] {}
+Again [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 4 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 1,
+  minAddLength: 11
+} nasa shuttle
+Again? [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 4 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 1,
+  minAddLength: 11
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 4 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 2,
+  minAddLength: 10
+} nasa shuttle
+Again? [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 4 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 2,
+  minAddLength: 10
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 4 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 3,
+  minAddLength: 9
+} nasa shuttle
+Again? [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 4 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 3,
+  minAddLength: 9
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 4 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 4,
+  minAddLength: 8
+} nasa shuttle
+Again? [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 4 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 4,
+  minAddLength: 8
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 4 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 5,
+  minAddLength: 7
+} nasa shuttle
+Again? [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 4 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 5,
+  minAddLength: 7
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 4 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 6,
+  minAddLength: 6
+} nasa shuttle
+Again? [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 4 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 6,
+  minAddLength: 6
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 4 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 7,
+  minAddLength: 5
+} nasa shuttle
+Again? [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 4 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 7,
+  minAddLength: 5
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 4 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 8,
+  minAddLength: 4
+} nasa shuttle
+Again? [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 4 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 8,
+  minAddLength: 4
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 4 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 9,
+  minAddLength: 3
+} nasa shuttle
+Again? [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 4 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 9,
+  minAddLength: 3
+}
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3271.ufo', 55 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2370.ufo', 20 ]
+] {}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3271.ufo', 55 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2370.ufo', 20 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 2,
+  minAddLength: 6
+} deviant
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3271.ufo', 55 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2370.ufo', 20 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 2,
+  minAddLength: 6
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3271.ufo', 55 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2370.ufo', 20 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 4,
+  minAddLength: 5
+} deviant
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3271.ufo', 55 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2370.ufo', 20 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 4,
+  minAddLength: 5
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3271.ufo', 55 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2370.ufo', 20 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 6,
+  minAddLength: 4
+} deviant
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3271.ufo', 55 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2370.ufo', 20 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 6,
+  minAddLength: 4
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3271.ufo', 55 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2370.ufo', 20 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 8,
+  minAddLength: 3
+} deviant
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3271.ufo', 55 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2370.ufo', 20 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 8,
+  minAddLength: 3
+}
+Again? [ [ '/home/cris/futzz/demo/data/ufo/addit.txt', 31 ] ] {}
+Again [ [ '/home/cris/futzz/demo/data/ufo/addit.txt', 31 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 1,
+  minAddLength: 8
+} reptilian
+Again? [ [ '/home/cris/futzz/demo/data/ufo/addit.txt', 31 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 1,
+  minAddLength: 8
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/addit.txt', 31 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 2,
+  minAddLength: 7
+} reptilian
+Again? [ [ '/home/cris/futzz/demo/data/ufo/addit.txt', 31 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 2,
+  minAddLength: 7
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/addit.txt', 31 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 3,
+  minAddLength: 6
+} reptilian
+Again? [ [ '/home/cris/futzz/demo/data/ufo/addit.txt', 31 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 3,
+  minAddLength: 6
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/addit.txt', 31 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 4,
+  minAddLength: 5
+} reptilian
+Again? [ [ '/home/cris/futzz/demo/data/ufo/addit.txt', 31 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 4,
+  minAddLength: 5
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/addit.txt', 31 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 5,
+  minAddLength: 4
+} reptilian
+Again? [ [ '/home/cris/futzz/demo/data/ufo/addit.txt', 31 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 5,
+  minAddLength: 4
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/addit.txt', 31 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 6,
+  minAddLength: 3
+} reptilian
+Again? [ [ '/home/cris/futzz/demo/data/ufo/addit.txt', 31 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 6,
+  minAddLength: 3
+}
+Again? [ [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 12 ] ] {}
+Again [ [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 12 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 1,
+  minAddLength: 13
+} marilyn monroe
+Again? [ [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 12 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 1,
+  minAddLength: 13
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 12 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 2,
+  minAddLength: 12
+} marilyn monroe
+Again? [ [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 12 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 2,
+  minAddLength: 12
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 12 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 3,
+  minAddLength: 11
+} marilyn monroe
+Again? [ [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 12 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 3,
+  minAddLength: 11
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 12 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 4,
+  minAddLength: 10
+} marilyn monroe
+Again? [ [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 12 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 4,
+  minAddLength: 10
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 12 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 5,
+  minAddLength: 9
+} marilyn monroe
+Again? [ [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 12 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 5,
+  minAddLength: 9
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 12 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 6,
+  minAddLength: 8
+} marilyn monroe
+Again? [ [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 12 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 6,
+  minAddLength: 8
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 12 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 7,
+  minAddLength: 7
+} marilyn monroe
+Again? [ [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 12 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 7,
+  minAddLength: 7
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 12 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 8,
+  minAddLength: 6
+} marilyn monroe
+Again? [ [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 12 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 8,
+  minAddLength: 6
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 12 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 9,
+  minAddLength: 5
+} marilyn monroe
+Again? [ [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 12 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 9,
+  minAddLength: 5
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 12 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 10,
+  minAddLength: 4
+} marilyn monroe
+Again? [ [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 12 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 10,
+  minAddLength: 4
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 12 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 11,
+  minAddLength: 3
+} marilyn monroe
+Again? [ [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 12 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 11,
+  minAddLength: 3
+}
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/alear2.txt', 16 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ]
+] {}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/alear2.txt', 16 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 2,
+  minAddLength: 6
+} area 51
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/alear2.txt', 16 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 2,
+  minAddLength: 6
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/alear2.txt', 16 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 4,
+  minAddLength: 5
+} area 51
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/alear2.txt', 16 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 4,
+  minAddLength: 5
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/alear2.txt', 16 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 6,
+  minAddLength: 4
+} area 51
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/alear2.txt', 16 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 6,
+  minAddLength: 4
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/alear2.txt', 16 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 8,
+  minAddLength: 3
+} area 51
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/alear2.txt', 16 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 8,
+  minAddLength: 3
+}
+Running query set 4 of 8 with 33 queries...
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/10most.ufo', 98 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3159.ufo', 62 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1904.ufo', 51 ],
+  [ '/home/cris/futzz/demo/data/ufo/SIGHTINGS/rhodbt1.ufo', 19 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 13 ]
+] {}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/10most.ufo', 98 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3159.ufo', 62 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1904.ufo', 51 ],
+  [ '/home/cris/futzz/demo/data/ufo/SIGHTINGS/rhodbt1.ufo', 19 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 13 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 5,
+  minAddLength: 10
+} antigravity
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/10most.ufo', 98 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3159.ufo', 62 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1904.ufo', 51 ],
+  [ '/home/cris/futzz/demo/data/ufo/SIGHTINGS/rhodbt1.ufo', 19 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 13 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 5,
+  minAddLength: 10
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/10most.ufo', 98 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3159.ufo', 62 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1904.ufo', 51 ],
+  [ '/home/cris/futzz/demo/data/ufo/SIGHTINGS/rhodbt1.ufo', 19 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 13 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 10,
+  minAddLength: 9
+} antigravity
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/10most.ufo', 98 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3159.ufo', 62 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1904.ufo', 51 ],
+  [ '/home/cris/futzz/demo/data/ufo/SIGHTINGS/rhodbt1.ufo', 19 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 13 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 10,
+  minAddLength: 9
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/10most.ufo', 98 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3159.ufo', 62 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1904.ufo', 51 ],
+  [ '/home/cris/futzz/demo/data/ufo/SIGHTINGS/rhodbt1.ufo', 19 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 13 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 15,
+  minAddLength: 8
+} antigravity
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/10most.ufo', 98 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3159.ufo', 62 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1904.ufo', 51 ],
+  [ '/home/cris/futzz/demo/data/ufo/SIGHTINGS/rhodbt1.ufo', 19 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 13 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 15,
+  minAddLength: 8
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/10most.ufo', 98 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3159.ufo', 62 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1904.ufo', 51 ],
+  [ '/home/cris/futzz/demo/data/ufo/SIGHTINGS/rhodbt1.ufo', 19 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 13 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 20,
+  minAddLength: 7
+} antigravity
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/10most.ufo', 98 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3159.ufo', 62 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1904.ufo', 51 ],
+  [ '/home/cris/futzz/demo/data/ufo/SIGHTINGS/rhodbt1.ufo', 19 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 13 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 20,
+  minAddLength: 7
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/10most.ufo', 98 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3159.ufo', 62 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1904.ufo', 51 ],
+  [ '/home/cris/futzz/demo/data/ufo/SIGHTINGS/rhodbt1.ufo', 19 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 13 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 25,
+  minAddLength: 6
+} antigravity
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/10most.ufo', 98 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3159.ufo', 62 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1904.ufo', 51 ],
+  [ '/home/cris/futzz/demo/data/ufo/SIGHTINGS/rhodbt1.ufo', 19 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 13 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 25,
+  minAddLength: 6
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/10most.ufo', 98 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3159.ufo', 62 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1904.ufo', 51 ],
+  [ '/home/cris/futzz/demo/data/ufo/SIGHTINGS/rhodbt1.ufo', 19 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 13 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 30,
+  minAddLength: 5
+} antigravity
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/10most.ufo', 98 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3159.ufo', 62 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1904.ufo', 51 ],
+  [ '/home/cris/futzz/demo/data/ufo/SIGHTINGS/rhodbt1.ufo', 19 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 13 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 30,
+  minAddLength: 5
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/10most.ufo', 98 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3159.ufo', 62 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1904.ufo', 51 ],
+  [ '/home/cris/futzz/demo/data/ufo/SIGHTINGS/rhodbt1.ufo', 19 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 13 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 35,
+  minAddLength: 4
+} antigravity
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/10most.ufo', 98 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3159.ufo', 62 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1904.ufo', 51 ],
+  [ '/home/cris/futzz/demo/data/ufo/SIGHTINGS/rhodbt1.ufo', 19 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 13 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 35,
+  minAddLength: 4
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/10most.ufo', 98 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3159.ufo', 62 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1904.ufo', 51 ],
+  [ '/home/cris/futzz/demo/data/ufo/SIGHTINGS/rhodbt1.ufo', 19 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 13 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 40,
+  minAddLength: 3
+} antigravity
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/10most.ufo', 98 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3159.ufo', 62 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1904.ufo', 51 ],
+  [ '/home/cris/futzz/demo/data/ufo/SIGHTINGS/rhodbt1.ufo', 19 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 13 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 40,
+  minAddLength: 3
+}
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/aerial.ufo', 337 ],
+  [ '/home/cris/futzz/demo/data/ufo/aliens01.asc', 90 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 37 ]
+] {}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/aerial.ufo', 337 ],
+  [ '/home/cris/futzz/demo/data/ufo/aliens01.asc', 90 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 37 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 3,
+  minAddLength: 8
+} spaceship
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/aerial.ufo', 337 ],
+  [ '/home/cris/futzz/demo/data/ufo/aliens01.asc', 90 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 37 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 3,
+  minAddLength: 8
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/aerial.ufo', 337 ],
+  [ '/home/cris/futzz/demo/data/ufo/aliens01.asc', 90 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 37 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 6,
+  minAddLength: 7
+} spaceship
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/aerial.ufo', 337 ],
+  [ '/home/cris/futzz/demo/data/ufo/aliens01.asc', 90 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 37 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 6,
+  minAddLength: 7
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/aerial.ufo', 337 ],
+  [ '/home/cris/futzz/demo/data/ufo/aliens01.asc', 90 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 37 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 9,
+  minAddLength: 6
+} spaceship
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/aerial.ufo', 337 ],
+  [ '/home/cris/futzz/demo/data/ufo/aliens01.asc', 90 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 37 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 9,
+  minAddLength: 6
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/aerial.ufo', 337 ],
+  [ '/home/cris/futzz/demo/data/ufo/aliens01.asc', 90 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 37 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 12,
+  minAddLength: 5
+} spaceship
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/aerial.ufo', 337 ],
+  [ '/home/cris/futzz/demo/data/ufo/aliens01.asc', 90 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 37 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 12,
+  minAddLength: 5
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/aerial.ufo', 337 ],
+  [ '/home/cris/futzz/demo/data/ufo/aliens01.asc', 90 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 37 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 15,
+  minAddLength: 4
+} spaceship
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/aerial.ufo', 337 ],
+  [ '/home/cris/futzz/demo/data/ufo/aliens01.asc', 90 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 37 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 15,
+  minAddLength: 4
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/aerial.ufo', 337 ],
+  [ '/home/cris/futzz/demo/data/ufo/aliens01.asc', 90 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 37 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 18,
+  minAddLength: 3
+} spaceship
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/aerial.ufo', 337 ],
+  [ '/home/cris/futzz/demo/data/ufo/aliens01.asc', 90 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 37 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 18,
+  minAddLength: 3
+}
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/dsrat17.txt', 22 ],
+  [ '/home/cris/futzz/demo/data/ufo/cia_ufo_story.txt', 7 ]
+] {}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/dsrat17.txt', 22 ],
+  [ '/home/cris/futzz/demo/data/ufo/cia_ufo_story.txt', 7 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 2,
+  minAddLength: 8
+} satellite
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/dsrat17.txt', 22 ],
+  [ '/home/cris/futzz/demo/data/ufo/cia_ufo_story.txt', 7 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 2,
+  minAddLength: 8
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/dsrat17.txt', 22 ],
+  [ '/home/cris/futzz/demo/data/ufo/cia_ufo_story.txt', 7 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 4,
+  minAddLength: 7
+} satellite
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/dsrat17.txt', 22 ],
+  [ '/home/cris/futzz/demo/data/ufo/cia_ufo_story.txt', 7 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 4,
+  minAddLength: 7
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/dsrat17.txt', 22 ],
+  [ '/home/cris/futzz/demo/data/ufo/cia_ufo_story.txt', 7 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 6,
+  minAddLength: 6
+} satellite
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/dsrat17.txt', 22 ],
+  [ '/home/cris/futzz/demo/data/ufo/cia_ufo_story.txt', 7 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 6,
+  minAddLength: 6
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/dsrat17.txt', 22 ],
+  [ '/home/cris/futzz/demo/data/ufo/cia_ufo_story.txt', 7 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 8,
+  minAddLength: 5
+} satellite
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/dsrat17.txt', 22 ],
+  [ '/home/cris/futzz/demo/data/ufo/cia_ufo_story.txt', 7 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 8,
+  minAddLength: 5
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/dsrat17.txt', 22 ],
+  [ '/home/cris/futzz/demo/data/ufo/cia_ufo_story.txt', 7 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 10,
+  minAddLength: 4
+} satellite
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/dsrat17.txt', 22 ],
+  [ '/home/cris/futzz/demo/data/ufo/cia_ufo_story.txt', 7 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 10,
+  minAddLength: 4
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/dsrat17.txt', 22 ],
+  [ '/home/cris/futzz/demo/data/ufo/cia_ufo_story.txt', 7 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 12,
+  minAddLength: 3
+} satellite
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/dsrat17.txt', 22 ],
+  [ '/home/cris/futzz/demo/data/ufo/cia_ufo_story.txt', 7 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 12,
+  minAddLength: 3
+}
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/pbbwarn.ufo', 97 ],
+  [ '/home/cris/futzz/demo/data/ufo/mj.12', 32 ],
+  [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 6 ],
+  [ '/home/cris/futzz/demo/data/ufo/paralazar.ufo', 4 ]
+] {}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/pbbwarn.ufo', 97 ],
+  [ '/home/cris/futzz/demo/data/ufo/mj.12', 32 ],
+  [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 6 ],
+  [ '/home/cris/futzz/demo/data/ufo/paralazar.ufo', 4 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 4,
+  minAddLength: 11
+} alien beings
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/pbbwarn.ufo', 97 ],
+  [ '/home/cris/futzz/demo/data/ufo/mj.12', 32 ],
+  [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 6 ],
+  [ '/home/cris/futzz/demo/data/ufo/paralazar.ufo', 4 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 4,
+  minAddLength: 11
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/pbbwarn.ufo', 97 ],
+  [ '/home/cris/futzz/demo/data/ufo/mj.12', 32 ],
+  [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 6 ],
+  [ '/home/cris/futzz/demo/data/ufo/paralazar.ufo', 4 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 8,
+  minAddLength: 10
+} alien beings
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/pbbwarn.ufo', 97 ],
+  [ '/home/cris/futzz/demo/data/ufo/mj.12', 32 ],
+  [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 6 ],
+  [ '/home/cris/futzz/demo/data/ufo/paralazar.ufo', 4 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 8,
+  minAddLength: 10
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/pbbwarn.ufo', 97 ],
+  [ '/home/cris/futzz/demo/data/ufo/mj.12', 32 ],
+  [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 6 ],
+  [ '/home/cris/futzz/demo/data/ufo/paralazar.ufo', 4 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 12,
+  minAddLength: 9
+} alien beings
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/pbbwarn.ufo', 97 ],
+  [ '/home/cris/futzz/demo/data/ufo/mj.12', 32 ],
+  [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 6 ],
+  [ '/home/cris/futzz/demo/data/ufo/paralazar.ufo', 4 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 12,
+  minAddLength: 9
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/pbbwarn.ufo', 97 ],
+  [ '/home/cris/futzz/demo/data/ufo/mj.12', 32 ],
+  [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 6 ],
+  [ '/home/cris/futzz/demo/data/ufo/paralazar.ufo', 4 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 16,
+  minAddLength: 8
+} alien beings
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/pbbwarn.ufo', 97 ],
+  [ '/home/cris/futzz/demo/data/ufo/mj.12', 32 ],
+  [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 6 ],
+  [ '/home/cris/futzz/demo/data/ufo/paralazar.ufo', 4 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 16,
+  minAddLength: 8
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/pbbwarn.ufo', 97 ],
+  [ '/home/cris/futzz/demo/data/ufo/mj.12', 32 ],
+  [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 6 ],
+  [ '/home/cris/futzz/demo/data/ufo/paralazar.ufo', 4 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 20,
+  minAddLength: 7
+} alien beings
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/pbbwarn.ufo', 97 ],
+  [ '/home/cris/futzz/demo/data/ufo/mj.12', 32 ],
+  [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 6 ],
+  [ '/home/cris/futzz/demo/data/ufo/paralazar.ufo', 4 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 20,
+  minAddLength: 7
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/pbbwarn.ufo', 97 ],
+  [ '/home/cris/futzz/demo/data/ufo/mj.12', 32 ],
+  [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 6 ],
+  [ '/home/cris/futzz/demo/data/ufo/paralazar.ufo', 4 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 24,
+  minAddLength: 6
+} alien beings
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/pbbwarn.ufo', 97 ],
+  [ '/home/cris/futzz/demo/data/ufo/mj.12', 32 ],
+  [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 6 ],
+  [ '/home/cris/futzz/demo/data/ufo/paralazar.ufo', 4 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 24,
+  minAddLength: 6
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/pbbwarn.ufo', 97 ],
+  [ '/home/cris/futzz/demo/data/ufo/mj.12', 32 ],
+  [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 6 ],
+  [ '/home/cris/futzz/demo/data/ufo/paralazar.ufo', 4 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 28,
+  minAddLength: 5
+} alien beings
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/pbbwarn.ufo', 97 ],
+  [ '/home/cris/futzz/demo/data/ufo/mj.12', 32 ],
+  [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 6 ],
+  [ '/home/cris/futzz/demo/data/ufo/paralazar.ufo', 4 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 28,
+  minAddLength: 5
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/pbbwarn.ufo', 97 ],
+  [ '/home/cris/futzz/demo/data/ufo/mj.12', 32 ],
+  [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 6 ],
+  [ '/home/cris/futzz/demo/data/ufo/paralazar.ufo', 4 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 32,
+  minAddLength: 4
+} alien beings
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/pbbwarn.ufo', 97 ],
+  [ '/home/cris/futzz/demo/data/ufo/mj.12', 32 ],
+  [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 6 ],
+  [ '/home/cris/futzz/demo/data/ufo/paralazar.ufo', 4 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 32,
+  minAddLength: 4
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/pbbwarn.ufo', 97 ],
+  [ '/home/cris/futzz/demo/data/ufo/mj.12', 32 ],
+  [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 6 ],
+  [ '/home/cris/futzz/demo/data/ufo/paralazar.ufo', 4 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 36,
+  minAddLength: 3
+} alien beings
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/pbbwarn.ufo', 97 ],
+  [ '/home/cris/futzz/demo/data/ufo/mj.12', 32 ],
+  [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 6 ],
+  [ '/home/cris/futzz/demo/data/ufo/paralazar.ufo', 4 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 36,
+  minAddLength: 3
+}
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/mj.12', 32 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1780.ufo', 25 ],
+  [ '/home/cris/futzz/demo/data/ufo/cia_ufo_story.txt', 8 ]
+] {}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/mj.12', 32 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1780.ufo', 25 ],
+  [ '/home/cris/futzz/demo/data/ufo/cia_ufo_story.txt', 8 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 3,
+  minAddLength: 9
+} alien race
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/mj.12', 32 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1780.ufo', 25 ],
+  [ '/home/cris/futzz/demo/data/ufo/cia_ufo_story.txt', 8 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 3,
+  minAddLength: 9
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/mj.12', 32 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1780.ufo', 25 ],
+  [ '/home/cris/futzz/demo/data/ufo/cia_ufo_story.txt', 8 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 6,
+  minAddLength: 8
+} alien race
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/mj.12', 32 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1780.ufo', 25 ],
+  [ '/home/cris/futzz/demo/data/ufo/cia_ufo_story.txt', 8 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 6,
+  minAddLength: 8
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/mj.12', 32 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1780.ufo', 25 ],
+  [ '/home/cris/futzz/demo/data/ufo/cia_ufo_story.txt', 8 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 9,
+  minAddLength: 7
+} alien race
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/mj.12', 32 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1780.ufo', 25 ],
+  [ '/home/cris/futzz/demo/data/ufo/cia_ufo_story.txt', 8 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 9,
+  minAddLength: 7
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/mj.12', 32 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1780.ufo', 25 ],
+  [ '/home/cris/futzz/demo/data/ufo/cia_ufo_story.txt', 8 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 12,
+  minAddLength: 6
+} alien race
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/mj.12', 32 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1780.ufo', 25 ],
+  [ '/home/cris/futzz/demo/data/ufo/cia_ufo_story.txt', 8 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 12,
+  minAddLength: 6
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/mj.12', 32 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1780.ufo', 25 ],
+  [ '/home/cris/futzz/demo/data/ufo/cia_ufo_story.txt', 8 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 15,
+  minAddLength: 5
+} alien race
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/mj.12', 32 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1780.ufo', 25 ],
+  [ '/home/cris/futzz/demo/data/ufo/cia_ufo_story.txt', 8 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 15,
+  minAddLength: 5
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/mj.12', 32 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1780.ufo', 25 ],
+  [ '/home/cris/futzz/demo/data/ufo/cia_ufo_story.txt', 8 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 18,
+  minAddLength: 4
+} alien race
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/mj.12', 32 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1780.ufo', 25 ],
+  [ '/home/cris/futzz/demo/data/ufo/cia_ufo_story.txt', 8 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 18,
+  minAddLength: 4
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/mj.12', 32 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1780.ufo', 25 ],
+  [ '/home/cris/futzz/demo/data/ufo/cia_ufo_story.txt', 8 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 21,
+  minAddLength: 3
+} alien race
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/mj.12', 32 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1780.ufo', 25 ],
+  [ '/home/cris/futzz/demo/data/ufo/cia_ufo_story.txt', 8 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 21,
+  minAddLength: 3
+}
+Again? [ [ '/home/cris/futzz/demo/data/ufo/addit.txt', 31 ] ] {}
+Again [ [ '/home/cris/futzz/demo/data/ufo/addit.txt', 31 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 1,
+  minAddLength: 8
+} reptilian
+Again? [ [ '/home/cris/futzz/demo/data/ufo/addit.txt', 31 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 1,
+  minAddLength: 8
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/addit.txt', 31 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 2,
+  minAddLength: 7
+} reptilian
+Again? [ [ '/home/cris/futzz/demo/data/ufo/addit.txt', 31 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 2,
+  minAddLength: 7
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/addit.txt', 31 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 3,
+  minAddLength: 6
+} reptilian
+Again? [ [ '/home/cris/futzz/demo/data/ufo/addit.txt', 31 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 3,
+  minAddLength: 6
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/addit.txt', 31 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 4,
+  minAddLength: 5
+} reptilian
+Again? [ [ '/home/cris/futzz/demo/data/ufo/addit.txt', 31 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 4,
+  minAddLength: 5
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/addit.txt', 31 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 5,
+  minAddLength: 4
+} reptilian
+Again? [ [ '/home/cris/futzz/demo/data/ufo/addit.txt', 31 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 5,
+  minAddLength: 4
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/addit.txt', 31 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 6,
+  minAddLength: 3
+} reptilian
+Again? [ [ '/home/cris/futzz/demo/data/ufo/addit.txt', 31 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 6,
+  minAddLength: 3
+}
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1922.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2632.ufo', 20 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1562.ufo', 16 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2066.ufo', 6 ]
+] {}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1922.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2632.ufo', 20 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1562.ufo', 16 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2066.ufo', 6 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 5,
+  minAddLength: 11
+} crashed disc
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1922.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2632.ufo', 20 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1562.ufo', 16 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2066.ufo', 6 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 5,
+  minAddLength: 11
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1922.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2632.ufo', 20 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1562.ufo', 16 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2066.ufo', 6 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 10,
+  minAddLength: 10
+} crashed disc
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1922.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2632.ufo', 20 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1562.ufo', 16 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2066.ufo', 6 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 10,
+  minAddLength: 10
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1922.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2632.ufo', 20 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1562.ufo', 16 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2066.ufo', 6 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 15,
+  minAddLength: 9
+} crashed disc
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1922.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2632.ufo', 20 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1562.ufo', 16 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2066.ufo', 6 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 15,
+  minAddLength: 9
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1922.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2632.ufo', 20 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1562.ufo', 16 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2066.ufo', 6 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 20,
+  minAddLength: 8
+} crashed disc
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1922.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2632.ufo', 20 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1562.ufo', 16 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2066.ufo', 6 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 20,
+  minAddLength: 8
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1922.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2632.ufo', 20 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1562.ufo', 16 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2066.ufo', 6 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 25,
+  minAddLength: 7
+} crashed disc
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1922.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2632.ufo', 20 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1562.ufo', 16 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2066.ufo', 6 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 25,
+  minAddLength: 7
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1922.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2632.ufo', 20 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1562.ufo', 16 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2066.ufo', 6 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 30,
+  minAddLength: 6
+} crashed disc
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1922.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2632.ufo', 20 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1562.ufo', 16 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2066.ufo', 6 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 30,
+  minAddLength: 6
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1922.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2632.ufo', 20 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1562.ufo', 16 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2066.ufo', 6 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 35,
+  minAddLength: 5
+} crashed disc
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1922.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2632.ufo', 20 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1562.ufo', 16 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2066.ufo', 6 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 35,
+  minAddLength: 5
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1922.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2632.ufo', 20 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1562.ufo', 16 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2066.ufo', 6 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 40,
+  minAddLength: 4
+} crashed disc
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1922.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2632.ufo', 20 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1562.ufo', 16 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2066.ufo', 6 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 40,
+  minAddLength: 4
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1922.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2632.ufo', 20 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1562.ufo', 16 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2066.ufo', 6 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 45,
+  minAddLength: 3
+} crashed disc
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1922.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2632.ufo', 20 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1562.ufo', 16 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2066.ufo', 6 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 45,
+  minAddLength: 3
+}
+Again? [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ] ] {}
+Again [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 1,
+  minAddLength: 11
+} video of ufo
+Again? [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 1,
+  minAddLength: 11
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 2,
+  minAddLength: 10
+} video of ufo
+Again? [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 2,
+  minAddLength: 10
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 3,
+  minAddLength: 9
+} video of ufo
+Again? [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 3,
+  minAddLength: 9
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 4,
+  minAddLength: 8
+} video of ufo
+Again? [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 4,
+  minAddLength: 8
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 5,
+  minAddLength: 7
+} video of ufo
+Again? [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 5,
+  minAddLength: 7
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 6,
+  minAddLength: 6
+} video of ufo
+Again? [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 6,
+  minAddLength: 6
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 7,
+  minAddLength: 5
+} video of ufo
+Again? [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 7,
+  minAddLength: 5
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 8,
+  minAddLength: 4
+} video of ufo
+Again? [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 8,
+  minAddLength: 4
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 9,
+  minAddLength: 3
+} video of ufo
+Again? [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 9,
+  minAddLength: 3
+}
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/alear1.txt', 52 ],
+  [ '/home/cris/futzz/demo/data/ufo/cannon.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/addit.txt', 21 ],
+  [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 6 ]
+] {}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/alear1.txt', 52 ],
+  [ '/home/cris/futzz/demo/data/ufo/cannon.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/addit.txt', 21 ],
+  [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 6 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 4,
+  minAddLength: 7
+} abductee
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/alear1.txt', 52 ],
+  [ '/home/cris/futzz/demo/data/ufo/cannon.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/addit.txt', 21 ],
+  [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 6 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 4,
+  minAddLength: 7
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/alear1.txt', 52 ],
+  [ '/home/cris/futzz/demo/data/ufo/cannon.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/addit.txt', 21 ],
+  [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 6 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 8,
+  minAddLength: 6
+} abductee
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/alear1.txt', 52 ],
+  [ '/home/cris/futzz/demo/data/ufo/cannon.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/addit.txt', 21 ],
+  [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 6 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 8,
+  minAddLength: 6
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/alear1.txt', 52 ],
+  [ '/home/cris/futzz/demo/data/ufo/cannon.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/addit.txt', 21 ],
+  [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 6 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 12,
+  minAddLength: 5
+} abductee
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/alear1.txt', 52 ],
+  [ '/home/cris/futzz/demo/data/ufo/cannon.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/addit.txt', 21 ],
+  [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 6 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 12,
+  minAddLength: 5
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/alear1.txt', 52 ],
+  [ '/home/cris/futzz/demo/data/ufo/cannon.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/addit.txt', 21 ],
+  [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 6 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 16,
+  minAddLength: 4
+} abductee
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/alear1.txt', 52 ],
+  [ '/home/cris/futzz/demo/data/ufo/cannon.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/addit.txt', 21 ],
+  [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 6 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 16,
+  minAddLength: 4
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/alear1.txt', 52 ],
+  [ '/home/cris/futzz/demo/data/ufo/cannon.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/addit.txt', 21 ],
+  [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 6 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 20,
+  minAddLength: 3
+} abductee
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/alear1.txt', 52 ],
+  [ '/home/cris/futzz/demo/data/ufo/cannon.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/addit.txt', 21 ],
+  [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 6 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 20,
+  minAddLength: 3
+}
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/cannon.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/capturehil.ufo', 36 ],
+  [ '/home/cris/futzz/demo/data/ufo/canada.txt', 21 ],
+  [ '/home/cris/futzz/demo/data/ufo/cia_ufo_story.txt', 7 ]
+] {}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/cannon.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/capturehil.ufo', 36 ],
+  [ '/home/cris/futzz/demo/data/ufo/canada.txt', 21 ],
+  [ '/home/cris/futzz/demo/data/ufo/cia_ufo_story.txt', 7 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 4,
+  minAddLength: 8
+} contactee
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/cannon.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/capturehil.ufo', 36 ],
+  [ '/home/cris/futzz/demo/data/ufo/canada.txt', 21 ],
+  [ '/home/cris/futzz/demo/data/ufo/cia_ufo_story.txt', 7 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 4,
+  minAddLength: 8
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/cannon.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/capturehil.ufo', 36 ],
+  [ '/home/cris/futzz/demo/data/ufo/canada.txt', 21 ],
+  [ '/home/cris/futzz/demo/data/ufo/cia_ufo_story.txt', 7 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 8,
+  minAddLength: 7
+} contactee
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/cannon.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/capturehil.ufo', 36 ],
+  [ '/home/cris/futzz/demo/data/ufo/canada.txt', 21 ],
+  [ '/home/cris/futzz/demo/data/ufo/cia_ufo_story.txt', 7 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 8,
+  minAddLength: 7
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/cannon.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/capturehil.ufo', 36 ],
+  [ '/home/cris/futzz/demo/data/ufo/canada.txt', 21 ],
+  [ '/home/cris/futzz/demo/data/ufo/cia_ufo_story.txt', 7 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 12,
+  minAddLength: 6
+} contactee
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/cannon.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/capturehil.ufo', 36 ],
+  [ '/home/cris/futzz/demo/data/ufo/canada.txt', 21 ],
+  [ '/home/cris/futzz/demo/data/ufo/cia_ufo_story.txt', 7 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 12,
+  minAddLength: 6
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/cannon.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/capturehil.ufo', 36 ],
+  [ '/home/cris/futzz/demo/data/ufo/canada.txt', 21 ],
+  [ '/home/cris/futzz/demo/data/ufo/cia_ufo_story.txt', 7 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 16,
+  minAddLength: 5
+} contactee
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/cannon.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/capturehil.ufo', 36 ],
+  [ '/home/cris/futzz/demo/data/ufo/canada.txt', 21 ],
+  [ '/home/cris/futzz/demo/data/ufo/cia_ufo_story.txt', 7 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 16,
+  minAddLength: 5
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/cannon.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/capturehil.ufo', 36 ],
+  [ '/home/cris/futzz/demo/data/ufo/canada.txt', 21 ],
+  [ '/home/cris/futzz/demo/data/ufo/cia_ufo_story.txt', 7 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 20,
+  minAddLength: 4
+} contactee
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/cannon.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/capturehil.ufo', 36 ],
+  [ '/home/cris/futzz/demo/data/ufo/canada.txt', 21 ],
+  [ '/home/cris/futzz/demo/data/ufo/cia_ufo_story.txt', 7 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 20,
+  minAddLength: 4
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/cannon.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/capturehil.ufo', 36 ],
+  [ '/home/cris/futzz/demo/data/ufo/canada.txt', 21 ],
+  [ '/home/cris/futzz/demo/data/ufo/cia_ufo_story.txt', 7 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 24,
+  minAddLength: 3
+} contactee
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/cannon.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/capturehil.ufo', 36 ],
+  [ '/home/cris/futzz/demo/data/ufo/canada.txt', 21 ],
+  [ '/home/cris/futzz/demo/data/ufo/cia_ufo_story.txt', 7 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 24,
+  minAddLength: 3
+}
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/0000/072.ufo', 267 ],
+  [ '/home/cris/futzz/demo/data/ufo/beliefs.ufo', 107 ],
+  [ '/home/cris/futzz/demo/data/ufo/psiufo.ufo', 91 ]
+] {}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/0000/072.ufo', 267 ],
+  [ '/home/cris/futzz/demo/data/ufo/beliefs.ufo', 107 ],
+  [ '/home/cris/futzz/demo/data/ufo/psiufo.ufo', 91 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 3,
+  minAddLength: 6
+} psychic
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/0000/072.ufo', 267 ],
+  [ '/home/cris/futzz/demo/data/ufo/beliefs.ufo', 107 ],
+  [ '/home/cris/futzz/demo/data/ufo/psiufo.ufo', 91 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 3,
+  minAddLength: 6
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/0000/072.ufo', 267 ],
+  [ '/home/cris/futzz/demo/data/ufo/beliefs.ufo', 107 ],
+  [ '/home/cris/futzz/demo/data/ufo/psiufo.ufo', 91 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 6,
+  minAddLength: 5
+} psychic
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/0000/072.ufo', 267 ],
+  [ '/home/cris/futzz/demo/data/ufo/beliefs.ufo', 107 ],
+  [ '/home/cris/futzz/demo/data/ufo/psiufo.ufo', 91 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 6,
+  minAddLength: 5
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/0000/072.ufo', 267 ],
+  [ '/home/cris/futzz/demo/data/ufo/beliefs.ufo', 107 ],
+  [ '/home/cris/futzz/demo/data/ufo/psiufo.ufo', 91 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 9,
+  minAddLength: 4
+} psychic
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/0000/072.ufo', 267 ],
+  [ '/home/cris/futzz/demo/data/ufo/beliefs.ufo', 107 ],
+  [ '/home/cris/futzz/demo/data/ufo/psiufo.ufo', 91 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 9,
+  minAddLength: 4
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/0000/072.ufo', 267 ],
+  [ '/home/cris/futzz/demo/data/ufo/beliefs.ufo', 107 ],
+  [ '/home/cris/futzz/demo/data/ufo/psiufo.ufo', 91 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 12,
+  minAddLength: 3
+} psychic
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/0000/072.ufo', 267 ],
+  [ '/home/cris/futzz/demo/data/ufo/beliefs.ufo', 107 ],
+  [ '/home/cris/futzz/demo/data/ufo/psiufo.ufo', 91 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 12,
+  minAddLength: 3
+}
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3090.ufo', 41 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2461.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2904.ufo', 10 ]
+] {}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3090.ufo', 41 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2461.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2904.ufo', 10 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 3,
+  minAddLength: 12
+} remote viewer
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3090.ufo', 41 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2461.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2904.ufo', 10 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 3,
+  minAddLength: 12
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3090.ufo', 41 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2461.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2904.ufo', 10 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 6,
+  minAddLength: 11
+} remote viewer
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3090.ufo', 41 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2461.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2904.ufo', 10 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 6,
+  minAddLength: 11
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3090.ufo', 41 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2461.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2904.ufo', 10 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 9,
+  minAddLength: 10
+} remote viewer
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3090.ufo', 41 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2461.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2904.ufo', 10 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 9,
+  minAddLength: 10
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3090.ufo', 41 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2461.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2904.ufo', 10 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 12,
+  minAddLength: 9
+} remote viewer
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3090.ufo', 41 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2461.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2904.ufo', 10 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 12,
+  minAddLength: 9
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3090.ufo', 41 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2461.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2904.ufo', 10 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 15,
+  minAddLength: 8
+} remote viewer
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3090.ufo', 41 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2461.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2904.ufo', 10 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 15,
+  minAddLength: 8
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3090.ufo', 41 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2461.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2904.ufo', 10 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 18,
+  minAddLength: 7
+} remote viewer
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3090.ufo', 41 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2461.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2904.ufo', 10 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 18,
+  minAddLength: 7
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3090.ufo', 41 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2461.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2904.ufo', 10 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 21,
+  minAddLength: 6
+} remote viewer
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3090.ufo', 41 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2461.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2904.ufo', 10 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 21,
+  minAddLength: 6
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3090.ufo', 41 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2461.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2904.ufo', 10 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 24,
+  minAddLength: 5
+} remote viewer
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3090.ufo', 41 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2461.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2904.ufo', 10 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 24,
+  minAddLength: 5
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3090.ufo', 41 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2461.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2904.ufo', 10 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 27,
+  minAddLength: 4
+} remote viewer
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3090.ufo', 41 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2461.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2904.ufo', 10 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 27,
+  minAddLength: 4
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3090.ufo', 41 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2461.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2904.ufo', 10 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 30,
+  minAddLength: 3
+} remote viewer
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3090.ufo', 41 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2461.ufo', 38 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2904.ufo', 10 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 30,
+  minAddLength: 3
+}
+Again? [ [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 6 ] ] {}
+Again [ [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 6 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 1,
+  minAddLength: 8
+} telepathy
+Again? [ [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 6 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 1,
+  minAddLength: 8
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 6 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 2,
+  minAddLength: 7
+} telepathy
+Again? [ [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 6 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 2,
+  minAddLength: 7
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 6 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 3,
+  minAddLength: 6
+} telepathy
+Again? [ [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 6 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 3,
+  minAddLength: 6
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 6 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 4,
+  minAddLength: 5
+} telepathy
+Again? [ [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 6 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 4,
+  minAddLength: 5
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 6 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 5,
+  minAddLength: 4
+} telepathy
+Again? [ [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 6 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 5,
+  minAddLength: 4
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 6 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 6,
+  minAddLength: 3
+} telepathy
+Again? [ [ '/home/cris/futzz/demo/data/ufo/mindcan.txt', 6 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 6,
+  minAddLength: 3
+}
+Running query set 5 of 8 with 12 queries...
+Again? [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ] ] {}
+Again [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 1,
+  minAddLength: 33
+} extraterrestrial biological entity
+Again? [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 1,
+  minAddLength: 33
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 2,
+  minAddLength: 32
+} extraterrestrial biological entity
+Again? [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 2,
+  minAddLength: 32
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 3,
+  minAddLength: 31
+} extraterrestrial biological entity
+Again? [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 3,
+  minAddLength: 31
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 4,
+  minAddLength: 30
+} extraterrestrial biological entity
+Again? [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 4,
+  minAddLength: 30
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 5,
+  minAddLength: 29
+} extraterrestrial biological entity
+Again? [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 5,
+  minAddLength: 29
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 6,
+  minAddLength: 28
+} extraterrestrial biological entity
+Again? [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 6,
+  minAddLength: 28
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 7,
+  minAddLength: 27
+} extraterrestrial biological entity
+Again? [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 7,
+  minAddLength: 27
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 8,
+  minAddLength: 26
+} extraterrestrial biological entity
+Again? [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 8,
+  minAddLength: 26
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 9,
+  minAddLength: 25
+} extraterrestrial biological entity
+Again? [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 9,
+  minAddLength: 25
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 10,
+  minAddLength: 24
+} extraterrestrial biological entity
+Again? [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 10,
+  minAddLength: 24
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 11,
+  minAddLength: 23
+} extraterrestrial biological entity
+Again? [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 11,
+  minAddLength: 23
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 12,
+  minAddLength: 22
+} extraterrestrial biological entity
+Again? [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 12,
+  minAddLength: 22
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 13,
+  minAddLength: 21
+} extraterrestrial biological entity
+Again? [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 13,
+  minAddLength: 21
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 14,
+  minAddLength: 20
+} extraterrestrial biological entity
+Again? [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 14,
+  minAddLength: 20
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 15,
+  minAddLength: 19
+} extraterrestrial biological entity
+Again? [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 15,
+  minAddLength: 19
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 16,
+  minAddLength: 18
+} extraterrestrial biological entity
+Again? [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 16,
+  minAddLength: 18
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 17,
+  minAddLength: 17
+} extraterrestrial biological entity
+Again? [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 17,
+  minAddLength: 17
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 18,
+  minAddLength: 16
+} extraterrestrial biological entity
+Again? [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 18,
+  minAddLength: 16
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 19,
+  minAddLength: 15
+} extraterrestrial biological entity
+Again? [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 19,
+  minAddLength: 15
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 20,
+  minAddLength: 14
+} extraterrestrial biological entity
+Again? [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 20,
+  minAddLength: 14
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 21,
+  minAddLength: 13
+} extraterrestrial biological entity
+Again? [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 21,
+  minAddLength: 13
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 22,
+  minAddLength: 12
+} extraterrestrial biological entity
+Again? [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 22,
+  minAddLength: 12
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 23,
+  minAddLength: 11
+} extraterrestrial biological entity
+Again? [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 23,
+  minAddLength: 11
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 24,
+  minAddLength: 10
+} extraterrestrial biological entity
+Again? [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 24,
+  minAddLength: 10
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 25,
+  minAddLength: 9
+} extraterrestrial biological entity
+Again? [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 25,
+  minAddLength: 9
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 26,
+  minAddLength: 8
+} extraterrestrial biological entity
+Again? [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 26,
+  minAddLength: 8
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 27,
+  minAddLength: 7
+} extraterrestrial biological entity
+Again? [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 27,
+  minAddLength: 7
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 28,
+  minAddLength: 6
+} extraterrestrial biological entity
+Again? [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 28,
+  minAddLength: 6
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 29,
+  minAddLength: 5
+} extraterrestrial biological entity
+Again? [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 29,
+  minAddLength: 5
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 30,
+  minAddLength: 4
+} extraterrestrial biological entity
+Again? [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 30,
+  minAddLength: 4
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 31,
+  minAddLength: 3
+} extraterrestrial biological entity
+Again? [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2457.ufo', 20 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 31,
+  minAddLength: 3
+}
+Running query set 7 of 8 with 16 queries...
+Again? [ [ '/home/cris/futzz/demo/data/ufo/94ufos.txt', 17 ] ] {}
+Again [ [ '/home/cris/futzz/demo/data/ufo/94ufos.txt', 17 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 1,
+  minAddLength: 4
+} mj 12
+Again? [ [ '/home/cris/futzz/demo/data/ufo/94ufos.txt', 17 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 1,
+  minAddLength: 4
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/94ufos.txt', 17 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 2,
+  minAddLength: 3
+} mj 12
+Again? [ [ '/home/cris/futzz/demo/data/ufo/94ufos.txt', 17 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 2,
+  minAddLength: 3
+}
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1207.ufo', 11 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ]
+] {}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1207.ufo', 11 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 2,
+  minAddLength: 3
+} noaa
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1207.ufo', 11 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 2,
+  minAddLength: 3
+}
+Again? [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1735.ufo', 73 ] ] {}
+Again [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1735.ufo', 73 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 1,
+  minAddLength: 3
+} flir
+Again? [ [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1735.ufo', 73 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 1,
+  minAddLength: 3
+}
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/3000/3254.ufo', 266 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2281.ufo', 252 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1850.ufo', 54 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1233.ufo', 7 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2573.ufo', 5 ]
+] {}
+Running query set 8 of 8 with 32 queries...
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/goodbook.ufo', 799 ],
+  [ '/home/cris/futzz/demo/data/ufo/informnt.ufo', 105 ]
+] {}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/goodbook.ufo', 799 ],
+  [ '/home/cris/futzz/demo/data/ufo/informnt.ufo', 105 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 2,
+  minAddLength: 10
+} majestic 12
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/goodbook.ufo', 799 ],
+  [ '/home/cris/futzz/demo/data/ufo/informnt.ufo', 105 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 2,
+  minAddLength: 10
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/goodbook.ufo', 799 ],
+  [ '/home/cris/futzz/demo/data/ufo/informnt.ufo', 105 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 4,
+  minAddLength: 9
+} majestic 12
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/goodbook.ufo', 799 ],
+  [ '/home/cris/futzz/demo/data/ufo/informnt.ufo', 105 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 4,
+  minAddLength: 9
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/goodbook.ufo', 799 ],
+  [ '/home/cris/futzz/demo/data/ufo/informnt.ufo', 105 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 6,
+  minAddLength: 8
+} majestic 12
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/goodbook.ufo', 799 ],
+  [ '/home/cris/futzz/demo/data/ufo/informnt.ufo', 105 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 6,
+  minAddLength: 8
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/goodbook.ufo', 799 ],
+  [ '/home/cris/futzz/demo/data/ufo/informnt.ufo', 105 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 8,
+  minAddLength: 7
+} majestic 12
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/goodbook.ufo', 799 ],
+  [ '/home/cris/futzz/demo/data/ufo/informnt.ufo', 105 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 8,
+  minAddLength: 7
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/goodbook.ufo', 799 ],
+  [ '/home/cris/futzz/demo/data/ufo/informnt.ufo', 105 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 10,
+  minAddLength: 6
+} majestic 12
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/goodbook.ufo', 799 ],
+  [ '/home/cris/futzz/demo/data/ufo/informnt.ufo', 105 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 10,
+  minAddLength: 6
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/goodbook.ufo', 799 ],
+  [ '/home/cris/futzz/demo/data/ufo/informnt.ufo', 105 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 12,
+  minAddLength: 5
+} majestic 12
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/goodbook.ufo', 799 ],
+  [ '/home/cris/futzz/demo/data/ufo/informnt.ufo', 105 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 12,
+  minAddLength: 5
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/goodbook.ufo', 799 ],
+  [ '/home/cris/futzz/demo/data/ufo/informnt.ufo', 105 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 14,
+  minAddLength: 4
+} majestic 12
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/goodbook.ufo', 799 ],
+  [ '/home/cris/futzz/demo/data/ufo/informnt.ufo', 105 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 14,
+  minAddLength: 4
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/goodbook.ufo', 799 ],
+  [ '/home/cris/futzz/demo/data/ufo/informnt.ufo', 105 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 16,
+  minAddLength: 3
+} majestic 12
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/goodbook.ufo', 799 ],
+  [ '/home/cris/futzz/demo/data/ufo/informnt.ufo', 105 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 16,
+  minAddLength: 3
+}
+Again? [ [ '/home/cris/futzz/demo/data/ufo/bluebuk5', 40 ] ] {}
+Again [ [ '/home/cris/futzz/demo/data/ufo/bluebuk5', 40 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 1,
+  minAddLength: 7
+} maryland
+Again? [ [ '/home/cris/futzz/demo/data/ufo/bluebuk5', 40 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 1,
+  minAddLength: 7
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/bluebuk5', 40 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 2,
+  minAddLength: 6
+} maryland
+Again? [ [ '/home/cris/futzz/demo/data/ufo/bluebuk5', 40 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 2,
+  minAddLength: 6
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/bluebuk5', 40 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 3,
+  minAddLength: 5
+} maryland
+Again? [ [ '/home/cris/futzz/demo/data/ufo/bluebuk5', 40 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 3,
+  minAddLength: 5
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/bluebuk5', 40 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 4,
+  minAddLength: 4
+} maryland
+Again? [ [ '/home/cris/futzz/demo/data/ufo/bluebuk5', 40 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 4,
+  minAddLength: 4
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/bluebuk5', 40 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 5,
+  minAddLength: 3
+} maryland
+Again? [ [ '/home/cris/futzz/demo/data/ufo/bluebuk5', 40 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 5,
+  minAddLength: 3
+}
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2566.ufo', 169 ],
+  [ '/home/cris/futzz/demo/data/ufo/area513.ufo', 98 ],
+  [ '/home/cris/futzz/demo/data/ufo/area514.ufo', 36 ]
+] {}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2566.ufo', 169 ],
+  [ '/home/cris/futzz/demo/data/ufo/area513.ufo', 98 ],
+  [ '/home/cris/futzz/demo/data/ufo/area514.ufo', 36 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 3,
+  minAddLength: 8
+} bob lazar
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2566.ufo', 169 ],
+  [ '/home/cris/futzz/demo/data/ufo/area513.ufo', 98 ],
+  [ '/home/cris/futzz/demo/data/ufo/area514.ufo', 36 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 3,
+  minAddLength: 8
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2566.ufo', 169 ],
+  [ '/home/cris/futzz/demo/data/ufo/area513.ufo', 98 ],
+  [ '/home/cris/futzz/demo/data/ufo/area514.ufo', 36 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 6,
+  minAddLength: 7
+} bob lazar
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2566.ufo', 169 ],
+  [ '/home/cris/futzz/demo/data/ufo/area513.ufo', 98 ],
+  [ '/home/cris/futzz/demo/data/ufo/area514.ufo', 36 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 6,
+  minAddLength: 7
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2566.ufo', 169 ],
+  [ '/home/cris/futzz/demo/data/ufo/area513.ufo', 98 ],
+  [ '/home/cris/futzz/demo/data/ufo/area514.ufo', 36 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 9,
+  minAddLength: 6
+} bob lazar
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2566.ufo', 169 ],
+  [ '/home/cris/futzz/demo/data/ufo/area513.ufo', 98 ],
+  [ '/home/cris/futzz/demo/data/ufo/area514.ufo', 36 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 9,
+  minAddLength: 6
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2566.ufo', 169 ],
+  [ '/home/cris/futzz/demo/data/ufo/area513.ufo', 98 ],
+  [ '/home/cris/futzz/demo/data/ufo/area514.ufo', 36 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 12,
+  minAddLength: 5
+} bob lazar
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2566.ufo', 169 ],
+  [ '/home/cris/futzz/demo/data/ufo/area513.ufo', 98 ],
+  [ '/home/cris/futzz/demo/data/ufo/area514.ufo', 36 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 12,
+  minAddLength: 5
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2566.ufo', 169 ],
+  [ '/home/cris/futzz/demo/data/ufo/area513.ufo', 98 ],
+  [ '/home/cris/futzz/demo/data/ufo/area514.ufo', 36 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 15,
+  minAddLength: 4
+} bob lazar
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2566.ufo', 169 ],
+  [ '/home/cris/futzz/demo/data/ufo/area513.ufo', 98 ],
+  [ '/home/cris/futzz/demo/data/ufo/area514.ufo', 36 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 15,
+  minAddLength: 4
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2566.ufo', 169 ],
+  [ '/home/cris/futzz/demo/data/ufo/area513.ufo', 98 ],
+  [ '/home/cris/futzz/demo/data/ufo/area514.ufo', 36 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 18,
+  minAddLength: 3
+} bob lazar
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2566.ufo', 169 ],
+  [ '/home/cris/futzz/demo/data/ufo/area513.ufo', 98 ],
+  [ '/home/cris/futzz/demo/data/ufo/area514.ufo', 36 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 18,
+  minAddLength: 3
+}
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1207.ufo', 11 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ]
+] {}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1207.ufo', 11 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 2,
+  minAddLength: 3
+} noaa
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1207.ufo', 11 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 2,
+  minAddLength: 3
+}
+Again? [ [ '/home/cris/futzz/demo/data/ufo/matrix.ufo', 53 ] ] {}
+Again [ [ '/home/cris/futzz/demo/data/ufo/matrix.ufo', 53 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 1,
+  minAddLength: 9
+} nellis afb
+Again? [ [ '/home/cris/futzz/demo/data/ufo/matrix.ufo', 53 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 1,
+  minAddLength: 9
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/matrix.ufo', 53 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 2,
+  minAddLength: 8
+} nellis afb
+Again? [ [ '/home/cris/futzz/demo/data/ufo/matrix.ufo', 53 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 2,
+  minAddLength: 8
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/matrix.ufo', 53 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 3,
+  minAddLength: 7
+} nellis afb
+Again? [ [ '/home/cris/futzz/demo/data/ufo/matrix.ufo', 53 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 3,
+  minAddLength: 7
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/matrix.ufo', 53 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 4,
+  minAddLength: 6
+} nellis afb
+Again? [ [ '/home/cris/futzz/demo/data/ufo/matrix.ufo', 53 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 4,
+  minAddLength: 6
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/matrix.ufo', 53 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 5,
+  minAddLength: 5
+} nellis afb
+Again? [ [ '/home/cris/futzz/demo/data/ufo/matrix.ufo', 53 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 5,
+  minAddLength: 5
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/matrix.ufo', 53 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 6,
+  minAddLength: 4
+} nellis afb
+Again? [ [ '/home/cris/futzz/demo/data/ufo/matrix.ufo', 53 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 6,
+  minAddLength: 4
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/matrix.ufo', 53 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 7,
+  minAddLength: 3
+} nellis afb
+Again? [ [ '/home/cris/futzz/demo/data/ufo/matrix.ufo', 53 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 7,
+  minAddLength: 3
+}
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/alear2.txt', 16 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ]
+] {}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/alear2.txt', 16 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 2,
+  minAddLength: 6
+} area 51
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/alear2.txt', 16 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 2,
+  minAddLength: 6
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/alear2.txt', 16 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 4,
+  minAddLength: 5
+} area 51
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/alear2.txt', 16 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 4,
+  minAddLength: 5
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/alear2.txt', 16 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 6,
+  minAddLength: 4
+} area 51
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/alear2.txt', 16 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 6,
+  minAddLength: 4
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/alear2.txt', 16 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 8,
+  minAddLength: 3
+} area 51
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/alear2.txt', 16 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 5 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 8,
+  minAddLength: 3
+}
+Again? [ [ '/home/cris/futzz/demo/data/ufo/alear1.txt', 32 ] ] {}
+Again [ [ '/home/cris/futzz/demo/data/ufo/alear1.txt', 32 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 1,
+  minAddLength: 9
+} new mexico
+Again? [ [ '/home/cris/futzz/demo/data/ufo/alear1.txt', 32 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 1,
+  minAddLength: 9
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/alear1.txt', 32 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 2,
+  minAddLength: 8
+} new mexico
+Again? [ [ '/home/cris/futzz/demo/data/ufo/alear1.txt', 32 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 2,
+  minAddLength: 8
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/alear1.txt', 32 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 3,
+  minAddLength: 7
+} new mexico
+Again? [ [ '/home/cris/futzz/demo/data/ufo/alear1.txt', 32 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 3,
+  minAddLength: 7
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/alear1.txt', 32 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 4,
+  minAddLength: 6
+} new mexico
+Again? [ [ '/home/cris/futzz/demo/data/ufo/alear1.txt', 32 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 4,
+  minAddLength: 6
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/alear1.txt', 32 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 5,
+  minAddLength: 5
+} new mexico
+Again? [ [ '/home/cris/futzz/demo/data/ufo/alear1.txt', 32 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 5,
+  minAddLength: 5
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/alear1.txt', 32 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 6,
+  minAddLength: 4
+} new mexico
+Again? [ [ '/home/cris/futzz/demo/data/ufo/alear1.txt', 32 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 6,
+  minAddLength: 4
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/alear1.txt', 32 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 7,
+  minAddLength: 3
+} new mexico
+Again? [ [ '/home/cris/futzz/demo/data/ufo/alear1.txt', 32 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 7,
+  minAddLength: 3
+}
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/3star.int', 35 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 18 ]
+] {}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/3star.int', 35 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 18 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 2,
+  minAddLength: 6
+} roswell
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/3star.int', 35 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 18 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 2,
+  minAddLength: 6
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/3star.int', 35 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 18 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 4,
+  minAddLength: 5
+} roswell
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/3star.int', 35 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 18 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 4,
+  minAddLength: 5
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/3star.int', 35 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 18 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 6,
+  minAddLength: 4
+} roswell
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/3star.int', 35 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 18 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 6,
+  minAddLength: 4
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/3star.int', 35 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 18 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 8,
+  minAddLength: 3
+} roswell
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/3star.int', 35 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2344.ufo', 18 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 8,
+  minAddLength: 3
+}
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/airspace.ufo', 44 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 42 ],
+  [ '/home/cris/futzz/demo/data/ufo/dsrat16.txt', 27 ]
+] {}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/airspace.ufo', 44 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 42 ],
+  [ '/home/cris/futzz/demo/data/ufo/dsrat16.txt', 27 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 3,
+  minAddLength: 7
+} new york
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/airspace.ufo', 44 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 42 ],
+  [ '/home/cris/futzz/demo/data/ufo/dsrat16.txt', 27 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 3,
+  minAddLength: 7
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/airspace.ufo', 44 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 42 ],
+  [ '/home/cris/futzz/demo/data/ufo/dsrat16.txt', 27 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 6,
+  minAddLength: 6
+} new york
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/airspace.ufo', 44 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 42 ],
+  [ '/home/cris/futzz/demo/data/ufo/dsrat16.txt', 27 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 6,
+  minAddLength: 6
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/airspace.ufo', 44 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 42 ],
+  [ '/home/cris/futzz/demo/data/ufo/dsrat16.txt', 27 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 9,
+  minAddLength: 5
+} new york
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/airspace.ufo', 44 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 42 ],
+  [ '/home/cris/futzz/demo/data/ufo/dsrat16.txt', 27 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 9,
+  minAddLength: 5
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/airspace.ufo', 44 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 42 ],
+  [ '/home/cris/futzz/demo/data/ufo/dsrat16.txt', 27 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 12,
+  minAddLength: 4
+} new york
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/airspace.ufo', 44 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 42 ],
+  [ '/home/cris/futzz/demo/data/ufo/dsrat16.txt', 27 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 12,
+  minAddLength: 4
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/airspace.ufo', 44 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 42 ],
+  [ '/home/cris/futzz/demo/data/ufo/dsrat16.txt', 27 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 15,
+  minAddLength: 3
+} new york
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/airspace.ufo', 44 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 42 ],
+  [ '/home/cris/futzz/demo/data/ufo/dsrat16.txt', 27 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 15,
+  minAddLength: 3
+}
+Again? [ [ '/home/cris/futzz/demo/data/ufo/aus_gov.txt', 99 ] ] {}
+Again [ [ '/home/cris/futzz/demo/data/ufo/aus_gov.txt', 99 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 1,
+  minAddLength: 8
+} australia
+Again? [ [ '/home/cris/futzz/demo/data/ufo/aus_gov.txt', 99 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 1,
+  minAddLength: 8
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/aus_gov.txt', 99 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 2,
+  minAddLength: 7
+} australia
+Again? [ [ '/home/cris/futzz/demo/data/ufo/aus_gov.txt', 99 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 2,
+  minAddLength: 7
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/aus_gov.txt', 99 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 3,
+  minAddLength: 6
+} australia
+Again? [ [ '/home/cris/futzz/demo/data/ufo/aus_gov.txt', 99 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 3,
+  minAddLength: 6
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/aus_gov.txt', 99 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 4,
+  minAddLength: 5
+} australia
+Again? [ [ '/home/cris/futzz/demo/data/ufo/aus_gov.txt', 99 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 4,
+  minAddLength: 5
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/aus_gov.txt', 99 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 5,
+  minAddLength: 4
+} australia
+Again? [ [ '/home/cris/futzz/demo/data/ufo/aus_gov.txt', 99 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 5,
+  minAddLength: 4
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/aus_gov.txt', 99 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 6,
+  minAddLength: 3
+} australia
+Again? [ [ '/home/cris/futzz/demo/data/ufo/aus_gov.txt', 99 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 6,
+  minAddLength: 3
+}
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/94ufos.txt', 22 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2049.ufo', 19 ],
+  [ '/home/cris/futzz/demo/data/ufo/portucatasc.ufo', 15 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1512.ufo', 15 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1507.ufo', 12 ]
+] {}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/94ufos.txt', 22 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2049.ufo', 19 ],
+  [ '/home/cris/futzz/demo/data/ufo/portucatasc.ufo', 15 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1512.ufo', 15 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1507.ufo', 12 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 5,
+  minAddLength: 10
+} russel targ
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/94ufos.txt', 22 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2049.ufo', 19 ],
+  [ '/home/cris/futzz/demo/data/ufo/portucatasc.ufo', 15 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1512.ufo', 15 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1507.ufo', 12 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 5,
+  minAddLength: 10
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/94ufos.txt', 22 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2049.ufo', 19 ],
+  [ '/home/cris/futzz/demo/data/ufo/portucatasc.ufo', 15 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1512.ufo', 15 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1507.ufo', 12 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 10,
+  minAddLength: 9
+} russel targ
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/94ufos.txt', 22 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2049.ufo', 19 ],
+  [ '/home/cris/futzz/demo/data/ufo/portucatasc.ufo', 15 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1512.ufo', 15 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1507.ufo', 12 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 10,
+  minAddLength: 9
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/94ufos.txt', 22 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2049.ufo', 19 ],
+  [ '/home/cris/futzz/demo/data/ufo/portucatasc.ufo', 15 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1512.ufo', 15 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1507.ufo', 12 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 15,
+  minAddLength: 8
+} russel targ
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/94ufos.txt', 22 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2049.ufo', 19 ],
+  [ '/home/cris/futzz/demo/data/ufo/portucatasc.ufo', 15 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1512.ufo', 15 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1507.ufo', 12 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 15,
+  minAddLength: 8
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/94ufos.txt', 22 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2049.ufo', 19 ],
+  [ '/home/cris/futzz/demo/data/ufo/portucatasc.ufo', 15 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1512.ufo', 15 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1507.ufo', 12 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 20,
+  minAddLength: 7
+} russel targ
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/94ufos.txt', 22 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2049.ufo', 19 ],
+  [ '/home/cris/futzz/demo/data/ufo/portucatasc.ufo', 15 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1512.ufo', 15 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1507.ufo', 12 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 20,
+  minAddLength: 7
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/94ufos.txt', 22 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2049.ufo', 19 ],
+  [ '/home/cris/futzz/demo/data/ufo/portucatasc.ufo', 15 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1512.ufo', 15 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1507.ufo', 12 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 25,
+  minAddLength: 6
+} russel targ
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/94ufos.txt', 22 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2049.ufo', 19 ],
+  [ '/home/cris/futzz/demo/data/ufo/portucatasc.ufo', 15 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1512.ufo', 15 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1507.ufo', 12 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 25,
+  minAddLength: 6
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/94ufos.txt', 22 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2049.ufo', 19 ],
+  [ '/home/cris/futzz/demo/data/ufo/portucatasc.ufo', 15 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1512.ufo', 15 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1507.ufo', 12 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 30,
+  minAddLength: 5
+} russel targ
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/94ufos.txt', 22 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2049.ufo', 19 ],
+  [ '/home/cris/futzz/demo/data/ufo/portucatasc.ufo', 15 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1512.ufo', 15 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1507.ufo', 12 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 30,
+  minAddLength: 5
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/94ufos.txt', 22 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2049.ufo', 19 ],
+  [ '/home/cris/futzz/demo/data/ufo/portucatasc.ufo', 15 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1512.ufo', 15 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1507.ufo', 12 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 35,
+  minAddLength: 4
+} russel targ
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/94ufos.txt', 22 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2049.ufo', 19 ],
+  [ '/home/cris/futzz/demo/data/ufo/portucatasc.ufo', 15 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1512.ufo', 15 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1507.ufo', 12 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 35,
+  minAddLength: 4
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/94ufos.txt', 22 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2049.ufo', 19 ],
+  [ '/home/cris/futzz/demo/data/ufo/portucatasc.ufo', 15 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1512.ufo', 15 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1507.ufo', 12 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 40,
+  minAddLength: 3
+} russel targ
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/94ufos.txt', 22 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2049.ufo', 19 ],
+  [ '/home/cris/futzz/demo/data/ufo/portucatasc.ufo', 15 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1512.ufo', 15 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1507.ufo', 12 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 40,
+  minAddLength: 3
+}
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2266.ufo', 173 ],
+  [ '/home/cris/futzz/demo/data/ufo/aus_gov.txt', 50 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 41 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1562.ufo', 17 ]
+] {}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2266.ufo', 173 ],
+  [ '/home/cris/futzz/demo/data/ufo/aus_gov.txt', 50 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 41 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1562.ufo', 17 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 4,
+  minAddLength: 17
+} pine gap australia
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2266.ufo', 173 ],
+  [ '/home/cris/futzz/demo/data/ufo/aus_gov.txt', 50 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 41 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1562.ufo', 17 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 4,
+  minAddLength: 17
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2266.ufo', 173 ],
+  [ '/home/cris/futzz/demo/data/ufo/aus_gov.txt', 50 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 41 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1562.ufo', 17 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 8,
+  minAddLength: 16
+} pine gap australia
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2266.ufo', 173 ],
+  [ '/home/cris/futzz/demo/data/ufo/aus_gov.txt', 50 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 41 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1562.ufo', 17 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 8,
+  minAddLength: 16
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2266.ufo', 173 ],
+  [ '/home/cris/futzz/demo/data/ufo/aus_gov.txt', 50 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 41 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1562.ufo', 17 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 12,
+  minAddLength: 15
+} pine gap australia
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2266.ufo', 173 ],
+  [ '/home/cris/futzz/demo/data/ufo/aus_gov.txt', 50 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 41 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1562.ufo', 17 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 12,
+  minAddLength: 15
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2266.ufo', 173 ],
+  [ '/home/cris/futzz/demo/data/ufo/aus_gov.txt', 50 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 41 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1562.ufo', 17 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 16,
+  minAddLength: 14
+} pine gap australia
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2266.ufo', 173 ],
+  [ '/home/cris/futzz/demo/data/ufo/aus_gov.txt', 50 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 41 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1562.ufo', 17 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 16,
+  minAddLength: 14
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2266.ufo', 173 ],
+  [ '/home/cris/futzz/demo/data/ufo/aus_gov.txt', 50 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 41 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1562.ufo', 17 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 20,
+  minAddLength: 13
+} pine gap australia
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2266.ufo', 173 ],
+  [ '/home/cris/futzz/demo/data/ufo/aus_gov.txt', 50 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 41 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1562.ufo', 17 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 20,
+  minAddLength: 13
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2266.ufo', 173 ],
+  [ '/home/cris/futzz/demo/data/ufo/aus_gov.txt', 50 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 41 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1562.ufo', 17 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 24,
+  minAddLength: 12
+} pine gap australia
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2266.ufo', 173 ],
+  [ '/home/cris/futzz/demo/data/ufo/aus_gov.txt', 50 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 41 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1562.ufo', 17 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 24,
+  minAddLength: 12
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2266.ufo', 173 ],
+  [ '/home/cris/futzz/demo/data/ufo/aus_gov.txt', 50 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 41 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1562.ufo', 17 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 28,
+  minAddLength: 11
+} pine gap australia
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2266.ufo', 173 ],
+  [ '/home/cris/futzz/demo/data/ufo/aus_gov.txt', 50 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 41 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1562.ufo', 17 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 28,
+  minAddLength: 11
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2266.ufo', 173 ],
+  [ '/home/cris/futzz/demo/data/ufo/aus_gov.txt', 50 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 41 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1562.ufo', 17 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 32,
+  minAddLength: 10
+} pine gap australia
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2266.ufo', 173 ],
+  [ '/home/cris/futzz/demo/data/ufo/aus_gov.txt', 50 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 41 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1562.ufo', 17 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 32,
+  minAddLength: 10
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2266.ufo', 173 ],
+  [ '/home/cris/futzz/demo/data/ufo/aus_gov.txt', 50 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 41 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1562.ufo', 17 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 36,
+  minAddLength: 9
+} pine gap australia
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2266.ufo', 173 ],
+  [ '/home/cris/futzz/demo/data/ufo/aus_gov.txt', 50 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 41 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1562.ufo', 17 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 36,
+  minAddLength: 9
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2266.ufo', 173 ],
+  [ '/home/cris/futzz/demo/data/ufo/aus_gov.txt', 50 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 41 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1562.ufo', 17 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 40,
+  minAddLength: 8
+} pine gap australia
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2266.ufo', 173 ],
+  [ '/home/cris/futzz/demo/data/ufo/aus_gov.txt', 50 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 41 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1562.ufo', 17 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 40,
+  minAddLength: 8
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2266.ufo', 173 ],
+  [ '/home/cris/futzz/demo/data/ufo/aus_gov.txt', 50 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 41 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1562.ufo', 17 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 44,
+  minAddLength: 7
+} pine gap australia
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2266.ufo', 173 ],
+  [ '/home/cris/futzz/demo/data/ufo/aus_gov.txt', 50 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 41 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1562.ufo', 17 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 44,
+  minAddLength: 7
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2266.ufo', 173 ],
+  [ '/home/cris/futzz/demo/data/ufo/aus_gov.txt', 50 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 41 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1562.ufo', 17 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 48,
+  minAddLength: 6
+} pine gap australia
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2266.ufo', 173 ],
+  [ '/home/cris/futzz/demo/data/ufo/aus_gov.txt', 50 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 41 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1562.ufo', 17 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 48,
+  minAddLength: 6
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2266.ufo', 173 ],
+  [ '/home/cris/futzz/demo/data/ufo/aus_gov.txt', 50 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 41 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1562.ufo', 17 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 52,
+  minAddLength: 5
+} pine gap australia
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2266.ufo', 173 ],
+  [ '/home/cris/futzz/demo/data/ufo/aus_gov.txt', 50 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 41 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1562.ufo', 17 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 52,
+  minAddLength: 5
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2266.ufo', 173 ],
+  [ '/home/cris/futzz/demo/data/ufo/aus_gov.txt', 50 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 41 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1562.ufo', 17 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 56,
+  minAddLength: 4
+} pine gap australia
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2266.ufo', 173 ],
+  [ '/home/cris/futzz/demo/data/ufo/aus_gov.txt', 50 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 41 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1562.ufo', 17 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 56,
+  minAddLength: 4
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2266.ufo', 173 ],
+  [ '/home/cris/futzz/demo/data/ufo/aus_gov.txt', 50 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 41 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1562.ufo', 17 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 60,
+  minAddLength: 3
+} pine gap australia
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/2000/2266.ufo', 173 ],
+  [ '/home/cris/futzz/demo/data/ufo/aus_gov.txt', 50 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 41 ],
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/1000/1562.ufo', 17 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 60,
+  minAddLength: 3
+}
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/0000/.descs', 110 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 44 ]
+] {}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/0000/.descs', 110 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 44 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 2,
+  minAddLength: 8
+} blue book
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/0000/.descs', 110 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 44 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 2,
+  minAddLength: 8
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/0000/.descs', 110 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 44 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 4,
+  minAddLength: 7
+} blue book
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/0000/.descs', 110 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 44 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 4,
+  minAddLength: 7
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/0000/.descs', 110 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 44 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 6,
+  minAddLength: 6
+} blue book
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/0000/.descs', 110 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 44 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 6,
+  minAddLength: 6
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/0000/.descs', 110 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 44 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 8,
+  minAddLength: 5
+} blue book
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/0000/.descs', 110 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 44 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 8,
+  minAddLength: 5
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/0000/.descs', 110 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 44 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 10,
+  minAddLength: 4
+} blue book
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/0000/.descs', 110 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 44 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 10,
+  minAddLength: 4
+}
+Again [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/0000/.descs', 110 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 44 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 12,
+  minAddLength: 3
+} blue book
+Again? [
+  [ '/home/cris/futzz/demo/data/ufo/UFOBBS/0000/.descs', 110 ],
+  [ '/home/cris/futzz/demo/data/ufo/airspace.txt', 44 ]
+] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 12,
+  minAddLength: 3
+}
+Again? [ [ '/home/cris/futzz/demo/data/ufo/fenwick', 8 ] ] {}
+Again [ [ '/home/cris/futzz/demo/data/ufo/fenwick', 8 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 1,
+  minAddLength: 10
+} yellow book
+Again? [ [ '/home/cris/futzz/demo/data/ufo/fenwick', 8 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 1,
+  minAddLength: 10
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/fenwick', 8 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 2,
+  minAddLength: 9
+} yellow book
+Again? [ [ '/home/cris/futzz/demo/data/ufo/fenwick', 8 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 2,
+  minAddLength: 9
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/fenwick', 8 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 3,
+  minAddLength: 8
+} yellow book
+Again? [ [ '/home/cris/futzz/demo/data/ufo/fenwick', 8 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 3,
+  minAddLength: 8
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/fenwick', 8 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 4,
+  minAddLength: 7
+} yellow book
+Again? [ [ '/home/cris/futzz/demo/data/ufo/fenwick', 8 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 4,
+  minAddLength: 7
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/fenwick', 8 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 5,
+  minAddLength: 6
+} yellow book
+Again? [ [ '/home/cris/futzz/demo/data/ufo/fenwick', 8 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 5,
+  minAddLength: 6
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/fenwick', 8 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 6,
+  minAddLength: 5
+} yellow book
+Again? [ [ '/home/cris/futzz/demo/data/ufo/fenwick', 8 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 6,
+  minAddLength: 5
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/fenwick', 8 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 7,
+  minAddLength: 4
+} yellow book
+Again? [ [ '/home/cris/futzz/demo/data/ufo/fenwick', 8 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 7,
+  minAddLength: 4
+}
+Again [ [ '/home/cris/futzz/demo/data/ufo/fenwick', 8 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 8,
+  minAddLength: 3
+} yellow book
+Again? [ [ '/home/cris/futzz/demo/data/ufo/fenwick', 8 ] ] {
+  addAllAsFactors: true,
+  runStart: true,
+  resultsLength: 8,
+  minAddLength: 3
+}
+{
+  "precision": [
+    99.48453608247422,
+    33.33333333333333,
+    24.444444444444443,
+    75,
+    66.66666666666666,
+    80,
+    90,
+    15.384615384615385,
+    8.695652173913043,
+    75,
+    98.4126984126984,
+    16.666666666666664,
+    50,
+    98.48484848484848,
+    5.128205128205128,
+    90,
+    83.33333333333334,
+    7.6923076923076925,
+    20,
+    14.903846153846153,
+    50,
+    98.4126984126984,
+    80,
+    80,
+    75,
+    75,
+    50,
+    99.75369458128078,
+    96.66666666666667,
+    10.526315789473683,
+    5.88235294117647,
+    12.5,
+    45.45454545454545,
+    14.285714285714285,
+    97.2972972972973,
+    50,
+    4.166666666666666,
+    50,
+    66.66666666666666,
+    88.88888888888889,
+    94.11764705882352,
+    96,
+    94.73684210526315,
+    96.96969696969697,
+    96.42857142857143,
+    99.48453608247422,
+    50,
+    92.85714285714286,
+    96.42857142857143,
+    83.33333333333334,
+    94.44444444444444,
+    90.9090909090909,
+    96.66666666666667,
+    66.66666666666666,
+    50,
+    75,
+    88.88888888888889,
+    94.44444444444444,
+    97.72727272727273,
+    94.11764705882352,
+    96,
+    66.66666666666666,
+    96.7741935483871,
+    50,
+    66.66666666666666,
+    96.875,
+    9.090909090909092,
+    50,
+    66.66666666666666,
+    75,
+    50,
+    8,
+    96.96969696969697,
+    96.7741935483871,
+    5.454545454545454,
+    14.285714285714285,
+    7.142857142857142,
+    6.25,
+    25,
+    85.71428571428571,
+    20,
+    66.66666666666666,
+    50
+  ],
+  "recall": [
+    6.831858407079645,
+    7.4074074074074066,
+    5.851063829787234,
+    1.1627906976744187,
+    0.7604562737642585,
+    2.072538860103627,
+    14.0625,
+    7.8431372549019605,
+    14.285714285714285,
+    2.727272727272727,
+    22.142857142857142,
+    28.57142857142857,
+    2.564102564102564,
+    39.63414634146341,
+    9.090909090909092,
+    2.6785714285714284,
+    9.25925925925926,
+    2.631578947368421,
+    8.571428571428571,
+    12.863070539419086,
+    0.7194244604316548,
+    22.142857142857142,
+    1.092896174863388,
+    2.5974025974025974,
+    1.3274336283185841,
+    60,
+    1.1764705882352942,
+    65.4281098546042,
+    1.0182584269662922,
+    15.384615384615385,
+    5,
+    10,
+    10,
+    50,
+    37.11340206185567,
+    8.333333333333332,
+    50,
+    0.2777777777777778,
+    40,
+    1.8140589569160999,
+    0.8653326122228232,
+    3.319502074688797,
+    1.1620400258231116,
+    2.205375603032391,
+    2.1209740769835035,
+    6.831858407079645,
+    12.5,
+    1.7543859649122806,
+    1.8404907975460123,
+    16.129032258064516,
+    1.0143198090692125,
+    9.523809523809524,
+    1.0182584269662922,
+    1.639344262295082,
+    0.6578947368421052,
+    4.761904761904762,
+    1.8140589569160999,
+    22.666666666666664,
+    39.44954128440367,
+    0.8653326122228232,
+    3.319502074688797,
+    40,
+    52.63157894736842,
+    2.631578947368421,
+    1.0362694300518136,
+    43.66197183098591,
+    4.285714285714286,
+    0.2590673575129534,
+    0.6172839506172839,
+    0.684931506849315,
+    0.53475935828877,
+    36.36363636363637,
+    35.55555555555556,
+    62.5,
+    75,
+    50,
+    50,
+    50,
+    50,
+    25,
+    66.66666666666666,
+    0.641025641025641,
+    3.0303030303030303
+  ],
+  "groups": [
+    {
+      "name": "!unrelated_terms",
+      "AvgPrecision": "43.9001",
+      "AvgRecall": "21.2611",
+      "Record": [
+        [
+          "halloween party",
+          0,
+          0
+        ],
+        [
+          "the germanic people",
+          0,
+          0
+        ],
+        [
+          "won an emmy",
+          4.444444444444445,
+          50
+        ],
+        [
+          "Tom Hanks",
+          15.384615384615385,
+          14.285714285714285
+        ],
+        [
+          "skyline",
+          83.33333333333334,
+          31.25
+        ],
+        [
+          "native americans",
+          0,
+          0
+        ],
+        [
+          "time apocalypse",
+          0,
+          0
+        ],
+        [
+          "time before time",
+          78.57142857142857,
+          4.602510460251046
+        ],
+        [
+          "time after death",
+          0,
+          0
+        ],
+        [
+          "universal law",
+          6.666666666666667,
+          21.428571428571427
+        ],
+        [
+          "cannon",
+          75,
+          6
+        ]
+      ]
+    },
+    {
+      "name": "_concepts",
+      "AvgPrecision": "10.4217",
+      "AvgRecall": "17.8213",
+      "Record": [
+        [
+          "john f kennedy",
+          "the assassinated american president",
+          0,
+          0
+        ],
+        [
+          "john f kennedy",
+          "the grassy knoll sniper shot",
+          0,
+          0
+        ],
+        [
+          "nasa shuttle",
+          "reusable space vehicle system",
+          2.272727272727273,
+          50
+        ],
+        [
+          "uri gagarin",
+          "first human in space",
+          10.714285714285714,
+          15.789473684210526
+        ],
+        [
+          "luna",
+          "another name for the moon",
+          0,
+          0
+        ],
+        [
+          "cia",
+          "spooks and spycraft",
+          25,
+          11.76470588235294
+        ],
+        [
+          "nsa",
+          "signals and geeks",
+          8.88888888888889,
+          16
+        ],
+        [
+          "dia",
+          "planners and pen pushers",
+          8.47457627118644,
+          26.31578947368421
+        ],
+        [
+          "oni",
+          "the no hat office",
+          15,
+          21.428571428571427
+        ],
+        [
+          "osi",
+          "project paperclip ahahaha",
+          17.391304347826086,
+          12.121212121212121
+        ],
+        [
+          "deviant",
+          "all spies",
+          0,
+          0
+        ],
+        [
+          "the adversary",
+          "an AI that seeks to take over the galaxy or the universe",
+          1.6129032258064515,
+          14.285714285714285
+        ],
+        [
+          "reptilian",
+          "the secret rules of the planet",
+          0,
+          0
+        ],
+        [
+          "alien-human hybrid",
+          "the real purpose of aliens and the alien agenda",
+          2.857142857142857,
+          5.88235294117647
+        ],
+        [
+          "roswell crash",
+          "us government alien coverup",
+          0,
+          0
+        ],
+        [
+          "anunaki",
+          "original creators of the human race",
+          26.31578947368421,
+          25.862068965517242
+        ],
+        [
+          "president einsenhower",
+          "the creator of majestic 12",
+          11.11111111111111,
+          3.571428571428571
+        ],
+        [
+          "president roosevelt",
+          "teddy president",
+          9.67741935483871,
+          6
+        ],
+        [
+          "marilyn monroe",
+          "famous person who was an alien",
+          0,
+          0
+        ],
+        [
+          "valiant thor",
+          "alien who worked for us government",
+          0,
+          0
+        ],
+        [
+          "area 51",
+          "us military installation housing aliens and crashed disc debris",
+          1.5873015873015872,
+          33.33333333333333
+        ],
+        [
+          "money and trade",
+          "why is there secrecy around aliens",
+          5,
+          7.142857142857142
+        ]
+      ]
+    },
+    {
+      "name": "general_terms",
+      "AvgPrecision": "57.2217",
+      "AvgRecall": "12.1581",
+      "Record": [
+        [
+          "UFO",
+          99.48453608247422,
+          6.831858407079645
+        ],
+        [
+          "antigravity",
+          33.33333333333333,
+          7.4074074074074066
+        ],
+        [
+          "disc craft",
+          24.444444444444443,
+          5.851063829787234
+        ],
+        [
+          "spaceship",
+          75,
+          1.1627906976744187
+        ],
+        [
+          "satellite",
+          66.66666666666666,
+          0.7604562737642585
+        ],
+        [
+          "alien beings",
+          80,
+          2.072538860103627
+        ],
+        [
+          "grey alien",
+          90,
+          14.0625
+        ],
+        [
+          "tall white",
+          15.384615384615385,
+          7.8431372549019605
+        ],
+        [
+          "nordic alien",
+          8.695652173913043,
+          14.285714285714285
+        ],
+        [
+          "alien race",
+          75,
+          2.727272727272727
+        ],
+        [
+          "alien abduction",
+          98.4126984126984,
+          22.142857142857142
+        ],
+        [
+          "insectoid",
+          16.666666666666664,
+          28.57142857142857
+        ],
+        [
+          "reptilian",
+          50,
+          2.564102564102564
+        ],
+        [
+          "underground base",
+          98.48484848484848,
+          39.63414634146341
+        ],
+        [
+          "radar data",
+          5.128205128205128,
+          9.090909090909092
+        ],
+        [
+          "ufo crash",
+          90,
+          2.6785714285714284
+        ],
+        [
+          "crashed disc",
+          83.33333333333334,
+          9.25925925925926
+        ],
+        [
+          "photograph of alien",
+          7.6923076923076925,
+          2.631578947368421
+        ],
+        [
+          "video of alien",
+          20,
+          8.571428571428571
+        ],
+        [
+          "photograph of ufo",
+          14.903846153846153,
+          12.863070539419086
+        ],
+        [
+          "video of ufo",
+          50,
+          0.7194244604316548
+        ],
+        [
+          "alien abduction",
+          98.4126984126984,
+          22.142857142857142
+        ],
+        [
+          "abductee",
+          80,
+          1.092896174863388
+        ],
+        [
+          "contactee",
+          80,
+          2.5974025974025974
+        ],
+        [
+          "psychic",
+          75,
+          1.3274336283185841
+        ],
+        [
+          "remote viewer",
+          75,
+          60
+        ],
+        [
+          "telepathy",
+          50,
+          1.1764705882352942
+        ],
+        [
+          "extraterrestrial",
+          99.75369458128078,
+          65.4281098546042
+        ],
+        [
+          "ET",
+          96.66666666666667,
+          1.0182584269662922
+        ],
+        [
+          "age regression",
+          10.526315789473683,
+          15.384615384615385
+        ],
+        [
+          "alien-human hybrid",
+          5.88235294117647,
+          5
+        ]
+      ]
+    },
+    {
+      "name": "long_terms",
+      "AvgPrecision": "37.2840",
+      "AvgRecall": "27.5745",
+      "Record": [
+        [
+          "special access program",
+          12.5,
+          10
+        ],
+        [
+          "the office of the president",
+          45.45454545454545,
+          10
+        ],
+        [
+          "stanford research institute",
+          14.285714285714285,
+          50
+        ],
+        [
+          "department of defense",
+          97.2972972972973,
+          37.11340206185567
+        ],
+        [
+          "alien genetic program",
+          0,
+          0
+        ],
+        [
+          "extraterrestrial biological entity",
+          50,
+          8.333333333333332
+        ],
+        [
+          "unacknowledged program",
+          4.166666666666666,
+          50
+        ],
+        [
+          "project center lane",
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "short_terms",
+      "AvgPrecision": "86.7458",
+      "AvgRecall": "6.3986",
+      "Record": [
+        [
+          "mj-12",
+          50,
+          0.2777777777777778
+        ],
+        [
+          "noaa",
+          66.66666666666666,
+          40
+        ],
+        [
+          "nasa",
+          88.88888888888889,
+          1.8140589569160999
+        ],
+        [
+          "cia",
+          94.11764705882352,
+          0.8653326122228232
+        ],
+        [
+          "nsa",
+          96,
+          3.319502074688797
+        ],
+        [
+          "dia",
+          94.73684210526315,
+          1.1620400258231116
+        ],
+        [
+          "osi",
+          96.96969696969697,
+          2.205375603032391
+        ],
+        [
+          "oni",
+          96.42857142857143,
+          2.1209740769835035
+        ],
+        [
+          "ufo",
+          99.48453608247422,
+          6.831858407079645
+        ],
+        [
+          "flir",
+          50,
+          12.5
+        ],
+        [
+          "sap",
+          92.85714285714286,
+          1.7543859649122806
+        ],
+        [
+          "sci",
+          96.42857142857143,
+          1.8404907975460123
+        ],
+        [
+          "sri",
+          83.33333333333334,
+          16.129032258064516
+        ],
+        [
+          "sai",
+          94.44444444444444,
+          1.0143198090692125
+        ],
+        [
+          "dod",
+          90.9090909090909,
+          9.523809523809524
+        ],
+        [
+          "ET",
+          96.66666666666667,
+          1.0182584269662922
+        ]
+      ]
+    },
+    {
+      "name": "specifc_entities",
+      "AvgPrecision": "59.0948",
+      "AvgRecall": "24.2092",
+      "Record": [
+        [
+          "majestic 12",
+          66.66666666666666,
+          1.639344262295082
+        ],
+        [
+          "maryland",
+          50,
+          0.6578947368421052
+        ],
+        [
+          "bob lazar",
+          75,
+          4.761904761904762
+        ],
+        [
+          "NASA",
+          88.88888888888889,
+          1.8140589569160999
+        ],
+        [
+          "Central Intelligence Agency",
+          94.44444444444444,
+          22.666666666666664
+        ],
+        [
+          "National Security Agency",
+          97.72727272727273,
+          39.44954128440367
+        ],
+        [
+          "CIA",
+          94.11764705882352,
+          0.8653326122228232
+        ],
+        [
+          "NSA",
+          96,
+          3.319502074688797
+        ],
+        [
+          "NOAA",
+          66.66666666666666,
+          40
+        ],
+        [
+          "Denver, Colorado",
+          96.7741935483871,
+          52.63157894736842
+        ],
+        [
+          "Nellis AFB",
+          50,
+          2.631578947368421
+        ],
+        [
+          "Area 51",
+          66.66666666666666,
+          1.0362694300518136
+        ],
+        [
+          "Nevada Test Site",
+          96.875,
+          43.66197183098591
+        ],
+        [
+          "Groom Lake, Nevada",
+          9.090909090909092,
+          4.285714285714286
+        ],
+        [
+          "New Mexico",
+          50,
+          0.2590673575129534
+        ],
+        [
+          "Roswell",
+          66.66666666666666,
+          0.6172839506172839
+        ],
+        [
+          "New York",
+          75,
+          0.684931506849315
+        ],
+        [
+          "Australia",
+          50,
+          0.53475935828877
+        ],
+        [
+          "president roosevelt",
+          8,
+          36.36363636363637
+        ],
+        [
+          "president eisenhower",
+          96.96969696969697,
+          35.55555555555556
+        ],
+        [
+          "president kennedy",
+          96.7741935483871,
+          62.5
+        ],
+        [
+          "hal puthoff",
+          5.454545454545454,
+          75
+        ],
+        [
+          "stanford research institute",
+          14.285714285714285,
+          50
+        ],
+        [
+          "science applications international",
+          7.142857142857142,
+          50
+        ],
+        [
+          "lockheed skunkworks",
+          6.25,
+          50
+        ],
+        [
+          "skunkworks",
+          25,
+          50
+        ],
+        [
+          "general electric",
+          85.71428571428571,
+          25
+        ],
+        [
+          "raytheon",
+          20,
+          66.66666666666666
+        ],
+        [
+          "blue book",
+          66.66666666666666,
+          0.641025641025641
+        ],
+        [
+          "yellow book",
+          50,
+          3.0303030303030303
+        ]
+      ]
+    }
+  ],
+  "avgPrecision": "62.15",
+  "medianPrecision": "75.00",
+  "modePrecision": "50",
+  "avgRecall": "16.52",
+  "medianRecall": "22.14",
+  "modeRecall": "1",
+  "score": "78.67"
+}
