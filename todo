@@ -1,4 +1,10 @@
-- Get AAFI to work on best sets it seems to fail on our old "nasa shuttle" 
+- make query better
+  - one thing I notice is even we use AAFI to get more factors for "nasa shuttle"
+  the facotrs I get are like prefixes ("nasa shuttle", "nasa sh") etc 
+  - what i want is to also get 
+  "a shuttle", "shuttle" etc
+  - I don't want to rely on "split the query at whitespace (tho that could be a useful hack)
+  - But I want to get More data out of the query
 - name, doc name is currently a number, which becomes a text key in the JSON
 let's convert the number to its base36 rep as its a string anyway. saves a few bytes
 - Investigate around our best prec (param space) to see if we can increase rec and keep cost low.

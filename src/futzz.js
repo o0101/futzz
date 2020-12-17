@@ -118,7 +118,7 @@ export const State = {
       factors.push(...Factors);
     }
 
-    console.log(JSON.stringfiy({factors,Factors,mainFactor},null,2));
+    console.log(JSON.stringify({factors,Factors,mainFactor},null,2));
 
     if ( MAIN_FACTOR && mainFactor ) {
       factors.push(mainFactor);
