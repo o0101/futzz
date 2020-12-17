@@ -118,7 +118,7 @@ export const State = {
       factors.push(...Factors);
     }
 
-    console.log(JSON.stringify({factors,Factors,mainFactor},null,2));
+    //console.log(JSON.stringify({factors,Factors,mainFactor},null,2));
 
     if ( MAIN_FACTOR && mainFactor ) {
       factors.push(mainFactor);
@@ -164,7 +164,7 @@ export const State = {
 
     if ( right_answers.length ) {
       if ( results.length ) {
-        console.log(JSON.stringify({words, results}, null, 2));
+        //console.log(JSON.stringify({words, results}, null, 2));
 
         let Sum;
         const recall = results.reduce(
@@ -174,9 +174,9 @@ export const State = {
         const precision = Sum/results.length;
 
         score = recall + precision;
-        console.log({score: recall + precision});
+        //console.log({score: recall + precision});
 
-        console.log('');
+        //console.log('');
       }
       
       return score;
@@ -187,7 +187,7 @@ export const State = {
         (opts.runStart && opts.resultsLength < AAFI_THRESH_LENGTH) 
     )) {
       const newOpts = JSON.parse(JSON.stringify(opts));
-      console.log("Again?", results, newOpts);
+      //console.log("Again?", results, newOpts);
       newOpts.addAllAsFactors = true;
       newOpts.runStart = true;
       newOpts.resultsLength = (newOpts.resultsLength || 0) + results.length;
@@ -197,7 +197,7 @@ export const State = {
         newOpts.minAddLength--;
       }
       if ( newOpts.minAddLength >= MINIMA_O_ADD_LENGTH ) {
-        console.log("Again", results, newOpts, oWords);
+        //console.log("Again", results, newOpts, oWords);
         const {results:Results, factors: Factors} = query(oWords, right_answers, newOpts);
         results.push(...Results);
         if ( Factors ) {
