@@ -11,6 +11,13 @@
   - So "nasa " leaves "shuttle" and "nasa sh" leaves "uttle", and we run that again.
   - BRTILLIANT! 
 - implement "refactor" make query better
+  - after testing around param space of best (83/1 ~ 75/57)
+  - i notice that things that seem to increase rec (and decrease prec)
+  - are the same things that are similar to what i plan to do with query refactoring
+  - extend: true, changes query factor lengths and alignment
+  - add all as factors: true, changes query factor lengths and alignment
+  - the big next question is, will refactored query technique be a better way to do this
+  so that we can increase rec without decreasing prec (and possibly even increasing prec as well)?
 
 - name, doc name is currently a number, which becomes a text key in the JSON
 let's convert the number to its base36 rep as its a string anyway. saves a few bytes
