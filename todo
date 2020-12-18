@@ -30,8 +30,13 @@
   - idea:
     - make the above idea simpler, and more fundamental (less parameters), less odd stuff like
     "continue doing until results set long enough"
-
-    
+  - idea:
+    - simpler version:
+    - lz can be run with a parameter, "breakFirstFactor" and the first factor will not be the longest
+    factor in the dict, but a shorter one
+    - lz can be run with a parameter, "factorPercent", and all factors will be that 
+    percent of their maximum length
+    - there could be other workable ways to select factors, but for now these will do
 
 
 - name, doc name is currently a number, which becomes a text key in the JSON
