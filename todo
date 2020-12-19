@@ -37,6 +37,10 @@
     - lz can be run with a parameter, "factorPercent", and all factors will be that 
     percent of their maximum length
     - there could be other workable ways to select factors, but for now these will do
+  - idea:
+    - even simler:
+    - lz can have a parameter (maxFactorLength) and all factors are below that
+    - we first set it to the length of the longest factor in the query - 1
 
 
 - name, doc name is currently a number, which becomes a text key in the JSON
