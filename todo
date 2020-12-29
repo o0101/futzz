@@ -1,3 +1,10 @@
+- make a tool, a separate file, program, to investigate nature of dictionary (frequency, etc)
+  - investigate difference in dict between a high prec (best 83/ etc), and a high recall (high score) one. What's the diff, maybe we can find ways to increase rec and keep prec that are inexpensive.
+  - find useless entries that we can prune
+  - limit number of entries in dict?
+  - limit entries added per indexed document?
+  - what if we trim dictionary entries of surrounding whitespace, and also trim the word when we check for it. It might save some space as well as some time?
+
 - refactor
   - make query better
     - one thing I notice is even we use AAFI to get more factors for "nasa shuttle"
@@ -47,12 +54,6 @@
 let's convert the number to its base36 rep as its a string anyway. saves a few bytes
 - Investigate around our best prec (param space) to see if we can increase rec and keep cost low.
 
-- make a tool, a separate file, program, to investigate nature of dictionary (frequency, etc)
-  - investigate difference in dict between a high prec (best 83/ etc), and a high recall (high score) one. What's the diff, maybe we can find ways to increase rec and keep prec that are inexpensive.
-  - find useless entries that we can prune
-  - limit number of entries in dict?
-  - limit entries added per indexed document?
-  - what if we trim dictionary entries of surrounding whitespace, and also trim the word when we check for it. It might save some space as well as some time?
 - add option to use on disk dictionary (sirdb)
 - add .save (to save dictionary to disk) to Q&A mode
 - evaluate out of memory (range error) condition using bigmap (which shouldn't happen)
