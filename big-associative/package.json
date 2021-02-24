@@ -1,0 +1,63 @@
+{
+  "_from": "big-associative",
+  "_id": "big-associative@0.0.1",
+  "_inBundle": false,
+  "_integrity": "sha512-t5wId+noQnfV1lu/xBL0lQDrtUufRCOkUUgq26QrINQGwqWPzem9G39olSKihxbung3yhQeDlyE8o2c/0GJWoQ==",
+  "_location": "/big-associative",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "big-associative",
+    "name": "big-associative",
+    "escapedName": "big-associative",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/big-associative/-/big-associative-0.0.1.tgz",
+  "_shasum": "9528797ff77891d17700e88fd66b9d06e7736541",
+  "_spec": "big-associative",
+  "_where": "/home/cris/futzz/src",
+  "author": {
+    "name": "Jeongho Nam"
+  },
+  "bugs": {
+    "url": "https://github.com/samchon/big-associative/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "Big associative containers who can store over 16M elements",
+  "devDependencies": {
+    "@types/node": "^14.14.2",
+    "source-map-support": "^0.5.19",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.3"
+  },
+  "homepage": "https://github.com/samchon/big-associative",
+  "keywords": [
+    "bigmap",
+    "bigset",
+    "bigweakmap",
+    "bigweakset"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "name": "big-associative",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samchon/big-associative.git"
+  },
+  "scripts": {
+    "build": "rm -rf lib && tsc",
+    "dev": "rm -rf lib && tsc --watch",
+    "test": "node lib/test",
+    "test:ts": "ts-node src/test"
+  },
+  "typings": "lib/index.d.ts",
+  "version": "0.0.1"
+}
