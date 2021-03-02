@@ -1,87 +1,94 @@
-- make a tool, a separate file, program, to investigate nature of dictionary (frequency, etc)
-  - investigate difference in dict between a high prec (best 83/ etc), and a high recall (high score) one. What's the diff, maybe we can find ways to increase rec and keep prec that are inexpensive.
-  - find useless entries that we can prune
-  - limit number of entries in dict?
-  - limit entries added per indexed document?
-  - what if we trim dictionary entries of surrounding whitespace, and also trim the word when we check for it. It might save some space as well as some time?
-
-- refactor
-  - make query better
-    - one thing I notice is even we use AAFI to get more factors for "nasa shuttle"
-    the facotrs I get are like prefixes ("nasa shuttle", "nasa sh") etc 
-    - what i want is to also get 
-    "a shuttle", "shuttle" etc
-    - I don't want to rely on "split the query at whitespace (tho that could be a useful hack)
-    - But I want to get More data out of the query
-    - I GOT IT!
-    - Every time we get a "AAFI" factor like "nasa ", or "nasa sh" we automatically "create"
-    the "complement factor" by cutting the given factors from the query
-    - So "nasa " leaves "shuttle" and "nasa sh" leaves "uttle", and we run that again.
-    - BRTILLIANT! 
-  - implement "refactor" make query better
-    - after testing around param space of best (83/1 ~ 75/57)
-    - i notice that things that seem to increase rec (and decrease prec)
-    - are the same things that are similar to what i plan to do with query refactoring
-    - extend: true, changes query factor lengths and alignment
-    - add all as factors: true, changes query factor lengths and alignment
-    - the big next question is, will refactored query technique be a better way to do this
-    so that we can increase rec without decreasing prec (and possibly even increasing prec as well)?
-  - idea:
-    - when factoring with maxFirstLen
-    - break on maxFirstLen for the first factor
-    - for i in minFirstLen..maxFirstLen each i will give us (probably) a different set of factors
-    - run i from Math.max(minFirstLen, factor1.length-startOffset) backwards to minFirstLen
-    to produce a set of factorizations startOffset could be 1 or more, and determines the 
-    minimum length of suffix to omit from the first factor to change the alignment
-    - then add these factors to a set and build result set from these until we have enough results
-  - idea:
-    - make the above idea simpler, and more fundamental (less parameters), less odd stuff like
-    "continue doing until results set long enough"
-  - idea:
-    - simpler version:
-    - lz can be run with a parameter, "breakFirstFactor" and the first factor will not be the longest
-    factor in the dict, but a shorter one
-    - lz can be run with a parameter, "factorPercent", and all factors will be that 
-    percent of their maximum length
-    - there could be other workable ways to select factors, but for now these will do
-  - idea:
-    - even simler:
-    - lz can have a parameter (maxFactorLength) and all factors are below that
-    - we first set it to the length of the longest factor in the query - 1
+[ new things ]
+  - swap hash map for radix trie to save space
+  - filter low idf tokens
+  - try bm25 for score
 
 
-- name, doc name is currently a number, which becomes a text key in the JSON
-let's convert the number to its base36 rep as its a string anyway. saves a few bytes
-- Investigate around our best prec (param space) to see if we can increase rec and keep cost low.
+[ old things ]
+  - make a tool, a separate file, program, to investigate nature of dictionary (frequency, etc)
+    - investigate difference in dict between a high prec (best 83/ etc), and a high recall (high score) one. What's the diff, maybe we can find ways to increase rec and keep prec that are inexpensive.
+    - find useless entries that we can prune
+    - limit number of entries in dict?
+    - limit entries added per indexed document?
+    - what if we trim dictionary entries of surrounding whitespace, and also trim the word when we check for it. It might save some space as well as some time?
 
-- add option to use on disk dictionary (sirdb)
-- add .save (to save dictionary to disk) to Q&A mode
-- evaluate out of memory (range error) condition using bigmap (which shouldn't happen)
-  - try to double add (via some random "code id" now that we have removed code id)
-  - limit max old space size and try to recreate the out of memory condition
-  - then increase max old space size and see if we can remove the out of memory condition
-  - also add debug line to bigmap code (done!) that shows the condition of the child dictionary when the set fails
-- remove all old code
-- purge and prune dictionary to get it as small as possible while maintaining results
-- make each count/score object a typed array?
+  - refactor
+    - make query better
+      - one thing I notice is even we use AAFI to get more factors for "nasa shuttle"
+      the facotrs I get are like prefixes ("nasa shuttle", "nasa sh") etc 
+      - what i want is to also get 
+      "a shuttle", "shuttle" etc
+      - I don't want to rely on "split the query at whitespace (tho that could be a useful hack)
+      - But I want to get More data out of the query
+      - I GOT IT!
+      - Every time we get a "AAFI" factor like "nasa ", or "nasa sh" we automatically "create"
+      the "complement factor" by cutting the given factors from the query
+      - So "nasa " leaves "shuttle" and "nasa sh" leaves "uttle", and we run that again.
+      - BRTILLIANT! 
+    - implement "refactor" make query better
+      - after testing around param space of best (83/1 ~ 75/57)
+      - i notice that things that seem to increase rec (and decrease prec)
+      - are the same things that are similar to what i plan to do with query refactoring
+      - extend: true, changes query factor lengths and alignment
+      - add all as factors: true, changes query factor lengths and alignment
+      - the big next question is, will refactored query technique be a better way to do this
+      so that we can increase rec without decreasing prec (and possibly even increasing prec as well)?
+    - idea:
+      - when factoring with maxFirstLen
+      - break on maxFirstLen for the first factor
+      - for i in minFirstLen..maxFirstLen each i will give us (probably) a different set of factors
+      - run i from Math.max(minFirstLen, factor1.length-startOffset) backwards to minFirstLen
+      to produce a set of factorizations startOffset could be 1 or more, and determines the 
+      minimum length of suffix to omit from the first factor to change the alignment
+      - then add these factors to a set and build result set from these until we have enough results
+    - idea:
+      - make the above idea simpler, and more fundamental (less parameters), less odd stuff like
+      "continue doing until results set long enough"
+    - idea:
+      - simpler version:
+      - lz can be run with a parameter, "breakFirstFactor" and the first factor will not be the longest
+      factor in the dict, but a shorter one
+      - lz can be run with a parameter, "factorPercent", and all factors will be that 
+      percent of their maximum length
+      - there could be other workable ways to select factors, but for now these will do
+    - idea:
+      - even simler:
+      - lz can have a parameter (maxFactorLength) and all factors are below that
+      - we first set it to the length of the longest factor in the query - 1
 
-// mid
-  - make chunks dependent on byte size rather than value length 
-  (and stay under 2gb per file limit)
-  - then go forward and using what we have try to prune more aggressively and on a metric like score, or something, to create even more improvements
-  - snippets are important to evaluate the document
-  - multicore indexing (if available), which would be split across a list of documents and merge, complexity from having a shared dictionary, IPC comms?
 
-// old
-  - don't pre-emptively optimise, keep the algorithm loose and open before it's thoroughly tested
-  - add spanish
-  - things we can try to improve performance:
-    - the usual parameters, cover, stopping condition, score calculation,1
-    - add new things like tf-idf for factors, cosine similarity (on what I don't yet know), boosting doc in (doc, query) based on how many times that doc has been the first clicked result for that query
-    - joining documents across factors rather than just summing scores.
-    - or summing scores, but multiplying across those factors that share a common document
-  - create a way to do snippets (contextual snippets to put the search result in context of the document)
-  - create a way to do instant (basically just indexing the queries, and querying those against the current query as it is typed)
+  - name, doc name is currently a number, which becomes a text key in the JSON
+  let's convert the number to its base36 rep as its a string anyway. saves a few bytes
+  - Investigate around our best prec (param space) to see if we can increase rec and keep cost low.
+
+  - add option to use on disk dictionary (sirdb)
+  - add .save (to save dictionary to disk) to Q&A mode
+  - evaluate out of memory (range error) condition using bigmap (which shouldn't happen)
+    - try to double add (via some random "code id" now that we have removed code id)
+    - limit max old space size and try to recreate the out of memory condition
+    - then increase max old space size and see if we can remove the out of memory condition
+    - also add debug line to bigmap code (done!) that shows the condition of the child dictionary when the set fails
+  - remove all old code
+  - purge and prune dictionary to get it as small as possible while maintaining results
+  - make each count/score object a typed array?
+
+  // mid
+    - make chunks dependent on byte size rather than value length 
+    (and stay under 2gb per file limit)
+    - then go forward and using what we have try to prune more aggressively and on a metric like score, or something, to create even more improvements
+    - snippets are important to evaluate the document
+    - multicore indexing (if available), which would be split across a list of documents and merge, complexity from having a shared dictionary, IPC comms?
+
+  // old
+    - don't pre-emptively optimise, keep the algorithm loose and open before it's thoroughly tested
+    - add spanish
+    - things we can try to improve performance:
+      - the usual parameters, cover, stopping condition, score calculation,1
+      - add new things like tf-idf for factors, cosine similarity (on what I don't yet know), boosting doc in (doc, query) based on how many times that doc has been the first clicked result for that query
+      - joining documents across factors rather than just summing scores.
+      - or summing scores, but multiplying across those factors that share a common document
+    - create a way to do snippets (contextual snippets to put the search result in context of the document)
+    - create a way to do instant (basically just indexing the queries, and querying those against the current query as it is typed)
 
 
 
